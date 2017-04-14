@@ -52,7 +52,7 @@
 
 <div class="input-group">
 <span class="input-group-addon btn-azul"><i class="glyphicon glyphicon-user"></i></span>
-<input type="text" class="form-control" placeholder="Ingrese El Nombre de Usuario" name="usuario" value="{{ old('nombre') }}"/>
+<input type="text" class="form-control" placeholder="Ingrese El Nombre de Usuario" name="login" value="{{ old('login') }}"/>
 </div>
 
 
@@ -67,10 +67,9 @@
 </div>
 
 <div class="input-group">
-<span class="input-group-addon btn-azul"><i class="glyphicon glyphicon-log-in"></i></span>
-<input type="password" class="form-control" placeholder="Repetir El Password" name="repassword"/>   
+<span class="input-group-addon btn-azul"><i class="glyphicon glyphicon-lock"></i></span>
+<input type="password" class="form-control" placeholder="Repetir Password" name="password_confirmation"/>    
 </div>
-                
 
                                                                
 

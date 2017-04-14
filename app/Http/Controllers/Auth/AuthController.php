@@ -3,6 +3,7 @@
 namespace Soft\Http\Controllers\Auth;
 
 use Soft\User;
+use Soft\Account;
 use Validator;
 use Soft\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -51,7 +52,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nombre' => 'required|max:255',
+            'login' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -66,31 +67,19 @@ class AuthController extends Controller
     protected function create(array $data)
     {
          $user = User::create([
-            'nombre' => $data['nombre'],
-            'apellido' =>$data['apellido'],
+            'login' => $data['login'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             're_password' =>$data['password_confirmation'],
-            'direccion' =>$data['direccion'],
-            'telefono' =>$data['telefono'],
-            'provincia' =>$data['provincia'],
-            'ciudad' =>$data['ciudad'],
-            'cp' =>$data['cp'],
-            'perfil_id'=>3,
         ]);
 
-         Cliente::create([
-            'nombre' =>$user->nombre,
-            'apellido' =>$user->apellido,
-            'user_id'=>$user->id,
-            'direccion'=>$user->direccion,
-            'email' =>$user->email,
-            'telefono' =>$user->telefono,
-            'provincia' =>$user->provincia,
-            'ciudad' =>$user->ciudad,
-            'cp' =>$user->cp,
+          $Account = Account::create([
+            'login' => $data['login'],
+            'email' => $data['email'],
+            'password' => base64_encode(pack('H*', sha1($data['password']))),
+            're_password' => $data['password_confirmation'],
+        ]);
 
-            ]);
 
         return $user;
          

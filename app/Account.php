@@ -1,6 +1,6 @@
 <?php
 
-namespace Soft\Models;
+namespace Soft;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,24 +11,17 @@ class Account extends Model
 {
     protected $table = 'accounts';
 
-    protected $primaryKey = 'login';
-
-	public $timestamps = false;
 
     protected $fillable = [
+        'login',
         'password',
+        're_password',
         'lastactive',
         'access_level',
         'lastIP',
         'lastServer',
         'email',
-        'nombre',
-        'pregunta',
-        'respuesta',
         'accessLevel',
-        'nome_completo',
-        'repasword',
-        'anotacao'
     ];
 
     protected $guarded = [];
