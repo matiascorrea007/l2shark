@@ -24,6 +24,20 @@ use Soft\Http\Requests\Request;
 Route::group(['middleware' => 'web'], function () {
     
 Route::get('/','PaginasController@home');
+Route::get('boss','BossController@boss');
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('blog','PaginasController@post');

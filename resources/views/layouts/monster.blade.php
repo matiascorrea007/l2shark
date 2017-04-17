@@ -17,13 +17,12 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://www.l2monsterkill.com.br/imgs/image_src.jpg">
 <!-- Bootstrap Core CSS -->
-        <link rel="stylesheet" href="shop/css/bootstrap.min.css">
+<link rel="stylesheet" href="shop/css/bootstrap.min.css">
 {!!Html::style('skin/monster/css/prettyPhoto.css')!!}
 {!!Html::style('skin/monster/css/global.css')!!}
 
 <script src="js/jquery.min.js"></script>
 <script src="shop/js/bootstrap.min.js"></script>
-
 <script type="text/javascript" src="skin/monster/js/global.js?4"></script>
 
 <script>
@@ -54,11 +53,8 @@
 <div class='all en'>
 	
 	<header>
-		
 		<img src='imgs\bg-top.jpg' id='bg-top'>
-		
 		<div class='bg-top-logo'></div>
-		
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
 		<div id='mainLoading'></div>
 		
@@ -73,9 +69,9 @@
 		
 		<div class='userarea'>
 						
-				@if (Auth::guest())
+				
 				<div class='anpc'><div>Don't have account?</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>Register</a></div>
-				@endif
+				
 
 				<div class='avatar' style='background-image: url(imgs/avatar/orc_female_mage.jpg);'></div>
 				
@@ -146,7 +142,7 @@
 			
 				<div class='box'>
 					<div class='statsButtons'>
-						<a title='Boss Status' title='' href='index-15.htm?page=boss' class='b1'><span></span></a>
+						<a title='Boss Status' title='' href="{{ url('/boss') }}" class='b1'><span></span></a>
 						<a title='Grand Olympiad' href='index-13.htm?page=oly_rank' class='b2'><span></span></a>
 						<a title='Castle & Siege' title='' href='index-16.htm?page=siege' class='b3'><span></span></a>
 					</div>
@@ -157,70 +153,42 @@
 						<div class='txt t1'></div>
 					</div>
 					<div class='dualRank'>
-						<table border='0' cellpadding='0' cellspacing='0' class='indexRank'>
+					<table border='0' cellpadding='0' cellspacing='0' class='table table-hover table-light indexRank'>
+						<thead>
 							<tr>
 								<th>Name</th>
 								<th>PVP</th>
 							</tr>
-							
+						</thead>
+						@foreach($pvps as $pvp)
+								<tbody>
 									<tr class='two'>
-										<td>ZoneSeeKer</td>
-										<td>123</td>
+										<td>{{$pvp->char_name}}</td>
+										<td>{{$pvp->pvpkills}}</td>
 									</tr>
-									
-									<tr>
-										<td>OEX</td>
-										<td>88</td>
-									</tr>
-									
-									<tr class='two'>
-										<td>BillyTheKid</td>
-										<td>69</td>
-									</tr>
-									
-									<tr>
-										<td>MortaL</td>
-										<td>64</td>
-									</tr>
-									
-									<tr class='two'>
-										<td>MagicEyes</td>
-										<td>53</td>
-									</tr>
-									
-						</table>
-						<table border='0' cellpadding='0' cellspacing='0' class='indexRank'>
+								</tbody>
+							@endforeach	
+					</table>
+
+
+					<table border='0' cellpadding='0' cellspacing='0' class='table table-hover table-light indexRank'>
+						<thead>
 							<tr>
 								<th>Name</th>
 								<th>PK</th>
 							</tr>
-							
+						</thead>
+						@foreach($pks as $pk)
+								<tbody>
 									<tr class='two'>
-										<td>OEX</td>
-										<td>11</td>
+										<td>{{$pk->char_name}}</td>
+										<td>{{$pk->pkkills}}</td>
 									</tr>
-									
-									<tr>
-										<td>Nutter</td>
-										<td>8</td>
-									</tr>
-									
-									<tr class='two'>
-										<td>Water</td>
-										<td>7</td>
-									</tr>
-									
-									<tr>
-										<td>Sasha</td>
-										<td>7</td>
-									</tr>
-									
-									<tr class='two'>
-										<td>SouEuBolaDeFogo</td>
-										<td>7</td>
-									</tr>
-									
-						</table>
+								</tbody>
+						@endforeach	
+					</table>
+
+
 					</div>
 					<a class='default dbig' href='index-9.htm?page=toppvp'>view more</a>
 				</div>

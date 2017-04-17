@@ -30,6 +30,21 @@ class PaginasController extends Controller
         if(!\Session::has('cliente')) \Session::put('cliente');
     }
 
+
+
+     public function Home(){
+
+      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(10);
+      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(10);
+
+      
+        
+         return view ('lineage.index',compact('pvps','pks'));
+
+
+    }
+
+    
     //total del carrito
     private function total()
     {
@@ -110,12 +125,7 @@ class PaginasController extends Controller
     }
 
 
-    public function Home(){
-        
-         return view ('lineage.index');
-
-
-    }
+   
     
 
 
