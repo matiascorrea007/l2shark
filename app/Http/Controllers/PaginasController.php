@@ -18,31 +18,27 @@ use Soft\Categoria;
 use Soft\Review;
 use Soft\Categoriasub;
 
-class PaginasController extends Controller
+class PaginasController extends BaseController 
 {
 
-  public function __construct()
-    {
-        /*si no existe mi session cart , esntonces la creo con put y creo
-        un array para almacenar los items*/
-        if(!\Session::has('cartweb')) \Session::put('cartweb', array());
-        //para cliente ya no es un array ya que almaceno 1 solo objeto
-        if(!\Session::has('cliente')) \Session::put('cliente');
+   //con este constructor llamo a las variales que hay en la clase padre que es BaseController
+ public function __construct(){
+       parent::__construct();
     }
-
 
 
      public function Home(){
 
-      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(10);
-      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(10);
-
+     
       
         
-         return view ('lineage.index',compact('pvps','pks'));
+         return view ('lineage.index');
 
 
     }
+
+
+
 
     
     //total del carrito

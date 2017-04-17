@@ -16,25 +16,30 @@
 <meta property="og:description" content="L2MK, the best server of Lineage 2 High Five. Join us for free and play!">
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://www.l2monsterkill.com.br/imgs/image_src.jpg">
+
+
+
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="shop/css/bootstrap.min.css">
 {!!Html::style('skin/monster/css/prettyPhoto.css')!!}
 {!!Html::style('skin/monster/css/global.css')!!}
 
+
 <script src="js/jquery.min.js"></script>
 <script src="shop/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="skin/monster/js/global.js?4"></script>
+<script type="text/javascript" src="skin/monster/js/global.js"></script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-90632607-1', 'auto');
   ga('send', 'pageview');
-
 </script>
+
+
+
 </head>
 <body>
 	
@@ -121,14 +126,11 @@
 			<a href='index-5.htm?page=info'></a>
 			<div style='left: -11px;'>
 				
-				<a href='index-9.htm?page=toppvp'>Top PvP</a>
-				<a href='index-10.htm?page=toppk' class='ativa'>Top Pk</a>
-				<a href='index-11.htm?page=toponline'>Top Online</a>
-				<a href='index-12.htm?page=topclan'>Top Clan</a>
-				<a href='index-13.htm?page=oly_rank'>Olympiad Ranking</a>
-				<a href='index-14.htm?page=oly_heroes'>Current Heroes</a>
-				<a href='index-15.htm?page=boss'>Boss Status</a>
-				<a href='index-16.htm?page=siege'>Castle & Siege</a>
+				<a href="{{ url('boss') }}">Boss Status</a>
+				<a href="{{ url('top-pvp') }}" class='ativa'>Top Players</a>
+				<a href="{{ url('siege') }}">Castle & Siege</a>
+
+			
 							</div>
 		</span>
 		<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank' class='o5'><span class='opac'></span></a>

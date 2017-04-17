@@ -25,11 +25,20 @@ Route::group(['middleware' => 'web'], function () {
     
 Route::get('/','PaginasController@home');
 Route::get('boss','BossController@boss');
+Route::get('siege','SiegeController@siege');
 
-
-
-
-
+/*---------------estadisticas-------------*/
+Route::get('top-pvp','EstadisticasController@rankingPVP');
+Route::get('top-pk','EstadisticasController@rankingPK');
+Route::get('top-clan','EstadisticasController@rankingClan');
+Route::get('top-hp','EstadisticasController@rankingHp');
+Route::get('top-mp','EstadisticasController@rankingMp');
+Route::get('top-mas-activos','EstadisticasController@rankingActivos');
+Route::get('player-online','EstadisticasController@rankingOnline');
+Route::get('top-donadores','EstadisticasController@rankingDonadores');
+Route::get('top-heroes','EstadisticasController@rankingHeroes');
+Route::get('top-olympiad','EstadisticasController@rankingOlympiad');
+/*---------------END estadisticas-------------*/
 
 
 

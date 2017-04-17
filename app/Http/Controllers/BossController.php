@@ -12,19 +12,20 @@ use Storage;
 use DB;
 use Carbon\Carbon;
 
-class BossController extends Controller
+class BossController extends BaseController
 {
     
-
+  //con este constructor llamo a las variales que hay en la clase padre que es BaseController
+ public function __construct(){
+       parent::__construct();
+    }
 
 
 
     public function boss()
     {
         
-    //datos de la plantilla principal
-      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(10);
-      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(10);
+
 
       //uno las tabla de los grandboss con la de los npc para obtener los nombres
       $boss = DB::table('grandboss_data')
@@ -41,7 +42,7 @@ class BossController extends Controller
       
      // dd($date);
         
-         return view ('lineage.boss',compact('pvps','pks','boss','raids'));
+         return view ('lineage.boss',compact('boss','raids'));
 
     }
 
