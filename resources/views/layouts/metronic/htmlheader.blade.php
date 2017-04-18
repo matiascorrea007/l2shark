@@ -30,15 +30,11 @@
         <!-- BEGIN THEME LAYOUT STYLES -->
         <link href="{{ asset('/metronic/layouts/layout2/css/layout.min.css') }}" rel="stylesheet" type="text/css" />
 
-        @if(DB::table('skins')->where('skin','=',"blue")->first())
+
+
+       
         <link href="{{ asset('/metronic/layouts/layout2/css/themes/blue.min.css') }}" rel="stylesheet" type="text/css" id="style_color"/> 
-        @elseif(DB::table('skins')->where('skin','=',"grey")->first())
-        <link href="{{ asset('/metronic/layouts/layout2/css/themes/grey.min.css') }}" rel="stylesheet" type="text/css" id="style_color"/> 
-        @elseif(DB::table('skins')->where('skin','=',"light")->first())
-        <link href="{{ asset('/metronic/layouts/layout2/css/themes/light.min.css') }}" rel="stylesheet" type="text/css" id="style_color"/> 
-        @elseif(DB::table('skins')->where('skin','=',"dark")->first())
-        <link href="{{ asset('/metronic/layouts/layout2/css/themes/dark.min.css') }}" rel="stylesheet" type="text/css" id="style_color"/> 
-        @endif
+       
 
 
         <link href="{{ asset('/metronic/layouts/layout2/css/custom.min.css') }}" rel="stylesheet" type="text/css" />

@@ -119,7 +119,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
 Route::group(['middleware' =>['admin']], function () {
 
- Route::get('/admin', 'FrontController@admin');
+ Route::get('/admin', 'PaginasController@admin');
  Route::get('usuario/perfil','UsuarioController@perfil');
 
 

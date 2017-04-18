@@ -28,16 +28,18 @@ class PaginasController extends BaseController
 
 
      public function Home(){
-
-     
-      
         
          return view ('lineage.index');
-
 
     }
 
 
+
+    public function Admin(){
+        
+         return view ('lineage.admin.index');
+
+    }
 
 
     

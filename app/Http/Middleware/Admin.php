@@ -36,13 +36,13 @@ class Admin
         }
 
 
-        if (  Auth::user()->perfil_id == 3) {
+        if (  Auth::user()->admin == 0) {
                  return redirect()->to('/');
             }
 
 
 
-            if (  Auth::user()->perfil_id == 1 or Auth::user()->perfil_id == 2 ) {
+            if (  Auth::user()->admin == 1 or Auth::user()->admin == 2 ) {
                  return $next($request);
             }
        

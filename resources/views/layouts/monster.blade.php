@@ -81,21 +81,36 @@
 				<div class='avatar' style='background-image: url(imgs/avatar/orc_female_mage.jpg);'></div>
 				
 				<div class='loginarea'>
-					<form id='login_form' action='./?engine=login' method='POST'>
-						<input type='hidden' name='lkey' value='57064e4a846e7c3eef8ad1863e7a8899'>						<div class='fieldsBox'>
+
+				@if (count($errors) > 0)
+        			<div class="alert alert-danger">
+            			<strong>Whoops!</strong> Hubo algunos problemas con su entrada.<br><br>
+            			<ul>
+                			@foreach ($errors->all() as $error)
+                    			<li>{{ $error }}</li>
+                			@endforeach
+            			</ul>
+        			</div>
+    			@endif
+
+
+					<form id='form' action="{{ url('/login') }}" method="post">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+						<div class='fieldsBox'>
 							<label>
-								<input type='text' name='ucp_login' class='inpt' placeholder='Login' title='Username' autocomplete='off'>
+								<input type='text' name='email' class='inpt' placeholder='Login' title='Username' autocomplete='off'>
 								<div class='acc_icon user'></div>
 							</label>
 							<label>
-								<input style='border-radius: 4px 0 0 4px;' type='password' name='ucp_passw' class='inpt pass' placeholder='Password' title='Password' autocomplete='off'>
+								<input style='border-radius: 4px 0 0 4px;' type='password' name='password' class='inpt pass' placeholder='Password' title='Password' autocomplete='off'>
 								<div class='acc_icon pass'></div>
 							</label>
-							<input type='button' onclick='opencaptcha();' class='default gologin' value='Login'>						</div>
-						<div class='ess'><a href='index-3.htm?page=forgot'>Forgot your password?</a></div>
-						<input type='hidden' value='fc4dda3e4e3b74f6062c4a273774d0f9' name='ucp_uniqid' id='ucp_uniqid'>
-						<input type='hidden' value='' name='captcha' id='ucp_captcha'>
+							<input type="submit"  class='default gologin' value='Login'>		
+						</div>
+						<div class='ess'><a href='index-3.htm?page=forgot'>Olvidaste tu contraseña?</a></div>
 					</form>
+
 				</div>
 				
 					</div>
@@ -103,7 +118,7 @@
 	</header>
 	
 	<nav>
-		<a href='index.htm' class='o1'><span class='opac'></span></a>
+		<a href="{{ url('/') }}" class='o1'><span class='opac'></span></a>
 		<span class='o2'><span class='opac'></span>
 			<a href='index-2.htm?page=register'></a>
 			<div style='left: -26px;'>

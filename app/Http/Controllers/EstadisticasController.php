@@ -102,4 +102,18 @@ class EstadisticasController extends BaseController
          return view ('lineage.estadisticas.donadores');
     }
 
+
+    public function rankingHeroes()
+    {   
+        
+        $heroes = DB::table('characters')
+        ->where('nobless','=',1)
+        ->join('clan_data', 'characters.clanid', '=', 'clan_data.clan_id')
+        ->join('class_list', 'characters.classid', '=', 'class_list.id')
+        ->orderBy('char_name', 'des')
+        ->get();
+        $contador = 0;
+         return view ('lineage.estadisticas.heroes',compact('heroes','contador'));
+    }
+
 }
