@@ -295,26 +295,6 @@
 
 @yield('content')
 
-<div class='news'><div>
-	
-			<div class='new'>
-				<a class='imgn' href='index-18.htm?page=news&id=17'><img src='imgs\nm\no-img-new.jpg'><span></span></a>
-				<a class='titn' href='index-18.htm?page=news&id=17' class='titlen'>Boatos</a>
-				<div class='datan'>10 April, 2017</div>
-				<div class='contentn'>
-					Prezados jogadores
-
-Ouve boatos infundados sobre um poss&iacute;vel fechamento de nosso servidor. Isso &eacute; MENTIRA. N&atilde;o acredite em informa&ccedil...
-				</div>
-				<a class='lern' href='index-18.htm?page=news&id=17'></a>
-			</div>
-			
-
-		</div>
-	</div>
-
-
-<a href='index-22.htm?page=news&id=all' class='default dbig' style='margin: 14px auto 0 !important;'>read more &raquo;</a>
 
 
 <!-- Facebook Box -->

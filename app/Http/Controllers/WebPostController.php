@@ -5,7 +5,7 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-use Soft\webpost;
+use Soft\web_post;
 use Alert;
 use Session;
 use Redirect;
@@ -14,17 +14,22 @@ use DB;
 use Image;
 use Soft\User;
 use Auth;
-class WebPostController extends Controller
+class WebPostController extends BaseController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+
+
+    //con este constructor llamo a las variales que hay en la clase padre que es BaseController
+ public function __construct(){
+       parent::__construct();
+    }
+
+
+    
     public function index()
     {
-        $posts=webpost::orderBy('created_at','desc')->paginate(10);
-        $user= User::where('perfil_id', '=','1')->lists('nombre','id');
+        $posts=web_post::orderBy('created_at','desc')->paginate(10);
+        $user= User::where('admin', '=',1)->lists('login','id');
         $link = "post";
     return view ('admin.post.index',compact('link','posts','user'));
     }
@@ -36,7 +41,7 @@ class WebPostController extends Controller
      */
     public function create()
     {   
-         $user= User::where('perfil_id', '=','1')->lists('nombre','id');
+         $user= User::where('admin', '=','1')->lists('login','id');
         //retorna a una vista que esta en la carpeta usuario y dentro esta create
         return view('admin.post.create',compact('user'));
     }
@@ -49,7 +54,7 @@ class WebPostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new webpost;
+        $post = new web_post;
         $post->titulo = $request['titulo'];
         $post->descripcioncorta = $request['descripcioncorta'];
         $post->descripcionlarga = $request['descripcionlarga'];
@@ -80,7 +85,7 @@ class WebPostController extends Controller
      */
     public function edit($id)
     {
-        $post=webpost::find($id);
+        $post=web_post::find($id);
         return view('admin.post.edit',compact('post'));
     }
 
@@ -93,7 +98,7 @@ class WebPostController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $post=webpost::find($id);
+         $post=web_post::find($id);
         $post->titulo = $request['titulo'];
         $post->descripcioncorta = $request['descripcioncorta'];
         $post->descripcionlarga = $request['descripcionlarga'];
@@ -113,11 +118,24 @@ class WebPostController extends Controller
      */
     public function destroy($id)
     {
-        $post=webPost::find($id);
+        $post=web_Post::find($id);
         $post->delete();
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'Post Eliminado');
         return Redirect::to('/post');
+    }
+
+
+
+
+
+
+
+    public function postDetalle($id)
+    {
+
+        $post=web_post::find($id);
+        return view('lineage.noticias',compact('post'));
     }
 }

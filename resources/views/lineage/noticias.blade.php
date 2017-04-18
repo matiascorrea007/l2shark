@@ -3,25 +3,25 @@
 @section('content')
 
 
-@foreach($posts as $post)
 <div class='news'><div>
 	
-			<div class='new'>
+			<div class=''>
 				<a class='imgn' href='index-18.htm?page=news&id=17'><img src='imgs\nm\no-img-new.jpg'><span></span></a>
 				<a class='titn' href='index-18.htm?page=news&id=17' class='titlen'>{{$post->titulo}}</a>
 				<div class='datan'>{{$post->created_at}}</div>
 				<div class='contentn'>
-					{!!$post->descripcioncorta!!}
+					{!!$post->descripcionlarga!!}
 				</div>
 				
-				{!! link_to_route('paginas.postDetalle', $title = '', $parameters = $post->id  , $attributes = ['class'=>'lern']); !!}
+			
 			</div>
 			
 
 		</div>
 	</div>
-@endforeach
 
-{!! $posts->render() !!}
+
+<a href="{{ url('/') }}" class='default dbig' style='margin: 14px auto 0 !important;'>Regresar &raquo;</a>
+
 
 @endsection

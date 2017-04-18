@@ -14,6 +14,7 @@
 </div>
 
 <div class="modal-footer">
+<button type="submit" class="btn btn-primary">Crear</button>
 <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
 {!!Form::close()!!}
 </div>

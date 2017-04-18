@@ -5,7 +5,7 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-use Soft\webpost;
+use Soft\web_post;
 use Alert;
 use Session;
 use Redirect;
@@ -28,8 +28,8 @@ class PaginasController extends BaseController
 
 
      public function Home(){
-        
-         return view ('lineage.index');
+        $posts=web_post::orderBy('created_at','desc')->paginate(10);
+         return view ('lineage.index',compact('posts'));
 
     }
 
@@ -94,33 +94,7 @@ class PaginasController extends BaseController
                                           ));
     }
 
- public function postDetalle($id)
-    {
-        //llama a la funcion CartTotal
-        $cartcount = $this->CartCount();
-        //llama a la funcion total
-        $total = $this->total();
-
-         /*seccion para el layout*/
-         $subcategorias = DB::table('categoriasubs')->orderBy('nombre', 'asc')->get();
-         $categorias = DB::table('categorias')->orderBy('nombre', 'asc')->get();
-        $carrucelMarcas =  DB::table('web_marcas')->orderBy('imagen', 'asc')->get();
-        $informacions =  DB::table('web_informacions')->orderBy('direccion1', 'asc')->get();
-        $boxs =  DB::table('web_facebooks')->orderBy('box', 'asc')->get();
-        $logos =  DB::table('web_logos')->orderBy('logo', 'asc')->get();
-        /*seccion para el layout*/
-        $post=webpost::find($id);
-        return view('shop.blog-details',compact('cartcount',
-                                          'carrucelMarcas',
-                                          'informacions',
-                                          'boxs',
-                                          'logos',
-                                          'post',
-                                          'subcategorias',
-                                          'categorias',
-                                          'total'
-                                          ));
-    }
+ 
 
 
    

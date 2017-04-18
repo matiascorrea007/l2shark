@@ -41,19 +41,21 @@ Route::get('top-olympiad','EstadisticasController@rankingOlympiad');
 /*---------------END estadisticas-------------*/
 
 
-
-
-
-
-
-
-
-
 Route::get('blog','PaginasController@post');
 Route::get('blogdetail-post{id}',[
 'as'=>'paginas.postDetalle',
-'uses'=>'PaginasController@postDetalle'
+'uses'=>'WebPostController@postDetalle'
 	]);
+
+
+
+
+
+
+
+
+
+
 Route::get('subcategoria-{slug}','PaginasController@subcategoria');
 Route::get('item-detalle-{slug}',[
 'as'=>'paginas.itemDetalle',

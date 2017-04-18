@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Scope;
 use Soft\Venta;
 use Soft\web_venta;
 use Soft\Perfil;
-use Soft\webpost;
+use Soft\web_post;
 use Soft\user_facturacion;
 use Soft\Ticket;
 use Soft\Tickets_comment;
@@ -18,6 +18,8 @@ use Soft\Reparacione;
 use Soft\Presupuesto;
 use Soft\Compra;
 use Soft\Cliente;
+
+
 class User extends Authenticatable
 {
     //el uso del soft delete
@@ -33,6 +35,7 @@ class User extends Authenticatable
         'password',
         're_password',
         'email',
+        'admin',
     ];
 
     /**
@@ -107,7 +110,7 @@ public function perfil()
 public function webpost()
     {
         //un usuario puede tener muchos post
-       return $this->hasMany(webpost::class);
+       return $this->hasMany(web_post::class);
     } 
 
     public function facturacion()
