@@ -25,13 +25,13 @@ class WebPostController extends BaseController
     }
 
 
-    
+
     public function index()
     {
         $posts=web_post::orderBy('created_at','desc')->paginate(10);
         $user= User::where('admin', '=',1)->lists('login','id');
         $link = "post";
-    return view ('admin.post.index',compact('link','posts','user'));
+    return view ('lineage.admin.post.index',compact('link','posts','user'));
     }
 
     /**
@@ -43,7 +43,7 @@ class WebPostController extends BaseController
     {   
          $user= User::where('admin', '=','1')->lists('login','id');
         //retorna a una vista que esta en la carpeta usuario y dentro esta create
-        return view('admin.post.create',compact('user'));
+        return view('lineage.admin.post.create',compact('user'));
     }
 
     /**
@@ -86,7 +86,7 @@ class WebPostController extends BaseController
     public function edit($id)
     {
         $post=web_post::find($id);
-        return view('admin.post.edit',compact('post'));
+        return view('lineage.admin.post.edit',compact('post'));
     }
 
     /**

@@ -21,28 +21,25 @@
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="shop/css/bootstrap.min.css">
-{!!Html::style('skin/monster/css/prettyPhoto.css')!!}
-{!!Html::style('skin/monster/css/global.css')!!}
-
+<link rel="stylesheet" type="text/css" href="skin/monster/css/prettyPhoto.css" media="all">
+<link rel="stylesheet" type="text/css" href="skin/monster/css/global.css" media="all">
+<link rel="stylesheet" type="text/css" href="skin/monster/css/mi-css.css" media="all">
 
 <script src="js/jquery.min.js"></script>
 <script src="shop/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="skin/monster/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="skin/monster/js/global.js"></script>
+<script type="text/javascript" src="skin/monster/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-90632607-1', 'auto');
-  ga('send', 'pageview');
-</script>
 
+ 
 
 
 </head>
 <body>
-	
+
+
 
 <div id="fb-root"></div>
 <script>
@@ -58,6 +55,12 @@
 <div class='all en'>
 	
 	<header>
+
+
+
+
+	
+
 		<img src='imgs\bg-top.jpg' id='bg-top'>
 		<div class='bg-top-logo'></div>
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
@@ -73,14 +76,16 @@
 		</div>
 		
 		<div class='userarea'>
-						
 				
+				@if(Auth::guest())		
 				<div class='anpc'><div>Don't have account?</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>Register</a></div>
+				@endif
+
+				<div class='avatar' style='background-image: url(skin/monster/imgs/avatar/human_male_mage.jpg);'></div>
 				
 
-				<div class='avatar' style='background-image: url(imgs/avatar/orc_female_mage.jpg);'></div>
-				
-				<div class='loginarea'>
+
+			<div class='loginarea'><!--Login Area-->
 
 				@if (count($errors) > 0)
         			<div class="alert alert-danger">
@@ -92,9 +97,27 @@
             			</ul>
         			</div>
     			@endif
+				
+				@if(Auth::check())
 
+				<div class="logged">{{$user->login}}</div>
+					<div class="loggedOptions">
+						<span class="default o1">
+							<span>PDU</span>
+							<div>
+						<a href="./ucp" class="default noJquery">Panel de Usuario</a>			
+						<a href="./?page=ucp_changepass" class="default">Cambiar Pass</a>
+						<a href="./?page=ucp_changeemail" class="default">Cambiar E-mail</a>	
+						<a href="./?page=ucp_unstuck" class="default">Unstuck Char</a>
+							</div>
+						</span>
+						<a href="{{ url('/logout') }}" class="default o2 noJquery">Logout</a>
+					</div>
 
-					<form id='form' action="{{ url('/login') }}" method="post">
+			
+				@else
+
+				<form id='form' action="{{ url('/login') }}" method="post">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class='fieldsBox'>
@@ -110,10 +133,9 @@
 						</div>
 						<div class='ess'><a href='index-3.htm?page=forgot'>Olvidaste tu contraseña?</a></div>
 					</form>
-
-				</div>
-				
-					</div>
+				  @endif
+				</div><!--END Login AREA-->
+			</div>
 	
 	</header>
 	
@@ -250,7 +272,9 @@
 	
 					<div class='galleryBox'><div>
 						
-									<a href='//www.youtube.com/watch?v=YGpZnIakNHE&rel=0' class='iframe' rel='prettyPhoto[fullGallery]'>
+									
+										
+										<a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" >VIDEO
 										<img src='imgs\gallery\thumbnail\YGpZnIakNHE.jpg'>
 										<div></div>
 										<span></span>
@@ -296,7 +320,6 @@
 @yield('content')
 
 
-
 <!-- Facebook Box -->
 	<hr>
 	<h1>Follow Us!</h1>
@@ -306,7 +329,12 @@
 		.faceIndex > div { width: 496px !important; }
 	</style>
 	<div class='faceIndex'><div>
-		<div class="fb-page" data-href="https://www.facebook.com/l2monsterkill" data-width="496" data-height="214" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/l2monsterkill"><a href="https://www.facebook.com/l2monsterkill"></a></blockquote></div></div>
+	
+			@if(!empty($box))
+			{!! $box->box!!}
+			@endif
+			
+		
 	</div></div>
 
 
@@ -392,8 +420,6 @@ $(document).ready(function(){
 
 
 
-<!-- PrettyPhoto -->
-<script type="text/javascript" src="js\jquery.prettyPhoto.js"></script><script type="text/javascript" charset="utf-8">$(document).ready(function(){ $("a[rel^='prettyPhoto']").prettyPhoto({ theme: 'atualstudio', social_tools: '', markup: '<div class="pp_pic_holder"><div class="ppt">&nbsp;</div><div class="pp_top"><div class="pp_left"></div><div class="pp_middle"></div><div class="pp_right"></div></div><div class="pp_content_container"><div class="pp_left"><div class="pp_right"><div class="pp_content"><div class="pp_loaderIcon"></div><div class="pp_fade"><a href="#" class="pp_expand" title="Expand the image">Expand</a><div class="pp_hoverContainer"><a class="pp_next" href="#">next</a><a class="pp_previous" href="#">previous</a></div><div id="pp_full_res"></div><div class="pp_details"></div></div></div></div></div></div><div class="pp_bottom"><div class="pp_left"></div><div class="pp_middle"></div><div class="pp_right"></div></div></div><div class="pp_overlay"></div>' }); });</script>
 
 <!-- Important Terms to JS Scripts -->
 <input type='hidden' id='hback' value=''><input type='hidden' id='titleDefault' value='L2MK - High Five'><input type='hidden' id='l11015' value='Please check your internet connection. The page is taking too long to respond.'><input type='hidden' id='l12055' value='Sorry, an error has occured! Please try again.'><input type='hidden' id='l11017' value='Security Code'><input type='hidden' id='l11018' value='Please fill in the code below, for security reasons.'><input type='hidden' id='l20001' value='Wait...'><input type='hidden' id='l40044' value='Your security key has expired! We will load the page and please try again.'>
@@ -415,7 +441,7 @@ $(document).ready(function(){
 <!--modal-->
 
     @include('lineage.modal.registrarse') 
-
+	@include('lineage.modal.video') 
 
 
 </body>

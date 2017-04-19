@@ -12,6 +12,9 @@ use Storage;
 use DB;
 use Image;
 use View;
+use Auth;
+use Soft\web_facebook;
+use Soft\web_logo;
 
 class BaseController extends Controller
 {
@@ -23,11 +26,18 @@ class BaseController extends Controller
        //datos de la plantilla principal
       $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(5);
       $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(5);
+      $logo=web_logo::first();
+      $box=web_facebook::first();
+      $user = Auth::user();
       //datos de la plantilla principal
 
 
        View::share ( 'pvps', $pvps );
        View::share ( 'pks', $pks );
+       View::share ( 'logo', $logo );
+       View::share ( 'box', $box );
+       View::share ( 'user', $user );
+      
 
     }  
 

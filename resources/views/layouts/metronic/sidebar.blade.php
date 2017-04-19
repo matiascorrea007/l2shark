@@ -21,85 +21,40 @@
                                 <span class="arrow open"></span>
                             </a>
                         </li>
+                        
 
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
+                        <a href="{!! URL::to('admin-config/') !!}" class="nav-link nav-toggle">
                                 <img height="40"  width="40" src="storage/icono admin/config.svg">
-                                <span class="title">Config</span>
+                                <span class="title">System</span>
                                 <span class="arrow"></span>
                             </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('ivatipo/') !!}" class="nav-link ">
-                                        <span class="title">Tipo de Ivas</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('marca/') !!}" class="nav-link ">
-                                        <span class="title">Marcas</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('transporte/') !!}" class="nav-link ">
-                                        <span class="title">Transporte</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('skin/') !!}" class="nav-link ">
-                                        <span class="title">Skin Panel</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
 
                         <li class="nav-item  ">
-                            <a href="javascript:;" class="nav-link nav-toggle">
-                                <img height="50"  width="50" src="storage/icono admin/configweb.svg">
-                                <span class="title">Web</span>
+                            <a href="{!! URL::to('tickets/') !!}" class="nav-link nav-toggle">
+                                <img height="40"  width="40" src="storage/icono admin/ticket.svg">
+                                <span class="title">tickets</span>
                                 <span class="arrow"></span>
                             </a>
-                            <ul class="sub-menu">
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('logo/') !!}" class="nav-link ">
-                                        <span class="title">Logo</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('carrucel/') !!}" class="nav-link ">
-                                        <span class="title">Carrucel</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('carrucelmarcas/') !!}" class="nav-link ">
-                                        <span class="title">Marcas</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('webconfig-footer/') !!}" class="nav-link ">
-                                        <span class="title">Footer</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('categoria/') !!}" class="nav-link ">
-                                        <span class="title">Categorias & Subcategorias</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('post/') !!}" class="nav-link ">
-                                        <span class="title">Post</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item  ">
-                                    <a href="{!! URL::to('puntos/') !!}" class="nav-link ">
-                                        <span class="title">Sistema de Puntos</span>
-                                    </a>
-                                </li>
-                            </ul>
+                        </li>
+
+
+                        <li class="nav-item  ">
+                            <a href="{!! URL::to('post/') !!}" class="nav-link nav-toggle">
+                                <img height="40"  width="40" src="storage/icono admin/ticket.svg">
+                                <span class="title">Noticias</span>
+                                <span class="arrow"></span>
+                            </a>
                         </li>
 
 
 
+                        
+
+
+<!--
 
                         <li class="nav-item  ">
                             <a href="javascript:;" class="nav-link nav-toggle">
@@ -230,13 +185,7 @@
                         </li>
 
                            
-                        <li class="nav-item  ">
-                            <a href="{!! URL::to('tickets/') !!}" class="nav-link nav-toggle">
-                                <img height="40"  width="40" src="storage/icono admin/ticket.svg">
-                                <span class="title">tickets</span>
-                                <span class="arrow"></span>
-                            </a>
-                        </li>
+                        
 
                          <li class="nav-item  ">
                             <a href="{!! URL::to('provedor/') !!}" class="nav-link nav-toggle">
@@ -302,7 +251,7 @@
                             </a>
                         </li>
 
-                        
+   -->                     
                         
                         
                     </ul>

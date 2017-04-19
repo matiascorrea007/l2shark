@@ -12,6 +12,8 @@ use Redirect;
 use Storage;
 use DB;
 use Image;
+
+
 class WebFacebookController extends Controller
 {
     /**
@@ -32,7 +34,7 @@ class WebFacebookController extends Controller
     public function create()
     {
          //retorna a una vista que esta en la carpeta usuario y dentro esta create
-        return view('admin.paginas.home.facebook.create');
+        return view('lineage.admin.config.facebook.create');
     }
 
     /**
@@ -47,7 +49,7 @@ class WebFacebookController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'box Creado');
-       return Redirect::to('/webconfig-footer');
+       return Redirect::to('/admin-config');
     }
 
     /**
@@ -87,7 +89,7 @@ class WebFacebookController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'box Modificado');
-       return Redirect::to('/webconfig-footer');
+       return Redirect::to('/admin-config');
     }
 
     /**
@@ -103,6 +105,6 @@ class WebFacebookController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'box Eliminado');
-        return Redirect::to('/webconfig-footer');
+        return Redirect::to('/admin-config');
     }
 }

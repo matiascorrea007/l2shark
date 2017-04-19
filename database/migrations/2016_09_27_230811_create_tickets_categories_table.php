@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWebPostsTable extends Migration
+class CreateTicketsCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreateWebPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('web_posts', function (Blueprint $table) {
+        Schema::create('tickets_categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('portada');
-            $table->string('titulo');
-            $table->string('descripcioncorta', 1000);
-            $table->string('descripcionlarga',10000);
-            $table->integer('user_id');
+            $table->string('nombre');
+            $table->string('color');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateWebPostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('web_posts');
+        Schema::drop('tickets_categories');
     }
 }

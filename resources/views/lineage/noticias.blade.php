@@ -6,9 +6,13 @@
 <div class='news'><div>
 	
 			<div class=''>
-				<a class='imgn' href='index-18.htm?page=news&id=17'><img src='imgs\nm\no-img-new.jpg'><span></span></a>
-				<a class='titn' href='index-18.htm?page=news&id=17' class='titlen'>{{$post->titulo}}</a>
-				<div class='datan'>{{$post->created_at}}</div>
+				<a class='imgn pull-left' href='index-18.htm?page=news&id=17'><img src='imgs\nm\no-img-new.jpg'><span></span></a>
+
+				<a class='titn pull-left' href="{{ url('blogdetail-post'.$post->id) }}" class='titlen'>	{{$post->titulo}}</a>
+
+				<div class='datan pull-right'>{{$post->created_at}}</div>
+
+				<br><br>
 				<div class='contentn'>
 					{!!$post->descripcionlarga!!}
 				</div>

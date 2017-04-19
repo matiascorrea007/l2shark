@@ -438,7 +438,7 @@ Route::put('carrucelmarcas-update/{id}','WebCarrucelMarcasController@update');
 Route::delete('carrucelmarcas-destroy/{id}','WebCarrucelMarcasController@destroy');
 
 
-Route::get('webconfig-footer','WebFooterController@ConfigFooter');
+
 
 Route::get('informacion','WebInformacionController@index');
 Route::get('informacion-create','WebInformacionController@create');
@@ -447,17 +447,24 @@ Route::put('informacion-update/{id}','WebInformacionController@update');
 Route::delete('informacion-destroy/{id}','WebInformacionController@destroy');
 
 
-Route::get('facebook','WebFacebookController@index');
-Route::get('facebook-create','WebFacebookController@create');
-Route::post('facebook-store','WebFacebookController@store');
-Route::put('facebook-update/{id}','WebFacebookController@update');
-Route::delete('facebook-destroy/{id}','WebFacebookController@destroy');
-
 Route::get('mercadopago','WebMercadoPagoController@index');
 Route::get('mercadopago-create','WebMercadoPagoController@create');
 Route::post('mercadopago-store','WebMercadoPagoController@store');
 Route::put('mercadopago-update/{id}','WebMercadoPagoController@update');
 Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
+
+
+
+
+
+Route::get('admin-config','WebConfigController@config');
+
+
+Route::get('facebook','WebFacebookController@index');
+Route::get('facebook-create','WebFacebookController@create');
+Route::post('facebook-store','WebFacebookController@store');
+Route::put('facebook-update/{id}','WebFacebookController@update');
+Route::delete('facebook-destroy/{id}','WebFacebookController@destroy');
 
 Route::get('logo','WebLogoController@index');
 Route::get('logo-create','WebLogoController@create');

@@ -25,7 +25,7 @@ class WebLogoController extends Controller
     {
         $logos=web_logo::all();
         $link = "logo";
-    return view ('admin.paginas.home.logo.index',compact('link','logos'));
+    return view ('lineage.admin.config.index',compact('link','logos'));
     }
 
     /**
@@ -36,7 +36,7 @@ class WebLogoController extends Controller
     public function create()
     {
         //retorna a una vista que esta en la carpeta usuario y dentro esta create
-        return view('admin.paginas.home.logo.create');
+        return view('lineage.admin.config.logo.create');
     }
 
     /**
