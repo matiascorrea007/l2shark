@@ -21,13 +21,11 @@
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="shop/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="skin/monster/css/prettyPhoto.css" media="all">
 <link rel="stylesheet" type="text/css" href="skin/monster/css/global.css" media="all">
 <link rel="stylesheet" type="text/css" href="skin/monster/css/mi-css.css" media="all">
 
 <script src="js/jquery.min.js"></script>
 <script src="shop/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="skin/monster/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="skin/monster/js/global.js"></script>
 <script type="text/javascript" src="skin/monster/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>
@@ -57,12 +55,8 @@
 	<header>
 
 
-
-
-	
-
 		<img src='imgs\bg-top.jpg' id='bg-top'>
-		<div class='bg-top-logo'></div>
+		<div class='bg-top-logo'> <img height="400" width="450" src="../public_html/storage/paginas/home/logo/1479094397.png" alt="" /></div>
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
 		<div id='mainLoading'></div>
 		

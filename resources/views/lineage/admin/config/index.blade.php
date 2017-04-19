@@ -51,7 +51,7 @@
     @foreach($boxs as $box)
     <tbody>
   <td>{{ $box -> id}}</td>
-  <td>{{ $box -> box}}</td>
+  <td>{!! $box -> box !!}</td>
 
 
   
