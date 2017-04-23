@@ -1,3 +1,14 @@
+.green{
+    color:green;
+    font-weight:bold;
+}
+
+.red{
+    color:red;
+    font-weight:bold;
+}
+
+
 /***** MODAL PROPERTIES *****/
  .modal-content {
     -webkit-box-shadow: none;

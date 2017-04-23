@@ -25,8 +25,113 @@ class SiegeController extends BaseController
     public function siege()
     {
         
+        $caslte = 
 
-        return view ('lineage.siege');
+       $Aden = DB::table('castle')
+      ->where('name','=','Aden')
+      ->first();
+
+      $AdenClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Aden')
+      ->first();
+
+      $Dion = DB::table('castle')
+      ->where('name','=','Dion')
+      ->first();
+
+      $DionClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Dion')
+      ->first();
+
+      $Giran = DB::table('castle')
+      ->where('name','=','Giran')
+      ->first();
+
+      $GiranClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
+      ->where('name','=','Giran')
+      ->first();
+
+      
+      
+      $Gludio = DB::table('castle')
+      ->where('name','=','Gludio')
+      ->first();
+
+      $GludioClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Gludio')
+      ->first();
+
+      $Goddard = DB::table('castle')
+      ->where('name','=','Goddard')
+      ->first();
+
+      $GoddardClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Goddard')
+      ->first();
+
+      $Innadril = DB::table('castle')
+      ->where('name','=','Innadril')
+      ->first();
+
+      $InnadrilClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Innadril')
+      ->first();
+
+      $Oren = DB::table('castle')
+      ->where('name','=','Oren')
+      ->first();
+
+      $OrenClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Oren')
+      ->first();
+
+      $Rune = DB::table('castle')
+      ->where('name','=','Rune')
+      ->first();
+
+      $RuneClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Rune')
+      ->first();
+
+      $Schuttgart = DB::table('castle')
+      ->where('name','=','Schuttgart')
+      ->first();
+
+      $SchuttgartClan = DB::table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Schuttgart')
+      ->first();
+
+      
+
+        return view ('lineage.siege',compact(
+            'Aden',
+            'AdenClan',
+            'Dion',
+            'DionClan',
+            'Giran',
+            'GiranClan',
+            'Gludio',
+            'GludioClan',
+            'Goddard',
+            'GoddardClan',
+            'Innadril',
+            'InnadrilClan',
+            'Oren',
+            'OrenClan',
+            'Rune',
+            'RuneClan',
+            'Schuttgart',
+            'SchuttgartClan'));
     
 
     }
