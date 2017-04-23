@@ -3,15 +3,15 @@
 namespace Soft;
 
 use Illuminate\Database\Eloquent\Model;
-use Soft\Tickets_categorie;
+use Soft\web_tickets_categorie;
 use Soft\User;
-use Soft\Tickets_prioritie;
-use Soft\Tickets_statu;
+use Soft\web_tickets_prioritie;
+use Soft\web_tickets_statu;
 
 
-class Ticket extends Model
+class web_ticket extends Model
 {
-     protected $fillable = [
+    protected $fillable = [
     'id',
     'subject',
     'content',
@@ -53,5 +53,4 @@ public function status()
         //un usuario puede tener muchas ventas
        return $this->belongsTo(Tickets_statu::class);
     }
-
 }

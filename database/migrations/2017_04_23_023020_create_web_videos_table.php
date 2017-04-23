@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTicketsCategoriesTable extends Migration
+class CreateWebVideosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateTicketsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('web_tickets_categories', function (Blueprint $table) {
+        Schema::create('web_videos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');
-            $table->string('color');
+            $table->string('titulo');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateTicketsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('tickets_categories');
+        Schema::drop('web_videos');
     }
 }

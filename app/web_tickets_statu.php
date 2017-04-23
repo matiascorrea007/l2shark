@@ -3,10 +3,9 @@
 namespace Soft;
 
 use Illuminate\Database\Eloquent\Model;
-use Soft\Ticket;
+use Soft\web_ticket;
 
-
-class Tickets_categorie extends Model
+class web_tickets_statu extends Model
 {
     protected $fillable = [
     'id',
@@ -14,12 +13,10 @@ class Tickets_categorie extends Model
     'color',
     ];
 
-public function ticket()
+
+      public function ticket()
     {
-        //un categoria puede tener muchas ticket
+        //un status puede tener muchas ticket
        return $this->hasMany(Ticket::class);
     }
-
-
-
 }

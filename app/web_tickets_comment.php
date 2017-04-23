@@ -5,9 +5,9 @@ namespace Soft;
 use Illuminate\Database\Eloquent\Model;
 use Soft\User;
 
-class Tickets_comment extends Model
+class web_tickets_comment extends Model
 {
-    protected $fillable = [
+     protected $fillable = [
     'id',
     'comment',
     'html',
@@ -22,5 +22,4 @@ class Tickets_comment extends Model
         //un comentario puede tener 1 usuario
        return $this->belongsTo(User::class);
     }
-    
 }

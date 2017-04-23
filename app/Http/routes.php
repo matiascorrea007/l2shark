@@ -56,6 +56,9 @@ Route::get('blogdetail-post{id}',[
 
 
 
+
+
+
 Route::get('subcategoria-{slug}','PaginasController@subcategoria');
 Route::get('item-detalle-{slug}',[
 'as'=>'paginas.itemDetalle',
@@ -480,6 +483,13 @@ Route::get('post-create','WebPostController@create');
 Route::post('post-store','WebPostController@store');
 Route::put('post-update/{id}','WebPostController@update');
 Route::delete('post-destroy/{id}','WebPostController@destroy');
+
+Route::get('galeria-imagen','GaleriaController@index');
+Route::get('galeria-imagen-edit-{id}','GaleriaController@edit');
+Route::get('galeria-imagen-create','GaleriaController@create');
+Route::post('galeria-imagen-store','GaleriaController@store');
+Route::put('galeria-imagen-update/{id}','GaleriaController@update');
+Route::delete('galeria-imagen-destroy/{id}','GaleriaController@destroy');
 /*---------------WEB CONFIG------------*/
 
 

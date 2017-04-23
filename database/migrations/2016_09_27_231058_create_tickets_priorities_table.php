@@ -12,7 +12,7 @@ class CreateTicketsPrioritiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets_priorities', function (Blueprint $table) {
+        Schema::create('web_tickets_priorities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('color');

@@ -49,6 +49,36 @@
                             </a>
                         </li>
 
+                          <li class="nav-item  ">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <img height="40"  width="40" src="storage/icono admin/venta.svg">
+                                <span class="title">Galeria</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                <a href="{!! URL::to('galeria-imagen/') !!}" class="nav-link ">
+                                        <span class="title">Galeria de Imagenes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{!! URL::to('listar-venta/') !!}" class="nav-link ">
+                                        <span class="title">Galeria de Videos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{!! URL::to('listar-venta/') !!}" class="nav-link ">
+                                        <span class="title">Enviar Imagen</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="{!! URL::to('listar-venta/') !!}" class="nav-link ">
+                                        <span class="title">Enviar Video</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
 
 
                         

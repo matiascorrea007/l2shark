@@ -3,11 +3,10 @@
 namespace Soft;
 
 use Illuminate\Database\Eloquent\Model;
-use Soft\Ticket;
+use Soft\web_ticket;
 
 
-
-class Tickets_statu extends Model
+class web_tickets_prioritie extends Model
 {
     protected $fillable = [
     'id',
@@ -16,9 +15,9 @@ class Tickets_statu extends Model
     ];
 
 
-      public function ticket()
+   public function ticket()
     {
-        //un status puede tener muchas ticket
+        //un prioridad puede tener muchas ticket
        return $this->hasMany(Ticket::class);
     }
 }

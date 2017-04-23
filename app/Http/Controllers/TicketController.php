@@ -12,8 +12,8 @@ use Alert;
 use Image;
 use DB;
 use Input;
-use Soft\Ticket;
-use Soft\Tickets_comment;
+use Soft\web_ticket;
+use Soft\web_tickets_comment;
 use Auth;
 
 class TicketController extends Controller
@@ -22,8 +22,8 @@ class TicketController extends Controller
     public function index(Request $request)
     {
         //ordenamos por usu_nombre y lo guaramos en $users
-        $tickets = ticket::where('status_id','=',2)->orderBy('created_at','asc');
-        $count = ticket::where('status_id','=',2)->count();
+        $tickets = web_ticket::where('status_id','=',2)->orderBy('created_at','asc');
+        $count = web_ticket::where('status_id','=',2)->count();
         //busqueda por descripccion
         $descripcion=$request->input('descripcion');
         if (!empty($descripcion)) { 
@@ -46,8 +46,8 @@ class TicketController extends Controller
     public function TicketCompletados(Request $request)
     {
         //ordenamos por usu_nombre y lo guaramos en $users
-        $tickets = ticket::where('status_id','=',1)->orderBy('created_at','asc');
-        $count = ticket::where('status_id','=',1)->count();
+        $tickets = web_ticket::where('status_id','=',1)->orderBy('created_at','asc');
+        $count = web_ticket::where('status_id','=',1)->count();
         //busqueda por descripccion
         $descripcion=$request->input('descripcion');
         if (!empty($descripcion)) { 
@@ -69,7 +69,7 @@ class TicketController extends Controller
 
     public function TicketCambiarStatus(Request $Request , $id){
 
-        $ticket=ticket::find($id);
+        $ticket=web_ticket::find($id);
         $ticket->status_id=$Request['pago'];
         $ticket->save();
          return Redirect::to('/tickets');
@@ -77,8 +77,8 @@ class TicketController extends Controller
     
 
      public function TicketResponder(Request $Request , $id){
-        $comentarios = Tickets_comment::where('ticket_id','=',$id)->get();
-        $ticket=ticket::find($id);
+        $comentarios = web_tickets_comment::where('ticket_id','=',$id)->get();
+        $ticket=web_ticket::find($id);
         $link = "ticket";
         return view('admin.ticket.responder',compact('link','ticket','comentarios')); 
     }  
@@ -88,7 +88,7 @@ class TicketController extends Controller
         
 
 
-        $comentario = new Tickets_comment;
+        $comentario = new web_tickets_comment;
         $comentario->comment = $Request['comentario'];
         $comentario->user_id = Auth::user()->id;
         $comentario->ticket_id = $id;

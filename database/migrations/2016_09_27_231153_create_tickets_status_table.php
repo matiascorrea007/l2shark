@@ -12,7 +12,7 @@ class CreateTicketsStatusTable extends Migration
      */
     public function up()
     {
-        Schema::create('tickets_status', function (Blueprint $table) {
+        Schema::create('web_tickets_status', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('color');
