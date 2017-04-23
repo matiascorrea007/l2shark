@@ -352,7 +352,7 @@ Route::get('tags', function (Illuminate\Http\Request  $request) {
     });
 
 
-
+/*
 Route::get('provedor','ProvedoreController@index');
 Route::get('provedor-create','ProvedoreController@create');
 Route::post('provedor-store','ProvedoreController@store');
@@ -366,8 +366,6 @@ Route::post('cliente-store','ClienteController@store');
 Route::put('cliente-update/{id}','ClienteController@update');
 Route::delete('cliente-destroy/{id}','ClienteController@destroy');
 Route::get('cliente-crear-usuario/{id}','ClienteController@CrearUsuario');
-
-
 
 Route::get('gasto','GastoController@index');
 Route::get('gasto-create','GastoController@create');
@@ -394,15 +392,6 @@ Route::post('categoriasub-store','CategoriaSubController@store');
 Route::put('categoriasub-update/{id}','CategoriaSubController@update');
 Route::delete('categoriasub-destroy/{id}','CategoriaSubController@destroy');
 
-
-Route::get('tickets','TicketController@index');
-Route::get('tickets-completados','TicketController@TicketCompletados');
-Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
-Route::get('tickets-responder/{id}','TicketController@TicketResponder');
-Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
-
-
-
 Route::get('reparaciones','ServicioTecnicoController@index');
 Route::get('reparaciones-completados','ServicioTecnicoController@ReparacionesCompletadas');
 Route::get('reparaciones-canceladas','ServicioTecnicoController@ReparacionesCancelada');
@@ -415,6 +404,18 @@ Route::post('reparacion-cambiar-status/{id}','ServicioTecnicoController@Servicio
 Route::delete('reparacion-destroy/{id}','ServicioTecnicoController@destroy');
 Route::get('reparacion-pdf/{tipo}/{id}','ServicioTecnicoController@crearReporteReparacion');
 
+*/
+
+Route::get('tickets','TicketController@index');
+Route::get('tickets-completados','TicketController@TicketCompletados');
+Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
+Route::get('tickets-responder/{id}','TicketController@TicketResponder');
+Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
+
+
+
+
+
 //backup 
 Route::get('backup', 'BackupController@index');
 
@@ -424,7 +425,7 @@ Route::get('backup', 'BackupController@index');
 
 /*---------------WEB CONFIG------------*/
 
-
+/*
 Route::get('carrucel','WebCarrucelController@index');
 Route::get('carrucel-create','WebCarrucelController@create');
 Route::post('carrucel-store','WebCarrucelController@store');
@@ -452,7 +453,7 @@ Route::get('mercadopago-create','WebMercadoPagoController@create');
 Route::post('mercadopago-store','WebMercadoPagoController@store');
 Route::put('mercadopago-update/{id}','WebMercadoPagoController@update');
 Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
-
+*/
 
 
 
@@ -480,6 +481,9 @@ Route::post('post-store','WebPostController@store');
 Route::put('post-update/{id}','WebPostController@update');
 Route::delete('post-destroy/{id}','WebPostController@destroy');
 /*---------------WEB CONFIG------------*/
+
+
+
 
 
 /*---------------reportes Pdf------------*/

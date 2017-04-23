@@ -176,8 +176,8 @@
 				<div class='box'>
 					<div class='statsButtons'>
 						<a title='Boss Status' title='' href="{{ url('/boss') }}" class='b1'><span></span></a>
-						<a title='Grand Olympiad' href='index-13.htm?page=oly_rank' class='b2'><span></span></a>
-						<a title='Castle & Siege' title='' href='index-16.htm?page=siege' class='b3'><span></span></a>
+						<a title='Grand Olympiad' href="{{ url('/top-olympiad') }}" class='b2'><span></span></a>
+						<a title='Castle & Siege' title='' href="{{ url('/siege') }}" class='b3'><span></span></a>
 					</div>
 				</div>
 				<div class='box'>

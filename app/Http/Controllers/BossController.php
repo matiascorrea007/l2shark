@@ -27,11 +27,85 @@ class BossController extends BaseController
         
 
 
-      //uno las tabla de los grandboss con la de los npc para obtener los nombres
-      $boss = DB::table('grandboss_data')
+       $boss = DB::table('grandboss_data')
       ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
       ->orderBy('level', 'asc')
       ->get();
+
+      //uno las tabla de los grandboss con la de los npc para obtener los nombres
+      $Benom = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Benom')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Antharas = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Antharas')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Baium = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Baium')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $QueenAnt = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Queen Ant')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Core = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Core')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Valakas = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Valakas')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Beleth = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Beleth')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $AndreasVanHalter = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Andreas Van Halter')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Zaken = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Zaken')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $ScarletvanHalisha = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Scarlet van Halisha')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Frintezza = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Frintezza')
+      ->orderBy('level', 'asc')
+      ->first();
+
+      $Orfen = DB::table('grandboss_data')
+      ->join('npc', 'grandboss_data.boss_id', '=', 'npc.id')
+      ->where('name','=','Orfen')
+      ->orderBy('level', 'asc')
+      ->first();
+
+     
 
       $raids = DB::table('raidboss_spawnlist')
       ->join('npc', 'raidboss_spawnlist.boss_id', '=', 'npc.id')
@@ -42,7 +116,19 @@ class BossController extends BaseController
       
      // dd($date);
         
-         return view ('lineage.boss',compact('boss','raids'));
+         return view ('lineage.boss',compact('boss','raids',
+          'Benom',
+          'Antharas',
+          'Baium',
+          'QueenAnt',
+          'Core',
+          'Valakas',
+          'Beleth',
+          'AndreasVanHalter',
+          'Zaken',
+          'ScarletvanHalisha',
+          'Frintezza',
+          'Orfen'));
 
     }
 
