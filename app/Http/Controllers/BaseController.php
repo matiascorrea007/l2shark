@@ -15,6 +15,7 @@ use View;
 use Auth;
 use Soft\web_facebook;
 use Soft\web_logo;
+use Soft\web_voto;
 
 class BaseController extends Controller
 {
@@ -28,6 +29,7 @@ class BaseController extends Controller
       $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(5);
       $logo=web_logo::first();
       $box=web_facebook::first();
+      $votos=web_voto::all();
       $user = Auth::user();
       //datos de la plantilla principal
 
@@ -37,6 +39,7 @@ class BaseController extends Controller
        View::share ( 'logo', $logo );
        View::share ( 'box', $box );
        View::share ( 'user', $user );
+       View::share ( 'votos', $votos );
       
 
     }  

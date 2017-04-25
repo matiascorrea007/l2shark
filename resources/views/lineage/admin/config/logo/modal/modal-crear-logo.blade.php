@@ -12,7 +12,7 @@
 <div class="modal-body">      
 
 
-@include('admin.paginas.home.logo.forms.formscreate')
+@include('lineage.admin.config.logo.forms.formscreate')
 </div>
 
 <div class="modal-footer">

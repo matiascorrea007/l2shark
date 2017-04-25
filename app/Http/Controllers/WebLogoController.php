@@ -23,9 +23,7 @@ class WebLogoController extends Controller
      */
     public function index()
     {
-        $logos=web_logo::all();
-        $link = "logo";
-    return view ('lineage.admin.config.index',compact('link','logos'));
+        
     }
 
     /**
@@ -35,8 +33,7 @@ class WebLogoController extends Controller
      */
     public function create()
     {
-        //retorna a una vista que esta en la carpeta usuario y dentro esta create
-        return view('lineage.admin.config.logo.create');
+        
     }
 
     /**
@@ -62,7 +59,7 @@ class WebLogoController extends Controller
        
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'logo Creado');
-       return Redirect::to('/logo');
+       return Redirect::to('/admin-config');
     }
 
     /**
@@ -109,7 +106,7 @@ class WebLogoController extends Controller
         }
          //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Logo Modificado');
-        return Redirect::to('/logo');
+        return Redirect::to('/admin-config');
     }
 
     /**
@@ -126,6 +123,6 @@ class WebLogoController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'logo Eliminada');
-       return Redirect::to('/logo');
+       return Redirect::to('/admin-config');
     }
 }

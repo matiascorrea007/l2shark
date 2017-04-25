@@ -1,23 +1,22 @@
-@foreach($logos as $logo)
-<div class="modal fade bs-example-modal-lg" id="Editlogo-{{$logo->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
+<div class="modal " id="crear-voto" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
  <div class="modal-dialog modal-lg" role="document">
      <div class="modal-content">
          <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <h4 class="modal-title">Editar Logo </h4>
+              <h4 class="modal-title">Crear Box Facebook </h4>
          </div>
 
 
-{!!Form::model($logo,['url'=>['logo-update',$logo->id],'method'=>'PUT' , 'files'=>True])!!}
+{!!Form::open(['url'=>['voto-store'],'method'=>'POST' , 'files'=>True])!!}
 
 <div class="modal-body">      
 
 
-@include('lineage.admin.config.logo.forms.formscreate')
+@include('lineage.admin.config.votos.forms.formscreate')
 </div>
 
 <div class="modal-footer">
-{!!Form::submit('modificar',['class'=>'btn btn-primary pull-right'])!!}
+{!!Form::submit('Agregar',['class'=>'btn btn-primary pull-right'])!!}
 <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
 {!!Form::close()!!}
 </div>
@@ -26,4 +25,3 @@
      </div>
    </div>
  </div>
-	@endforeach

@@ -12,7 +12,7 @@
 <div class="modal-body">      
 
 
-@include('admin.paginas.home.facebook.forms.formscreate')
+@include('lineage.admin.config.facebook.forms.formscreate')
 </div>
 
 <div class="modal-footer">

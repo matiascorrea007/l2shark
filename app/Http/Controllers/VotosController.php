@@ -5,16 +5,15 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-use Soft\web_facebook;
 use Alert;
 use Session;
 use Redirect;
 use Storage;
 use DB;
 use Image;
+use Soft\web_voto;
 
-
-class WebFacebookController extends Controller
+class VotosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -44,10 +43,10 @@ class WebFacebookController extends Controller
      */
     public function store(Request $request)
     {
-        web_facebook::create($request->all());
+         web_voto::create($request->all());
 
         //le manda un mensaje al usuario
-       Alert::success('Mensaje existoso', 'box Creado');
+       Alert::success('Mensaje existoso', 'Voto Creado');
        return Redirect::to('/admin-config');
     }
 
@@ -82,12 +81,12 @@ class WebFacebookController extends Controller
      */
     public function update(Request $request, $id)
     {
-          $box=web_facebook::find($id);
-        $box->fill($request->all());
-        $box->save();
+        $voto=web_voto::find($id);
+        $voto->fill($request->all());
+        $voto->save();
 
         //le manda un mensaje al usuario
-       Alert::success('Mensaje existoso', 'box Modificado');
+       Alert::success('Mensaje existoso', 'Voto Modificado');
        return Redirect::to('/admin-config');
     }
 
@@ -99,11 +98,11 @@ class WebFacebookController extends Controller
      */
     public function destroy($id)
     {
-        $box=web_facebook::find($id);
-        $box->delete();
+        $voto=web_voto::find($id);
+        $voto->delete();
         
         //le manda un mensaje al usuario
-        Alert::success('Mensaje existoso', 'box Eliminado');
+        Alert::success('Mensaje existoso', 'voto Eliminado');
         return Redirect::to('/admin-config');
     }
 }

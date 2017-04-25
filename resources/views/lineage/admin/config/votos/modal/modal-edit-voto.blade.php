@@ -1,19 +1,19 @@
-@foreach($logos as $logo)
-<div class="modal fade bs-example-modal-lg" id="Editlogo-{{$logo->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
+@foreach($votos as $voto)
+<div class="modal fade bs-example-modal-lg" id="Editvoto-{{ $voto->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
  <div class="modal-dialog modal-lg" role="document">
      <div class="modal-content">
          <div class="modal-header">
              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-              <h4 class="modal-title">Editar Logo </h4>
+              <h4 class="modal-title">Editar carrucel </h4>
          </div>
 
 
-{!!Form::model($logo,['url'=>['logo-update',$logo->id],'method'=>'PUT' , 'files'=>True])!!}
+{!!Form::model($voto,['url'=>['voto-update',$voto->id],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">      
 
 
-@include('lineage.admin.config.logo.forms.formscreate')
+@include('lineage.admin.config.votos.forms.formscreate')
 </div>
 
 <div class="modal-footer">

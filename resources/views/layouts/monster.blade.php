@@ -56,7 +56,11 @@
 
 
 		<img src='imgs\bg-top.jpg' id='bg-top'>
-		<div class='bg-top-logo'> <img height="400" width="450" src="../public_html/storage/paginas/home/logo/1479094397.png" alt="" /></div>
+		<div class='bg-top-logo'> 
+		@if(!empty($logo))
+		<img height="400" width="450" src="../public_html/storage/paginas/home/logo/{{$logo->logo}}" alt="" />
+		@endif
+		</div>
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
 		<div id='mainLoading'></div>
 		
@@ -345,13 +349,12 @@
 	
 	With your help we will have greater visibility, attracting more players and providing even more fun for you!	
 	<div class='votelinks'>
-		<a target="_blank" href="http://vgw.hopzone.net/site/vote/102012/1"><img src="http://642507963.r.cdnsun.net/img/_vbanners/lineage2/lineage2-90x60-2.gif" alt="Vote our server on HopZone.Net" width="90" height="60" border="0"></a>
-		<a target="_blank" href="https://l2topzone.com/vote/id/14446" target="_blank" title="l2topzone"><img src="https://l2topzone.com/90x60.png" alt="l2topzone.com" border="0"></a>
-		<a target="_blank" href="http://l2top.co/vote/server/L2MonsterKill"><img src="http://l2top.co/img/banners/banner_3.png" alt="Vote for L2MonsterKill in L2Top.CO" border="0"></a>
-		<a target="_blank" href="https://l2network.eu/index.php?a=in&u=l2monsterkill"><img src="https://l2network.eu/images/button2.png" alt="L2TopNetwork"></a>
-		<a target="_blank" href="https://www.gamebytes.net/index.php?a=in&u=l2monsterkill"><img src="https://www.gamebytes.net/button.php?u=l2monsterkill&buttontype=static" alt="GameBytes - Best Lineage 2 Toplist"></a>
-		<a target="_blank" href="http://www.topservers200.com/in.php?id=19191" target="_blank"><img src="http://www.topservers200.com/button/19191.png" alt="Vote no Top 200" border="0"></a>
-		<a target="_blank" href="http://www.topgs200.com/?in=992"><img src="http://www.topgs200.com/vote.jpg" border="0" alt="private server"></a>
+
+		@foreach($votos as $voto)
+			{!!$voto->link!!}
+		@endforeach
+
+
 	</div>
 	
 </div>

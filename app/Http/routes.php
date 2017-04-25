@@ -464,6 +464,13 @@ Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
 Route::get('admin-config','WebConfigController@config');
 
 
+Route::get('voto','VotosController@index');
+Route::get('voto-create','VotosController@create');
+Route::post('voto-store','VotosController@store');
+Route::put('voto-update/{id}','VotosController@update');
+Route::delete('voto-destroy/{id}','VotosController@destroy');
+
+
 Route::get('facebook','WebFacebookController@index');
 Route::get('facebook-create','WebFacebookController@create');
 Route::post('facebook-store','WebFacebookController@store');
