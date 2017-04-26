@@ -95,9 +95,11 @@ a.downloadButton:hover span { opacity: 1; }
 nav { position: absolute; left: -36px; top: 632px; z-index: 3; width: 1270px; height: 216px; padding: 99px 0 0 158px; box-sizing: border-box; display: table; background: transparent url('../imgs/menu.png') no-repeat; }
 nav.fixed { position: fixed; left: calc((100% - 1270px) / 2); top: -106px; }
 nav > *, nav .opac { float: left; display: block; height: 60px; z-index: 4; }
+
 .en nav > *, .en nav .opac { background: transparent url('../imgs/menu_en.jpg') no-repeat; }
 .es nav > *, .es nav .opac { background: transparent url('../imgs/menu_es.jpg') no-repeat; }
 .pt nav > *, .pt nav .opac { background: transparent url('../imgs/menu_pt.jpg') no-repeat; }
+
 nav > *.o1, nav > *.o1 > .opac { width: 122px; background-position: -0px 0; }
 nav > *.o2, nav > *.o2 > .opac { width: 138px; background-position: -122px 0; }
 nav > *.o3, nav > *.o3 > .opac { width: 111px; background-position: -260px 0; }

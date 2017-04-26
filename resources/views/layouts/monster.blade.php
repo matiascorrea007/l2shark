@@ -50,8 +50,16 @@
 	}(document, 'script', 'facebook-jssdk'));
 </script>
 
+
+@if(\Session::get('lang') == 'en')
 <div class='all en'>
-	
+@endif
+
+@if(\Session::get('lang') == 'es' or \Session::get('lang') == '' )
+<div class='all es'>
+@endif
+
+
 	<header>
 
 
@@ -141,8 +149,10 @@
 			</div>
 	
 	</header>
-	
-	<nav>
+		
+			
+		
+		<nav>
 		<a href="{{ url('/') }}" class='o1'><span class='opac'></span></a>
 		<span class='o2'><span class='opac'></span>
 			<a href='index-2.htm?page=register'></a>
@@ -176,7 +186,10 @@
 		<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank' class='o5'><span class='opac'></span></a>
 		<a href='http://www.l2monsterkill.com.br/forum' class='o6' target='_blank'><span class='opac'></span></a>
 	</nav>
+
 	
+
+
 	<section>
 		
 		<aside>
@@ -232,7 +245,7 @@
 
 
 					</div>
-					<a class='default dbig' href="{{ url('/top-pvp') }}">view more</a>
+					<a class='default dbig' href="{{ url('/top-pvp') }}">{{ trans('layout.ver más') }}</a>
 				</div>
 
 				<div class='box'>
@@ -266,7 +279,7 @@
 									</div>
 								</a>
 								</div>
-					<a class='default dbig' target='_blank' href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/'>view more</a>
+					<a class='default dbig' target='_blank' href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/'>{{ trans('layout.ver más') }}</a>
 				</div>
 				<div class='box'>
 					<div class='title'>
@@ -303,7 +316,7 @@
 									</a>
 									
 					</div></div>
-					<a style='margin-top:4px !important;' class='default dbig' href='index-17.htm?page=gallery'>view more</a>
+					<a style='margin-top:4px !important;' class='default dbig' href='index-17.htm?page=gallery'>{{ trans('layout.ver más') }}</a>
 				</div>			
 		</aside>
 		
@@ -326,9 +339,7 @@
 
 <!-- Facebook Box -->
 	<hr>
-	<h1>Follow Us!</h1>
-	<div class='pddInner'>
-		Like our <a href='https://www.facebook.com/l2monsterkill' target='_blank'>facebook page!</a>	</div>
+	<h1>{{ trans('layout.siguenos') }}!</h1>
 	<style>
 		.faceIndex > div { width: 496px !important; }
 	</style>
@@ -343,7 +354,7 @@
 
 
 <hr>
-<h1>Help Us Voting</h1>
+<h1>{{ trans('layout.Ayúdenos a votar') }}</h1>
 <style>
 	.votelinks { display: table; margin: 0 auto;  margin: 20px 0 0 0; padding: 5px; padding: 10px; background: rgba(0,0,0,0.2); border-radius: 7px; }
 	.votelinks a { display: block; float: left; margin: 0 0 0 5px; }
@@ -353,7 +364,7 @@
 </style>
 <div class='pddInner'>
 	
-	With your help we will have greater visibility, attracting more players and providing even more fun for you!	
+	{{ trans('layout.Con su ayuda..') }}	
 	<div class='votelinks'>
 
 		@foreach($votos as $voto)
