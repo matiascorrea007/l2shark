@@ -72,10 +72,10 @@
 
 <a class="btn btn-primary btn-lg fa fa-globe" href="{!! URL::to('blogdetail-post'.$post->id) !!}"></a>
 <!--esto es para que solo el administrador pueda eliminar-->
-@if (Auth::user()->perfil_id == 1)
+
 <!--para el metodo eliminar necesito de un formulario para ejecutarlo-->
  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete-{{ $post->id }}"><i class="fa fa-trash-o"> Eliminar</i></button>
-@endif
+
 </td>
 
   </tbody>

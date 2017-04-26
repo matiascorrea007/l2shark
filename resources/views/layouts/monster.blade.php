@@ -64,7 +64,7 @@
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
 		<div id='mainLoading'></div>
 		
-				<div class='serverStatus on'><span></span></div>
+				<div class='serverStatus off'><span></span></div>
 		
 		<a class='downloadButton' href='index-1.htm?page=download'><span></span></a>
 		
@@ -150,11 +150,11 @@
 		<span class='o3'><span class='opac'></span>
 			<a href='index-5.htm?page=info'></a>
 			<div style='left: -39px;'>
-				<a href='index-1.htm?page=download'>Downloads</a>
-				<a href='index-5.htm?page=info'>Informations</a>
-				<a href='index-6.htm?page=support' class='noJquery'>Support</a>
-				<a href='index-7.htm?page=rules'>Rules</a>
-				<a href='index-8.htm?page=donations'>Donations</a>
+				<a href="{{ url('/descargas') }}">Downloads</a>
+				<a href="{{ url('/donaciones') }}">Donations</a>
+				<a href="{{ url('/reglas') }}">Rules</a>
+				<a href="{{ url('/soporte') }}" class='noJquery'>Support</a>
+				<a href="{{ url('/informacion') }}">Informations</a>	
 			</div>
 		</span>
 		<span class='o4'><span class='opac'></span>
@@ -227,8 +227,9 @@
 
 
 					</div>
-					<a class='default dbig' href='index-9.htm?page=toppvp'>view more</a>
+					<a class='default dbig' href="{{ url('/top-pvp') }}">view more</a>
 				</div>
+
 				<div class='box'>
 					<div class='title'>
 						<div class='bg'></div>

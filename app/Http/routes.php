@@ -41,6 +41,12 @@ Route::get('top-olympiad','EstadisticasController@rankingOlympiad');
 /*---------------END estadisticas-------------*/
 
 
+Route::get('descargas','PaginasController@Download');
+Route::get('donaciones','PaginasController@Donaciones');
+Route::get('reglas','PaginasController@Reglas');
+Route::get('soporte','PaginasController@Soporte');
+Route::get('informacion','PaginasController@Informacion');
+
 Route::get('blog','PaginasController@post');
 Route::get('blogdetail-post{id}',[
 'as'=>'paginas.postDetalle',
@@ -409,11 +415,7 @@ Route::get('reparacion-pdf/{tipo}/{id}','ServicioTecnicoController@crearReporteR
 
 */
 
-Route::get('tickets','TicketController@index');
-Route::get('tickets-completados','TicketController@TicketCompletados');
-Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
-Route::get('tickets-responder/{id}','TicketController@TicketResponder');
-Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
+
 
 
 
@@ -461,7 +463,21 @@ Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
 
 
 
-Route::get('admin-config','WebConfigController@config');
+Route::get('admin-config','AdminController@Config');
+Route::get('admin-paginas','AdminController@Paginas');
+
+Route::get('paginas','ConfigPaginasController@index');
+Route::get('paginas-create','ConfigPaginasController@create');
+Route::post('paginas-store','ConfigPaginasController@store');
+Route::get('paginas-update/{id}','ConfigPaginasController@update');
+Route::put('paginas-destroy/{id}','ConfigPaginasController@destroy');
+
+
+Route::get('tickets','TicketController@index');
+Route::get('tickets-completados','TicketController@TicketCompletados');
+Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
+Route::get('tickets-responder/{id}','TicketController@TicketResponder');
+Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
 
 
 Route::get('voto','VotosController@index');

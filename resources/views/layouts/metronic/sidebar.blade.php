@@ -31,6 +31,14 @@
                             </a>
                         </li>
 
+                        <li class="nav-item  ">
+                        <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link nav-toggle">
+                                <img height="40"  width="40" src="storage/icono admin/config.svg">
+                                <span class="title">Paginas</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
 
                         <li class="nav-item  ">
                             <a href="{!! URL::to('tickets/') !!}" class="nav-link nav-toggle">

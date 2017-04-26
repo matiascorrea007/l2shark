@@ -5,7 +5,6 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-
 use Soft\web_facebook;
 use Soft\web_logo;
 use Soft\web_voto;
@@ -17,10 +16,8 @@ use Storage;
 use DB;
 use Image;
 
-
-class WebConfigController extends Controller
+class AdminController extends Controller
 {
-    
      public function Config()
     {
     $logos=web_logo::all();
