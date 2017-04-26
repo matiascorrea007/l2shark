@@ -29,6 +29,8 @@ class Kernel extends HttpKernel
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \Soft\Http\Middleware\VerifyCsrfToken::class,
+            //mis middlewares de traduccinn
+            \Soft\Http\Middleware\LangMiddleware::class,
         ],
 
         'api' => [
@@ -54,6 +56,8 @@ class Kernel extends HttpKernel
 
         //mis middlewares
         'admin'=> \Soft\Http\Middleware\Admin::class,
+        
+       
         
     ];
 }

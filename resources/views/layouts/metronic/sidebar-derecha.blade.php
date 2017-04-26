@@ -4,6 +4,10 @@
             </a>
             <div class="page-quick-sidebar-wrapper" data-close-on-body-click="false">
                 <div class="page-quick-sidebar">
+
+
+
+
                     <ul class="nav nav-tabs">
                         <li class="active">
                             <a href="javascript:;" data-target="#quick_sidebar_tab_1" data-toggle="tab"> Users

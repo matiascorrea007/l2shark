@@ -23,5 +23,4 @@
 @endforeach
 
 {!! $posts->render() !!}
-
 @endsection

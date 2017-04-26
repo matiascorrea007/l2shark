@@ -68,15 +68,20 @@
 		
 		<a class='downloadButton' href='index-1.htm?page=download'><span></span></a>
 		
-		<div class='langs'>			<a href='?changelang=en' class='en noJquery' title='English' onclick="document.location.replace('./index.php?changelang=en&url=http://l2monsterkill.com.br%2F');return false;"><span></span></a>
-			<a href='?changelang=es' class='es noJquery' title='Espa&ntilde;ol' onclick="document.location.replace('./index.php?changelang=es&url=http://l2monsterkill.com.br%2F');return false;"><span></span></a>
-			<a href='?changelang=pt' class='pt noJquery' title='Portugu&ecirc;s' onclick="document.location.replace('./index.php?changelang=pt&url=http://l2monsterkill.com.br%2F');return false;"><span></span></a>
+		<div class='langs'>			
+		<a href="{{ url('lang', ['en']) }}" class='en noJquery' title='English'><span></span></a>
+
+		<a href="{{ url('lang', ['es']) }}" class='es noJquery' title='Espa&ntilde;ol'><span></span></a>
+
+		<a href='?changelang=pt' class='pt noJquery' title='Portugu&ecirc;s'><span></span></a>
+
 		</div>
 		
 		<div class='userarea'>
 				
 				@if(Auth::guest())		
-				<div class='anpc'><div>Don't have account?</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>Register</a></div>
+			<div class='anpc'><div>{{ trans('layout.no tiene una cuenta?') }}
+			</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>{{ trans('layout.registrarse') }}</a></div>
 				@endif
 
 				<div class='avatar' style='background-image: url(skin/monster/imgs/avatar/human_male_mage.jpg);'></div>
@@ -129,7 +134,7 @@
 							</label>
 							<input type="submit"  class='default gologin' value='Login'>		
 						</div>
-						<div class='ess'><a href='index-3.htm?page=forgot'>Olvidaste tu contraseña?</a></div>
+						<div class='ess'><a href='index-3.htm?page=forgot'>{{ trans('layout.Olvidaste tu contraseña?') }}</a></div>
 					</form>
 				  @endif
 				</div><!--END Login AREA-->
@@ -150,11 +155,11 @@
 		<span class='o3'><span class='opac'></span>
 			<a href='index-5.htm?page=info'></a>
 			<div style='left: -39px;'>
-				<a href="{{ url('/descargas') }}">Downloads</a>
-				<a href="{{ url('/donaciones') }}">Donations</a>
-				<a href="{{ url('/reglas') }}">Rules</a>
-				<a href="{{ url('/soporte') }}" class='noJquery'>Support</a>
-				<a href="{{ url('/informacion') }}">Informations</a>	
+			<a href="{{ url('/descargas') }}">{{ trans('layout.Descargas') }}</a>
+			<a href="{{ url('/donaciones') }}">{{ trans('layout.Donaciones') }}</a>
+			<a href="{{ url('/reglas') }}">{{ trans('layout.Reglas') }}</a>
+			<a href="{{ url('/soporte') }}" class='noJquery'>{{ trans('layout.Soporte') }}</a>
+			<a href="{{ url('/informacion') }}">{{ trans('layout.Informacion') }}</a>	
 			</div>
 		</span>
 		<span class='o4'><span class='opac'></span>

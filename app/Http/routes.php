@@ -54,8 +54,13 @@ Route::get('blogdetail-post{id}',[
 	]);
 
 
-
-
+//rutas para la traduccion 
+Route::get('lang/{lang}', function ($lang) {
+        session(['lang' => $lang]);
+        return \Redirect::back();
+    })->where([
+        'lang' => 'en|es'
+    ]);
 
 
 
