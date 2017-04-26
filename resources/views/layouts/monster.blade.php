@@ -157,9 +157,9 @@
 		<span class='o2'><span class='opac'></span>
 			<a href='index-2.htm?page=register'></a>
 			<div style='left: -26px;'>
-				<a href='index-2.htm?page=register'>Register</a>
-				<a href='index-4.htm?page=changepass'>Change Password</a>
-				<a href='index-3.htm?page=forgot'>Recover</a>
+				<a href='index-2.htm?page=register'>{{ trans('layout.registrarse') }}</a>
+				<a href='index-4.htm?page=changepass'>{{ trans('layout.cambiar contraseña') }}</a>
+				<a href='index-3.htm?page=forgot'>{{ trans('layout.recuperar contraseña') }}</a>
 			</div>
 		</span>
 		<span class='o3'><span class='opac'></span>
@@ -339,7 +339,7 @@
 
 <!-- Facebook Box -->
 	<hr>
-	<h1>{{ trans('layout.siguenos') }}!</h1>
+	<h1>{{ trans('layout.Síguenos') }}!</h1>
 	<style>
 		.faceIndex > div { width: 496px !important; }
 	</style>
@@ -364,7 +364,7 @@
 </style>
 <div class='pddInner'>
 	
-	{{ trans('layout.Con su ayuda..') }}	
+	{{ trans('layout.Con su ayuda') }}	
 	<div class='votelinks'>
 
 		@foreach($votos as $voto)
@@ -394,21 +394,21 @@ $(document).ready(function(){
 <footer>
 	<div class='linksPanel'>
 		<div style='width: 133px; border-left: 0;'>
-			<div>Account</div>
-			<a href='index-2.htm?page=register'>Register</a>
-			<a href='index-4.htm?page=changepass'>Change Password</a>
-			<a href='index-3.htm?page=forgot'>Recover</a>
+			<div>{{ trans('layout.Cuenta') }}</div>
+			<a href='index-2.htm?page=register'>{{ trans('layout.registrarse') }}</a>
+			<a href='index-4.htm?page=changepass'>{{ trans('layout.cambiar contraseña') }}</a>
+			<a href='index-3.htm?page=forgot'>{{ trans('layout.recuperar contraseña') }}</a>
 		</div>
 		<div style='width: 146px;'>
-			<div>Server</div>
-			<a href='index-1.htm?page=download'>Downloads</a>
-			<a href='index-5.htm?page=info'>Informations</a>
-			<a href='index-6.htm?page=support' class='noJquery'>Support</a>
-			<a href='index-7.htm?page=rules'>Rules</a>
-			<a href='index-8.htm?page=donations'>Donations</a>
+			<div>{{ trans('layout.Servidor') }}</div>
+			<a href='index-1.htm?page=download'>{{ trans('layout.Descargas') }}</a>
+			<a href='index-5.htm?page=info'>{{ trans('layout.Informacion') }}</a>
+			<a href='index-6.htm?page=support' class='noJquery'>{{ trans('layout.Soporte') }}</a>
+			<a href='index-7.htm?page=rules'>{{ trans('layout.Reglas') }}</a>
+			<a href='index-8.htm?page=donations'>{{ trans('layout.Donaciones') }}</a>
 		</div>
 		<div style='width: 172px;'>
-			<div>Stats</div>
+			<div>{{ trans('layout.Estadísticas') }}</div>
 			
 			<a href='index-9.htm?page=toppvp'>Top PvP</a>
 			<a href='index-10.htm?page=toppk' class='ativa'>Top Pk</a>
@@ -419,15 +419,15 @@ $(document).ready(function(){
 			<a href='index-16.htm?page=siege'>Castle & Siege</a>
 					</div>
 		<div style='width: 120px; border-right: 0;'>
-			<div>Others</div>
+			<div>{{ trans('layout.Otros') }}</div>
 			
-			<a href='index-17.htm?page=gallery'>Gallery</a>
-			<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank'>Knowledge Base</a>
+			<a href='index-17.htm?page=gallery'>{{ trans('layout.Galeria') }}</a>
+			<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank'>{{ trans('layout.Base de conocimientos') }}</a>
 			<a href='http://www.l2monsterkill.com.br/forum' target='_blank'>Forum</a>
 					</div>
 	</div>
 	<div class='copyright'>
-		&copy 2017 L2 Monster Kill - All rights reserved
+		&copy 2017 L2 Shark  - All rights reserved
 	</div>
 </footer>
 
