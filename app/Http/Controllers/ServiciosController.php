@@ -213,7 +213,30 @@ class ServiciosController extends Controller
      public function Noblesse(Request $request)
     {
 
-        return view ('lineage.admin.servicios.index');
+         $char_nombre = $request['charnombre'];
+        
+        
+        //para comprobar que se selecciono un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+        
+        //si ya es nobles que avise con un mensaje
+        $char = character::where('char_name','=',$char_nombre)->first();
+        if ($char->nobless == 1) {
+            session()->flash('message-error','El Personaje Seleccionado ya es Nobless!!');
+             return Redirect::to('/servicios');
+        }else{
+
+            $character=character::where('char_name','=',$char_nombre)->first();
+            $character->nobless = 1;
+            $character->save();
+
+        Alert::success('Mensaje existoso', 'Su personaje ya es Nobless');
+        return Redirect::to('/servicios');
+        }
     }
 
 

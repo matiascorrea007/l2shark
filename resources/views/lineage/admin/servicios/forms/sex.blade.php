@@ -12,7 +12,7 @@ Seleccione el género y confirme haciendo clic en el botón de abajo.
 	
 	
             <div class="input-group input-icon right ">
-                <span class="input-group-addon"><i class="fa fa-file-text font-blue">:</i></span>
+                <span class="input-group-addon"><i class="fa fa-male font-blue"></i> <i class="fa fa-female font-blue"></i></span>
                  <select name="sex"  class="form-control">
                        <option value="hombre">Hombre</option>
                        <option value="mujer">Mujer</option>
