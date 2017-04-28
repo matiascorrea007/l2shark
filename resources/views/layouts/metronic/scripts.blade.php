@@ -1,6 +1,6 @@
 <!------------------------------- metronic scriptt ------------------------------>
             <!-- BEGIN CORE PLUGINS -->
-<script src="{{ asset('/js/jQuery-2.1.4.min.js') }}" type="text/javascript"></script>
+<script src="js/jQuery-2.1.4.min.js" type="text/javascript"></script>
 <script src="{{ asset('/metronic/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/metronic/global/plugins/js.cookie.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/metronic/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>

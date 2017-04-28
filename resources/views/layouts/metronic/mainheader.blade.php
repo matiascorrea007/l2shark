@@ -4,7 +4,7 @@
             <div class="page-header-inner ">
                 <!-- BEGIN LOGO -->
                 <div class="page-logo">
-                    <h3 class="caption-subject   uppercase">ADMIN SHARK</h3>
+                    <h3 class="caption-subject   uppercase"></h3>
                     <div class="menu-toggler sidebar-toggler">
                         <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
                     </div>

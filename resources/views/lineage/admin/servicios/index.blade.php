@@ -21,13 +21,13 @@
   <br />
 <div class="">
     <div class="row">
-        <div class="form-horizontal col-xs-12 col-sm-12 col-md-2"></div>
+        
         <div class="">
           <form class=" " role="form">
            
   
   @foreach($characters as $character)
-       <div class="form-horizontal col-xs-2 col-sm-2 col-md-1">
+       <div class="form-horizontal col-xs-2 col-sm-2 col-md-2">
         @if($character->race == 0 and $character->sex == 0 and $character->classid == 0)
           <img src="skin/globales/img/avatar/human_male_fighter.jpg" height="150" width="170" class="img-responsive img-radio">
         @elseif($character->race == 0 and $character->sex == 0 and $character->classid == 10)
