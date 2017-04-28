@@ -1,11 +1,14 @@
-$(function() {
-    $(".video").click(function () {
-      var theModal = $(this).data("target"),
-      videoSRC = $(this).attr("data-video"),
-      videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      });
+
+
+/*"Image Checkbox Buttons"*/
+$(function () {
+    $('.btn-radio').click(function(e) {
+        $('.btn-radio').not(this).removeClass('active')
+        .siblings('input').prop('checked',false)
+            .siblings('.img-radio').css('opacity','0.5');
+      $(this).addClass('active')
+            .siblings('input').prop('checked',true)
+        .siblings('.img-radio').css('opacity','1');
     });
-  });
+});
+

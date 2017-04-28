@@ -471,6 +471,10 @@ Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
 Route::get('admin-config','AdminController@Config');
 Route::get('admin-paginas','AdminController@Paginas');
 
+
+Route::get('servicios','ServiciosController@index');
+Route::get('nicknamecolor-edit','ServiciosController@NickNameColor');
+
 Route::get('paginas','ConfigPaginasController@index');
 Route::get('paginas-create','ConfigPaginasController@create');
 Route::post('paginas-store','ConfigPaginasController@store');
