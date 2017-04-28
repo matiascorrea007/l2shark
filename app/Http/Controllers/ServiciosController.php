@@ -132,45 +132,112 @@ class ServiciosController extends Controller
         session()->flash('message-error','El NOMBRE ingresado ya se encuentra en uso!!');
         return Redirect::to('/servicios');
         }
+    }
+
+
+
+
+
+
+
+
+
+
+     public function ClanName(Request $request)
+    {
+
+        return view ('lineage.admin.servicios.index');
+    }
+
+
+
+
+
+
+
+
+
+
+     public function Sex(Request $request)
+    {
+
+       $char_nombre = $request['charnombre'];
         
         
+        //para comprobar que se selecciono un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
 
-       
+        
+        if ($request['sex'] == 'hombre') {
+            $character=character::where('char_name','=',$char_nombre)->first();
+            $character->sex = 0;
+            $character->save();
 
-        return view ('lineage.admin.servicios.index');
+        Alert::success('Mensaje existoso', 'Sexo Modificado');
+        return Redirect::to('/servicios');
+
+        }else{
+
+            $character=character::where('char_name','=',$char_nombre)->first();
+            $character->sex = 1;
+            $character->save();
+
+        Alert::success('Mensaje existoso', 'Sexo Modificado');
+        return Redirect::to('/servicios');
+        }
     }
 
-     public function ClanName()
+
+
+
+
+
+
+
+     public function Unstuck(Request $request)
     {
 
         return view ('lineage.admin.servicios.index');
     }
 
-     public function Sex()
+
+
+
+
+
+
+
+     public function Noblesse(Request $request)
     {
 
         return view ('lineage.admin.servicios.index');
     }
 
-     public function Unstuck()
+
+
+
+
+
+
+
+     public function Hero(Request $request)
     {
 
         return view ('lineage.admin.servicios.index');
     }
 
-     public function Noblesse()
-    {
 
-        return view ('lineage.admin.servicios.index');
-    }
 
-     public function Hero()
-    {
 
-        return view ('lineage.admin.servicios.index');
-    }
 
-     public function Vip()
+
+
+
+
+     public function Vip(Request $request)
     {
 
         return view ('lineage.admin.servicios.index');
