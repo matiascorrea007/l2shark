@@ -471,9 +471,21 @@ Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
 Route::get('admin-config','AdminController@Config');
 Route::get('admin-paginas','AdminController@Paginas');
 
-
+/*Servicios*/
 Route::get('servicios','ServiciosController@index');
-Route::get('nicknamecolor-edit','ServiciosController@NickNameColor');
+Route::post('nicknamecolor-edit','ServiciosController@NickNameColor');
+Route::post('removekarma-edit','ServiciosController@RemoveKarma');
+Route::post('pkcounter-edit','ServiciosController@PkCounter');
+Route::post('nickname-edit','ServiciosController@NickName');
+Route::post('clanname-edit','ServiciosController@ClanName');
+Route::post('sex-edit','ServiciosController@Sex');
+Route::post('unstuck-edit','ServiciosController@Unstuck');
+Route::post('noblesse-edit','ServiciosController@Noblesse');
+Route::post('hero-edit','ServiciosController@Hero');
+Route::post('vip-edit','ServiciosController@Vip');
+
+Route::get('servicios/{charnombre}','ServiciosController@ObtenerCharacter');
+/*END Servicios*/
 
 Route::get('paginas','ConfigPaginasController@index');
 Route::get('paginas-create','ConfigPaginasController@create');

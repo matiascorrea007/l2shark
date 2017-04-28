@@ -39,7 +39,8 @@
 
         <link href="{{ asset('/metronic/layouts/layout2/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
-
+        <!-- sweetalert -->
+    <link href="{{ asset('/css/sweetalert/sweetalert.css') }}" rel="stylesheet"/>
         {!!Html::style('css/select2.min.css')!!} 
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> 

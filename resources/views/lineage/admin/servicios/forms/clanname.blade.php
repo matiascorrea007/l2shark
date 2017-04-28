@@ -13,6 +13,8 @@ Introduzca el nuevo nombre y haga clic en el botón de abajo. Nota: Sólo el lí
 
 	{!!Form::text('nickname',null,['class'=>'form-control', 'placeholder'=>'ingrese el nombre'])!!}
 	{!!Form::text('re-nickname',null,['class'=>'form-control', 'placeholder'=>'re-ingrese el nombre'])!!}
+
+	{!!Form::text('charnombre',null,['class'=>'form-control hidden char', 'placeholder'=>'ingrese el codigo del color'])!!}
 </div>
 
 

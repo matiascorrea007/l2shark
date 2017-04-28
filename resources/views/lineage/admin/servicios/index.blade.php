@@ -1,33 +1,27 @@
 @extends('layouts.metronic')
-@include('alerts.errors')
 @section('content')
-
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
 <div class="row">
     <div class="col-md-12">
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-
 <i class="icon-user font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Seleccione Un Personaje</span>
-
     <div><br>
     </div>
-
      </div><!--end caption-->
-
         </div><!--portlet-title-->
 
   <br />
-<div class="">
+
     <div class="row">
-        
-        <div class="">
           <form class=" " role="form">
-           
-  
+    <div class="form-horizontal  col-md-2"></div>
   @foreach($characters as $character)
-       <div class="form-horizontal col-xs-2 col-sm-2 col-md-2">
+       <div class="form-horizontal col-xs-3 col-sm-2 col-md-1">
         @if($character->race == 0 and $character->sex == 0 and $character->classid == 0)
           <img src="skin/globales/img/avatar/human_male_fighter.jpg" height="150" width="170" class="img-responsive img-radio">
         @elseif($character->race == 0 and $character->sex == 0 and $character->classid == 10)
@@ -58,25 +52,27 @@
         <img src="skin/globales/img/avatar/dwarf_female.jpg" height="150" width="170" class="img-responsive img-radio">
         @endif
   
-      <button type="button"  class="btn btn-primary btn-radio">{{$character->char_name}}</button>
-          <input type="checkbox" id="1" class="hidden" >
+      <button type="button"  class="btn btn-primary btn-radio character" id="{{$character->char_name}}" >{{$character->char_name}}</button>
+      <input type="checkbox" id="right-item" class="hidden">
       </div>
   @endforeach
-              
-            
-           
-
-
           </form>
-        </div>
+    </div>
 
-       
+      <br>
+    <div class="row">
+            <div class="form-horizontal col-xs-12 col-sm-12 col-md-3"></div>
 
+           <div class="form-group col-xs-12 col-sm-12 col-md-6">
+            <div class="input-group input-icon right ">
+            <span class="input-group-addon"><i class="fa fa-user font-blue"> Personaje Seleccionado : </i></span>
+                 <input type="text" disabled="" name="serie_comprobante" value="{{old('serie_comprobante')}}" class="form-control char" placeholder="Serie comprobante...">
+            </div>
+          </div>
+
+          <div class="form-horizontal col-xs-12 col-sm-12 col-md-3"></div>
 
     </div>
-</div>
-
-
             </div>
             <!-- END SAMPLE TABLE PORTLET-->
         </div>
@@ -175,7 +171,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['removekarma-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.removerkarma')
     <br>
@@ -203,7 +199,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['pkcounter-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.pkcounter')
     <br>
@@ -232,7 +228,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['nickname-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.nickname')
     <br>
@@ -262,7 +258,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['clanname-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.clanname')
     <br>
@@ -291,7 +287,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['sex-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.sex')
     <br>
@@ -321,7 +317,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['unstuck-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.unstuck')
     <br>
@@ -348,7 +344,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['noblesse-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.noblesse')
     <br>
@@ -377,7 +373,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['hero-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.hero')
     <br>
@@ -408,7 +404,7 @@
        </div>
    </div>
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['vip-edit'],'method'=>'POST' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.vip')
     <br>
