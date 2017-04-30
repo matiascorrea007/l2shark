@@ -135,7 +135,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
 Route::group(['middleware' =>['admin']], function () {
 
- Route::get('/admin', 'PaginasController@admin');
+ Route::get('/admin', 'AdminController@admin');
  Route::get('usuario/perfil','UsuarioController@perfil');
 
 
@@ -467,7 +467,7 @@ Route::delete('mercadopago-destroy/{id}','WebMercadoPagoController@destroy');
 
 
 
-
+Route::get('admin/{character}','AdminController@ObtenerCharacter');
 Route::get('admin-config','AdminController@Config');
 Route::get('admin-paginas','AdminController@Paginas');
 

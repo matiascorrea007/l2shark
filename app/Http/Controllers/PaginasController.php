@@ -18,6 +18,8 @@ use Soft\Producto_Imagen;
 use Soft\Categoria;
 use Soft\Review;
 use Soft\Categoriasub;
+use Auth;
+use Soft\Models\character;
 
 class PaginasController extends BaseController 
 {
@@ -34,13 +36,6 @@ class PaginasController extends BaseController
 
     }
 
-
-
-    public function Admin(){
-        
-         return view ('lineage.admin.index');
-
-    }
 
 
     public function Download(){
@@ -71,29 +66,6 @@ class PaginasController extends BaseController
           $paginas = web_pagina::first();
          return view ('lineage.informacion',compact('paginas'));
 
-    }
-
-    
-    //total del carrito
-    private function total()
-    {
-      
-        $cart = \Session::get('cartweb');
-        $total = 0;
-        foreach($cart as $item){
-            $total += $item->precioventa * $item->quantity;
-        }
-        return $total;
-    }
-
-
-  public function CartCount(){
-        /*obtengo mi variable de session cart que cree y la almaceno en $cart */
-        $cart = \Session::get('cartweb');
-        //cuenta los item que hay en la session
-        $cartcount =  count($cart);
-
-        return $cartcount;
     }
 
 

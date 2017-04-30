@@ -40,15 +40,12 @@ class ServiciosController extends Controller
         //si es una peticion ajax
         if ($request->ajax()) {
             $nombre = character::where('char_name','=',$charnombre)->first();
-            
-            
 
             return response()->json([
-                 $nombre->char_name
+                 $nombre
                 ]);
         }
 
-        return view ('lineage.admin.servicios.index');
     }
 
 
