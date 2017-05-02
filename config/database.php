@@ -69,11 +69,11 @@ return [
 
         'informatica' => [
             'driver' => 'mysql',
-            'host' => env('shark_HOST', 'localhost'),
+            'host' => '',
             'port' => env('shark_PORT', '3306'),
-            'database' => env('shark_DATABASE', 'forge'),
-            'username' => env('shark_USERNAME', 'forge'),
-            'password' => env('shark_PASSWORD', ''),
+            'database' => '',
+            'username' => '',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

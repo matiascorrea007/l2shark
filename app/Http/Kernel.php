@@ -31,6 +31,7 @@ class Kernel extends HttpKernel
             \Soft\Http\Middleware\VerifyCsrfToken::class,
             //mis middlewares de traduccinn
             \Soft\Http\Middleware\LangMiddleware::class,
+            \Soft\Http\Middleware\setDB::class,
         ],
 
         'api' => [

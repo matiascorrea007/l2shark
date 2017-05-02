@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
 
-
+use Soft\web_conexion;
+use Config;
+use DB;
 class ShopController extends Controller
 {
     /**
@@ -17,19 +19,9 @@ class ShopController extends Controller
     public function index()
     {   
 
-      $tenant = informatica::whereSubDomain($subdomain)->first();  
+     
 
-Config::set('database.connections.informatica.host', $informatica ->host);
-Config::set('database.connections.informatica.username', $informatica ->username);
-Config::set('database.connections.informatica.password', $informatica ->password);
-Config::set('database.connections.informatica.database', $informatica ->database);
-
-//If you want to use query builder without having to specify the connection
-Config::set('database.default', 'informatica');
-DB::reconnect('informatica');
-
-dd(\DB::connection('informatica'));
-
+   
          return view ('lineage.admin.shop.index');
     }
 
