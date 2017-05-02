@@ -67,6 +67,22 @@ return [
    
         ],  
 
+        'informatica' => [
+            'driver' => 'mysql',
+            'host' => env('shark_HOST', 'localhost'),
+            'port' => env('shark_PORT', '3306'),
+            'database' => env('shark_DATABASE', 'forge'),
+            'username' => env('shark_USERNAME', 'forge'),
+            'password' => env('shark_PASSWORD', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+   
+        ], 
+
+
     
 
         'pgsql' => [

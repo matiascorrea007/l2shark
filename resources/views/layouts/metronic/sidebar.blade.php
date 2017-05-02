@@ -63,6 +63,16 @@
                                 <span class="arrow"></span>
                             </a>
                         </li>
+                        
+
+                        <li class="nav-item  ">
+                            <a href="{!! URL::to('shop') !!}" class="nav-link nav-toggle">
+                                <img height="40"  width="40" src="storage/icono admin/ticket.svg">
+                                <span class="title">Shop</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
 
                           <li class="nav-item  ">
                             <a href="javascript:;" class="nav-link nav-toggle">

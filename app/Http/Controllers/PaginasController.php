@@ -32,6 +32,9 @@ class PaginasController extends BaseController
 
      public function Home(){
         $posts=web_post::orderBy('created_at','desc')->paginate(10);
+       // $pago = DB::connection('informatica')->table('marcas')->first();
+
+        
          return view ('lineage.index',compact('posts'));
 
     }
