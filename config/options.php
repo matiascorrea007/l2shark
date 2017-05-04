@@ -9,6 +9,16 @@ return array(
 	'3'	=> 'user',
 	],
 
+
+	'l2items'=>[
+	''	=> 'selecione un tipo',
+	'armor'	=> 'armor',
+	'weapon'	=> 'weapon',
+	'custom armor'	=> 'custom armor',
+	'custom weapon'	=> 'custom weapon',
+	'items'	=> 'items',
+	],
+
 'provincia'=>[
 	null	=> 'selecione una Provincia',
 	'Buenos Aires'	=> 'Buenos Aires',

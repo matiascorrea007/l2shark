@@ -23,7 +23,8 @@
         "guzzlehttp/guzzle": "~6.0",
         "monolog/monolog": "^1.21",
         "arcanedev/log-viewer": "~3.0",
-        "milon/barcode": "^5.3"
+        "milon/barcode": "^5.3",
+        "laracasts/flash": "^3.0"
 
     
 

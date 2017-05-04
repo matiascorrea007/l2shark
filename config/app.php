@@ -174,6 +174,7 @@ return [
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
         Milon\Barcode\BarcodeServiceProvider::class,
         Iber\Generator\ModelGeneratorProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
        
         
 

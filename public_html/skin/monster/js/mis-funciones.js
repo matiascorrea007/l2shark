@@ -40,8 +40,6 @@ $(document).ready(function(){
 
 
 
-
-
 //seleccion del personaje en la ruta Admin
 $(document).ready(function(){
 //token
@@ -130,3 +128,127 @@ $(document).ready(function(){
 
   });//end calcularTotal
 });//end document
+
+
+
+
+
+
+
+
+
+
+
+function AgregarItem(id) {
+    var token = $("#token").val();
+    //capturo el nombre del personaje
+    var tablaDatos = $("#datos");
+    $("#datos").empty();
+
+    //hace referencia a la ruta , y le mandos los parametros
+  $.get('combo-item-add/'+ id , function(data){
+  //me lo muesta en el input que tenga id mostrar
+$(data).each(function(key,value){
+  console.log(data);
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+        });
+});
+  
+}
+
+
+
+
+
+
+
+
+
+
+//funcion para el boton buscar y que realize la busqueda por ID o por Nombre
+  $('#search').click(function(){
+    var token = $("#token").val();
+    //capturo el nombre del personaje
+    var tablaDatos = $("#datos2");
+    $("#datos2").empty();
+
+
+    //busqueda por iD
+    var id = $('#searchid').val();
+  $.get('search-id/'+ id , function(data){
+  //me lo muesta en el input que tenga id mostrar
+$(data).each(function(key,value){
+  console.log(data);
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+        });
+    });
+
+
+    //busqueda por Nombre
+    var nombre = $('#searchnombre').val();
+    //hace referencia a la ruta , y le mandos los parametros
+  $.get('search-nombre/'+ nombre , function(data){
+  //me lo muesta en el input que tenga id mostrar
+$(data).each(function(key,value){
+  console.log(data);
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-warning item' id="+value.item_id+"> Agregar <i class='fa fa-expand'></i></button><span class='label label-success'> Agregado! </span></td></tr>");
+        });
+    });
+
+  });//end #search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function searchItems() {
+
+    //si se preciona enter que realize la accion
+if (event.keyCode == 13){
+    var token = $("#token").val();
+    //capturo el nombre del personaje
+    var tablaDatos = $("#datos2");
+    $("#datos2").empty();
+     var id =  eval($("#searchid").val());
+     //url
+      $.get('search-id/'+ id , function(data){
+  //me lo muesta en el input que tenga id mostrar
+$(data).each(function(key,value){
+  console.log(data);
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+        });
+    });
+}
+   
+
+//si se preciona enter que realize la accion
+ if (event.keyCode == 13){
+    var token = $("#token").val();
+    //capturo el nombre del personaje
+    var tablaDatos = $("#datos2");
+    $("#datos2").empty();
+     //var nombre = $(this).val();
+      var nombre = $("#searchnombre").val();
+      console.log(nombre);
+      //url
+      $.get('search-nombre/'+ nombre , function(data){
+  //me lo muesta en el input que tenga id mostrar
+$(data).each(function(key,value){
+   console.log(data);
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+        });
+    });
+}
+
+
+}//end function searchItems()
+

@@ -10,10 +10,11 @@ use Alert;
 use Session;
 use Redirect;
 use Storage;
-use Soft\Categoria;
-use Soft\Categoriasub;
 use DB;
 use Image;
+
+use Soft\web_categoria;
+
 
 class CategoriaController extends Controller
 {
@@ -26,12 +27,6 @@ class CategoriaController extends Controller
     {   
 
       
-      $subcategorias = categoriasub::all();
-       $categorias = DB::table('categorias')->orderBy('nombre', 'asc')->get();
-        $categoriasList=categoria::lists('nombre','id');
-        $link = "categorias";
-         return view('admin.categoria.index',compact('link','categorias','subcategorias','categoriasList'));
-
     }
 
     /**
@@ -53,20 +48,13 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {   
-        //obtenemos el campo icon definido en el formulario
-        $file = $request->file('icon');
-         //obtenemos el nombre del archivo
-       $nombre = $file->getClientOriginalName();
-       //indicamos que queremos guardar un nuevo archivo en el disco local
-       \Storage::disk('svg')->put($nombre,  \File::get($file));
-
-        categoria::create([
+        
+        web_categoria::create([
             'nombre' =>$request['nombre'],
-            'icon'=>$nombre,
             ]);
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Categoria Creada');
-       return Redirect::to('/categoria');
+       return Redirect::back();
     }
 
     /**

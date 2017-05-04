@@ -3,13 +3,14 @@
 namespace Soft;
 
 use Illuminate\Database\Eloquent\Model;
-use web_producto_combo;
+use Soft\web_producto_combo;
 
 class web_producto extends Model
 {	
 
 	protected $fillable = [
           'id',
+          'item_id',
           'nombre',
           'precio',
           'slug',

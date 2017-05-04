@@ -5,9 +5,10 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-
 use Soft\web_conexion;
 use Soft\web_categoria;
+use Soft\web_producto_combo;
+use Soft\web_producto;
 use Config;
 use DB;
 use Alert;
@@ -19,7 +20,7 @@ use Auth;
 use Flash;
 
 
-class ShopController extends Controller
+class ComboController extends Controller
 {
      public function __construct()
     {
@@ -34,7 +35,7 @@ class ShopController extends Controller
 
 
 
-
+    //si no se utilizaria ajax , esta funcio realiza la busqueda y la pagina
     public function SearchItem(Request $request)
     {
         //buscamos por nombre
@@ -186,7 +187,8 @@ class ShopController extends Controller
 
 
     public function index(Request $request)
-    {   
+    {       
+
         $categorias = web_categoria::all();
          return view ('lineage.admin.shop.index',compact('categorias'));
     }
@@ -194,16 +196,6 @@ class ShopController extends Controller
     
     
 
-
-    public function Combocreate()
-    {       
-    
-           
-        
-    
-    flash('Seleccione una Categoria para la Busqueda.')->success();
-    return view ('lineage.admin.shop.crear-combo');
-    }
 
     
      public function ComboItemAdd(Request $request,$id)
@@ -236,102 +228,107 @@ class ShopController extends Controller
     }
 
 
-     public function ComboItemDelete(Request $request,$id)
+    public function ComboItemTrash(Request $request)
+    {
+        \Session::forget('items');
+        flash('Items del Combo Eliminados.')->success();
+        return Redirect::back();
+    }
+
+
+
+    public function SearchId(Request $request,$id)
     {
          //si es una peticion ajax
         if ($request->ajax()) {
+                
+                //por id
+             $etcitem = DB::table('etcitem')->where('item_id','LIKE',$id)->get();
+             $armors = DB::table('armor')->where('item_id','LIKE',$id)->get();
+             $weapons = DB::table('weapon')->where('item_id','LIKE',$id)->get();
+             $cw = DB::table('custom_weapon')->where('item_id','LIKE',$id)->get();
+             $ca = DB::table('custom_armor')->where('item_id','LIKE',$id)->get();
             
-             $etcitem = DB::table('etcitem')->where('item_id','=',$id)->get();
-             $armors = DB::table('armor')->where('item_id','=',$id)->get();
-             $weapons = DB::table('weapon')->where('item_id','=',$id)->get();
-             $cw = DB::table('custom_weapon')->where('item_id','=',$id)->get();
-             $ca = DB::table('custom_armor')->where('item_id','=',$id)->get();
+
              //unimos los array
              $alls = array_merge($etcitem,$armors,$weapons,$cw,$ca);
 
-            $itemadds  = $alls;
+            
 
-
-
-
-
-            $cart = \Session::get('items');
-            foreach ($itemadds as $key => $itemadd) {
-              unset($cart[]);  
-            }
-            \Session::put('items', $cart);
-
-            //cargo de nuevo la session para traer los items anterior y recien la mando
-            $cart = \Session::get('items');
-
-            return response($cart);
+            return response($alls);
         }
-}
 
-     //agregar item
-    public function add($id)
-    {
-        $itemadd  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        $itemadd->quantity = 1;
-        $cart[$itemadd->descripcion] = $itemadd;
-        \Session::put('cartweb', $cart);
-       
-        return Redirect::back();
-
-     }
-
-     // Delete item y client
-    public function delete($id)
-    {
-        $item  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        unset($cart[$item->descripcion]);
-        \Session::put('cartweb', $cart);
-        return Redirect::back();
     }
 
 
-     // Update item
-    public function update($id, $quantity)
+    public function SearchNombre(Request $request,$nombre)
     {
-        
-        $item  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        $cart[$item->descripcion]->quantity = $quantity;
-        \Session::put('cartweb', $cart);
+         //si es una peticion ajax
+        if ($request->ajax()) {
+                
+             //por nombre
+             $etcitem = DB::table('etcitem')->where('name','LIKE',$nombre.'%')->get();
+             $armors = DB::table('armor')->where('item_id','>',8000)->where('name','LIKE',$nombre.'%')->get();
+             $weapons = DB::table('weapon')->where('item_id','>',9000)->where('name','LIKE',$nombre.'%')->get();
+             $cw = DB::table('custom_weapon')->where('name','LIKE',$nombre.'%')->get();
+             $ca = DB::table('custom_armor')->where('name','LIKE',$nombre.'%')->get();
+            
 
-        return Redirect::to('web-shopping-cart');
-       
-    }
+             //unimos los array
+             $alls = array_merge($etcitem,$armors,$weapons,$cw,$ca);
 
+            
 
-    //limpiar carrito y cliente
-     public function trash()
-    {
-        \Session::forget('cartweb');
-        \Session::forget('cliente');
-        
-        return Redirect::back();
-    }
-
-
-    //total del carrito
-    private function total()
-    {
-        $cart = \Session::get('cartweb');
-        $total = 0;
-        foreach($cart as $item){
-            $total += $item->precioventa * $item->quantity;
+            return response($alls);
         }
-        return $total;
+
+    }
+
+    
+
+
+    public function Combocreate()
+    {       
+
+        //\Session::forget('items');
+        //$cart = \Session::get('items');
+        //dd($cart);
+        $categorias = web_categoria::all();
+    flash('Seleccione una Categoria para la Busqueda.')->success();
+    return view ('lineage.admin.shop.crear-combo',compact('categorias'));
     }
 
 
+    
 
     public function Combostore(Request $request)
-    {
-        //
+    {   
+
+      
+
+         $productoCombo = web_producto_combo::create([
+           'nombre'=>$request['nombre'],
+           'web_categoria_id'=>$request['categoria_id'],
+            ]);
+
+
+
+         $cart = \Session::get('items');
+
+          foreach ($cart as $item) {
+            //crea una nueva transaccion
+            $producto  = new web_producto();
+            $producto->item_id    = $item->item_id;
+            $producto->nombre    = $item->name;
+            $producto->web_combo_id    = $productoCombo->id;
+            $producto->save();
+
+        }   
+
+
+        Alert::success('Success', 'Combo Creado ');
+         return Redirect::to('/combo');
+    
     }
 
     
@@ -361,22 +358,7 @@ class ShopController extends Controller
 
 
 
-  
 
 
-
-     public function Search2(Request $request,$id)
-    {
-        if ($request->ajax()) {
-            
-           
-             $etcitems = DB::table('etcitem')->where('item_id','<',60)->get();
-            
-        
-
-            //return response()->json(['etcitems' => $etcitems,]);
-            return response($etcitems);
-        }
-    }
 
 }

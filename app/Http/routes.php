@@ -393,11 +393,7 @@ Route::post('pago-store','PagoController@store');
 Route::put('pago-update/{id}','PagoController@update');
 Route::delete('pago-destroy/{id}','PagoController@destroy');
 
-Route::get('categoria','CategoriaController@index');
-Route::get('categoria-create','CategoriaController@create');
-Route::post('categoria-store','CategoriaController@store');
-Route::put('categoria-update/{id}','CategoriaController@update');
-Route::delete('categoria-destroy/{id}','CategoriaController@destroy');
+
 
 
 Route::get('categoriasub','CategoriaSubController@index');
@@ -494,6 +490,27 @@ Route::get('shop-create','ShopController@create');
 Route::post('shop-store','ShopController@store');
 Route::get('shop-update/{id}','ShopController@update');
 Route::put('shop-destroy/{id}','ShopController@destroy');
+
+Route::get('categoria','CategoriaController@index');
+Route::get('categoria-create','CategoriaController@create');
+Route::post('categoria-store','CategoriaController@store');
+Route::put('categoria-update/{id}','CategoriaController@update');
+Route::delete('categoria-destroy/{id}','CategoriaController@destroy');
+
+Route::get('combo','ComboController@index');
+Route::get('combo-create','ComboController@Combocreate');
+Route::post('combo-store','ComboController@Combostore');
+Route::get('combo-update/{id}','ComboController@Comboupdate');
+Route::put('combo-destroy/{id}','ComboController@Combodestroy');
+
+Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');
+Route::get('combo-item-trash','ComboController@ComboItemTrash');
+
+//busqueda por ajax
+Route::get('search-id/{id}','ComboController@SearchId');
+Route::get('search-nombre/{nombre}','ComboController@SearchNombre');
+//busqueda con formulario
+Route::get('search-item','ComboController@SearchItem');
 
 
 Route::get('paginas','ConfigPaginasController@index');

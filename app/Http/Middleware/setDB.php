@@ -27,11 +27,11 @@ class setDB
 
         $informatica = web_conexion::first();
 
-        Config::set('database.connections.informatica.host', $informatica ->host);
-        Config::set('database.connections.informatica.username', $informatica ->user);
-        Config::set('database.connections.informatica.password', $informatica ->password);
-        Config::set('database.connections.informatica.database', $informatica ->db);
-        DB::connection('informatica');
+        Config::set('database.connections.externa.host', $informatica ->host);
+        Config::set('database.connections.externa.username', $informatica ->user);
+        Config::set('database.connections.externa.password', $informatica ->password);
+        Config::set('database.connections.externa.database', $informatica ->db);
+        DB::connection('externa');
 
 
           if($request->has('auth_token') || Session::has('auth_token')){

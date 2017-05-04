@@ -67,7 +67,7 @@ return [
    
         ],  
 
-        'informatica' => [
+        'externa' => [
             'driver' => 'mysql',
             'host' => '',
             'port' => env('shark_PORT', '3306'),
