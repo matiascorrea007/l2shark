@@ -22,3 +22,49 @@
 .space-20 {
     margin-top: 20px;
 }
+
+
+
+
+/*efecto de las tablas con la imagen arriba*/
+table.default {border-radius: 4px;box-shadow: 0 0 5px rgba(0,0,0,0.3);width: 100%;background: 0;overflow: hidden;}
+table.default tr td:first-child { border: 0; }
+table.default tr td { text-align: center; font-size: 12px; padding: 6px 8px; border-left: 1px solid rgba(0,0,0,0.2); background: rgba(0,0,0,0.1); }
+table.default tr.two td { background: rgba(0,0,0,0.03); }
+table.default tr td.foco { font-weight: bold; color: #000; background: rgba(0,0,0,0.15); }
+table.default tr.two td.foco { background: rgba(0,0,0,0.06); }
+table.default tr th { font-weight: bold; text-align: center; background: #5e5e5e; color: #fff; padding: 10px 0; }
+table.default tr.ctype2, table.default tr.ctype2 td { padding: 0; margin: 0; height: 2px; background: rgba(0,0,0,0.1); }
+table.default .pos { width: 25px; text-align: center; }
+table.default tr.pin td { background: #fffde5 !important; }
+
+
+.shopPacks { box-sizing: border-box; width: 100%; padding: 0 0 30px 15px; display: table; }
+.shopPacks > a { opacity: 1; transition: opacity 0.3s; position: relative; float: left; width: 136px; height: 136px; display: block; margin: 0 10px 10px 0; background-color: transparent; background-repeat: no-repeat; background-position: center top; border-radius: 3px; }
+.shopPacks > a > div { overflow: hidden; box-sizing: border-box; width: 136px; height: 50px; padding: 30px 0 0 0; position: absolute; left: 0; bottom: 0; background: transparent url('../imgs/nm/degrade_black_transp.png'); color: #fff; font-size: 10px; text-align: center; border-radius: 0 0 3px 3px; }
+.shopPacks > a:hover { opacity: 0.7; }
+
+.shopItemList { padding: 0 20px 20px; }
+.shopItemList table td, .shopItemList table th { text-align: left !important; }
+.shopItemList table td { font-size: 13px !important; }
+.shopItemList table td:hover {  }
+
+#buyItemForm { position: relative; }
+
+.shopItemList .packImg {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    padding: 6px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.2);
+}
+
+.shopItemList .packImg, .shopItemList .packImg img {
+    width: 80px;
+    height: 80px;
+}
+/*efecto de las tablas con la imagen arriba*/
+
+
+

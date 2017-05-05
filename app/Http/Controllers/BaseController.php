@@ -13,6 +13,7 @@ use DB;
 use Image;
 use View;
 use Auth;
+use Route;
 use Soft\web_facebook;
 use Soft\web_logo;
 use Soft\web_voto;
@@ -31,6 +32,8 @@ class BaseController extends Controller
       $box=web_facebook::first();
       $votos=web_voto::all();
       $user = Auth::user();
+    
+       
       //datos de la plantilla principal
 
 
@@ -40,6 +43,7 @@ class BaseController extends Controller
        View::share ( 'box', $box );
        View::share ( 'user', $user );
        View::share ( 'votos', $votos );
+     
       
 
     }  

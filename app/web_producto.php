@@ -16,7 +16,7 @@ class web_producto extends Model
           'slug',
           'web_producto_combo_id',
           'imagen',
-          'filename',
+          'ruta',
             
     ];
 

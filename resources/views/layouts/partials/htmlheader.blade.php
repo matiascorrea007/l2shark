@@ -41,4 +41,5 @@
     {!!Html::style('css/font-awesome.min.css')!!}
  
     {!!Html::style('css/select2.min.css')!!} 
+    <link rel="stylesheet" type="text/css" href="skin/monster/css/mic-css.css" media="all">
 </head>

@@ -4,6 +4,31 @@
 @include('alerts.request')
 @include('alerts.success')
 @include('flash::message')
+  
+
+
+    <h1 class="page-title"> <br>
+                        <small></small>
+                    </h1>
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="{{ url('combo') }}" >Shop</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="{{ url('combo') }}" >Lista de paquetes</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="" >Crear Paquete</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+
 
 <div class="row">
     <div class="col-md-12">
@@ -11,7 +36,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-  {!!Form::open(['url'=>'combo-store', 'method'=>'POST' , 'class'=>'navbar-form navbar-left'])!!}<!-- FORM OPEN-->
+  {!!Form::open(['url'=>'combo-store', 'method'=>'POST' , 'class'=>'navbar-form navbar-left' ,'files'=>True]  )!!}<!-- FORM OPEN-->
 
 <i class="fa fa-bank font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Crear Combo</span>
@@ -44,6 +69,7 @@
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-6">
   {!!Form::label('file', 'Imagen del Combo') !!}
   {!!Form::file('imagen')!!}
+
 </div>
     </div>
 
@@ -71,6 +97,7 @@
     <th>id</th>
     <th>Nombre</th>
     <th class="col-md-4">Operaciones</th>
+     <th class="col-md-4">Imagen</th>
 
   </thead>
  

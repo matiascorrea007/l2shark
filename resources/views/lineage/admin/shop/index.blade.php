@@ -1,8 +1,28 @@
 @extends('layouts.metronic')
+@section('content')
 @include('alerts.errors')
 @include('alerts.request')
 @include('alerts.success')
-@section('content')
+
+
+                    <h1 class="page-title"> <br>
+                        <small></small>
+                    </h1>
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <i class="icon-home"></i>
+                                <a href="{{ url('combo') }}" >Shop</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                            <li>
+                                <a href="" >Lista de paquetes</a>
+                                <i class="fa fa-angle-right"></i>
+                            </li>
+                        </ul>
+                    </div>
+
+
 
 
  <div class="row">
@@ -69,8 +89,16 @@
           
           <div class="row">
             
-            
-          
+ @foreach($combos as $combo)
+    <!-- si es sin foto cargo la foto por defecto -->
+  @if($combo->imagen == "sin-foto.jpg")
+    <a class="btn" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="storage/combos/{{$combo->imagen}}" alt="" height="100" width="100" ></a>
+     <!-- caso contrario cargo la foto -->
+  @elseif($combo->imagen != "sin-foto.jpg")
+    <a class="btn" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="{{$combo->ruta}}" alt="" height="100" width="100" ></a>
+  @endif
+@endforeach
+
 
 
           </div>

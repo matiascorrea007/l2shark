@@ -13,6 +13,7 @@ protected $fillable = [
           'id',
           'nombre',
           'imagen',
+          'ruta',
           'web_categoria_id',
             
     ];

@@ -1,6 +1,8 @@
 @extends('layouts.metronic')
-@include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
 
 
 <div class="row">

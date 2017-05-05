@@ -498,10 +498,12 @@ Route::put('categoria-update/{id}','CategoriaController@update');
 Route::delete('categoria-destroy/{id}','CategoriaController@destroy');
 
 Route::get('combo','ComboController@index');
+Route::get('combo-ver-{id}','ComboController@ComboVer');
 Route::get('combo-create','ComboController@Combocreate');
 Route::post('combo-store','ComboController@Combostore');
-Route::get('combo-update/{id}','ComboController@Comboupdate');
-Route::put('combo-destroy/{id}','ComboController@Combodestroy');
+Route::put('combo-update-imagen-{idcombo}','ComboController@ComboUpdateImagen');
+Route::put('combo-update-nombre-{idcombo}','ComboController@ComboUpdateNombre');
+Route::delete('combo-destroy/{id}','ComboController@Combodestroy');
 
 Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');
 Route::get('combo-item-trash','ComboController@ComboItemTrash');
