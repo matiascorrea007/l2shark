@@ -92,10 +92,24 @@
  @foreach($combos as $combo)
     <!-- si es sin foto cargo la foto por defecto -->
   @if($combo->imagen == "sin-foto.jpg")
-    <a class="btn" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="storage/combos/{{$combo->imagen}}" alt="" height="100" width="100" ></a>
+  <div class="form-group col-xs-12 col-sm-12 col-md-2">
+    <a class="btn center-block" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="storage/combos/{{$combo->imagen}}" alt="" height="100" width="100" ></a>
+
+    <a class="btn btn-danger btn-lg fa fa-trash-o col-xs-12 col-sm-12 col-md-6" data-toggle="modal" data-target="#confirmDelete-{{ $combo->id }}"> </a>
+   
+    <a href="{{ url('combo-edit-'.$combo->id) }}" class="btn btn-primary btn-lg fa fa-edit col-xs-12 col-sm-12 col-md-6"></a>
+    
+    </div>
      <!-- caso contrario cargo la foto -->
   @elseif($combo->imagen != "sin-foto.jpg")
-    <a class="btn" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="{{$combo->ruta}}" alt="" height="100" width="100" ></a>
+  <div class="form-group col-xs-12 col-sm-12 col-md-2">
+    <a class="btn center-block" href="{{ url('combo-ver-'.$combo->id) }}"><div>{{$combo->nombre}}</div><img src="{{$combo->ruta}}" alt="" height="100" width="100" ></a>
+
+    <a class="btn btn-danger btn-lg fa fa-trash-o col-xs-12 col-sm-12 col-md-6" data-toggle="modal" data-target="#confirmDelete-{{ $combo->id }}"> </a>
+   
+    <a href="{{ url('combo-edit-'.$combo->id) }}" class="btn btn-primary btn-lg fa fa-edit col-xs-12 col-sm-12 col-md-6"></a>
+
+    </div>
   @endif
 @endforeach
 
@@ -111,4 +125,6 @@
     </div>
 
 
+
+@include('lineage.admin.shop.modal.modal-delete-combo')
 @endsection

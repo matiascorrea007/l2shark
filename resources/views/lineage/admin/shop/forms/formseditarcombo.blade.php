@@ -1,20 +1,29 @@
-<div class="panel-body">
 <div class="row">
-
-        <div class="form-group col-xs-12 col-sm-12 col-md-12">
-        <label for="cliente"></label>
-            <div class="input-group">
-                
-                
-                    
-                
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-success" data-toggle="modal" data-target="#crear-categoria"> Nuevo Combo <i class="fa fa-plus"></i></button>
-                </div>
-              </div>
-        </div>
-
-
-
+     
+ <div class="form-horizontal col-xs-12 col-sm-12 col-md-6">
+	{!!Form::label('Nombre del Paquete')!!}
+	{!!Form::text ('nombre',null,['class'=>'form-control'])!!}
 </div>
+
+ <div class="form-horizontal col-xs-12 col-sm-12 col-md-2">
+ 	@if($combo->imagen == "sin-foto.jpg")
+	<img src="storage/combos/{{$combo->imagen}}" alt="" height="50" width="50">
+	@else
+	<img src="{{$combo->ruta}}" alt="" height="50" width="50">
+	@endif
+	{!!Form::file('imagen')!!}
+</div>
+
+ <div class="form-horizontal col-xs-12 col-sm-12 col-md-6">
+	{!!Form::label('Categoria')!!}
+	{!!Form::select('web_categoria_id',$categorias,null,[ 'class'=>'form-control','id'=>'categoriaedit'])!!}
+</div>
+
+		
+	
+
+
+
+
+
 </div>

@@ -501,8 +501,9 @@ Route::get('combo','ComboController@index');
 Route::get('combo-ver-{id}','ComboController@ComboVer');
 Route::get('combo-create','ComboController@Combocreate');
 Route::post('combo-store','ComboController@Combostore');
-Route::put('combo-update-imagen-{idcombo}','ComboController@ComboUpdateImagen');
-Route::put('combo-update-nombre-{idcombo}','ComboController@ComboUpdateNombre');
+Route::get('combo-edit-{idcombo}','ComboController@ComboEdit');
+Route::put('combo-update-item-{idcombo}','ComboController@ComboUpdateItem');
+Route::put('combo-update-{idcombo}','ComboController@ComboUpdate');
 Route::delete('combo-destroy/{id}','ComboController@Combodestroy');
 
 Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');

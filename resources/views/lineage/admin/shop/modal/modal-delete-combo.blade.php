@@ -1,5 +1,5 @@
-@foreach($clientes as $cliente)
-<div class="modal fade" id="confirmDelete-{{ $cliente->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
+@foreach($combos as $combo)
+<div class="modal fade" id="confirmDelete-{{ $combo->id }}" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
  <div class="modal-dialog" role="document">
      <div class="modal-content">
          <div class="modal-header">
@@ -7,12 +7,12 @@
               <h4 class="modal-title">Confirm Cliente Deletion</h4>
          </div>
          <div class="modal-body">
-             <p>Esta seguro que desea eliminar al Cliente {{ $cliente->clie_nombres }}?</p>
+             <p>Esta seguro que desea eliminar el Combo {{ $combo->nombre }}?</p>
          </div>
          <div class="modal-footer">
              <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
 
-              {!! Form::open(['method' => 'DELETE', 'url' => ['cliente-destroy',$cliente->id]]) !!}
+              {!! Form::open(['method' => 'DELETE', 'url' => ['combo-destroy',$combo->id]]) !!}
              <button type="submit" class="btn btn-danger">Delete</button>
                {!! Form::close() !!}
          </div>

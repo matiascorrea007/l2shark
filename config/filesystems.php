@@ -73,6 +73,10 @@ return [
             'root'   => 'storage/productos',
         ],
 
+        'combos' => [
+            'driver' => 'local',
+            'root'   => 'storage/combos',
+        ],
 
          'svg' => [
             'driver' => 'local',

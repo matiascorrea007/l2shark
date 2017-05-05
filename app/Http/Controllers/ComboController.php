@@ -279,6 +279,9 @@ class ComboController extends Controller
     }
 
 
+
+
+
     public function Combocreate()
     {       
 
@@ -291,14 +294,13 @@ class ComboController extends Controller
     }
 
 
+
+
     
 
     public function Combostore(Request $request)
     {   
 
-        dd($request);
-       
-        
         $categoria = web_categoria::find($request['categoria_id']);
        
         //carpeta
@@ -361,6 +363,9 @@ class ComboController extends Controller
     }
 
     
+
+
+
     public function ComboVer($id)
     {   
         $combo = web_producto_combo::find($id);
@@ -370,15 +375,85 @@ class ComboController extends Controller
     }
 
     
-    public function ComboUpdateNombre(Request $request,$idcombo)
-    {
-        //
+
+
+
+
+    public function ComboEdit(Request $request,$idcombo)
+    {   
+        $categorias = web_categoria::lists('nombre','id');
+        $combo = web_producto_combo::find($idcombo);
+        $productos = web_producto::where('web_combo_id','=',$idcombo)->get();
+        return view ('lineage.admin.shop.editar-combo',compact('productos','combo','categorias'));
     }
 
-    
-    public function ComboUpdateImagen(Request $request,$idcombo)
-    {   
+
+
+
+
+
+
+    public function ComboUpdate(Request $request,$idcombo)
+    {
         $combo = web_producto_combo::find($idcombo);
+      $categoria = web_categoria::find($request['web_categoria_id']);
+       
+        //carpeta
+         $nombreCombo = $request['nombre'];
+        $directory = "combos/".$categoria->nombre."/".$nombreCombo;
+
+         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
+        if(!empty($request->hasFile('imagen'))){
+
+            //eliminamos la imagen anterior    
+            if($combo->imagen != "sin-foto.jpg"){
+            $directoryDelete = $combo->web_categoria->nombre."/".$combo->nombre."/".$combo->imagen;
+            \Storage::disk('combos')->delete($directoryDelete);
+            }
+
+          $imagen = Input::file('imagen');
+            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+            //crea la carpeta
+            Storage::makeDirectory($directory);
+            //esto es para q funcione en local 
+            //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
+            image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
+        }
+
+
+        if(!empty($request->hasFile('imagen'))){
+            $ruta = 'storage/'.$directory.'/'. $filename;
+        }
+
+    
+
+         $productoCombo = web_producto_combo::find($idcombo);
+         $productoCombo->nombre = $request['nombre'];
+         if (!empty($request['imagen'])) {
+            $productoCombo->ruta = $ruta;
+             $productoCombo->imagen = $filename;
+         }
+         
+         $productoCombo->web_categoria_id =$request['web_categoria_id'];
+         $productoCombo->save();
+            
+
+
+      return Redirect::back()->with('message', 'Modificado Con Exito');
+    }
+
+
+
+
+
+
+
+    
+    public function ComboUpdateItem(Request $request,$idcombo)
+    {   
+        
+        $combo = web_producto_combo::find($idcombo);
+
         $productos = web_producto::where('web_combo_id','=',$idcombo)->get();
 
 
@@ -387,42 +462,78 @@ class ComboController extends Controller
         $nombreCombo = $combo->nombre;
         $directory = "combos/".$categoria->nombre."/".$nombreCombo;
 
+
+
         foreach ($productos as  $producto) {
         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
-        if(!empty($request->hasFile('imagen'.$producto->item_id))){
-          $imagen = Input::file('imagen'.$producto->item_id);
+        if(!empty($request->hasFile('imagen'.$producto->id))){
+
+            //eliminamos la imagen anterior    
+            if($producto->imagen != "sin-foto.jpg"){
+            $directoryDelete = $categoria->nombre."/".$nombreCombo."/".$producto->imagen;
+            \Storage::disk('combos')->delete($directoryDelete);
+            }
+           
+          $imagen = Input::file('imagen'.$producto->id);
             $filename=time() . '.' . $imagen->getClientOriginalExtension();
-            
             //esto es para q funcione en local 
             //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
             image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
-        }elseif(empty($request->hasFile('imagen'.$producto->item_id))){
-            //crea la carpeta
-            Storage::makeDirectory($directory);
-            $filename = "sin-foto.jpg";
         }
 
 
-        if(empty($request->hasFile('imagen'.$producto->item_id))){
-            $ruta = "sin-foto.jpg"; 
-        }else{
+        if(!empty($request->hasFile('imagen'.$producto->id))){
             $ruta = 'storage/'.$directory.'/'. $filename;
         }
 
-                $producto->imagen = $filename;
-                $producto->ruta = $ruta;
+
+        if (!empty($request['imagen'.$producto->id])) {
+            $producto->imagen = $filename;
+            $producto->ruta = $ruta;
+        }
+               
+        if ($request['precio'.$producto->id] != 0) {
+            $producto->precio = $request['precio'.$producto->id];
+        }
                 $producto->save();
         }
        
-       flash('Imagenes Agregada Corractamente.')->success();
-        return Redirect::back();
+     
+        return Redirect::back()->with('message', 'Modificado Con Exito');
         
     }
 
+
+
+
+
     
-    public function destroy($id)
-    {
-        //
+    public function Combodestroy($id)
+    {   
+        $combo = web_producto_combo::find($id);
+        $productos = web_producto::where('web_combo_id' ,'=',$combo->id)->get();
+
+        foreach ($productos as $producto) {
+            //eliminamos la imagen de los items
+            if($producto->imagen != "sin-foto.jpg"){
+        $directoryItemDelete = $combo->web_categoria->nombre."/".$combo->nombre."/".$producto->imagen;
+         \Storage::disk('combos')->delete($directoryItemDelete);
+        }
+        //elimino el item
+        $producto->delete();
+        }
+
+        //elimino la imagen del combo
+        if($combo->imagen1 != "sin-foto.jpg"){
+        $directoryComboDelete = $combo->web_categoria->nombre."/".$combo->nombre."/".$combo->imagen;
+         \Storage::disk('combos')->delete($directoryComboDelete);
+        }    
+        //elimino el combo
+        $combo->delete();
+        
+
+         Alert::success('Success', 'Combo Eliminado Correctamente ');
+         return Redirect::to('/combo');
     }
 
 

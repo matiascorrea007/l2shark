@@ -28,7 +28,6 @@
                     </div>
 
 
-@include('lineage.admin.shop.modal.modal-editar-combo')
 
 <div class="row">
     <div class="col-md-12">
@@ -44,8 +43,7 @@
 
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-              <a class="btn btn-success"   data-toggle="modal" data-target="#editar-combo">Editar
-              <i class="fa  fa-edit fa-lg"></i></a>
+              
        </div>
    </div>
 
@@ -80,7 +78,7 @@
            <td><img src="{{$producto->ruta}}" alt="" height="50" width="50" ></td>
           @endif
               
-              <td>{{$producto->nombre}} <b>+10</b></td>
+              <td>{{$producto->nombre}} <b>(1)</b></td>
               <td><b>{{$producto->precio}}</b> Online Coin's</td>
             </tr>
           @endforeach
