@@ -88,7 +88,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="icon-user font-red"></i>
+<i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Nickname color</span>
 
     <div><br>
@@ -131,7 +131,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="icon-user font-red"></i>
+<i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Title color</span>
 
     <div><br>
@@ -162,7 +162,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-monster-skull font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Remove Karma</span>
     <div><br>
     </div>
@@ -190,7 +190,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-bone-bite font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: PK Counter Reset</span>
     <div><br>
     </div>
@@ -219,7 +219,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-muscle-fat font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Character Nickname</span>
     <div><br>
     </div>
@@ -249,7 +249,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-dervish-swords font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Clan Name</span>
     <div><br>
     </div>
@@ -278,7 +278,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="fa fa-venus-mars font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Sex/Gender Change</span>
     <div><br>
     </div>
@@ -308,7 +308,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-player-teleport font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Unstuck</span>
     <div><br>
     </div>
@@ -335,7 +335,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-angel-wings font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Noblesse</span>
     <div><br>
     </div>
@@ -364,7 +364,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-wyvern font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Hero</span>
     <div><br>
     </div>
@@ -395,7 +395,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-helmet font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Vip</span>
     <div><br>
     </div>

@@ -12,7 +12,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="icon-user font-red"></i>
+<i class="fa fa-cogs font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Configuracion Box Facebook</span>
 
     <div><br>
@@ -102,7 +102,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-image font-red"></i>
+<i class="fa fa-cogs font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Configurar Logo</span>
 
 
@@ -187,7 +187,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-image font-red"></i>
+<i class="fa fa-cogs font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Configurar Votos</span>
 
 

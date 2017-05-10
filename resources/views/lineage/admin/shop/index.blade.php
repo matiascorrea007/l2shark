@@ -11,7 +11,7 @@
                     <div class="page-bar">
                         <ul class="page-breadcrumb">
                             <li>
-                                <i class="icon-home"></i>
+                                <i class="fa fa-cart-arrow-down"></i>
                                 <a href="{{ url('combo') }}" >Shop</a>
                                 <i class="fa fa-angle-right"></i>
                             </li>
@@ -31,7 +31,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-bank font-red"></i>
+<i class="fa fa-cart-arrow-down font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Seccion Shop</span>
 
     <div><br>
@@ -72,7 +72,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-image font-red"></i>
+<i class="ra ra-lightning-sword font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Shop</span>
     <div><br>
     </div>

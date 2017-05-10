@@ -38,7 +38,7 @@
 
   {!!Form::open(['url'=>'combo-store', 'method'=>'POST' , 'class'=>'navbar-form navbar-left' ,'files'=>True]  )!!}<!-- FORM OPEN-->
 
-<i class="fa fa-bank font-red"></i>
+<i class="fa fa-cart-arrow-down font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Crear Combo</span>
 
     <div><br>
@@ -133,7 +133,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-bank font-red"></i>
+<i class="ra ra-crossed-swords font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Seleccionar Items</span>
 
     <div><br>

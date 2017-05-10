@@ -11,7 +11,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="icon-user font-red"></i>
+<i class="fa fa-wrench font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Información de la cuenta</span>
 
     <div><br>
@@ -88,7 +88,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="icon-user font-red"></i>
+<i class="fa fa-user font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Último acceso al panel</span>
 
     <div><br>
@@ -149,7 +149,7 @@
     <div class="portlet light ">
         <div class="portlet-title">
             <div class="caption">
-<i class="icon-user font-red"></i>
+<i class="ra ra-player-pyromaniac font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Seleccione Un Personaje</span>
     <div><br>
     </div>
