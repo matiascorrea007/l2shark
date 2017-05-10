@@ -20,12 +20,12 @@
 
 
 <!-- Bootstrap Core CSS -->
-<link rel="stylesheet" href="shop/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="skin/monster/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="skin/monster/css/global.css" media="all">
 <link rel="stylesheet" type="text/css" href="skin/monster/css/mi-css.css" media="all">
 
-<script src="js/jquery.min.js"></script>
-<script src="shop/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="skin/monster/js//bootstrap.js"></script>
 <script type="text/javascript" src="skin/monster/js/global.js"></script>
 <script type="text/javascript" src="skin/monster/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>

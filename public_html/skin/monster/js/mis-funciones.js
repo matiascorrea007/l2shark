@@ -179,7 +179,7 @@ $(data).each(function(key,value){
   //me lo muesta en el input que tenga id mostrar
 $(data).each(function(key,value){
   console.log(data);
-            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-primary item' id="+value.item_id+"> Agregar <i class='ra ra-battered-axe'></i></button></td></tr>");
         });
     });
 
@@ -191,7 +191,7 @@ $(data).each(function(key,value){
   //me lo muesta en el input que tenga id mostrar
 $(data).each(function(key,value){
   console.log(data);
-            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-warning item' id="+value.item_id+"> Agregar <i class='fa fa-expand'></i></button><span class='label label-success'> Agregado! </span></td></tr>");
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-primary item' id="+value.item_id+"> Agregar <i class='ra ra-battered-axe'></i></button></td></tr>");
         });
     });
 
@@ -224,7 +224,7 @@ if (event.keyCode == 13){
   //me lo muesta en el input que tenga id mostrar
 $(data).each(function(key,value){
   console.log(data);
-            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-primary item' id="+value.item_id+"> Agregar <i class='ra ra-battered-axe'></i></button></td></tr>");
         });
     });
 }
@@ -244,7 +244,7 @@ $(data).each(function(key,value){
   //me lo muesta en el input que tenga id mostrar
 $(data).each(function(key,value){
    console.log(data);
-            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><span class='label label-success'> Agregado! </span></td></tr>");
+            tablaDatos.append("<tr><td>"+value.item_id+"</td><td>"+value.name+"</td><td><button onclick='AgregarItem("+value.item_id+");'  type='button' class='btn btn-primary item' id="+value.item_id+"> Agregar <i class='ra ra-battered-axe'></i></button></td></tr>");
         });
     });
 }

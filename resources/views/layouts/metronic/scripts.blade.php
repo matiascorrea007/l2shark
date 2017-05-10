@@ -1,48 +1,59 @@
 <!------------------------------- metronic scriptt ------------------------------>
             <!-- BEGIN CORE PLUGINS -->
-<script src="js/jQuery-2.1.4.min.js" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/bootstrap/js/bootstrap.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/js.cookie.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/jquery.blockui.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
-            <!-- END CORE PLUGINS -->
-            <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="{{ asset('/metronic/global/plugins/morris/morris.min.js') }}" type="text/javascript"></script>
-            <!-- END PAGE LEVEL PLUGINS -->
-            <!-- BEGIN THEME GLOBAL SCRIPTS -->
-<script src="{{ asset('/metronic/global/scripts/app.min.js') }}" type="text/javascript"></script>
-            <!-- END THEME GLOBAL SCRIPTS -->
-            <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="{{ asset('/metronic/pages/scripts/dashboard.min.js') }}" type="text/javascript"></script>
-            <!-- END PAGE LEVEL SCRIPTS -->
-            <!-- BEGIN THEME LAYOUT SCRIPTS -->
-<script src="{{ asset('/metronic/layouts/layout2/scripts/layout.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/layouts/layout2/scripts/demo.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/layouts/global/scripts/quick-sidebar.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/layouts/global/scripts/quick-nav.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/counterup/jquery.waypoints.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/metronic/global/plugins/counterup/jquery.counterup.min.js') }}" type="text/javascript"></script>
-            <!-- END THEME LAYOUT SCRIPTS -->
+
+<!-- END QUICK NAV -->
+        <!--[if lt IE 9]>
+<script src="../assets/global/plugins/respond.min.js"></script>
+<script src="../assets/global/plugins/excanvas.min.js"></script> 
+<script src="../assets/global/plugins/ie8.fix.min.js"></script> 
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+         
+        <script src="{{ asset('layout/js/jquery.min.js') }}" type="text/javascript"></script>
+        {!!Html::script('layout/js/bootstrap.js')!!} 
+        {!!Html::script('layout/js/js.cookie.min.js')!!}
+        {!!Html::script('layout/js/jquery.slimscroll.js')!!}
+        {!!Html::script('layout/js/jquery.blockui.min.js')!!}
+        {!!Html::script('layout/js/bootstrap-switch.js')!!}
+        {!!Html::script('layout/js/moment.min.js')!!}
+        {!!Html::script('layout/js/daterangepicker.js')!!}
+        {!!Html::script('layout/js/morris.js')!!}
+        {!!Html::script('layout/js/raphael-min.js')!!}
+        {!!Html::script('layout/js/jquery.waypoints.min.js')!!}
+        {!!Html::script('layout/js/jquery.counterup.js')!!}
+        {!!Html::script('layout/js/fullcalendar.js')!!}
+        {!!Html::script('layout/js/jquery.flot.js')!!}
+        {!!Html::script('layout/js/jquery.flot.resize.js')!!}
+        {!!Html::script('layout/js/jquery.flot.categories.js')!!}
+        {!!Html::script('layout/js/jquery.easypiechart.js')!!}
+        {!!Html::script('layout/js/jquery.sparkline.min.js')!!}
+        {!!Html::script('layout/js/app.js')!!}
+        {!!Html::script('layout/js/dashboard.js')!!}
+        {!!Html::script('layout/js/layout.js')!!}
+        {!!Html::script('layout/js/demo.js')!!}
+        {!!Html::script('layout/js/quick-sidebar.js')!!}
+        {!!Html::script('layout/js/quick-nav.js')!!}
+
+
 <!------------------------------- metronic scriptt ------------------------------>
 
 
-
-
-
 <!-- Bootstrap 3.3.2 JS -->
-<script src="{{ asset('/js/bootstrapselect.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/select2.min.js') }}"></script>
+<script src="{{ asset('layout/js/bootstrapselect.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('layout/js/select2.min.js') }}"></script>
 <!-- manejo de graficas -->
-<script src="{{ asset('/js/graficas.js') }}" type="text/javascript"></script>
-<script src="{{ asset('/js/highcharts.js') }}" type="text/javascript"></script>
+<script src="{{ asset('layout/js/graficas.js') }}" type="text/javascript"></script>
+<script src="{{ asset('layout/js/highcharts.js') }}" type="text/javascript"></script>
 <!--estos dos scrip es para mandar la cantidad de item del carrito y actualizar-->
-<script src="{{ asset('/js/main.js') }}" ></script>
-<script src="{{ asset('js/pinterest_grid.js') }}"></script>
+<script src="{{ asset('layout/js/main.js') }}" ></script>
+<script src="{{ asset('layout/js/pinterest_grid.js') }}"></script>
 <!--sweetalert-->
-<script src="{{ asset('js/sweetalert/sweetalert.min.js') }}"></script>
-<script src="{{ asset('js/sweetalert/sweetalert-dev.js') }}"></script>
+<script src="{{ asset('layout/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('layout/js/sweetalert-dev.js') }}"></script>
 @include('sweet::alert')
+
+<script src="{{ asset('layout/js/parallax.js') }}"></script>
+
 <!--Filemanager-->
 <script src="{{ asset('../vendor/unisharp/laravel-filemanager/public/js/lfm.js') }}"></script>
 <script src="{{ asset('../vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
@@ -77,7 +88,7 @@ filebrowserUploadUrl: 'laravel-filemanager/upload?type=Files&_token={{csrf_token
 
 
 <!--dropzone-->
-<script src="{{ asset('/js/dropzone/dropzone.js') }}" ></script>
+<script src="{{ asset('layout/js/dropzone/dropzone.js') }}" ></script>
 <script>
         Dropzone.options.myDropzone = {
             autoProcessQueue: false,
@@ -161,7 +172,7 @@ $.get('ajax-subcategoria?cat_id='+ cat_id, function(data){
 
 
 
-<script src="{{ asset('/js/productocombo.js') }}" ></script>
+<script src="{{ asset('layout/js/productocombo.js') }}" ></script>
 
 	
 <!--===============scrip de los tags========-->
@@ -195,34 +206,10 @@ $.get('ajax-subcategoria?cat_id='+ cat_id, function(data){
 
 <script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>
 
-<script type="text/javascript">
-  
-
-
-
-
-  
-
-//paginacion
-$(document).on('click','.pagination a',function(e){
-    e.preventDefault();
-    var page = $(this).attr('href').split('page=')[1];
-    var route = "http://localhost:8000/usuario";
-    $.ajax({
-        url: route,
-        data: {page: page},
-        type: 'GET',
-        dataType: 'json',
-        success: function(data){
-            $(".users").html(data);
-        }
-    });
-});
-
-
-</script>
 <!------------script backup---------------->	
 
 
 
 <!------------script backup---------------->
+
+

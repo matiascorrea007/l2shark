@@ -19,54 +19,104 @@ License: You must have a valid license purchased only from themeforest(the above
     <!--<![endif]-->
     <!-- BEGIN HEAD -->
 
-@section('htmlheader')
-    @include('layouts.metronic.htmlheader')
-@show
+    @section('htmlheader')
+        @include('layouts.metronic.htmlheader')
+    @show
+    <!-- END HEAD -->
 
-    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md">
+    <body class="page-container-bg-solid page-header-menu-fixed">
+        <div class="page-wrapper">
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-top">
+                     @include('layouts.metronic.mainheader')
 
-
-        @include('layouts.metronic.mainheader')
-
-
-        <!-- BEGIN HEADER & CONTENT DIVIDER -->
-        <div class="clearfix"> </div>
-        <!-- END HEADER & CONTENT DIVIDER -->
-        <!-- BEGIN CONTAINER -->
-        <div class="page-container">
-            <!-- BEGIN SIDEBAR -->
-            
-             @include('layouts.metronic.sidebar')
-
-
-
-            <!-- BEGIN CONTENT -->
-            <div class="page-content-wrapper">
-                <!-- BEGIN CONTENT BODY -->
-                <div class="page-content">
-                @include('layouts.metronic.config')
-                
-                    @yield('content')           
+                 
+                    <!-- END HEADER -->
                 </div>
-                <!-- END CONTENT BODY -->
             </div>
+            <div class="page-wrapper-row full-height">
+                <div class="page-wrapper-middle">
+                    <!-- BEGIN CONTAINER -->
+                    <div class="page-container">
+                        <!-- BEGIN CONTENT -->
+                        <div class="page-content-wrapper">
+                            <!-- BEGIN CONTENT BODY -->
+                            <!-- BEGIN PAGE HEAD-->
+                            <div class="page-head">
+                                <div class="container-fluid">
+                                    <!-- BEGIN PAGE TITLE -->
+                                    <div class="page-title">
+                                        <ul class="page-breadcrumb breadcrumb">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+                                        <li>
+                                            <span>Dashboard</span>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- END PAGE TITLE -->
+                                    <!-- BEGIN PAGE TOOLBAR -->
+                                   @include('layouts.metronic.config')
+                                       
+                                </div>
+                            </div>
+                            <!-- END PAGE HEAD-->
+                            <!-- BEGIN PAGE CONTENT BODY -->
+                            <div class="page-content">
+                                <div class="container-fluid">
+                                    <!-- BEGIN PAGE BREADCRUMBS -->
+                                   
+                                    <!-- END PAGE BREADCRUMBS -->
 
 
 
-            <!-- END CONTENT -->
+                                    <!-- BEGIN PAGE CONTENT INNER -->
+                                    <div class="page-content-inner">
+                                        <div class="mt-content-body">
+                                        @yield('content')       
+                                        </div>
+                                    </div>
+                                    <!-- END PAGE CONTENT INNER -->
 
-            @include('layouts.metronic.sidebar-derecha')
-            
+
+
+
+
+                                </div>
+                            </div>
+                            <!-- END PAGE CONTENT BODY -->
+                            <!-- END CONTENT BODY -->
+                        </div>
+                        <!-- END CONTENT -->
+
+                        <!-- BEGIN QUICK SIDEBAR -->
+                        
+                      
+                        <!-- END QUICK SIDEBAR -->
+
+
+                    </div>
+                    <!-- END CONTAINER -->
+                </div>
+            </div>
+            <div class="page-wrapper-row">
+                <div class="page-wrapper-bottom">
+                     @include('layouts.metronic.footer')
+                </div>
+            </div>
         </div>
-        <!-- END CONTAINER -->
 
-        @include('layouts.metronic.footer')
+       
+        
+        
+        
 
 
-@section('scripts')
-    @include('layouts.metronic.scripts')
-@show
-         
+        @section('scripts')
+            @include('layouts.metronic.scripts')
+        @show
     </body>
 
 </html>

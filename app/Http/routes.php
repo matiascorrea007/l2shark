@@ -23,6 +23,8 @@ use Soft\Http\Requests\Request;
 
 Route::group(['middleware' => 'web'], function () {
     
+    Route::get('conexion','AdminController@index');
+    
 Route::get('/','PaginasController@home');
 Route::get('boss','BossController@boss');
 Route::get('siege','SiegeController@siege');
@@ -483,6 +485,8 @@ Route::post('noblesse-edit','ServiciosController@Noblesse');
 Route::post('hero-edit','ServiciosController@Hero');
 Route::post('vip-edit','ServiciosController@Vip');
 /*END Servicios*/
+
+
 
 
 Route::get('shop','ShopController@index');

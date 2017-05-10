@@ -23,6 +23,14 @@ class AdminController extends Controller
 {   
 
 
+     public function index(){
+        $characters = DB::table('characters')->first();
+        //$characters = DB::connection('externa')->table('characters')->first();
+
+        dd($characters);
+        return view ('lineage.admin.index',compact('characters'));
+    }
+
 
     public function Admin(){
         $characters = DB::table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
