@@ -73,6 +73,11 @@ return [
             'root'   => 'storage/productos',
         ],
 
+        'noticias' => [
+            'driver' => 'local',
+            'root'   => 'storage/noticias',
+        ],
+
         'combos' => [
             'driver' => 'local',
             'root'   => 'storage/combos',

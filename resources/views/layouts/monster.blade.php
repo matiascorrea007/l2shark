@@ -51,10 +51,12 @@
 </script>
 
 
+<!--si la session es english -->
 @if(\Session::get('lang') == 'en')
 <div class='all en'>
 @endif
 
+<!--si la session es español -->
 @if(\Session::get('lang') == 'es' or \Session::get('lang') == '' )
 <div class='all es'>
 @endif
@@ -63,8 +65,9 @@
 	<header>
 
 
-		<img src='imgs\bg-top.jpg' id='bg-top'>
+		
 		<div class='bg-top-logo'> 
+		<img src='' style="background:url('skin/monster/imgs/bg-top.jpg') no-repeat center top" >
 		@if(!empty($logo))
 		<img height="400" width="450" src="../public_html/storage/paginas/home/logo/{{$logo->logo}}" alt="" />
 		@endif

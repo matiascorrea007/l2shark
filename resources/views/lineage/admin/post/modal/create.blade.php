@@ -10,7 +10,7 @@
 {!!Form::open(['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
 
 <div class="modal-body">   
-@include('admin.post.forms.formscreate')
+@include('lineage.admin.post.forms.formscreate')
 </div>
 
 <div class="modal-footer">

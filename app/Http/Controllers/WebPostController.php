@@ -14,6 +14,7 @@ use DB;
 use Image;
 use Soft\User;
 use Auth;
+use Input;
 class WebPostController extends BaseController
 {
     
@@ -59,7 +60,39 @@ class WebPostController extends BaseController
         $post->descripcioncorta = $request['descripcioncorta'];
         $post->descripcionlarga = $request['descripcionlarga'];
         $post->user_id = Auth::user()->id;
-        $post->save();
+
+
+        //carpeta
+         $nombreNoticia = $request['titulo'];
+        $directory = "noticias/".$nombreNoticia;
+
+         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
+        if(!empty($request->hasFile('imagen'))){
+          $imagen = Input::file('imagen');
+            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+            //crea la carpeta
+            Storage::makeDirectory($directory);
+            //esto es para q funcione en local 
+            //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
+            image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
+        }elseif(empty($request->hasFile('imagen'))){
+            //crea la carpeta
+            Storage::makeDirectory($directory);
+            $filename = "noticia.jpg";
+        }
+
+
+        if(empty($request->hasFile('imagen'))){
+            $ruta = "storage/noticias/noticia.jpg"; 
+        }else{
+            $ruta = 'storage/'.$directory.'/'. $filename;
+        }
+
+    
+
+         $post->portada = $ruta;
+         $post->imagen = $filename;
+         $post->save();
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Post Creado');
@@ -99,6 +132,38 @@ class WebPostController extends BaseController
     public function update(Request $request, $id)
     {
          $post=web_post::find($id);
+        
+
+         //carpeta
+         $nombreNoticia = $post->titulo;
+        $directory = "noticias/".$nombreNoticia;
+
+         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
+        if(!empty($request->hasFile('imagen'))){
+
+            //eliminamos la imagen anterior    
+            if($post->portada != "storage/noticias/noticia.jpg"){
+            $directoryDelete = $post->titulo."/".$post->imagen;
+            \Storage::disk('noticias')->delete($directoryDelete);
+            }
+
+            $imagen = Input::file('imagen');
+            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+        
+            //esto es para q funcione en local 
+            //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
+            image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
+        }
+
+        if(!empty($request->hasFile('imagen'))){
+            $ruta = 'storage/'.$directory.'/'. $filename;
+        }
+
+         if (!empty($request['imagen'])) {
+            $post->imagen = $filename;
+            $post->portada = $ruta;
+        }
+           
         $post->titulo = $request['titulo'];
         $post->descripcioncorta = $request['descripcioncorta'];
         $post->descripcionlarga = $request['descripcionlarga'];

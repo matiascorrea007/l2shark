@@ -6,9 +6,9 @@
 <div class='news'><div>
 	
 			<div class=''>
-				<a class='imgn pull-left' href='index-18.htm?page=news&id=17'><img src='imgs\nm\no-img-new.jpg'><span></span></a>
+				<a class='imgn pull-left' href='index-18.htm?page=news&id=17'><img src='skin/globales/img/icon.jpg' height="25" width="25"> <span></span></a>
 
-				<a class='titn pull-left' href="{{ url('blogdetail-post'.$post->id) }}" class='titlen'>	{{$post->titulo}}</a>
+				<a class='titn pull-left' href="{{ url('blogdetail-post'.$post->id) }}" class='titlen'> 	{{$post->titulo}}</a>
 
 				<div class='datan pull-right'>{{$post->created_at}}</div>
 

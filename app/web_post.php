@@ -9,6 +9,7 @@ class web_post extends Model
    protected $fillable = [
         	'id',
           'portada',
+          'imagen',
         	'titulo',
           'descripcioncorta',
           'descripcionlarga',

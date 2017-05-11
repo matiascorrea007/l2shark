@@ -69,7 +69,7 @@ Page Header
   .page-header.navbar-static-top {
     z-index: 9995; }
   .page-header .page-header-top {
-    height: 75px;
+   
     /* Header logo */
     /* Top menu */
     /* Menu Toggler */ }
@@ -568,7 +568,7 @@ Page Header
     clear: both;
     height: auto; }
     .page-header .page-header-top {
-      height: auto;
+      
       /* Page logo */
       /* Top Menu */
       /* Menu Toggler */ }

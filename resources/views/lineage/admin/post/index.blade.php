@@ -25,7 +25,7 @@
   {!!Form::text('nombre',null,['class'=>'form-control','placeholder'=>'nombre y apellido'])!!}
   {!!Form::text('email',null,['class'=>'form-control','placeholder'=>'Email'])!!}
   {{ Form::select('type',config('options.type'),'',['class'=>'form-control']) }}
- <button type="submit" class="glyphicon glyphicon-search btn btn-success"> BUSCAR </button>
+ <button type="submit" class="fa fa-search btn btn-success"> BUSCAR </button>
 </div>
 {!!Form::close()!!}
  <!--endbuscador-->
@@ -89,12 +89,12 @@
     </div>
 
 <!--modal ver post-->
- @include('admin.post.modal.show')
+ @include('lineage.admin.post.modal.show')
 <!--modal eliminar post-->
- @include('admin.post.modal.delete')
+ @include('lineage.admin.post.modal.delete')
  <!--modal create post-->
- @include('admin.post.modal.create')
+ @include('lineage.admin.post.modal.create')
   <!--modal create post-->
- @include('admin.post.modal.edit')                         
+ @include('lineage.admin.post.modal.edit')                         
 
 @endsection

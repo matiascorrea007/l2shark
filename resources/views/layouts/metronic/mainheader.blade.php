@@ -7,17 +7,17 @@
 
 <div class="page-header " id="main">
                         <!-- BEGIN HEADER TOP -->
-                        <div class="">
+                        <div class="page-header-top">
                             <div class="container-fluid">
                                 <!-- BEGIN LOGO -->
                                 
                                 <!-- END LOGO -->
                                 <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-                                <a href="javascript:;" class="menu-toggler"></a>
+                                <a href="javascript:;" class="menu-toggler"><i class="fa fa-navicon"></i></a>
                                 <!-- END RESPONSIVE MENU TOGGLER -->
                                 <!-- BEGIN TOP NAVIGATION MENU -->
                                 <div class="top-menu">
-                                    
+                                   
                                 </div>
                                 <!-- END TOP NAVIGATION MENU -->
                             </div>
@@ -26,17 +26,38 @@
                         <!-- BEGIN HEADER MENU -->
                         <div class="page-header-menu" style="display: block;">
                             <div class="container-fluid">
+
+                            <ul class="nav navbar-nav pull-right">
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <img alt="" class="img-circle" src="../skin/globales/img/avatar/human_female_fighter.jpg">
+                                                <span class="username username-hide-mobile">Nick</span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-default">
+                                                
+                                                <li>
+                                                    <a href="{!! URL::to('logout') !!}">
+                                                        <i class="fa fa-sign-out "></i> Log Out </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
                                 <!-- BEGIN HEADER SEARCH BOX -->
                                 <form class="search-form" action="page_general_search.html" method="GET">
                                     <div class="input-group">
                                         <input type="text" class="form-control" placeholder="Search" name="query">
                                         <span class="input-group-btn">
                                             <a href="javascript:;" class="btn submit">
-                                                <i class="icon-magnifier"></i>
+                                                <i class="fa fa-search"></i>
                                             </a>
                                         </span>
                                     </div>
                                 </form>
+
+                                 
                                 <!-- END HEADER SEARCH BOX -->
                                 <!-- BEGIN MEGA MENU -->
                                 <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
