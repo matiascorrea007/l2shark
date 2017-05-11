@@ -10,5 +10,7 @@ class web_video extends Model
         	  'id',
             'titulo',
             'link',
+            'imagen',
+            'filename',
     ];
 }

@@ -6,6 +6,16 @@ use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
 use Soft\web_imagene;
+use Embed\Embed;
+use Soft\web_video;
+use Alert;
+use Session;
+use Redirect;
+use Storage;
+use DB;
+use Image;
+use Auth;
+
 
 class GaleriaController extends Controller
 {
@@ -16,9 +26,9 @@ class GaleriaController extends Controller
      */
     public function index()
     {
-        $galeria =  web_imagene::orderBy('created_at','asc');
         
-        return view('lineage.admin.galeria.index',compact('galeria')); 
+        
+        return view('lineage.admin.galeria.index'); 
     }
 
     /**
@@ -26,7 +36,7 @@ class GaleriaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createImagen()
     {
         //
     }
@@ -37,7 +47,7 @@ class GaleriaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeImagen(Request $request)
     {
         //
     }
@@ -48,7 +58,7 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showImagen($id)
     {
         //
     }
@@ -59,7 +69,7 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function editImagen($id)
     {
         //
     }
@@ -71,7 +81,7 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updateImagen(Request $request, $id)
     {
         //
     }
@@ -82,8 +92,102 @@ class GaleriaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroyImagen($id)
     {
         //
     }
+
+
+
+
+
+
+
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function createVideo()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function storeVideo(Request $request)
+    {
+        $info = Embed::create($request['link']);
+
+        $subject = $request['link'];
+        $remplace = "embed/";
+        $search = 'watch?v=';
+        $url =  str_replace (  $search ,  $remplace ,  $subject);
+
+        
+         $video = new web_video;
+         $video->titulo = $info->title;
+         $video->link = $url;
+         $video->imagen = $info->image;
+         $video->save();
+
+         Alert::success('Mensaje existoso', 'Video Creado');
+       return Redirect::to('/galeria');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showVideo($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function editVideo($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateVideo(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyVideo($id)
+    {
+        //
+    }
+
+
+
+
+
+
 }

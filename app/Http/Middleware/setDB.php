@@ -24,7 +24,7 @@ class setDB
     public function handle($request, Closure $next)
     {
 
-
+/*
         $informatica = web_conexion::first();
 
         Config::set('database.connections.externa.host', $informatica ->host);
@@ -33,7 +33,7 @@ class setDB
         Config::set('database.connections.externa.database', $informatica ->db);
         DB::connection('externa');
 
-
+*/
           
 
         return $next($request);

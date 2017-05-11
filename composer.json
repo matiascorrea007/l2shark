@@ -23,7 +23,8 @@
         "monolog/monolog": "^1.21",
         "arcanedev/log-viewer": "~3.0",
         "milon/barcode": "^5.3",
-        "laracasts/flash": "^3.0"
+        "laracasts/flash": "^3.0",
+        "embed/embed": "^3.0"
 
     
 

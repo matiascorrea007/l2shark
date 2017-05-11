@@ -319,7 +319,7 @@
 									</a>
 									
 					</div></div>
-					<a style='margin-top:4px !important;' class='default dbig' href='index-17.htm?page=gallery'>{{ trans('layout.ver más') }}</a>
+					<a style='margin-top:4px !important;' class='default dbig' href="{{ url('galeria-video') }}">{{ trans('layout.ver más') }}</a>
 				</div>			
 		</aside>
 		

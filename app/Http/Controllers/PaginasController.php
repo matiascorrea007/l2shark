@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
 use Soft\web_post;
+use Soft\web_video;
+use Soft\web_imagene;
 use Soft\web_pagina;
 use Alert;
 use Session;
@@ -20,6 +22,7 @@ use Soft\Review;
 use Soft\Categoriasub;
 use Auth;
 use Soft\Models\character;
+use Embed\Embed;
 
 class PaginasController extends BaseController 
 {
@@ -66,6 +69,12 @@ class PaginasController extends BaseController
     public function Informacion(){
           $paginas = web_pagina::first();
          return view ('lineage.informacion',compact('paginas'));
+
+    }
+
+    public function GaleriaVideos(){
+          $videos = web_video::all();
+         return view ('lineage.galeria',compact('videos'));
 
     }
 

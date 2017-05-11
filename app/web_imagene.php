@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class web_imagene extends Model
 {
-        protected $fillable = [
-        	  'id',
+    protected $fillable = [
+        	'id',
             'titulo',
             'link',
     ];
