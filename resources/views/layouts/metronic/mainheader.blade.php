@@ -87,7 +87,7 @@
                 <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link"><i class="fa fa-columns"></i> Paginas </a>
             </li>
             <li class=" ">
-                <a href="dashboard_3.html" class="nav-link"><i class="fa fa-database"></i> DB</a>
+                <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-database"></i> DB</a>
             </li>
         </ul>
      </li>

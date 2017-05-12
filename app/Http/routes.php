@@ -489,6 +489,11 @@ Route::post('vip-edit','ServiciosController@Vip');
 
 
 
+Route::get('db-config','DbController@index');
+Route::get('db-check','DbController@ProbarConexion');
+Route::post('db-config-store','DbController@store');
+Route::put('db-config-update/{id}','DbController@update');
+
 
 Route::get('shop','ShopController@index');
 Route::get('shop-create','ShopController@create');

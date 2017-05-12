@@ -126,7 +126,7 @@ class ServiciosController extends Controller
 
         }else{
 
-        session()->flash('message-error','El NOMBRE ingresado ya se encuentra en uso!!');
+        flash('message-error','El NOMBRE ingresado ya se encuentra en uso!!')->success();
         return Redirect::to('/servicios');
         }
     }
