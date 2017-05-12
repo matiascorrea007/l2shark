@@ -293,34 +293,77 @@
 					<div class='galleryBox'><div>
 						
 									
-										
-										<a href="#" class="btn btn-default" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/loFtozxZG0s" >VIDEO
-										<img src='imgs\gallery\thumbnail\YGpZnIakNHE.jpg'>
-										<div></div>
-										<span></span>
-									</a>
-									
-									<a href='//www.youtube.com/watch?v=4K640l4ogK4&rel=0' class='iframe' rel='prettyPhoto[fullGallery]'>
-										<img src='imgs\gallery\thumbnail\4K640l4ogK4.jpg'>
-										<div></div>
-										<span></span>
-									</a>
-									
-									<a href='//www.youtube.com/watch?v=TQvDgJJ4D-s&rel=0' class='iframe' rel='prettyPhoto[fullGallery]'>
-										<img src='imgs\gallery\thumbnail\TQvDgJJ4D-s.jpg'>
-										<div></div>
-										<span></span>
-									</a>
-									
-									<a href='//www.youtube.com/watch?v=i5NI2FvE6RQ&rel=0' class='iframe' rel='prettyPhoto[fullGallery]'>
-										<img src='imgs\gallery\thumbnail\i5NI2FvE6RQ.jpg'>
-										<div></div>
-										<span></span>
-									</a>
+					@foreach($videos as $video)					
+					<a href="#" class="btn btn-default" data-toggle="modal" data-target="#video-{{$video->id}}" >
+					<img src='{{$video->imagen}}'>
+					<div></div><span></span>
+					</a>
+					@endforeach	
+
+		
+		<!--Cargo el modal-->	
+		@foreach($videos as $video)
+			<div class="modal fade" id="video-{{$video->id}}" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button  type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <div>
+                                <iframe width="560" height="360" src="{{$video->link}}" frameborder="10" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		@endforeach
+
+								
 									
 					</div></div>
 					<a style='margin-top:4px !important;' class='default dbig' href="{{ url('galeria-video') }}">{{ trans('layout.ver más') }}</a>
-				</div>			
+				</div>	
+
+		<div class='box'>
+					<div class='title'>
+						<div class='bg'></div>
+						<div class='txt t3'></div>
+					</div>
+	
+				<div class='thumbnail img-responsive'>
+					<div>
+						
+									
+					@foreach($imagenes as $imagene)					
+					<a href="#" class="btn btn-default" data-toggle="modal" data-target="#imagenes-{{$imagene->id}}" >
+					<img height="100" width="100" 	src='{{$imagene->url}}'>
+					<div></div><span></span>
+					</a>
+					@endforeach	
+
+		
+		<!--Cargo el modal-->	
+		@foreach($imagenes as $imagene)
+			<div class="modal fade modal-fullscreen" id="imagenes-{{$imagene->id}}" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button  type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <div>
+                                <img src="{{$imagene->url}}" height="850" width="850" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		@endforeach
+
+								
+									
+					</div>
+				</div>
+					<a style='margin-top:4px !important;' class='default dbig' href="{{ url('galeria-imagen') }}">{{ trans('layout.ver más') }}</a>
+				</div>
+
 		</aside>
 		
 		<article>
@@ -458,7 +501,7 @@ $(document).ready(function(){
 <!--modal-->
 
     @include('lineage.modal.registrarse') 
-	@include('lineage.modal.video') 
+	
 
 
 </body>

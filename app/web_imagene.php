@@ -9,6 +9,9 @@ class web_imagene extends Model
     protected $fillable = [
         	'id',
             'titulo',
-            'link',
+            'url',
+            'imagen',
+            'user_id',
+              'visible',
     ];
 }

@@ -125,16 +125,13 @@
     <span class="arrow"></span></a>
         <ul class="dropdown-menu pull-left">
             <li class=" ">
-                <a href="{!! URL::to('galeria-imagen/') !!}" class="nav-link"><i class="fa fa-image"></i> Galeria de Imagenes</a>
+                <a href="{!! URL::to('galeria-imagen-show') !!}" class="nav-link"><i class="fa fa-image"></i> Galeria de Imagenes</a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link"><i class="fa fa-youtube-play"></i> Galeria de Videos </a>
+                <a href="{!! URL::to('galeria-video-show') !!}" class="nav-link"><i class="fa fa-youtube-play"></i> Galeria de Videos </a>
             </li>
             <li class=" ">
-                <a href="dashboard_3.html" class="nav-link"><i class="fa fa-link"></i> Enviar Imagen</a>
-            </li>
-            <li class=" ">
-                <a href="dashboard_3.html" class="nav-link"><i class="fa fa-link"></i> Enviar Videos</a>
+            <a href="{!! URL::to('galeria') !!}" class="nav-link"><i class="fa fa-link"></i> Enviar Imagen/Video</a>
             </li>
         </ul>
      </li>

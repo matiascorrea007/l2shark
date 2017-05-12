@@ -17,6 +17,8 @@ use Route;
 use Soft\web_facebook;
 use Soft\web_logo;
 use Soft\web_voto;
+use Soft\web_video;
+use Soft\web_imagene;
 
 class BaseController extends Controller
 {
@@ -32,6 +34,9 @@ class BaseController extends Controller
       $box=web_facebook::first();
       $votos=web_voto::all();
       $user = Auth::user();
+      $imagenes = web_imagene::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
+      $videos = web_video::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
+     
     
        
       //datos de la plantilla principal
@@ -43,6 +48,8 @@ class BaseController extends Controller
        View::share ( 'box', $box );
        View::share ( 'user', $user );
        View::share ( 'votos', $votos );
+       View::share ( 'imagenes', $imagenes );
+       View::share ( 'videos', $videos );
      
       
 

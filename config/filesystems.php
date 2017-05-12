@@ -83,6 +83,11 @@ return [
             'root'   => 'storage/combos',
         ],
 
+        'galeria' => [
+            'driver' => 'local',
+            'root'   => 'storage/galeria',
+        ],
+
          'svg' => [
             'driver' => 'local',
             'root'   => public_path().'/storage/categorias',

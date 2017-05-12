@@ -15,7 +15,7 @@ use Storage;
 use DB;
 use Image;
 use Auth;
-
+use Input;
 
 class GaleriaController extends Controller
 {
@@ -41,6 +41,12 @@ class GaleriaController extends Controller
         //
     }
 
+
+    public function showImagen()
+    {
+        $imagenes = web_imagene::paginate(20);
+         return view ('lineage.admin.galeria.ver-imagenes',compact('imagenes'));
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -49,19 +55,41 @@ class GaleriaController extends Controller
      */
     public function storeImagen(Request $request)
     {
-        //
+        
+         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
+        if(!empty($request->hasFile('imagen'))){
+
+            $imagen = Input::file('imagen');
+            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+
+            //carpeta
+            $nombreCombo = $request['nombre'];
+            $directory = "galeria/imagenes/";
+            //crea la carpeta
+            Storage::makeDirectory($directory);
+            //esto es para q funcione en local 
+            //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
+            image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
+
+             $imagen = web_imagene::create([
+          
+           'url'=>'storage/'.$directory.'/'. $filename,
+           'imagen'=>$filename,
+            ]);
+
+        }elseif(empty($request->hasFile('imagen'))){
+            
+            return Redirect::back()->with('message-error', 'Seleecione una imagen');
+        }
+
+
+
+        Alert::success('Success', 'Imagen creada');
+         return Redirect::to('/galeria');
+    
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showImagen($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -83,7 +111,19 @@ class GaleriaController extends Controller
      */
     public function updateImagen(Request $request, $id)
     {
-        //
+        $imagen = web_imagene::find($id);
+        if ($request['visible'] == "0") {
+           $imagen->visible = 0;
+            $imagen->save();
+
+        }
+        if ($request['visible'] == "1") {
+            $imagen->visible = 1;
+           $imagen->save();
+        }
+
+
+         return Redirect::back()->with('message', 'Modificado Con Exito');
     }
 
     /**
@@ -94,7 +134,15 @@ class GaleriaController extends Controller
      */
     public function destroyImagen($id)
     {
-        //
+        $imagen = web_imagene::find($id);
+       
+        $imagenes = "imagenes";
+        $directoryItemDelete = $imagenes."/".$imagen->imagen;
+         \Storage::disk('galeria')->delete($directoryItemDelete);
+         $imagen->delete();
+
+         Alert::success('Success', 'Imagen Eliminado Correctamente ');
+         return Redirect::back();
     }
 
 
@@ -102,6 +150,12 @@ class GaleriaController extends Controller
 
 
 
+
+    public function showVideo()
+    {
+        $videos = web_video::paginate(20);
+         return view ('lineage.admin.galeria.ver-videos',compact('videos'));
+    }
 
 
     /**
@@ -121,7 +175,10 @@ class GaleriaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function storeVideo(Request $request)
-    {
+    {   
+        if ($request['link'] == "") {
+             return Redirect::back()->with('message-error', 'Ingrese la URl del Video');
+        }
         $info = Embed::create($request['link']);
 
         $subject = $request['link'];
@@ -138,17 +195,6 @@ class GaleriaController extends Controller
 
          Alert::success('Mensaje existoso', 'Video Creado');
        return Redirect::to('/galeria');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function showVideo($id)
-    {
-        //
     }
 
     /**
@@ -171,7 +217,19 @@ class GaleriaController extends Controller
      */
     public function updateVideo(Request $request, $id)
     {
-        //
+         $video = web_video::find($id);
+        if ($request['visible'] == "0") {
+           $video->visible = 0;
+            $video->save();
+
+        }
+        if ($request['visible'] == "1") {
+            $video->visible = 1;
+           $video->save();
+        }
+
+
+         return Redirect::back()->with('message', 'Modificado Con Exito');
     }
 
     /**
@@ -182,7 +240,11 @@ class GaleriaController extends Controller
      */
     public function destroyVideo($id)
     {
-        //
+         $video = web_video::find($id);
+         $video->delete();
+
+         Alert::success('Success', 'Video Eliminado Correctamente ');
+         return Redirect::back();
     }
 
 

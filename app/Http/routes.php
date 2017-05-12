@@ -564,11 +564,15 @@ Route::delete('post-destroy/{id}','WebPostController@destroy');
 
 
 Route::get('galeria','GaleriaController@index');
+
+Route::get('galeria-imagen-show','GaleriaController@showImagen');
 Route::get('galeria-imagen-edit-{id}','GaleriaController@editImagen');
 Route::get('galeria-imagen-create','GaleriaController@createImagen');
 Route::post('galeria-imagen-store','GaleriaController@storeImagen');
 Route::put('galeria-imagen-update/{id}','GaleriaController@updateImagen');
 Route::delete('galeria-imagen-destroy/{id}','GaleriaController@destroyImagen');
+
+Route::get('galeria-video-show','GaleriaController@showVideo');
 Route::get('galeria-video-edit-{id}','GaleriaController@editVideo');
 Route::get('galeria-video-create','GaleriaController@createVideo');
 Route::post('galeria-video-store','GaleriaController@storeVideo');

@@ -73,8 +73,14 @@ class PaginasController extends BaseController
     }
 
     public function GaleriaVideos(){
-          $videos = web_video::all();
-         return view ('lineage.galeria',compact('videos'));
+          $AllVideos = web_video::where('visible','=',1)->get();
+         return view ('lineage.galeria-videos',compact('AllVideos'));
+
+    }
+
+    public function GaleriaImagenes(){
+          $AllImagenes = web_imagene::where('visible','=',1)->get();
+         return view ('lineage.galeria-imagenes',compact('AllImagenes'));
 
     }
 

@@ -52,6 +52,7 @@
   <thead>
       <tr>
     <th>Id</th>
+    <th>Imagen</th>
     <th>titulo</th>
     <th class="col-md-4">Operaciones</th> 
       </tr>
@@ -59,7 +60,9 @@
     @foreach($posts as $post)
     <tbody>
   <td>{{ $post -> id}}</td>
+  <td><img src="{{$post->portada}}" height="100" width="100" alt=""></td>
   <td>{{ $post -> titulo}}</td>
+
   
   
 <td>
