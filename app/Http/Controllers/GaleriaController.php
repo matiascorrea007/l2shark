@@ -75,6 +75,7 @@ class GaleriaController extends Controller
           
            'url'=>'storage/'.$directory.'/'. $filename,
            'imagen'=>$filename,
+           'visible'=>$request['optionsRadios'],
             ]);
 
         }elseif(empty($request->hasFile('imagen'))){
@@ -84,7 +85,7 @@ class GaleriaController extends Controller
 
 
 
-        Alert::success('Success', 'Imagen creada');
+        Alert::success('Success', 'Imagen Enviada');
          return Redirect::to('/galeria');
     
     }
@@ -191,9 +192,10 @@ class GaleriaController extends Controller
          $video->titulo = $info->title;
          $video->link = $url;
          $video->imagen = $info->image;
+         $video->visible = $request['optionsRadios'];
          $video->save();
 
-         Alert::success('Mensaje existoso', 'Video Creado');
+         Alert::success('Mensaje existoso', 'Video Enviado');
        return Redirect::to('/galeria');
     }
 

@@ -451,51 +451,46 @@ class ComboController extends Controller
     
     public function ComboUpdateItem(Request $request,$idcombo)
     {   
-        
+      
+        //traigo el combo
         $combo = web_producto_combo::find($idcombo);
-
+        //traigo los productos del combo
         $productos = web_producto::where('web_combo_id','=',$idcombo)->get();
-
-
+        //categoria a la cual petrtenece el combo
          $categoria = web_categoria::find($combo->web_categoria_id);
         //carpeta
         $nombreCombo = $combo->nombre;
         $directory = "combos/".$categoria->nombre."/".$nombreCombo;
 
 
-
         foreach ($productos as  $producto) {
         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
-        if(!empty($request->hasFile('imagen'.$producto->id))){
+        if(!empty($request->hasFile('imagen'.$producto->id))  ){
 
             //eliminamos la imagen anterior    
             if($producto->imagen != "sin-foto.jpg"){
             $directoryDelete = $categoria->nombre."/".$nombreCombo."/".$producto->imagen;
             \Storage::disk('combos')->delete($directoryDelete);
             }
-           
-          $imagen = Input::file('imagen'.$producto->id);
-            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+
+            $imagen = Input::file('imagen'.$producto->id);
+            $filename=time() . '.' . $imagen->getClientOriginalName();
+
             //esto es para q funcione en local 
             //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
             image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
-        }
 
-
-        if(!empty($request->hasFile('imagen'.$producto->id))){
             $ruta = 'storage/'.$directory.'/'. $filename;
-        }
-
-
-        if (!empty($request['imagen'.$producto->id])) {
             $producto->imagen = $filename;
             $producto->ruta = $ruta;
+            $producto->save();
         }
-               
+
         if ($request['precio'.$producto->id] != 0) {
             $producto->precio = $request['precio'.$producto->id];
+            $producto->save();
         }
-                $producto->save();
+  
         }
        
      
