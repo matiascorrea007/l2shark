@@ -474,6 +474,7 @@ Route::get('admin-paginas','AdminController@Paginas');
 /*Servicios*/
 Route::get('servicios','ServiciosController@index');
 Route::get('servicios/{charnombre}','ServiciosController@ObtenerCharacter');
+Route::put('servicios-coin-update','ServiciosController@CoinServicioUpdate');
 
 Route::post('nicknamecolor-edit','ServiciosController@NickNameColor');
 Route::post('removekarma-edit','ServiciosController@RemoveKarma');

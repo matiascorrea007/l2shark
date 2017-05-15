@@ -70,7 +70,7 @@
            <div class="form-group col-xs-12 col-sm-12 col-md-6">
             <div class="input-group input-icon right ">
             <span class="input-group-addon"><i class="fa fa-user font-blue"> Personaje Seleccionado : </i></span>
-                 <input type="text" disabled="" name="serie_comprobante" value="{{old('serie_comprobante')}}" class="form-control char" placeholder="Serie comprobante...">
+                 <input type="text" disabled="" class="form-control char" placeholder="">
             </div>
           </div>
 
@@ -92,7 +92,7 @@
 
 <i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Nickname color</span>
-  <a href="" class="pull-right">asdas</a>
+  <span class="label color-gris " > COSTO : <b>{{$coin->nicknamecolor}} Online Coin's</b> </span>
     <div><br>
     </div>
 
@@ -144,7 +144,7 @@
 
 <i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Title color</span>
-
+<span class="label color-gris " > COSTO : <b>{{$coin->titlecolor}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -185,6 +185,7 @@
             <div class="caption">
 <i class="ra ra-monster-skull font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Remove Karma</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->removekarma}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -218,6 +219,7 @@
             <div class="caption">
 <i class="ra ra-bone-bite font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: PK Counter Reset</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->pkreset}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -250,6 +252,7 @@
             <div class="caption">
 <i class="ra ra-muscle-fat font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Character Nickname</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->nickname}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -283,6 +286,7 @@
             <div class="caption">
 <i class="ra ra-dervish-swords font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Clan Name</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->clanname}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -315,6 +319,7 @@
             <div class="caption">
 <i class="fa fa-venus-mars font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Sex/Gender Change</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->sex}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -348,6 +353,7 @@
             <div class="caption">
 <i class="ra ra-player-teleport font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Unstuck</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->unstuck}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -378,6 +384,7 @@
             <div class="caption">
 <i class="ra ra-angel-wings font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Noblesse</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->noblesse}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -410,6 +417,7 @@
             <div class="caption">
 <i class="ra ra-wyvern font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Hero</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->hero}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->
@@ -444,6 +452,7 @@
             <div class="caption">
 <i class="ra ra-helmet font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Set Vip</span>
+<span class="label color-gris " > COSTO : <b>{{$coin->vip}} Online Coin's</b> </span>
     <div><br>
     </div>
      </div><!--end caption-->

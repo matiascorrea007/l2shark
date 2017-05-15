@@ -280,8 +280,13 @@ class ServiciosController extends Controller
 
         public function CoinServicioUpdate(Request $request)
     {
-        \Session::forget('items');
-        flash('Items del Combo Eliminados.')->success();
+       
+        $coin = web_coin_servicio::first();
+        $coin->fill($request->all());
+        $coin->save();
+
+
+        flash('Coins modificados con exito.')->success();
         return Redirect::back();
     }
 

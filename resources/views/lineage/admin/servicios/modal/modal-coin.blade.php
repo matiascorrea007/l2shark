@@ -7,7 +7,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('nicknamecolor',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -36,7 +36,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('titlecolor',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -65,7 +65,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('removekarma',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -96,7 +96,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('pkreset',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -125,7 +125,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('nickname',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -155,7 +155,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('clanname',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -183,7 +183,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('sex',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -213,7 +213,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('unstuck',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -233,7 +233,7 @@
 
 
  <!-------------------   NOBLESs    -------------------------->
-<div class="modal bs-example-modal-lg fade" id="nobless" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
+<div class="modal bs-example-modal-lg fade" id="noblesse" tabindex="-1" role="dialog" aria-labelledby="confirmDelete">
  <div class="modal-dialog modal-lg" role="document">
      <div class="modal-content">
          <div class="modal-header">
@@ -241,10 +241,10 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
-{!!Form::text('nobless',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
+{!!Form::text('noblesse',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
 </div>
 
 <div class="modal-footer">
@@ -268,7 +268,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('hero',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}
@@ -298,7 +298,7 @@
               <h4 class="modal-title">Editar Coin </h4>
          </div>
 
-{!!Form::model($coin,['url'=>['post-store'],'method'=>'POST' , 'files'=>True])!!}
+{!!Form::model($coin,['url'=>['servicios-coin-update'],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">  
 {!!Form::text('vip',null,['class'=>'form-control', 'placeholder'=>'ingrese la cantidad de coins'])!!}

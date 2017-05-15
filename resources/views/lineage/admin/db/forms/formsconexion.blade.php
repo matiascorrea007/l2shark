@@ -61,7 +61,7 @@
 {!!Form::submit('Guardar',['class'=>'btn btn-primary pull-right'])!!}
 
 <a class="btn btn-success  pull-right" href="{{ url('db-check') }}" >
-              <i class="fa  fa-plug fa-lg"></i>Probar Conexion</a>
+              Probar Conexion <i class="fa  fa-plug fa-lg"></i></a>
 </div>
 
 
