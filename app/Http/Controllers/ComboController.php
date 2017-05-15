@@ -37,7 +37,7 @@ class ComboController extends Controller
 
 
     //si no se utilizaria ajax , esta funcio realiza la busqueda y la pagina
-    public function SearchItem(Request $request)
+   /* public function SearchItem(Request $request)
     {
         //buscamos por nombre
         $nombre = $request->input('nombre');
@@ -172,7 +172,7 @@ class ComboController extends Controller
 
         $cart = \Session::get('items');
          return view ('lineage.admin.shop.crear-combo',compact('alls','cart'));
-    }
+    }*/
 
 
 
@@ -183,11 +183,11 @@ class ComboController extends Controller
          //si es una peticion ajax
         if ($request->ajax()) {
             
-             $etcitem = DB::table('etcitem')->where('item_id','=',$id)->get();
-             $armors = DB::table('armor')->where('item_id','=',$id)->get();
-             $weapons = DB::table('weapon')->where('item_id','=',$id)->get();
-             $cw = DB::table('custom_weapon')->where('item_id','=',$id)->get();
-             $ca = DB::table('custom_armor')->where('item_id','=',$id)->get();
+             $etcitem = DB::connection('externa')->table('etcitem')->where('item_id','=',$id)->get();
+             $armors = DB::connection('externa')->table('armor')->where('item_id','=',$id)->get();
+             $weapons = DB::connection('externa')->table('weapon')->where('item_id','=',$id)->get();
+             $cw = DB::connection('externa')->table('custom_weapon')->where('item_id','=',$id)->get();
+             $ca = DB::connection('externa')->table('custom_armor')->where('item_id','=',$id)->get();
              //unimos los array
              $alls = array_merge($etcitem,$armors,$weapons,$cw,$ca);
 
@@ -223,11 +223,11 @@ class ComboController extends Controller
         if ($request->ajax()) {
                 
                 //por id
-             $etcitem = DB::table('etcitem')->where('item_id','LIKE',$id)->get();
-             $armors = DB::table('armor')->where('item_id','LIKE',$id)->get();
-             $weapons = DB::table('weapon')->where('item_id','LIKE',$id)->get();
-             $cw = DB::table('custom_weapon')->where('item_id','LIKE',$id)->get();
-             $ca = DB::table('custom_armor')->where('item_id','LIKE',$id)->get();
+             $etcitem = DB::connection('externa')->table('etcitem')->where('item_id','LIKE',$id)->get();
+             $armors = DB::connection('externa')->table('armor')->where('item_id','LIKE',$id)->get();
+             $weapons = DB::connection('externa')->table('weapon')->where('item_id','LIKE',$id)->get();
+             $cw = DB::connection('externa')->table('custom_weapon')->where('item_id','LIKE',$id)->get();
+             $ca = DB::connection('externa')->table('custom_armor')->where('item_id','LIKE',$id)->get();
             
 
              //unimos los array
@@ -247,11 +247,11 @@ class ComboController extends Controller
         if ($request->ajax()) {
                 
              //por nombre
-             $etcitem = DB::table('etcitem')->where('name','LIKE',$nombre.'%')->get();
-             $armors = DB::table('armor')->where('item_id','>',8000)->where('name','LIKE',$nombre.'%')->get();
-             $weapons = DB::table('weapon')->where('item_id','>',9000)->where('name','LIKE',$nombre.'%')->get();
-             $cw = DB::table('custom_weapon')->where('name','LIKE',$nombre.'%')->get();
-             $ca = DB::table('custom_armor')->where('name','LIKE',$nombre.'%')->get();
+             $etcitem = DB::connection('externa')->table('etcitem')->where('name','LIKE',$nombre.'%')->get();
+             $armors = DB::connection('externa')->table('armor')->where('item_id','>',8000)->where('name','LIKE',$nombre.'%')->get();
+             $weapons = DB::connection('externa')->table('weapon')->where('item_id','>',9000)->where('name','LIKE',$nombre.'%')->get();
+             $cw = DB::connection('externa')->table('custom_weapon')->where('name','LIKE',$nombre.'%')->get();
+             $ca = DB::connection('externa')->table('custom_armor')->where('name','LIKE',$nombre.'%')->get();
             
 
              //unimos los array
@@ -288,8 +288,20 @@ class ComboController extends Controller
         //\Session::forget('items');
         //$cart = \Session::get('items');
         //dd($cart);
+        
+    
+    try
+        {
+            //comprueba la conexion
+            DB::connection('externa')->getPdo();
+        }
+            //en caso de una exepcion
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion a la BD.')->error();
+        }
+
         $categorias = web_categoria::all();
-    flash('Seleccione una Categoria para la Busqueda.')->success();
     return view ('lineage.admin.shop.crear-combo',compact('categorias'));
     }
 
@@ -530,6 +542,7 @@ class ComboController extends Controller
          Alert::success('Success', 'Combo Eliminado Correctamente ');
          return Redirect::to('/combo');
     }
+
 
 
 

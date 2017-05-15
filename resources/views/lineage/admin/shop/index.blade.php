@@ -3,7 +3,7 @@
 @include('alerts.errors')
 @include('alerts.request')
 @include('alerts.success')
-
+@include('flash::message')
 
                     <h1 class="page-title"> <br>
                         <small></small>

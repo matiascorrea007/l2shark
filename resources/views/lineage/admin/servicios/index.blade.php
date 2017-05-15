@@ -3,7 +3,7 @@
 @include('alerts.errors')
 @include('alerts.request')
 @include('alerts.success')
-
+@include('flash::message')
 
 <div class="row">
     <div class="col-md-12">
@@ -22,6 +22,7 @@
     <div class="row">
           <form class=" " role="form">
     <div class="form-horizontal  col-md-2"></div>
+    @if(!empty($characters))
   @foreach($characters as $character)
        <div class="form-horizontal col-xs-3 col-sm-2 col-md-1">
         @if($character->race == 0 and $character->sex == 0 and $character->classid == 0)
@@ -58,6 +59,7 @@
       <input type="checkbox" id="right-item" class="hidden">
       </div>
   @endforeach
+  @endif
           </form>
     </div>
 
@@ -90,14 +92,21 @@
 
 <i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Nickname color</span>
-
+  <a href="" class="pull-right">asdas</a>
     <div><br>
     </div>
 
 
      </div><!--end caption-->
 
-
+    @if(Auth::user()->admin == 1)
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+              <a class="btn btn-success" data-toggle="modal" data-target="#nicknamecolor" >
+              <i class="fa  fa-edit fa-lg"></i></a>
+       </div>
+   </div>
+   @endif
 
     <div class="actions">
        <div class="btn-group btn-group-devided" >
@@ -131,12 +140,24 @@
         <div class="portlet-title">
             <div class="caption">
 
+
+
 <i class="fa fa-paint-brush font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Servicio: Title color</span>
 
     <div><br>
     </div>
      </div><!--end caption-->
+
+     @if(Auth::user()->admin == 1)
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+              <a class="btn btn-success" data-toggle="modal" data-target="#titlecolor" >
+              <i class="fa  fa-edit fa-lg"></i></a>
+       </div>
+   </div>
+   @endif
+
     <div class="actions">
        <div class="btn-group btn-group-devided" >
            @if(empty(DB::table('web_facebooks')->get()))
@@ -167,11 +188,16 @@
     <div><br>
     </div>
      </div><!--end caption-->
+
+     @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success"data-toggle="modal" data-target="#removekarma" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
+
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['removekarma-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -195,11 +221,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+@if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#pkreset" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['pkcounter-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -224,13 +253,16 @@
     <div><br>
     </div>
      </div><!--end caption-->
+@if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#nickname" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
-    {!!Form::open(['url'=>['nickname-edit'],'method'=>'POST' , 'files'=>True])!!}
+    {!!Form::open(['url'=>['nickname-edit'],'method'=>'PUT' , 'files'=>True])!!}
 
     @include('lineage.admin.servicios.forms.nickname')
     <br>
@@ -254,11 +286,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+@if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#clanname" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['clanname-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -283,11 +318,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+    @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#sex" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['sex-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -313,11 +351,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+    @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#unstuck" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['unstuck-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -340,11 +381,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+    @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#noblesse" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['noblesse-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -369,11 +413,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+    @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#hero" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['hero-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -400,11 +447,14 @@
     <div><br>
     </div>
      </div><!--end caption-->
+    @if(Auth::user()->admin == 1)
     <div class="actions">
        <div class="btn-group btn-group-devided" >
-           <!--boton derecha superior-->
+              <a class="btn btn-success" data-toggle="modal" data-target="#vip" >
+              <i class="fa  fa-edit fa-lg"></i></a>
        </div>
    </div>
+   @endif
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['vip-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -420,5 +470,5 @@
     </div><!-- END ROW-->
 
 
-
+@include('lineage.admin.servicios.modal.modal-coin')
 @endsection

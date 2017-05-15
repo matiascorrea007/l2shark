@@ -478,7 +478,7 @@ Route::get('servicios/{charnombre}','ServiciosController@ObtenerCharacter');
 Route::post('nicknamecolor-edit','ServiciosController@NickNameColor');
 Route::post('removekarma-edit','ServiciosController@RemoveKarma');
 Route::post('pkcounter-edit','ServiciosController@PkCounter');
-Route::post('nickname-edit','ServiciosController@NickName');
+Route::put('nickname-edit','ServiciosController@NickName');
 Route::post('clanname-edit','ServiciosController@ClanName');
 Route::post('sex-edit','ServiciosController@Sex');
 Route::post('unstuck-edit','ServiciosController@Unstuck');

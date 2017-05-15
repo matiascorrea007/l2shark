@@ -35,20 +35,24 @@ class DbController extends Controller
 
     public function ProbarConexion()
     {  
-  
-         if(DB::connection('externa')->getDatabaseName() == "")
-        {
-            $db = web_conexion::first();
-            flash('No se pudo realizar la conexion con la Base de Datos')->error();
-            return view ('lineage.admin.db.index',compact('db'));
-        }else{
-            $db = web_conexion::first();
-            flash('La Conexion a la Base de Datos se Realizo Correctamente')->success();
-            return view ('lineage.admin.db.index',compact('db'));
-        }
-   
 
-        
+       try
+        {
+            //comprueba la conexion
+            DB::connection('externa')->getPdo();
+            flash('la conexion a la BD se realizo Correctamente.')->success();
+        }
+            //en caso de una exepcion
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+        $db = web_conexion::first();
+        return view ('lineage.admin.db.index',compact('db'));
+
+
     }
 
     /**

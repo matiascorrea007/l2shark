@@ -3,7 +3,7 @@
 @include('alerts.errors')
 @include('alerts.request')
 @include('alerts.success')
-
+@include('flash::message')
 
 <div class="row">
     <div class="col-md-6">
@@ -161,6 +161,7 @@
     <div class="row">
           <form class=" " role="form">
     <div class="form-horizontal  col-md-2"></div>
+    @if(!empty($characters))
   @foreach($characters as $character)
        <div class="form-horizontal col-xs-3 col-sm-2 col-md-1">
         @if($character->race == 0 and $character->sex == 0 and $character->classid == 0)
@@ -197,6 +198,7 @@
       <input type="checkbox" id="right-item" class="hidden">
       </div>
   @endforeach
+  @endif
           </form>
     </div>
 

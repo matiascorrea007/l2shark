@@ -211,11 +211,11 @@ class ShopController extends Controller
          //si es una peticion ajax
         if ($request->ajax()) {
             
-             $etcitem = DB::table('etcitem')->where('item_id','=',$id)->get();
-             $armors = DB::table('armor')->where('item_id','=',$id)->get();
-             $weapons = DB::table('weapon')->where('item_id','=',$id)->get();
-             $cw = DB::table('custom_weapon')->where('item_id','=',$id)->get();
-             $ca = DB::table('custom_armor')->where('item_id','=',$id)->get();
+             $etcitem = DB::connection('externa')->table('etcitem')->where('item_id','=',$id)->get();
+             $armors = DB::connection('externa')->table('armor')->where('item_id','=',$id)->get();
+             $weapons = DB::connection('externa')->table('weapon')->where('item_id','=',$id)->get();
+             $cw = DB::connection('externa')->table('custom_weapon')->where('item_id','=',$id)->get();
+             $ca = DB::connection('externa')->table('custom_armor')->where('item_id','=',$id)->get();
              //unimos los array
              $alls = array_merge($etcitem,$armors,$weapons,$cw,$ca);
 
@@ -267,65 +267,6 @@ class ShopController extends Controller
             return response($cart);
         }
 }
-
-     //agregar item
-    public function add($id)
-    {
-        $itemadd  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        $itemadd->quantity = 1;
-        $cart[$itemadd->descripcion] = $itemadd;
-        \Session::put('cartweb', $cart);
-       
-        return Redirect::back();
-
-     }
-
-     // Delete item y client
-    public function delete($id)
-    {
-        $item  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        unset($cart[$item->descripcion]);
-        \Session::put('cartweb', $cart);
-        return Redirect::back();
-    }
-
-
-     // Update item
-    public function update($id, $quantity)
-    {
-        
-        $item  = producto::find($id);
-        $cart = \Session::get('cartweb');
-        $cart[$item->descripcion]->quantity = $quantity;
-        \Session::put('cartweb', $cart);
-
-        return Redirect::to('web-shopping-cart');
-       
-    }
-
-
-    //limpiar carrito y cliente
-     public function trash()
-    {
-        \Session::forget('cartweb');
-        \Session::forget('cliente');
-        
-        return Redirect::back();
-    }
-
-
-    //total del carrito
-    private function total()
-    {
-        $cart = \Session::get('cartweb');
-        $total = 0;
-        foreach($cart as $item){
-            $total += $item->precioventa * $item->quantity;
-        }
-        return $total;
-    }
 
 
 

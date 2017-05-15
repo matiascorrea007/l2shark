@@ -9,6 +9,7 @@ use Soft\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Soft\Cliente;
+use DB;
 
 
 class AuthController extends Controller
@@ -73,12 +74,14 @@ class AuthController extends Controller
             're_password' =>$data['password_confirmation'],
         ]);
 
-          $Account = Account::create([
-            'login' => $data['login'],
+         DB::connection('externa')->table('accounts')->insert([
+            'login' => $data['login'], 
             'email' => $data['email'],
-            'password' => base64_encode(pack('H*', sha1($data['password']))),
-            're_password' => $data['password_confirmation'],
-        ]);
+            'password' => base64_encode(pack('H*', sha1($data['password'])))
+            ]
+        );
+
+         
 
 
         return $user;

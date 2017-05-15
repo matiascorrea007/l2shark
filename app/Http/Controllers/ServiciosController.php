@@ -17,6 +17,7 @@ use Image;
 use View;
 use Auth;
 use Soft\web_facebook;
+use Soft\web_coin_servicio;
 use Soft\Models\character;
 
 class ServiciosController extends Controller
@@ -27,10 +28,23 @@ class ServiciosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $characters = DB::table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
+    {   
+
+        $coin = web_coin_servicio::first();
+
+        try
+        {
+             $characters = DB::connection('externa')->table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
+        }
+        catch(\PDOException $e)
+        {
+            $characters = "";
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
         
-        return view ('lineage.admin.servicios.index',compact('characters'));
+        
+        return view ('lineage.admin.servicios.index',compact('characters','coin'));
     }
 
 
@@ -39,7 +53,7 @@ class ServiciosController extends Controller
 
         //si es una peticion ajax
         if ($request->ajax()) {
-            $nombre = character::where('char_name','=',$charnombre)->first();
+            $nombre = DB::connection('externa')->table('characters')->where('char_name','=',$charnombre)->first();
 
             return response()->json([
                  $nombre
@@ -61,12 +75,12 @@ class ServiciosController extends Controller
         }
 
 
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['name_color' => $request['nicknamecolor']]);
+            Alert::success('Mensaje existoso', 'Modificado Con Exito');
+    
         
-        $character=character::where('char_name','=',$char_nombre)->first();
-        $character->name_color = $request['nicknamecolor'];
-        $character->save();
-
-        Alert::success('Mensaje existoso', 'Modificado Con Exito');
         return Redirect::to('/servicios');
     }
 
@@ -110,16 +124,19 @@ class ServiciosController extends Controller
 
         //esto es para ver si coinciden los nombres
         if ($request['nickname'] != $request['re-nickname']) {
-          session()->flash('message-error','los campor del Nombre Y Re-Nombre no coinciden!!');
+        flash('message-error','los campor del Nombre Y Re-Nombre no coinciden!!')->error();
         return Redirect::to('/servicios');
         }
 
         //para comprobar que el nombe no exista en la base de datos
-        $nombre = character::where('char_name','=',$request['nickname'])->first();
+        $nombre = DB::connection('externa')->table('characters')->where('char_name','=',$request['nickname'])->first();
         if (empty($nombre)) {
-            $character=character::where('char_name','=',$char_nombre)->first();
-            $character->char_name = $request['nickname'];
-            $character->save();
+            
+            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['char_name' => $request['nickname']]);;
+           
+            
 
         Alert::success('Mensaje existoso', 'Nombre Modificado');
         return Redirect::to('/servicios');
@@ -169,22 +186,18 @@ class ServiciosController extends Controller
 
         
         if ($request['sex'] == 'hombre') {
-            $character=character::where('char_name','=',$char_nombre)->first();
-            $character->sex = 0;
-            $character->save();
-
-        Alert::success('Mensaje existoso', 'Sexo Modificado');
-        return Redirect::to('/servicios');
+             $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['sex' => 0]);
 
         }else{
-
-            $character=character::where('char_name','=',$char_nombre)->first();
-            $character->sex = 1;
-            $character->save();
+            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['sex' => 1]);
+        }
 
         Alert::success('Mensaje existoso', 'Sexo Modificado');
         return Redirect::to('/servicios');
-        }
     }
 
 
@@ -223,15 +236,14 @@ class ServiciosController extends Controller
         //si ya es nobles que avise con un mensaje
         $char = character::where('char_name','=',$char_nombre)->first();
         if ($char->nobless == 1) {
-            session()->flash('message-error','El Personaje Seleccionado ya es Nobless!!');
+            flash('El Personaje Seleccionado ya es Nobless!!')->error();
              return Redirect::to('/servicios');
         }else{
+            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['nobless' => 1]);
 
-            $character=character::where('char_name','=',$char_nombre)->first();
-            $character->nobless = 1;
-            $character->save();
-
-        Alert::success('Mensaje existoso', 'Su personaje ya es Nobless');
+        Alert::success('Mensaje existoso', 'Su personaje ahora es Nobless');
         return Redirect::to('/servicios');
         }
     }
@@ -261,6 +273,16 @@ class ServiciosController extends Controller
     {
 
         return view ('lineage.admin.servicios.index');
+    }
+
+
+
+
+        public function CoinServicioUpdate(Request $request)
+    {
+        \Session::forget('items');
+        flash('Items del Combo Eliminados.')->success();
+        return Redirect::back();
     }
 
 
