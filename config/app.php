@@ -161,7 +161,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         \Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Kim\Activity\ActivityServiceProvider::class,
@@ -175,6 +174,7 @@ return [
         Milon\Barcode\BarcodeServiceProvider::class,
         Iber\Generator\ModelGeneratorProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
        
         
 
@@ -227,7 +227,6 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Cart'=> \Gloudemans\Shoppingcart\Facades\Cart::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Activity' => Kim\Activity\ActivityFacade::class,
@@ -238,6 +237,7 @@ return [
         'Input' => Illuminate\Support\Facades\Input::class,
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+        'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
         
         
 

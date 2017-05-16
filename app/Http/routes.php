@@ -497,10 +497,12 @@ Route::put('db-config-update/{id}','DbController@update');
 
 
 Route::get('donaciones','DonacionesController@index');
-Route::get('shop-create','DonacionesController@create');
-Route::post('shop-store','DonacionesController@store');
-Route::get('shop-update/{id}','DonacionesController@update');
-Route::put('shop-destroy/{id}','DonacionesController@destroy');
+Route::post('donaciones-create','DonacionesController@create');
+Route::post('donaciones-store','DonacionesController@store');
+Route::get('donaciones-update/{id}','DonacionesController@update');
+Route::put('donaciones-destroy/{id}','DonacionesController@destroy');
+
+Route::get('paypal-store','PaypalController@store');
 
 Route::get('shop','ShopController@index');
 Route::get('shop-create','ShopController@create');

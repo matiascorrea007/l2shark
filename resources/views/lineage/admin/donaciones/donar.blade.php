@@ -42,7 +42,7 @@ Usted puede comprar muchos artículos en el juego y disfrutar de unos servicios 
 <p>
 Cada Online Coin cuesta un cierto valor, se describe a continuación, con bonificación automática del 10% para pedidos superiores a 100 Online Coin's, 15% para compras superiores a 400 Online Coin's y 20% para compras superiores a 1000 Online Coin's. Por ejemplo: Usted paga 100 y recibe 110; paga 450 y recibe 517; paga 1200 y recibe 1440.</p>
 
-     {!!Form::open(['url'=>['db-config-store'],'method'=>'POST' , 'files'=>True , 'onsubmit'=>'return checkCheckBox(this)'])!!}
+     
           
             <div class="rulesbox" style="width:auto !important;">
         <h1>Condiciones para comprar Coin's</h1>
@@ -57,20 +57,13 @@ Controversias en sites de pago, los intentos de cargo o actitudes fraudulentas n
 Si surgen problemas en la entrega automática, todo lo que tienes que hacer es ponerse en contacto con nosotros. No contacte antes de un período de 24 horas después de la confirmación de su pago.<br>
     </div>
 
+{!!Form::open(['url'=>['donaciones-create'],'method'=>'POST' , 'files'=>True , 'onsubmit'=>'return checkCheckBox(this)'])!!}
 
     <label><input type="checkbox" name="checkbox" id="acceptrules" value="0"> <b>He leído y acepto las condiciones de compra de coin's expresado anteriormente</b></label>
         
     <label for="">Introduzca los datos requeridos a continuación y haga clic en "Hacer Pedido". Un nuevo pedido se llevará a cabo y se abrirá una ventana con la factura para el pago. Lo mismo pedido se puede acceder más tarde en la página Mis Pedidos.</label>    
 
 
-            
-        
-
- 
-
-
-
-        
 
 
 <div class="table-scrollable">
@@ -82,7 +75,22 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
   </thead>
   <tbody>
   <!-- -->
-    <td>{{ Form::select('type',config('options.donaciones'),'',['class'=>'form-control','name'=>'qtdmetodo_pgtoCoins','id'=>'metodo_pgto']) }}
+    <td>
+    <select style="min-width: 160px;" name="metodo_pgto" id="metodo_pgto">
+        <option data-symbol="€" value="G2APay">G2APay</option>
+        <option data-symbol="R$" value="PagSeguro">PagSeguro</option>
+        <option data-symbol="$" value="PayPal_USD">PayPal (USD)</option>
+        <option data-symbol="R$" value="PayPal_BRL">PayPal (BRL)</option>
+        <option data-symbol="€" value="PayPal_EUR">PayPal (EUR)</option>
+        <option data-symbol="R$" value="MercadoPago">MercadoPago</option>
+        <option data-symbol="$" value="PayGol_USD">PayGol (USD)</option>
+        <option data-symbol="R$" value="PayGol_BRL">PayGol (BRL)</option>
+        <option data-symbol="€" value="PayGol_EUR">PayGol (EUR)</option>
+        <option data-symbol="$" value="WebMoney">WebMoney</option>
+        <option data-symbol="$" value="Payza">Payza</option>
+        <option data-symbol="$" value="Skrill">Skrill</option>
+        <option data-symbol="R$" value="Banking">Transacción bancaria</option>                  
+        </select>
     </td>
     
     <td>{{ Form::select('type',config('options.coins'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
