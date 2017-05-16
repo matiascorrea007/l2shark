@@ -15,7 +15,7 @@
         {!!Html::script('layout/js/jquery.slimscroll.js')!!}
         {!!Html::script('layout/js/jquery.blockui.min.js')!!}
         {!!Html::script('layout/js/bootstrap-switch.js')!!}
-        {!!Html::script('layout/js/moment.min.js')!!}
+        {!!Html::script('layout/js/moment.js')!!}
         {!!Html::script('layout/js/daterangepicker.js')!!}
         {!!Html::script('layout/js/morris.js')!!}
         {!!Html::script('layout/js/raphael-min.js')!!}

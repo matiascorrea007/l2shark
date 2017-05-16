@@ -1,6 +1,9 @@
 @extends('layouts.app')
-@include('alerts.errors')
 @section('content')
+@include('alerts.request')
+@include('alerts.success')
+@include('alerts.errors')
+@include('flash::message')
 
 <section class="content">
       <div class="row">

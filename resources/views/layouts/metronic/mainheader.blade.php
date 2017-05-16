@@ -16,9 +16,7 @@
                                 <a href="javascript:;" class="menu-toggler"><i class="fa fa-navicon"></i></a>
                                 <!-- END RESPONSIVE MENU TOGGLER -->
                                 <!-- BEGIN TOP NAVIGATION MENU -->
-                                <div class="top-menu">
-                                   
-                                </div>
+                                
                                 <!-- END TOP NAVIGATION MENU -->
                             </div>
                         </div>
@@ -29,16 +27,34 @@
 
                             <ul class="nav navbar-nav pull-right">
                                         <!-- BEGIN USER LOGIN DROPDOWN -->
+                                       <li class="dropdown dropdown-user dropdown-dark">
+                                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                        <i class="fa fa-btc"></i> Saldo :
+                                                        <span class="badge badge-success">25 Coin</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                                     <li>
+                                                         <a href="{!! URL::to('logout') !!}">
+                                                        <i class="fa fa-credit-card  "></i> Agregar Saldo</a>
+                                                     </li>
+                                                     <li>
+                                                         <a href="{!! URL::to('logout') !!}">
+                                                        <i class="fa fa-exchange "></i> Transferir Saldo </a>
+                                                     </li>
+                                                    </ul>
+                                                </li>
+
+
+
                                         <li class="dropdown dropdown-user dropdown-dark">
                                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                <img alt="" class="img-circle" src="../skin/globales/img/avatar/human_female_fighter.jpg">
+                                                <img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30">
                                                 <span class="username username-hide-mobile">Nick</span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-default">
-                                                
                                                 <li>
-                                                    <a href="{!! URL::to('logout') !!}">
-                                                        <i class="fa fa-sign-out "></i> Log Out </a>
+                                                    <a href="{!! URL::to('logout') !!}" >
+                                                        <i class="fa fa-sign-out color-light"></i> Log Out </a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -46,16 +62,7 @@
 
 
                                 <!-- BEGIN HEADER SEARCH BOX -->
-                                <form class="search-form" action="page_general_search.html" method="GET">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search" name="query">
-                                        <span class="input-group-btn">
-                                            <a href="javascript:;" class="btn submit">
-                                                <i class="fa fa-search"></i>
-                                            </a>
-                                        </span>
-                                    </div>
-                                </form>
+                                
 
                                  
                                 <!-- END HEADER SEARCH BOX -->
@@ -77,7 +84,7 @@
         
     <li class="menu-dropdown classic-menu-dropdown ">
     <a href="javascript:;">
-    <img height="30"  width="30" src="storage/icono admin/config.svg"> Configuracion
+    <img height="30"  width="30" src="storage/icono admin/seo.svg"> Configuracion
     <span class="arrow"></span></a>
         <ul class="dropdown-menu pull-left">
             <li class=" ">
@@ -94,8 +101,30 @@
     
 
     <li class="menu-dropdown classic-menu-dropdown ">
+    <a href="javascript:;">
+    <img height="30"  width="30" src="storage/icono admin/coins.svg"> Donaciones
+    <span class="arrow"></span></a>
+        <ul class="dropdown-menu pull-left">
+            <li class=" ">
+                <a href="{!! URL::to('donaciones/') !!}" class="nav-link"><i class="fa fa-plus-circle"></i> Adquirir Coins</a>
+            </li>
+            <li class=" ">
+                <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Hechas </a>
+            </li>
+            <li class=" ">
+                <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferir Coins</a>
+            </li>
+            <li class=" ">
+                <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
+            </li>
+        </ul>
+     </li>
+
+
+
+    <li class="menu-dropdown classic-menu-dropdown ">
             <a href="{!! URL::to('servicios/') !!}">
-                <img height="30"  width="30" src="storage/icono admin/home.svg"> Servicios
+                <img height="30"  width="30" src="storage/icono admin/swords.svg"> Servicios
             </a>      
     </li>
 
@@ -121,7 +150,7 @@
     
     <li class="menu-dropdown classic-menu-dropdown ">
     <a href="javascript:;">
-    <img height="30"  width="30" src="storage/icono admin/config.svg"> Galeria
+    <img height="30"  width="30" src="storage/icono admin/galeria.svg"> Galeria
     <span class="arrow"></span></a>
         <ul class="dropdown-menu pull-left">
             <li class=" ">
@@ -135,7 +164,7 @@
             </li>
         </ul>
      </li>
-
+    
 
         </ul>
     </div>

@@ -1,5 +1,9 @@
 @extends('layouts.metronic')
 @section('content')
+@include('alerts.request')
+@include('alerts.success')
+@include('alerts.errors')
+@include('flash::message')
 <!-- muestra mensaje que se a modificado o creado exitosamente-->
 <!--include('alerts.success')-->
 
@@ -12,8 +16,7 @@
 
 <i class="fa fa-wordpress  font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Seccion de Post</span>
-@include('alerts.request')
-@include('alerts.success')
+
 
     <div><br>
     </div>

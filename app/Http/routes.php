@@ -496,6 +496,12 @@ Route::post('db-config-store','DbController@store');
 Route::put('db-config-update/{id}','DbController@update');
 
 
+Route::get('donaciones','DonacionesController@index');
+Route::get('shop-create','DonacionesController@create');
+Route::post('shop-store','DonacionesController@store');
+Route::get('shop-update/{id}','DonacionesController@update');
+Route::put('shop-destroy/{id}','DonacionesController@destroy');
+
 Route::get('shop','ShopController@index');
 Route::get('shop-create','ShopController@create');
 Route::post('shop-store','ShopController@store');

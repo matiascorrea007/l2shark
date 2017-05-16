@@ -252,3 +252,189 @@ $(data).each(function(key,value){
 
 }//end function searchItems()
 
+
+
+
+
+
+
+
+//----------------------------aceptar las condicones para continuar-----------------------//
+function checkCheckBox(f){
+  var l12004 = $('#l12004').val();
+if (f.checkbox.checked == false )
+{
+atualAlert(l12004);
+return false;
+}else
+return true;
+}
+
+
+$('body').on('click', '#alerta .ok > div', function(){
+    var url = $(this).attr('data-url');
+    if(url.length > 0 && url != undefined && url != 'undefined') {
+      document.location.href=''+url+'';
+    } else {
+      closeModal();
+    }
+  });
+
+function atualAlert(texto, act, url) {
+  $("#modal, #backblack, #alerta").remove();
+  $('*:focus').blur();
+  if(act == 'OK') { var aaClass = 'ok sucesso'; } else { var aaClass = 'ok'; }
+  $('body').append("<div id='backblack'></div><div id='alerta'>"+texto+"<div class='"+aaClass+"'><div data-url='"+url+"'>Ok</div></div></div>");
+  if($('#alerta').width() > 700) { $('#alerta').css({ 'width': '700px' }); }
+  $('#alerta').css({ 'left': ''+(($(window).width()-($('#alerta').width()+60))/2)+'px', 'top': ''+(($(window).height()-($('#alerta').height()+50))/2)+'px', 'visibility': 'visible' });
+}
+
+
+closeModal = function(instant) {
+    if($("#modal:visible, #backblack:visible, #alerta:visible").length > 0) {
+      if(instant == '1') {
+        $("#modal, #backblack, #alerta").finish().remove();
+      } else {
+        $("#modal, #backblack, #alerta").fadeOut('fast', function(){
+          $("#modal, #backblack, #alerta").finish().remove();
+        });
+      }
+    }
+  };
+
+//----------------------------aceptar las condicones para continuar-----------------------//
+
+
+
+
+//----------------------------seleccion de coins-----------------------//
+$(document).ready(function(){
+  
+  $('select option:selected').removeAttr('selected');
+  
+  var dsymbol = $('select#metodo_pgto option:selected').attr('data-symbol');
+  $('#valor_symbol').text(dsymbol);
+  
+  $('select#metodo_pgto').change(function(){
+    
+    var dsymbol = $('select#metodo_pgto option:selected').attr('data-symbol');
+    $('#valor_symbol').text(dsymbol);
+    
+    if($('select#metodo_pgto').val() == 'PagSeguro') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'Banking') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayPal_USD') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'PayPal_BRL') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayPal_EUR') {
+      var preco = "0.30";
+    } else if($('select#metodo_pgto').val() == 'MercadoPago') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayGol_USD') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'PayGol_BRL') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayGol_EUR') {
+      var preco = "0.30";
+    } else if($('select#metodo_pgto').val() == 'WebMoney') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'Payza') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'Skrill') {
+      var preco = "0.40";
+    } else {
+      var preco = "0.30";
+    }
+    
+    var valor = parseInt($('select#qtdCoins').val());
+    
+        
+    var count1 = parseInt("100");
+    var bonus1 = parseInt("10");
+    var count2 = parseInt("400");
+    var bonus2 = parseInt("15");
+    var count3 = parseInt("1000");
+    var bonus3 = parseInt("20");
+    
+    if(valor >= count3) { var bonus = bonus3; }
+    else if(valor >= count2) { var bonus = bonus2; }
+    else if(valor >= count1) { var bonus = bonus1; }
+    else { var bonus = '0'; }
+    if(bonus > 0) {
+      var calculado = parseInt((valor*bonus)/100);
+      $('#bonus').text(calculado);
+      $('.bonus').show();
+    } else {
+      $('#bonus').text('');
+      $('.bonus').hide();
+    }
+    
+        
+    var price = ((valor * preco).toFixed(2)).replace(".", ",");
+    $('#valor_total').text(''+price+'');
+    
+  });
+  
+  $('select#qtdCoins').change(function(){
+    
+    if($('select#metodo_pgto').val() == 'PagSeguro') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'Banking') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayPal_USD') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'PayPal_BRL') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayPal_EUR') {
+      var preco = "0.30";
+    } else if($('select#metodo_pgto').val() == 'MercadoPago') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayGol_USD') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'PayGol_BRL') {
+      var preco = "1.00";
+    } else if($('select#metodo_pgto').val() == 'PayGol_EUR') {
+      var preco = "0.30";
+    } else if($('select#metodo_pgto').val() == 'WebMoney') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'Payza') {
+      var preco = "0.40";
+    } else if($('select#metodo_pgto').val() == 'Skrill') {
+      var preco = "0.40";
+    } else {
+      var preco = "0.30";
+    }
+    
+    var valor = parseInt($(this).val());
+    
+        
+    var count1 = parseInt("100");
+    var bonus1 = parseInt("10");
+    var count2 = parseInt("400");
+    var bonus2 = parseInt("15");
+    var count3 = parseInt("1000");
+    var bonus3 = parseInt("20");
+    
+    if(valor >= count3) { var bonus = bonus3; }
+    else if(valor >= count2) { var bonus = bonus2; }
+    else if(valor >= count1) { var bonus = bonus1; }
+    else { var bonus = '0'; }
+    if(bonus > 0) {
+      var calculado = parseInt((valor*bonus)/100);
+      $('#bonus').text(calculado);
+      $('.bonus').show();
+    } else {
+      $('#bonus').text('');
+      $('.bonus').hide();
+    }
+    
+        
+    var price = ((valor * preco).toFixed(2)).replace(".", ",");
+    $('#valor_total').text(''+price+'');
+    
+  });
+  
+});
+//----------------------------seleccion de coins-----------------------//

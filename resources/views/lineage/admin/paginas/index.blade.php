@@ -2,6 +2,8 @@
 @section('content')
 @include('alerts.request')
 @include('alerts.success')
+@include('alerts.errors')
+@include('flash::message')
 
 <div class="row">
     <div class="col-md-12">

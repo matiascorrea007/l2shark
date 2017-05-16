@@ -3,7 +3,7 @@
 @include('alerts.request')
 @include('alerts.success')
 @include('alerts.errors')
-
+@include('flash::message')
 
 
 

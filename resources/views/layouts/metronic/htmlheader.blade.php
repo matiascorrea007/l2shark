@@ -8,8 +8,8 @@
         <meta content="" name="author" />
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link href="{{ asset('layout/css/font.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('layout/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('layout/css/simple-line-icons.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('layout/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('layout/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/bootstrap-switch.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
