@@ -76,7 +76,11 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
   <tbody>
   <!-- -->
     <td>
-    <select style="min-width: 160px;" name="metodo_pgto" id="metodo_pgto">
+        <select style="min-width: 160px;" name="metodo_pgto" >
+        <option data-symbol="$" value="mercadopago">Mercado Pago</option>
+                      
+        </select>    
+    <!--<select style="min-width: 160px;" name="metodo_pgto" id="metodo_pgto">
         <option data-symbol="€" value="G2APay">G2APay</option>
         <option data-symbol="R$" value="PagSeguro">PagSeguro</option>
         <option data-symbol="$" value="PayPal_USD">PayPal (USD)</option>
@@ -90,7 +94,7 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
         <option data-symbol="$" value="Payza">Payza</option>
         <option data-symbol="$" value="Skrill">Skrill</option>
         <option data-symbol="R$" value="Banking">Transacción bancaria</option>                  
-        </select>
+        </select>-->
     </td>
     
     <td>{{ Form::select('type',config('options.coins'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
@@ -98,7 +102,9 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
     </td>
     
     <td style="text-align: center;">
-        <h1><span style="color:#237200"><b><span id="valor_symbol">€</span> <span id="valor_total">0,00</span></b></span></h1>
+        <h1><span style="color:#237200"><b><span id="valor_symbol">$</span> <span id="valor_total">0,00</span></b></span></h1>
+
+        <input type="text" name="total" hidden class="valor_total"   value="">
     </td>
   </tbody>
   </table>

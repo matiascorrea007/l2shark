@@ -447,7 +447,7 @@ $(document).ready(function(){
 	
 	});
 	
-	setTimeout(showElements, 10000);
+	setTimeout(showElements, 500);
 	
 	
 	$('.news .new').hover(function(e) {

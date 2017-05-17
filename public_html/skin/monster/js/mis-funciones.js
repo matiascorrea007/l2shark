@@ -310,72 +310,7 @@ closeModal = function(instant) {
 //----------------------------seleccion de coins-----------------------//
 $(document).ready(function(){
   
-  $('select option:selected').removeAttr('selected');
-  
-  var dsymbol = $('select#metodo_pgto option:selected').attr('data-symbol');
-  $('#valor_symbol').text(dsymbol);
-  
-  $('select#metodo_pgto').change(function(){
-    
-    var dsymbol = $('select#metodo_pgto option:selected').attr('data-symbol');
-    $('#valor_symbol').text(dsymbol);
-    
-    if($('select#metodo_pgto').val() == 'PagSeguro') {
-      var preco = "1.00";
-    } else if($('select#metodo_pgto').val() == 'Banking') {
-      var preco = "1.00";
-    } else if($('select#metodo_pgto').val() == 'PayPal_USD') {
-      var preco = "0.40";
-    } else if($('select#metodo_pgto').val() == 'PayPal_BRL') {
-      var preco = "1.00";
-    } else if($('select#metodo_pgto').val() == 'PayPal_EUR') {
-      var preco = "0.30";
-    } else if($('select#metodo_pgto').val() == 'MercadoPago') {
-      var preco = "1.00";
-    } else if($('select#metodo_pgto').val() == 'PayGol_USD') {
-      var preco = "0.40";
-    } else if($('select#metodo_pgto').val() == 'PayGol_BRL') {
-      var preco = "1.00";
-    } else if($('select#metodo_pgto').val() == 'PayGol_EUR') {
-      var preco = "0.30";
-    } else if($('select#metodo_pgto').val() == 'WebMoney') {
-      var preco = "0.40";
-    } else if($('select#metodo_pgto').val() == 'Payza') {
-      var preco = "0.40";
-    } else if($('select#metodo_pgto').val() == 'Skrill') {
-      var preco = "0.40";
-    } else {
-      var preco = "0.30";
-    }
-    
-    var valor = parseInt($('select#qtdCoins').val());
-    
-        
-    var count1 = parseInt("100");
-    var bonus1 = parseInt("10");
-    var count2 = parseInt("400");
-    var bonus2 = parseInt("15");
-    var count3 = parseInt("1000");
-    var bonus3 = parseInt("20");
-    
-    if(valor >= count3) { var bonus = bonus3; }
-    else if(valor >= count2) { var bonus = bonus2; }
-    else if(valor >= count1) { var bonus = bonus1; }
-    else { var bonus = '0'; }
-    if(bonus > 0) {
-      var calculado = parseInt((valor*bonus)/100);
-      $('#bonus').text(calculado);
-      $('.bonus').show();
-    } else {
-      $('#bonus').text('');
-      $('.bonus').hide();
-    }
-    
-        
-    var price = ((valor * preco).toFixed(2)).replace(".", ",");
-    $('#valor_total').text(''+price+'');
-    
-  });
+
   
   $('select#qtdCoins').change(function(){
     
@@ -404,7 +339,8 @@ $(document).ready(function(){
     } else if($('select#metodo_pgto').val() == 'Skrill') {
       var preco = "0.40";
     } else {
-      var preco = "0.30";
+      //este es el que dijita el porcentaje
+      var preco = "0.3";
     }
     
     var valor = parseInt($(this).val());
@@ -433,6 +369,8 @@ $(document).ready(function(){
         
     var price = ((valor * preco).toFixed(2)).replace(".", ",");
     $('#valor_total').text(''+price+'');
+    //muestra el valor en el input oculto para mandarlo por el formulario
+    $('.valor_total').val(price);
     
   });
   

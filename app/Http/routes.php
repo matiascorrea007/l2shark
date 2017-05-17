@@ -22,8 +22,11 @@ use Soft\Http\Requests\Request;
 
 
 Route::group(['middleware' => 'web'], function () {
-    
-    Route::get('conexion','AdminController@index');
+
+//sistema de logue para laravel 5.2
+Route::auth();
+
+Route::get('conexion','AdminController@index');
     
 Route::get('/','PaginasController@home');
 Route::get('boss','BossController@boss');
@@ -131,18 +134,24 @@ Route::get('buscador','BuscadorController@buscador');
 
 
 
+
+
 Route::group(array('middleware' => 'auth'), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });
+
+
+
+
+
+
+
 
 
 Route::group(['middleware' =>['admin']], function () {
 
 
  Route::get('usuario/perfil','UsuarioController@perfil');
-
-
-
 
 /*---------------VENTAS------------*/
 //busqueda de los productos
@@ -497,10 +506,14 @@ Route::put('db-config-update/{id}','DbController@update');
 
 
 Route::get('donaciones','DonacionesController@index');
-Route::post('donaciones-create','DonacionesController@create');
-Route::post('donaciones-store','DonacionesController@store');
-Route::get('donaciones-update/{id}','DonacionesController@update');
-Route::put('donaciones-destroy/{id}','DonacionesController@destroy');
+Route::match(['get','post'],'donaciones-create','DonacionesController@create');
+
+Route::get('donaciones-listar','DonacionesController@listar');
+Route::get('donaciones-hechas','DonacionesController@hechas');
+Route::get('donaciones-pendientes','DonacionesController@pendientes');
+Route::post('donacion-cambiar-status/{id}','DonacionesController@Status');
+
+
 
 Route::get('paypal-store','PaypalController@store');
 
@@ -677,8 +690,7 @@ Route::put('myaccount-edit-datos-facturacion-checkout/{id}',[
 
 
 /*---------------login------------*/
-//sistema de logue para laravel 5.2
-Route::auth();
+
 //para redireccionar si ya esta logueado y trata de entrar al login
 Route::get('logged', 'LoginController@logged');
 Route::get('login-redirect', 'LoginController@LoginRedirect');

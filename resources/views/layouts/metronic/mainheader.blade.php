@@ -109,13 +109,19 @@
                 <a href="{!! URL::to('donaciones/') !!}" class="nav-link"><i class="fa fa-plus-circle"></i> Adquirir Coins</a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Hechas </a>
+                <a href="{!! URL::to('donaciones-hechas/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Hechas </a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferir Coins</a>
+                <a href="{!! URL::to('donaciones-listar/') !!}" class="nav-link"><i class="fa fa-list"></i> Listar Donaciones </a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
+                <a href="{!! URL::to('donaciones-pendientes/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Pendientes </a>
+            </li>
+            <li class=" ">
+                <a href="{!! URL::to('transferir-coin/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferir Coins</a>
+            </li>
+            <li class=" ">
+                <a href="{!! URL::to('transferir-realizadas/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
             </li>
         </ul>
      </li>

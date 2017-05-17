@@ -73,7 +73,7 @@
 		@endif
 		</div>
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
-		<div id='mainLoading'></div>
+		<div id=''></div>
 		
 				<div class='serverStatus off'><span></span></div>
 		
@@ -292,31 +292,7 @@
 	
 					<div class='galleryBox'><div>
 						
-									
-					@foreach($videos as $video)					
-					<a href="#" class="btn btn-default" data-toggle="modal" data-target="#video-{{$video->id}}" >
-					<img src='{{$video->imagen}}'>
-					<div></div><span></span>
-					</a>
-					@endforeach	
-
-		
-		<!--Cargo el modal-->	
-		@foreach($videos as $video)
-			<div class="modal fade" id="video-{{$video->id}}" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button  type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                            <div>
-                                <iframe width="560" height="360" src="{{$video->link}}" frameborder="10" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-		@endforeach
-
+					
 								
 									
 					</div></div>
@@ -488,6 +464,7 @@ $(document).ready(function(){
 
 <div id='fanback'><div id='fan-exit'></div><div id='fanbox'><div id='fanclose'></div><iframe src='//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/l2monsterkill&amp;width=402&amp;height=255&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23E2E2E2&amp;stream=false&amp;header=false&amp;appId=577018195656213' scrolling='no' frameborder='0' allowtransparency='true'></iframe></div></div>
 <script src='js\jquery.cookie.js' type='text/javascript'></script>
+
 <script type='text/javascript'>
 	$(function() { if($.cookie('atualstudioPopup') != 'yes'){ $('#fanback').delay(100).fadeIn('medium'); $('#fanclose, #fan-exit').click(function(){ $('#fanback').stop().fadeOut('medium'); }); } $.cookie('atualstudioPopup', 'yes', { path: '/', expires: 2 }); });
 </script>
