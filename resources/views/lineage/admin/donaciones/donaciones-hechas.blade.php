@@ -37,6 +37,8 @@
     <th>Id</th>
     <th>Account</th>
     <th>Coins</th>
+    <th>Bonus</th>
+    <th>Coins Entregados</th>
     <th>Total</th>
     <th>Metodo</th>
     <th>Status</th>
@@ -49,26 +51,27 @@
   <td>{{ $donacione -> id}}</td>
   <td>{{ $donacione -> account}}</td>
   <td>{{ $donacione -> coin}}</td>
-  <td>{{ $donacione -> total}}</td>
+  <td>{{ $donacione -> bonus}}</td>
+   <td> <img src="storage/icono admin/coins.svg" alt="" width="25"  height="25"> {{ $donacione -> bonus + $donacione -> coin}}</td>
+  <td>${{ $donacione -> total}}</td>
   <td>{{ $donacione -> metodo}}</td>
-  <td>{{ $donacione -> status}}</td>
+  <td>
+  @if ($donacione -> status == "pendiente")
+     <span class="label label-warning">{{ $donacione -> status}}</span>
+      @elseif ($donacione -> status == "entregado")
+     <span class="label label-success">{{ $donacione -> status }}</span>
+      @endif
+  </td>
   <td>{{ $donacione -> created_at}}</td>
 
 
   
   
 <td>
-
-    @if ($donacione -> status == "pendiente")
-      <a href="#status-{{ $donacione->id }}" data-toggle="modal" ><span class="label label-warning">{{ $donacione -> status}}</span></a>
-      @elseif ($donacione -> status == "entregado")
-      <a href="#status-{{ $donacione->id }}" data-toggle="modal" ><span class="label label-success">{{ $donacione -> status }}</span></a>
-      @endif
-
-
+@if ($donacione -> status == "pendiente")
 <!--para el metodo eliminar necesito de un formulario para ejecutarlo-->
  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete-{{ $donacione->id }}"><i class="fa fa-trash-o"> Eliminar</i></button>
-
+ @endif
 </td>
 
   </tbody>
@@ -91,5 +94,5 @@
 
 
 @include('lineage.admin.donaciones.modal.status')
-@include('lineage.admin.donaciones.modal.delete')
+@include('lineage.admin.donaciones.modal.mydelete')
 @endsection

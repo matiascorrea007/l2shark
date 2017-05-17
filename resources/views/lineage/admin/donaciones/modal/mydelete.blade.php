@@ -12,7 +12,7 @@
          <div class="modal-footer">
              <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
 
-              {!! Form::open(['method' => 'DELETE', 'url' => ['donaciones-destroy',$donacione->id]]) !!}
+              {!! Form::open(['method' => 'DELETE', 'url' => ['my-donaciones-destroy',$donacione->id]]) !!}
              <button type="submit" class="btn btn-danger">Delete</button>
                {!! Form::close() !!}
          </div>

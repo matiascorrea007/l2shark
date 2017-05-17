@@ -17,7 +17,7 @@ use Flash;
 use Input;
 use MP;
 use Soft\web_donacione;
-
+use Soft\User;
 class DonacionesController extends Controller
 {
     /**
@@ -44,6 +44,7 @@ class DonacionesController extends Controller
 
         $donacion = new web_donacione;
         $donacion->coin = $request['qtdCoins'];
+        $donacion->bonus = $request['bonus'];
         $donacion->account = Auth::user()->login;
         $donacion->total = $request['total'];
         $donacion->metodo = $request['metodo_pgto'];
@@ -179,58 +180,51 @@ class DonacionesController extends Controller
     }
 
 
+
+
+
      public function Status(Request $Request , $id){
         $donacion=web_donacione::find($id);
         if ($Request['status'] == "1") {
            $donacion->status= "entregado";
+           $donacion->save();
         }else{
             $donacion->status= "pendiente";
+            $donacion->save();
         }
-        $donacion->save();
+
+        //cargamos el saldo al usuiaro con el total de los coins
+        $user = user::find(Auth::user()->id);
+        $user->saldo = $donacion->coin + $donacion->bonus;
+        $user->save();
+        
          return Redirect::to('/donaciones-pendientes');
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
     public function destroy($id)
     {
-        //
+       $donacion = web_donacione::find($id);
+        $donacion->delete();
+         Alert::success('Success', 'Donacion Eliminada Correctamente ');
+         return Redirect::to('/donaciones-hechas');
+    }
+
+
+    public function destroyMyDonacion($id)
+    {
+       
+        $donacion = web_donacione::find($id);
+       //para comprobar que la donacion sea del que esta logueado
+       if ($donacion->account == Auth::user()->login) {
+          $donacion->delete();
+       }
+      
+
+        Alert::success('Success', 'Donacion Eliminada Correctamente ');
+         return Redirect::to('/donaciones-hechas');
     }
 }

@@ -361,6 +361,7 @@ $(document).ready(function(){
       var calculado = parseInt((valor*bonus)/100);
       $('#bonus').text(calculado);
       $('.bonus').show();
+      $('.bonuss').val(calculado);
     } else {
       $('#bonus').text('');
       $('.bonus').hide();

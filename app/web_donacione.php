@@ -9,6 +9,7 @@ class web_donacione extends Model
     protected $fillable = [
         	'id',   
         	'coin',
+        	'bonus',
         	'account',
         	'total',
         	'metodo',

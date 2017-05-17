@@ -105,6 +105,7 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
         <h1><span style="color:#237200"><b><span id="valor_symbol">$</span> <span id="valor_total">0,00</span></b></span></h1>
 
         <input type="text" name="total" hidden class="valor_total"   value="">
+        <input type="text" name="bonus" hidden class="bonuss"   value="">
     </td>
   </tbody>
   </table>

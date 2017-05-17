@@ -36,6 +36,7 @@ class User extends Authenticatable
         're_password',
         'email',
         'admin',
+        'saldo',
     ];
 
     /**
