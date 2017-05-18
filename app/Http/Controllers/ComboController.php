@@ -21,10 +21,11 @@ use Flash;
 use Input;
 
 
-class ComboController extends Controller
+class ComboController extends AdminBaseController
 {
      public function __construct()
     {
+         parent::__construct();
         /*si no existe mi session items , esntonces la creo con put y creo
         un array para almacenar los items*/
         if(!\Session::has('items')) \Session::put('items', array());
@@ -32,7 +33,7 @@ class ComboController extends Controller
     }
 
 
-
+   
 
 
 

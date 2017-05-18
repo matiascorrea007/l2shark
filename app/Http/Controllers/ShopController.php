@@ -19,7 +19,7 @@ use Auth;
 use Flash;
 
 
-class ShopController extends Controller
+class ShopController extends AdminBaseController
 {
      public function __construct()
     {

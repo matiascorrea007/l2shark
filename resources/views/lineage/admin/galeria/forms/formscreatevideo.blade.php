@@ -11,10 +11,9 @@
 </div>
 <br><br><br><br>
 
-@if(Auth::user()->admin == 1)<!--si es admin-->
-
+@if(Auth::user()->admin == 1)
 <div class="form-horizontal  col-xs-12 col-sm-12 col-md-12">
-    <label class="mt-radio">
+    <label class="mt-radio ">
           <input type="radio" name="optionsRadios" id="optionsRadios4" value="1" > Visible
           <span></span>
     </label>
@@ -23,16 +22,17 @@
           <span></span>
     </label>
 </div>
-
-@else<!--si es usuario-->
-
+@else
 <div class="form-horizontal  col-xs-12 col-sm-12 col-md-12">
-    <label class="mt-radio">
-          <input type="radio" name="optionsRadios" id="optionsRadios5" value="0" checked="" hidden> Oculto
+    <label class="mt-radio hidden">
+          <input type="radio" name="optionsRadios" id="optionsRadios4" value="1" > Visible
+          <span></span>
+    </label>
+    <label class="mt-radio hidden">
+          <input type="radio" name="optionsRadios" id="optionsRadios5" value="0" checked=""> Oculto
           <span></span>
     </label>
 </div>
-
 @endif
 
 </div>

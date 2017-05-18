@@ -17,7 +17,7 @@ use Image;
 use Auth;
 use Input;
 
-class GaleriaController extends Controller
+class GaleriaController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

@@ -410,7 +410,7 @@ class ServiciosController extends AdminBaseController
 
         
         return Redirect::to('/servicios');
-        }
+        
     }
 
 

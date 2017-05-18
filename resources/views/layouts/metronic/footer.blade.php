@@ -60,9 +60,10 @@
                     <!-- END PRE-FOOTER -->
                     <!-- BEGIN INNER FOOTER -->
                     <div class="page-footer">
-                        <div class="container-fluid"> 2016 &copy; Metronic Theme By
-                            <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-                            <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+                        <div class="container-fluid"> 2017 &copy; l2Servers
+                            - All rights reserved &nbsp;|&nbsp;
+                            Lineage 2 Panel 1.0 &nbsp;|&nbsp;
+                            Developer by <a href="http://sharkdesing.com/" title="desarrollo web" target="_blank">Sharkdesing.com</a>
                         </div>
                     </div>
                     <div class="scroll-to-top">

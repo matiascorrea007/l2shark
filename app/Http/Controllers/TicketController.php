@@ -19,6 +19,12 @@ use Auth;
 class TicketController extends Controller
 {
    
+   //con este constructor llamo a las variales que hay en la clase padre que es BaseController
+    public function __construct(){
+       parent::__construct();
+    }
+
+    
     public function index(Request $request)
     {
         //ordenamos por usu_nombre y lo guaramos en $users

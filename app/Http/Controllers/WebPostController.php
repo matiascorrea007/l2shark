@@ -6,22 +6,24 @@ use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
 use Soft\web_post;
+use Soft\User;
+use DB;
 use Alert;
 use Session;
 use Redirect;
 use Storage;
-use DB;
 use Image;
-use Soft\User;
 use Auth;
+use Flash;
 use Input;
-class WebPostController extends BaseController
+
+class WebPostController extends AdminBaseController
 {
     
 
 
     //con este constructor llamo a las variales que hay en la clase padre que es BaseController
- public function __construct(){
+    public function __construct(){
        parent::__construct();
     }
 
@@ -30,9 +32,9 @@ class WebPostController extends BaseController
     public function index()
     {
         $posts=web_post::orderBy('created_at','desc')->paginate(10);
-        $user= User::where('admin', '=',1)->lists('login','id');
+      
         $link = "post";
-    return view ('lineage.admin.post.index',compact('link','posts','user'));
+    return view ('lineage.admin.post.index',compact('link','posts'));
     }
 
     /**
