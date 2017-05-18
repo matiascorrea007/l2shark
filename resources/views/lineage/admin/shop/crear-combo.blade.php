@@ -5,29 +5,7 @@
 @include('alerts.success')
 @include('flash::message')
   
-
-
-    <h1 class="page-title"> <br>
-                        <small></small>
-                    </h1>
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <i class="icon-home"></i>
-                                <a href="{{ url('combo') }}" >Shop</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="{{ url('combo') }}" >Lista de paquetes</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="" >Crear Paquete</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                        </ul>
-                    </div>
-
+@if(Auth::user()->admin == 1)
 
 
 <div class="row">
@@ -201,4 +179,5 @@
 @endif
 
 
+@endif
 @endsection

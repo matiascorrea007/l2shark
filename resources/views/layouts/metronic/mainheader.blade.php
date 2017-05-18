@@ -82,6 +82,7 @@
             </a>      
          </li>
         
+    @if(Auth::user()->admin == 1)<!--permiso de admin-->
     <li class="menu-dropdown classic-menu-dropdown ">
     <a href="javascript:;">
     <img height="30"  width="30" src="storage/icono admin/seo.svg"> Configuracion
@@ -98,7 +99,7 @@
             </li>
         </ul>
      </li>
-    
+    @endif
 
     <li class="menu-dropdown classic-menu-dropdown ">
     <a href="javascript:;">
@@ -111,17 +112,19 @@
             <li class=" ">
                 <a href="{!! URL::to('donaciones-hechas/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Hechas </a>
             </li>
+            @if(Auth::user()->admin == 1)<!--permiso de admin-->
             <li class=" ">
                 <a href="{!! URL::to('donaciones-listar/') !!}" class="nav-link"><i class="fa fa-list"></i> Listar Donaciones </a>
             </li>
             <li class=" ">
                 <a href="{!! URL::to('donaciones-pendientes/') !!}" class="nav-link"><i class="fa fa-list"></i> Donaciones Pendientes </a>
             </li>
+            @endif
             <li class=" ">
                 <a href="{!! URL::to('transferir-coin/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferir Coins</a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('transferir-realizadas/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
+                <a href="{!! URL::to('transfererencias-realizadas/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
             </li>
         </ul>
      </li>
@@ -140,12 +143,14 @@
             </a>      
     </li>
     
-
+     @if(Auth::user()->admin == 1)<!--permiso de admin-->
     <li class="menu-dropdown classic-menu-dropdown ">
             <a href="{!! URL::to('post/') !!}">
                 <img height="30"  width="30" src="storage/icono admin/news.svg"> Noticias
             </a>      
     </li>
+    @endif
+
 
     <li class="menu-dropdown classic-menu-dropdown ">
             <a href="{!! URL::to('combo/') !!}">
@@ -159,12 +164,14 @@
     <img height="30"  width="30" src="storage/icono admin/galeria.svg"> Galeria
     <span class="arrow"></span></a>
         <ul class="dropdown-menu pull-left">
+        @if(Auth::user()->admin == 1)<!--permiso de admin-->
             <li class=" ">
                 <a href="{!! URL::to('galeria-imagen-show') !!}" class="nav-link"><i class="fa fa-image"></i> Galeria de Imagenes</a>
             </li>
             <li class=" ">
                 <a href="{!! URL::to('galeria-video-show') !!}" class="nav-link"><i class="fa fa-youtube-play"></i> Galeria de Videos </a>
             </li>
+        @endif
             <li class=" ">
             <a href="{!! URL::to('galeria') !!}" class="nav-link"><i class="fa fa-link"></i> Enviar Imagen/Video</a>
             </li>

@@ -6,28 +6,6 @@
 @include('flash::message')
   
 
-  <h1 class="page-title"> <br>
-                        <small></small>
-                    </h1>
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <i class="icon-home"></i>
-                                <a href="{{ url('combo') }}" >Shop</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="{{ url('combo') }}" >Lista de paquetes</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                            <li>
-                                <a href="" >{{$combo->nombre}}</a>
-                                <i class="fa fa-angle-right"></i>
-                            </li>
-                        </ul>
-                    </div>
-
-
 
 <div class="row">
     <div class="col-md-12">

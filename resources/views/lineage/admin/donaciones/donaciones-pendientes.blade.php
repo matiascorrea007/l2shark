@@ -5,7 +5,7 @@
 @include('alerts.errors')
 @include('flash::message')
 
-
+@if(Auth::user()->admin == 1)
 <div class="row">
     <div class="col-md-12">
     <div class="portlet light ">
@@ -99,4 +99,5 @@
 
 @include('lineage.admin.donaciones.modal.status')
 @include('lineage.admin.donaciones.modal.delete')
+@endif
 @endsection

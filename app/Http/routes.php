@@ -148,7 +148,7 @@ Route::group(array('middleware' => 'auth'), function(){
 
 
 
-Route::group(['middleware' =>['admin']], function () {
+Route::group(['middleware' =>['auth']], function () {
 
 
  Route::get('usuario/perfil','UsuarioController@perfil');
@@ -516,7 +516,7 @@ Route::get('donaciones-pendientes','DonacionesController@pendientes');
 Route::get('transferir-coin','DonacionesController@TransferirCoin');
 Route::post('transferir-coin-player','DonacionesController@TransferirCoinPlayer');
 Route::post('transferir-coin-cuenta','DonacionesController@TransferirCoinCuenta');
-
+Route::get('transfererencias-realizadas','DonacionesController@TransferenciasRealizadas');
 
 Route::post('donacion-cambiar-status/{id}','DonacionesController@Status');
 Route::delete('donaciones-destroy/{id}','DonacionesController@destroy');

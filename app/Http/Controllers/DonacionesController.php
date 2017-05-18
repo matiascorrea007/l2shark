@@ -20,6 +20,7 @@ use Input;
 use MP;
 use Soft\web_donacione;
 use Soft\User;
+use Soft\web_donaciones_transferencia;
 class DonacionesController extends AdminBaseController
 {
     /**
@@ -220,7 +221,6 @@ class DonacionesController extends AdminBaseController
         }
 
 
-        $donaciones = web_donacione::where('status','=',"pendiente")->orderBy('created_at','des')->get();
 
         return view ('lineage.admin.donaciones.donaciones-transferir',compact('characters'));
     }
@@ -272,11 +272,16 @@ class DonacionesController extends AdminBaseController
             Alert::success('Success', 'Alex Coins transferidos correctamente');
          }
 
-        
+        //cargue el log
+         $character = DB::connection('externa')->table('characters')->where('obj_Id','=',$request['destinatario'])->first();
+         $log = new web_donaciones_transferencia;
+         $log->cantidad = $request['cantidad'];
+         $log->pj = $character->char_name;
+         $log->save();
+
 
         return Redirect::to('/transferir-coin');
     }
-
 
 
 
@@ -308,11 +313,29 @@ class DonacionesController extends AdminBaseController
                 Alert::success('Success', 'Coins transferidos correctamente');
             }   
         
-            
+        //cargue el log
+         $log = new web_donaciones_transferencia;
+         $log->cantidad = $request['cantidad'];
+         $log->email = $user->email;
+         $log->save();
+
         return Redirect::to('/transferir-coin');
     }
 
 
+
+
+
+
+
+
+    public function TransferenciasRealizadas(){
+            //traigo el log de las transferencias
+            $transferenciasPlayers = web_donaciones_transferencia::where('pj','!=',"")->orderBy('created_at', 'des')->get();
+            $transferenciasCuentas = web_donaciones_transferencia::where('email','!=',"")->get();
+
+            return view ('lineage.admin.donaciones.transferencias-realizadas',compact('transferenciasPlayers','transferenciasCuentas'));
+    }
 
 
 
