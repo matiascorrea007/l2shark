@@ -29,16 +29,16 @@
                                         <!-- BEGIN USER LOGIN DROPDOWN -->
                                        <li class="dropdown dropdown-user dropdown-dark">
                                                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                        <i class="fa fa-btc"></i> Saldo :
-                                                        <span class="badge badge-success">25 Coin</span>
+                                                        <i class=""><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></i> Saldo :
+                                                        <span class="badge badge-success">{{$user->saldo}}</span>
                                                     </a>
                                                     <ul class="dropdown-menu dropdown-menu-dark">
                                                      <li>
-                                                         <a href="{!! URL::to('logout') !!}">
+                                                         <a href="{!! URL::to('donaciones') !!}">
                                                         <i class="fa fa-credit-card  "></i> Agregar Saldo</a>
                                                      </li>
                                                      <li>
-                                                         <a href="{!! URL::to('logout') !!}">
+                                                         <a href="{!! URL::to('transferir-coin') !!}">
                                                         <i class="fa fa-exchange "></i> Transferir Saldo </a>
                                                      </li>
                                                     </ul>
@@ -49,7 +49,7 @@
                                         <li class="dropdown dropdown-user dropdown-dark">
                                             <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                                                 <img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30">
-                                                <span class="username username-hide-mobile">Nick</span>
+                                                <span class="username username-hide-mobile">{{$user->login}}</span>
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-default">
                                                 <li>

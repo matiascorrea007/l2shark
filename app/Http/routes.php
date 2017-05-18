@@ -511,6 +511,12 @@ Route::match(['get','post'],'donaciones-create','DonacionesController@create');
 Route::get('donaciones-listar','DonacionesController@listar');
 Route::get('donaciones-hechas','DonacionesController@hechas');
 Route::get('donaciones-pendientes','DonacionesController@pendientes');
+
+Route::get('transferir-coin','DonacionesController@TransferirCoin');
+Route::post('transferir-coin-player','DonacionesController@TransferirCoinPlayer');
+Route::post('transferir-coin-cuenta','DonacionesController@TransferirCoinCuenta');
+
+
 Route::post('donacion-cambiar-status/{id}','DonacionesController@Status');
 Route::delete('donaciones-destroy/{id}','DonacionesController@destroy');
 Route::delete('my-donaciones-destroy/{id}','DonacionesController@destroyMyDonacion');

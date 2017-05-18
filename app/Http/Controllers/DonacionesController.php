@@ -5,6 +5,8 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
+use Soft\Http\Requests\TransferirCoinCuentaRequest;
+use Soft\Http\Requests\TransferirCoinPlayerRequest;
 use Config;
 use DB;
 use Alert;
@@ -18,7 +20,7 @@ use Input;
 use MP;
 use Soft\web_donacione;
 use Soft\User;
-class DonacionesController extends Controller
+class DonacionesController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.
@@ -197,9 +199,119 @@ class DonacionesController extends Controller
         $user = user::find(Auth::user()->id);
         $user->saldo = $donacion->coin + $donacion->bonus;
         $user->save();
-        
+            
+        Alert::success('Success', 'el saldo se agrego correctamente al usuario');
          return Redirect::to('/donaciones-pendientes');
     }
+
+
+
+    public function TransferirCoin()
+    {   
+
+         try
+        {
+             $characters = DB::connection('externa')->table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
+        }
+        catch(\PDOException $e)
+        {
+            $characters = "";
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
+        $donaciones = web_donacione::where('status','=',"pendiente")->orderBy('created_at','des')->get();
+
+        return view ('lineage.admin.donaciones.donaciones-transferir',compact('characters'));
+    }
+
+
+    public function TransferirCoinPlayer(TransferirCoinPlayerRequest $request)
+    {   
+
+        // dd($request);
+
+         $user = User::find(Auth::user()->id);
+
+         if ($request['cantidad'] > $user->saldo) {
+                flash('saldo Insuficiente.')->error();
+                return Redirect::to('/transferir-coin');    
+            }else{
+                $user->saldo = $user->saldo - $request['cantidad'];
+                $user->save();
+            }
+
+        //traigo el item 
+         $item = DB::connection('externa')->table('items')->where('owner_id','=',$request['destinatario'])
+         ->where('item_id','=',3509)->first();
+
+         //si esta vacio lo creo
+         if (empty($item)) {
+             DB::connection('externa')->table('items')->insert(
+                ['owner_id' => $request['destinatario'], 
+               
+                'item_id' => 3509,
+                'count' => $request['cantidad'],
+                'enchant_level' => 0,
+                'loc' => "INVENTORY",
+                'loc_data' => 0,
+                'price_sell' => 0,
+                'price_buy' => 0,
+                'custom_type1' => 0,
+                'custom_type2' => 0,
+                'mana_left' => -1,
+                ]);
+
+
+             Alert::success('Success', 'Alex Coins transferidos correctamente');
+         }else{
+            //si ya existe lo actualiso
+            $item = DB::connection('externa')->table('items')
+            ->where('owner_id','=',$request['destinatario'])
+            ->where('item_id','=',3509)
+            ->update(['count' => $item->count + $request['cantidad']]);
+            Alert::success('Success', 'Alex Coins transferidos correctamente');
+         }
+
+        
+
+        return Redirect::to('/transferir-coin');
+    }
+
+
+
+
+
+    public function TransferirCoinCuenta(TransferirCoinCuentaRequest $request)
+    {   
+
+            $user = User::find(Auth::user()->id);
+
+            if ($request['cantidad'] > $user->saldo) {
+                flash('saldo Insuficiente.')->error();
+            }else{
+                $user->saldo = $user->saldo - $request['cantidad'];
+                $user->save();
+            }
+            
+
+            $destinatario = User::where('email','=',$request['email'])->first();
+
+            if (empty($destinatario)) {
+                flash('el Email Ingresado no corresponde a ninguna cuenta asociada.')->error();
+            }else{
+                $destinatario->saldo = $destinatario->saldo + $request['cantidad'];
+                $destinatario->save();
+                Alert::success('Success', 'Coins transferidos correctamente');
+            }   
+        
+            
+        return Redirect::to('/transferir-coin');
+    }
+
+
+
 
 
 
@@ -212,6 +324,9 @@ class DonacionesController extends Controller
          Alert::success('Success', 'Donacion Eliminada Correctamente ');
          return Redirect::to('/donaciones-hechas');
     }
+
+
+
 
 
     public function destroyMyDonacion($id)

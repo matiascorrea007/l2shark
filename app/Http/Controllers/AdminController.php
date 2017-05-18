@@ -20,7 +20,7 @@ use Soft\Models\ClanDatum;
 use Auth;
 use Flash;
 
-class AdminController extends Controller
+class AdminController extends AdminBaseController
 {   
 
 

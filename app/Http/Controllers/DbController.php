@@ -18,7 +18,7 @@ use Auth;
 use Flash;
 use Input;
 
-class DbController extends Controller
+class DbController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.
