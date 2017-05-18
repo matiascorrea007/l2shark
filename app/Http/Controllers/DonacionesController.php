@@ -216,8 +216,7 @@ class DonacionesController extends AdminBaseController
         catch(\PDOException $e)
         {
             $characters = "";
-             flash('no se puedo realizar la conexion a la BD.')->error();
-            
+             flash('no se puedo realizar la conexion a la BD.')->error();      
         }
 
 
@@ -230,10 +229,9 @@ class DonacionesController extends AdminBaseController
     public function TransferirCoinPlayer(TransferirCoinPlayerRequest $request)
     {   
 
-        // dd($request);
-
          $user = User::find(Auth::user()->id);
 
+         //comprobamos el saldo
          if ($request['cantidad'] > $user->saldo) {
                 flash('saldo Insuficiente.')->error();
                 return Redirect::to('/transferir-coin');    
@@ -288,8 +286,10 @@ class DonacionesController extends AdminBaseController
 
             $user = User::find(Auth::user()->id);
 
+            //comprobar saldo suficiente
             if ($request['cantidad'] > $user->saldo) {
                 flash('saldo Insuficiente.')->error();
+                return Redirect::to('/transferir-coin');
             }else{
                 $user->saldo = $user->saldo - $request['cantidad'];
                 $user->save();
@@ -298,8 +298,10 @@ class DonacionesController extends AdminBaseController
 
             $destinatario = User::where('email','=',$request['email'])->first();
 
+            //comprobar que el email exista
             if (empty($destinatario)) {
                 flash('el Email Ingresado no corresponde a ninguna cuenta asociada.')->error();
+                return Redirect::to('/transferir-coin');
             }else{
                 $destinatario->saldo = $destinatario->saldo + $request['cantidad'];
                 $destinatario->save();

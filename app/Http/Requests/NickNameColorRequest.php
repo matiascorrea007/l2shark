@@ -25,6 +25,7 @@ class NickNameColorRequest extends Request
     {
         return [
             'nicknamecolor' =>'required',
+            
         ];
     }
 }

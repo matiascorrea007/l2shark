@@ -108,14 +108,7 @@
    </div>
    @endif
 
-    <div class="actions">
-       <div class="btn-group btn-group-devided" >
-           @if(empty(DB::table('web_facebooks')->get()))
-              <a class="btn btn-success" data-toggle="modal" data-target="#crear-facebook" >
-              <i class="fa  fa-plus fa-lg"></i></a>
-            @endif
-       </div>
-   </div>
+    
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['nicknamecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
 
@@ -158,14 +151,7 @@
    </div>
    @endif
 
-    <div class="actions">
-       <div class="btn-group btn-group-devided" >
-           @if(empty(DB::table('web_facebooks')->get()))
-              <a class="btn btn-success" data-toggle="modal" data-target="#crear-facebook" >
-              <i class="fa  fa-plus fa-lg"></i></a>
-            @endif
-       </div>
-   </div>
+    
         </div><!--portlet-title-->
     {!!Form::open(['url'=>['titlecolor-edit'],'method'=>'POST' , 'files'=>True])!!}
 

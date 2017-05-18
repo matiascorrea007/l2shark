@@ -8,19 +8,21 @@ use Soft\Http\Requests;
 use Soft\Http\Requests\NickNameColorRequest;
 use Soft\Http\Requests\NickNameRequest;
 
+use DB;
 use Alert;
 use Session;
 use Redirect;
 use Storage;
-use DB;
 use Image;
-use View;
 use Auth;
+use Flash;
+use Input;
 use Soft\web_facebook;
 use Soft\web_coin_servicio;
 use Soft\Models\character;
+use Soft\User;
 
-class ServiciosController extends Controller
+class ServiciosController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.
@@ -65,22 +67,70 @@ class ServiciosController extends Controller
 
 
     public function NickNameColor(NickNameColorRequest $request)
-    {
+    {   
+       
         $char_nombre = $request['charnombre'];
 
-        
+        //validamos que selecciono a un personaje
         if (empty($char_nombre)) {
             Alert::error('UPs!', 'Seleccione un personaje');
         return Redirect::to('/servicios');
         }
 
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->nicknamecolor > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->nicknamecolor;
+            $user->save();
+            Alert::success('Mensaje existoso', 'color del Nickname modificado');
+        }
 
         $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
             //hacemos la actualizacion de la tabla
             ->update(['name_color' => $request['nicknamecolor']]);
-            Alert::success('Mensaje existoso', 'Modificado Con Exito');
     
-        
+        return Redirect::to('/servicios');
+    }
+
+
+
+
+    public function TitleNameColor(Request $request)
+    {   
+       
+     
+        $char_nombre = $request['charnombre'];
+
+        //validamos que selecciono a un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->titlecolor > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->titlecolor;
+            $user->save();
+            Alert::success('Mensaje existoso', 'color del titulo modificado');
+        }
+
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['title_color' => $request['titlenamecolor']]);
+    
         return Redirect::to('/servicios');
     }
 
@@ -89,10 +139,37 @@ class ServiciosController extends Controller
 
 
 
-     public function RemoveKarma()
+     public function RemoveKarma(Request $request)
     {
+       
+        $char_nombre = $request['charnombre'];
 
-        return view ('lineage.admin.servicios.index');
+        //validamos que selecciono a un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->removekarma > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->removekarma;
+            $user->save();
+            Alert::success('Mensaje existoso', 'Karma Restaurado');
+        }
+
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['karma' => 0]);
+
+
+        return Redirect::to('/servicios');
     }
 
 
@@ -100,10 +177,36 @@ class ServiciosController extends Controller
 
 
 
-     public function PkCounter()
-    {
+     public function PkCounter(Request $request)
+    {   
+        $char_nombre = $request['charnombre'];
 
-        return view ('lineage.admin.servicios.index');
+        //validamos que selecciono a un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->pkreset > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->pkreset;
+            $user->save();
+            Alert::success('Mensaje existoso', 'PK Restaurado');
+        }
+
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            //hacemos la actualizacion de la tabla
+            ->update(['pkkills' => 0]);
+
+
+        return Redirect::to('/servicios');
     }
 
 
@@ -122,28 +225,35 @@ class ServiciosController extends Controller
         return Redirect::to('/servicios');
         }
 
-        //esto es para ver si coinciden los nombres
-        if ($request['nickname'] != $request['re-nickname']) {
-        flash('message-error','los campor del Nombre Y Re-Nombre no coinciden!!')->error();
-        return Redirect::to('/servicios');
+        
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->nickname > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->nickname;
+            $user->save();
         }
 
         //para comprobar que el nombe no exista en la base de datos
         $nombre = DB::connection('externa')->table('characters')->where('char_name','=',$request['nickname'])->first();
+        
         if (empty($nombre)) {
             
-            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
-            //hacemos la actualizacion de la tabla
-            ->update(['char_name' => $request['nickname']]);;
-           
-            
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+        //hacemos la actualizacion de la tabla
+        ->update(['char_name' => $request['nickname']]);;
 
         Alert::success('Mensaje existoso', 'Nombre Modificado');
         return Redirect::to('/servicios');
 
         }else{
 
-        flash('message-error','El NOMBRE ingresado ya se encuentra en uso!!')->success();
+        flash('El NOMBRE ingresado ya se encuentra en uso!!')->error();
         return Redirect::to('/servicios');
         }
     }
@@ -184,6 +294,19 @@ class ServiciosController extends Controller
         return Redirect::to('/servicios');
         }
 
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->sex > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->sex;
+            $user->save();
+        }
+
         
         if ($request['sex'] == 'hombre') {
              $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
@@ -210,7 +333,35 @@ class ServiciosController extends Controller
      public function Unstuck(Request $request)
     {
 
-        return view ('lineage.admin.servicios.index');
+        $char_nombre = $request['charnombre'];
+
+        //validamos que selecciono a un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->unstuck > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->unstuck;
+            $user->save();
+            Alert::success('Mensaje existoso', 'Unstuck realizado Corractamente');
+        }
+        
+
+        //movemos al character
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$request['characheter'])
+        ->update(['x' =>81918,'y'=>148045,'z'=>-3405]);
+
+
+        return Redirect::to('/servicios');
     }
 
 
@@ -232,18 +383,32 @@ class ServiciosController extends Controller
         return Redirect::to('/servicios');
         }
 
-        
-        //si ya es nobles que avise con un mensaje
+         //si ya es nobles que avise con un mensaje
         $char = character::where('char_name','=',$char_nombre)->first();
         if ($char->nobless == 1) {
             flash('El Personaje Seleccionado ya es Nobless!!')->error();
              return Redirect::to('/servicios');
+        }
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->noblesse > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
         }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->noblesse;
+            $user->save();
+            Alert::success('Mensaje existoso', 'Noblesse Activado Corractamente');
+        }
+
+      
             $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
             //hacemos la actualizacion de la tabla
             ->update(['nobless' => 1]);
 
-        Alert::success('Mensaje existoso', 'Su personaje ahora es Nobless');
+        
         return Redirect::to('/servicios');
         }
     }
@@ -278,13 +443,14 @@ class ServiciosController extends Controller
 
 
 
+
+
+
         public function CoinServicioUpdate(Request $request)
     {
-       
         $coin = web_coin_servicio::first();
         $coin->fill($request->all());
         $coin->save();
-
 
         flash('Coins modificados con exito.')->success();
         return Redirect::back();

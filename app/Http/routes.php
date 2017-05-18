@@ -486,6 +486,7 @@ Route::get('servicios/{charnombre}','ServiciosController@ObtenerCharacter');
 Route::put('servicios-coin-update','ServiciosController@CoinServicioUpdate');
 
 Route::post('nicknamecolor-edit','ServiciosController@NickNameColor');
+Route::post('titlecolor-edit','ServiciosController@TitleNameColor');
 Route::post('removekarma-edit','ServiciosController@RemoveKarma');
 Route::post('pkcounter-edit','ServiciosController@PkCounter');
 Route::put('nickname-edit','ServiciosController@NickName');

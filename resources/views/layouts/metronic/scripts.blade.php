@@ -15,7 +15,7 @@
         {!!Html::script('layout/js/jquery.slimscroll.js')!!}
         {!!Html::script('layout/js/jquery.blockui.min.js')!!}
         {!!Html::script('layout/js/bootstrap-switch.js')!!}
-        {!!Html::script('layout/js/moment.js')!!}
+        {!!Html::script('layout/js/moment.min.js')!!}
         {!!Html::script('layout/js/daterangepicker.js')!!}
         {!!Html::script('layout/js/morris.js')!!}
         {!!Html::script('layout/js/raphael-min.js')!!}
@@ -27,12 +27,15 @@
         {!!Html::script('layout/js/jquery.flot.categories.js')!!}
         {!!Html::script('layout/js/jquery.easypiechart.js')!!}
         {!!Html::script('layout/js/jquery.sparkline.min.js')!!}
+        {!!Html::script('layout/js/components-color-pickers.js')!!}
+        {!!Html::script('layout/js/bootstrap-colorpicker.js')!!}
         {!!Html::script('layout/js/app.js')!!}
         {!!Html::script('layout/js/dashboard.js')!!}
         {!!Html::script('layout/js/layout.js')!!}
         {!!Html::script('layout/js/demo.js')!!}
         {!!Html::script('layout/js/quick-sidebar.js')!!}
         {!!Html::script('layout/js/quick-nav.js')!!}
+        {!!Html::script('layout/js/jquery.minicolors.js')!!}
 
 
 <!------------------------------- metronic scriptt ------------------------------>

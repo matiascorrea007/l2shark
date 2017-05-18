@@ -12,6 +12,7 @@
         <link href="{{ asset('layout/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/bootstrap-switch.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('layout/css/colorpicker.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/morris.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/fullcalendar.css') }}" rel="stylesheet" type="text/css" />
@@ -19,6 +20,7 @@
         <link href="{{ asset('layout/css/plugins.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/layout.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/custom.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('layout/css/jquery.minicolors.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/themes/default.css') }}" rel="stylesheet" type="text/css" />
         <!-- sweetalert -->
         <link href="{{ asset('layout/css/sweetalert.css') }}" rel="stylesheet"/>

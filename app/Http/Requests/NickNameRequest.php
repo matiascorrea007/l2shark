@@ -24,8 +24,7 @@ class NickNameRequest extends Request
     public function rules()
     {
         return [
-            'nickname' =>'required',
-            're-nickname' =>'required',
+            'nickname' =>'required|confirmed',
         ];
     }
 }

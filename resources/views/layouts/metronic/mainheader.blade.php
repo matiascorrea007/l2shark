@@ -143,7 +143,7 @@
 
     <li class="menu-dropdown classic-menu-dropdown ">
             <a href="{!! URL::to('post/') !!}">
-                <img height="30"  width="30" src="storage/icono admin/blog.svg"> Noticias
+                <img height="30"  width="30" src="storage/icono admin/news.svg"> Noticias
             </a>      
     </li>
 

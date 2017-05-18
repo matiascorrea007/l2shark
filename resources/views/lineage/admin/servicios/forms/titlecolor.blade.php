@@ -1,7 +1,8 @@
 
 <div class="row">
 <p>Le permite cambiar el color del título de tu personaje..
-Introducir el código del color abajo. Si usted no sabe los codigos de colores en HEX , <a target="_blank" href="http://htmlcolorcodes.com/es/">haga clic aquí.</a></p>
+Seleccione en la paletea de colores.</p>
+
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-3">
 </div>
@@ -9,7 +10,26 @@ Introducir el código del color abajo. Si usted no sabe los codigos de colores e
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-6">
 
-	{!!Form::text('titlecolor',null,['class'=>'form-control', 'placeholder'=>'ingrese el codigo del color'])!!}
+
+   <div class="minicolors minicolors-theme-bootstrap minicolors-position-bottom minicolors-position-left minicolors-focus">
+      <input type="hidden" id="hidden-input" name="titlenamecolor" class="demo minicolors-input" value="#db913d" size="7">
+      <div class="minicolors-panel minicolors-slider-hue" style="display: block;">
+         <div class="minicolors-slider minicolors-sprite">
+            <div class="minicolors-picker" style="top: 136.709px;"></div>
+         </div>
+      <div class="minicolors-opacity-slider minicolors-sprite">
+         <div class="minicolors-picker"></div>
+      </div>
+      <div class="minicolors-grid minicolors-sprite" style="background-color: rgb(255, 136, 0);">
+         <div class="minicolors-grid-inner"></div>
+            <div class="minicolors-picker" style="top: 21px; left: 109px;"><div></div>
+            </div>
+      </div>
+      </div>
+      </div> 
+
+	
+	{!!Form::text('charnombre',null,['class'=>'form-control hidden char', 'placeholder'=>'ingrese el codigo del color'])!!}
 </div>
 
 
