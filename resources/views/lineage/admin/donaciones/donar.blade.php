@@ -12,8 +12,8 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-database  font-red"></i>
-<span class="caption-subject font-red sbold uppercase">Configuracion de la Base de Datos</span>
+<i class="font-red"><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></i>
+<span class="caption-subject font-red sbold uppercase">Realizar Una Donacion</span>
 
     <div><br>
     </div>

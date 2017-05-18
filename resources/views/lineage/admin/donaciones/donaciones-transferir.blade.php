@@ -12,7 +12,7 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-database  font-red"></i>
+<i class="fa fa-exchange  font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Transferir Online Coins</span>
 
     <div><br>
