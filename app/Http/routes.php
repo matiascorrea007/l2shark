@@ -136,12 +136,9 @@ Route::get('buscador','BuscadorController@buscador');
 
 
 
-Route::group(array('middleware' => 'auth'), function(){
+Route::group(array('middleware' => 'web'), function(){
     Route::controller('filemanager', 'FilemanagerLaravelController');
 });
-
-
-
 
 
 
@@ -545,6 +542,8 @@ Route::put('combo-update-item-{idcombo}','ComboController@ComboUpdateItem');
 Route::put('combo-update-{idcombo}','ComboController@ComboUpdate');
 Route::delete('combo-destroy/{id}','ComboController@Combodestroy');
 
+Route::post('combo-comprar','ComboController@ComboComprar');
+
 Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');
 Route::get('combo-item-trash','ComboController@ComboItemTrash');
 
@@ -562,21 +561,22 @@ Route::get('paginas-update/{id}','ConfigPaginasController@update');
 Route::put('paginas-destroy/{id}','ConfigPaginasController@destroy');
 
 
+
+/*--------ticket----------*/
 Route::get('administrar-tickets','TicketController@index');
+Route::get('tickets-completados','TicketController@TicketCompletados');
+Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
 Route::get('tickets-responder-{id}','TicketController@TicketResponder');
+Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
 
 Route::get('user-ticket','TicketController@UserTicket');
 Route::post('user-ticket-crear','TicketController@UserTicketCrear');
 Route::get('user-ticket-responder-{id}','TicketController@UserTicketResponder');
 Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario');
+/*--------ticket----------*/
 
 
 
-Route::get('tickets-completados','TicketController@TicketCompletados');
-Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
-
-
-Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
 
 
 Route::get('voto','VotosController@index');
@@ -714,42 +714,4 @@ Route::get('login-redirect', 'LoginController@LoginRedirect');
 
 /*---------------login------------*/
 
-
-
-
-
-
-
-
-
-
-/*
-Route::get('contacto','FrontController@contacto');
-Route::get('reviews','FrontController@reviews');
-Route::get('password/email','Auth\PasswordController@getEmail');
-Route::post('password/email','Auth\PasswordController@getEmail');
-
-//sistema de logue para laravel 5.2
-Route::auth();
-
-
-Route::resource('mail','MailController');
-//para redireccionar si ya esta logueado y trata de entrar al login
-Route::get('logged', 'LoginController@index');
-
-//enrutado ressfull
-
-Route::resource('genero', 'GeneroController');
-Route::resource('pelicula', 'PeliculaController');
-
-
-//ADMINISTRADOR
-
-//el auth es un middleware que significa que solo puede acceder a la ruta si esta logueado
-//y el middleware es el que nosotros creamos para cada ruta espesifica
-Route::group(['middleware'=>['guest']], function(){
-
-
-});
-*/
 });

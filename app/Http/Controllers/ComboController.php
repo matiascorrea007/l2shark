@@ -9,6 +9,7 @@ use Soft\web_conexion;
 use Soft\web_categoria;
 use Soft\web_producto_combo;
 use Soft\web_producto;
+use Soft\User;
 use Config;
 use DB;
 use Alert;
@@ -313,7 +314,7 @@ class ComboController extends AdminBaseController
 
     public function Combostore(Request $request)
     {   
-
+        dd($request);
         $categoria = web_categoria::find($request['categoria_id']);
        
         //carpeta
@@ -380,10 +381,21 @@ class ComboController extends AdminBaseController
 
 
     public function ComboVer($id)
-    {   
+    {    
+        try
+        {
+             $characters = DB::connection('externa')->table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
+        }
+        catch(\PDOException $e)
+        {
+            $characters = "";
+             flash('no se puedo realizar la conexion a la BD.')->error(); 
+        }
+
+
         $combo = web_producto_combo::find($id);
         $productos = web_producto::where('web_combo_id','=',$id)->get();
-         return view ('lineage.admin.shop.ver',compact('productos','combo'));
+         return view ('lineage.admin.shop.ver',compact('productos','combo','characters'));
         
     }
 
@@ -403,7 +415,59 @@ class ComboController extends AdminBaseController
 
 
 
+    public function ComboComprar(Request $request)
+    {   
+        
 
+        $request['destinatario'];
+        $request['total'];
+
+        $user = User::find(Auth::user()->id);
+        $items = $request->itens;
+       
+        //comprobamos el saldo
+         if ($request['total'] > $user->saldo) {
+                flash('saldo Insuficiente.')->error();
+                return Redirect::back();    
+            }else{
+                $user->saldo = $user->saldo - $request['total'];
+                $user->save();
+            }
+
+
+        $i = 0;
+            foreach ($items as $item) {
+                
+              //traigo los item 
+             $allitems[] = DB::connection('externa')->table('items')->where('owner_id','=',$request['destinatario'])
+         ->where('item_id','=',$item)->first();
+
+           //los creo siempre ya que son armor wepons y rings
+            
+             DB::connection('externa')->table('items')->insert(
+                ['owner_id' => $request['destinatario'], 
+                'item_id' => $item,
+                'count' => 1,
+                'enchant_level' => 0,
+                'loc' => "INVENTORY",
+                'loc_data' => 0,
+                'price_sell' => 0,
+                'price_buy' => 0,
+                'custom_type1' => 0,
+                'custom_type2' => 0,
+                'mana_left' => -1,
+                ]);
+
+
+         $i = $i + 1 ;
+            }
+            
+        Alert::success('Success', 'Items transferidos correctamente');
+      
+        
+        return Redirect::to('/combo');
+        //return view ('lineage.admin.shop.editar-combo',compact('productos','combo','categorias'));
+    }
 
 
     public function ComboUpdate(Request $request,$idcombo)

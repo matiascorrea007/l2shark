@@ -377,3 +377,90 @@ $(document).ready(function(){
   
 });
 //----------------------------seleccion de coins-----------------------//
+
+
+
+
+
+
+//----------------------------comprar combo , sumar precios al tildar checkbox-----------------------//
+$(function() {
+  
+  $('.sumPrice').prop('checked', false);
+  
+  $('.sumPrice').change(function(){
+    
+    var isChecked = $(this).prop('checked');
+    var price = $(this).attr('data-price');
+    
+    if($(this).val() == 'all') {
+      
+      if(isChecked == true) {
+        $('input.sumPrice[value!="all"]').prop('checked', false).prop('disabled', true);
+        $('#valor_total').text(parseInt(price));
+      } else {
+        $('input.sumPrice[value!="all"]').prop('checked', false).prop('disabled', false);
+        $('#valor_total').text('0');
+      }
+      
+    } else {
+      
+      $('input.sumPrice[value="all"]').prop('checked', false);
+      
+      var priceTotal = $('#valor_total').text();
+      
+      if(isChecked == true) {
+        $('#valor_total').text(parseInt(parseInt(priceTotal)+parseInt(price)));
+        //con esto mando en un input oculto el valor total
+        $('.valor_total').val(parseInt(parseInt(priceTotal)+parseInt(price)));
+      } else {
+        $('#valor_total').text(parseInt(parseInt(priceTotal)-parseInt(price)));
+        //con esto mando en un input oculto el valor total
+        $('.valor_total').val(parseInt(parseInt(priceTotal)-parseInt(price)));
+      }
+      
+    }
+    
+    
+  });
+  
+  
+  $('#buyTrigger').click(function() {
+    
+    var submitButton = $(this);
+    var theForm = $('#buyItemForm');
+  
+    if(!$(submitButton).hasClass('loading')) {
+      
+      $(submitButton).attr('data-oldtext', ''+$(submitButton).val()+'').addClass('loading').val('Espera...');
+      
+      $.ajax({
+        type: 'POST',
+        url: './?module=shop&engine=buyitem',
+        cache: false,
+        data: $(theForm).serialize()+'&char='+$('select#personagem').val()+'&pack=13&isJS=1',
+        dataType: 'json',
+        timeout: 20000,
+        async: false,
+        success: function(data)
+        {
+          
+          $(submitButton).val(''+$(submitButton).attr('data-oldtext')+'').removeClass('loading');
+          atualAlert(data.msg, data.act, data.url);
+          
+        },
+          error: function(jqXHR, textStatus){
+            $(submitButton).val(''+$(submitButton).attr('data-oldtext')+'').removeClass('loading');
+            if(textStatus == 'timeout') {
+                atualAlert('Por favor, compruebe su conexión a Internet. La página está tomando demasiado tiempo para responder.');
+            } else if(textStatus != 'abort') {
+                atualAlert('Lo sentimos, ha ocurrido un error! Por favor, vuelva a intentarlo. #3');
+            }
+          }
+      });
+      
+    }
+    
+  });
+  
+});

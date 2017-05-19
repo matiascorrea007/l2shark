@@ -17,7 +17,7 @@
         "maatwebsite/excel": "~2.1.0",
         "uxweb/sweet-alert": "~1.1",
         "pqb/filemanager-laravel": "2.*",
-        "unisharp/laravel-filemanager": "^1.6",
+        "unisharp/laravel-filemanager": "1.6.4",
         "unisharp/laravel-ckeditor": "^4.5",
         "guzzlehttp/guzzle": "~6.0",
         "monolog/monolog": "^1.21",
