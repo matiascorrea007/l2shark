@@ -137,12 +137,24 @@
             </a>      
     </li>
 
-     <li class="menu-dropdown classic-menu-dropdown ">
-            <a href="{!! URL::to('tickets/') !!}">
-                <img height="30"  width="30" src="storage/icono admin/ticket.svg"> Ticket
-            </a>      
-    </li>
     
+    <li class="menu-dropdown classic-menu-dropdown ">
+    <a href="javascript:;">
+    <img height="30"  width="30" src="storage/icono admin/ticket.svg"> Ticket
+    <span class="arrow"></span></a>
+        <ul class="dropdown-menu pull-left">
+            <li class=" ">
+                <a href="{!! URL::to('user-ticket/') !!}" class="nav-link"><i class="fa fa-plus-circle"></i> Mis Ticket</a>
+            </li>
+            @if(Auth::user()->admin == 1)<!--permiso de admin-->
+            <li class=" ">
+                <a href="{!! URL::to('administrar-tickets/') !!}" class="nav-link"><i class="fa fa-list"></i> Administrar ticket </a>
+            </li>
+            @endif
+
+        </ul>
+     </li>
+
      @if(Auth::user()->admin == 1)<!--permiso de admin-->
     <li class="menu-dropdown classic-menu-dropdown ">
             <a href="{!! URL::to('post/') !!}">

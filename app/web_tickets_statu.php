@@ -17,6 +17,6 @@ class web_tickets_statu extends Model
       public function ticket()
     {
         //un status puede tener muchas ticket
-       return $this->hasMany(Ticket::class);
+       return $this->hasMany(web_ticket::class);
     }
 }

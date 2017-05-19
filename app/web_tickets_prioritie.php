@@ -18,6 +18,6 @@ class web_tickets_prioritie extends Model
    public function ticket()
     {
         //un prioridad puede tener muchas ticket
-       return $this->hasMany(Ticket::class);
+       return $this->hasMany(web_ticket::class);
     }
 }

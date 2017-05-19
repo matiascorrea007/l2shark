@@ -27,13 +27,13 @@ class web_ticket extends Model
 public function category()
     {
         //un usuario puede tener muchas ventas
-       return $this->belongsTo(Tickets_categorie::class);
+       return $this->belongsTo(web_tickets_categorie::class);
     }
 
 public function priority()
     {
         //un usuario puede tener muchas ventas
-       return $this->belongsTo(Tickets_prioritie::class);
+       return $this->belongsTo(web_tickets_prioritie::class);
     }
 
 public function user()
@@ -51,6 +51,6 @@ public function user()
 public function status()
     {
         //un usuario puede tener muchas ventas
-       return $this->belongsTo(Tickets_statu::class);
+       return $this->belongsTo(web_tickets_statu::class);
     }
 }

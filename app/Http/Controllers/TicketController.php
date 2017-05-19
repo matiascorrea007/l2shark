@@ -3,7 +3,7 @@
 namespace Soft\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Soft\Http\Requests\TicketCreateRequest;
 use Soft\Http\Requests;
 use Session;
 use Redirect;
@@ -14,9 +14,11 @@ use DB;
 use Input;
 use Soft\web_ticket;
 use Soft\web_tickets_comment;
+use Soft\web_tickets_prioritie;
+use Soft\web_tickets_categorie;
 use Auth;
 
-class TicketController extends Controller
+class TicketController extends AdminBaseController
 {
    
    //con este constructor llamo a las variales que hay en la clase padre que es BaseController
@@ -44,9 +46,8 @@ class TicketController extends Controller
         $tickets=$tickets->paginate(10);
         $link = "ticket";
 
-        return view('admin.ticket.index',compact('link','count','tickets')); 
+        return view('lineage.admin.ticket.admin-ticket',compact('link','count','tickets')); 
     }
-
 
 
     public function TicketCompletados(Request $request)
@@ -71,28 +72,15 @@ class TicketController extends Controller
      }
 
 
-
-
-    public function TicketCambiarStatus(Request $Request , $id){
-
-        $ticket=web_ticket::find($id);
-        $ticket->status_id=$Request['pago'];
-        $ticket->save();
-         return Redirect::to('/tickets');
-    }
-    
-
      public function TicketResponder(Request $Request , $id){
         $comentarios = web_tickets_comment::where('ticket_id','=',$id)->get();
-        $ticket=web_ticket::find($id);
+        $ticket= web_ticket::find($id);
         $link = "ticket";
-        return view('admin.ticket.responder',compact('link','ticket','comentarios')); 
-    }  
+        return view('lineage.admin.ticket.admin-responder',compact('link','ticket','comentarios')); 
+    } 
 
 
     public function TicketComentario(Request $Request , $id){
-        
-
 
         $comentario = new web_tickets_comment;
         $comentario->comment = $Request['comentario'];
@@ -100,13 +88,86 @@ class TicketController extends Controller
         $comentario->ticket_id = $id;
         $comentario->save();
 
-
-
-     
-       return Redirect::to('/tickets');
+       return Redirect::back();
     }
 
 
 
+    public function TicketCambiarStatus(Request $Request , $id){
+
+        $ticket=web_ticket::find($id);
+        $ticket->status_id=$Request['pago'];
+        $ticket->save();
+         return Redirect::back();
+    }
+
+
+
+
+    /*------------------------usuario-----------------------*/
+
+
+    public function UserTicket(){
+
+        //datos de facturacion
+        $tickets =  web_ticket::where( 'user_id', '=',Auth::user()->id)->orderBy('created_at', 'des')->paginate(10);
+        $prioridades  = web_tickets_prioritie::lists('nombre', 'id');
+        $category  = web_tickets_categorie::lists('nombre', 'id');
+
+        return view('lineage.admin.ticket.user-ticket',compact('category','prioridades','tickets'));
+
+    }
+
+
+
+     
+    public function UserTicketResponder($id){
+
+        //datos de facturacion
+        $ticket =  web_ticket::find($id);
+        $comentarios = web_tickets_comment::where('ticket_id','=',$id)->get();
+
+        return view('lineage.admin.ticket.user-ticket-responder',compact(
+            'comentarios',
+            'ticket',
+            'categorias'));
+
+    }
+
+
     
+
+    public function UserTicketComentario(request $request ,$id){
+        
+        $comentario = new web_tickets_comment;
+        $comentario->comment = $request['comentario'];
+        $comentario->user_id = Auth::user()->id;
+        $comentario->ticket_id = $id;
+        $comentario->save();
+
+        Session::flash('message','Mensaje enviado');
+        return Redirect::back();
+
+        }
+
+
+    
+        public function UserTicketCrear(TicketCreateRequest $request)
+        {
+
+        $ticket = new web_ticket;
+        $ticket->subject = $request['subject'];
+        $ticket->content = $request['comentario'];
+        $ticket->priority_id = $request['prioridad'];
+        $ticket->status_id = 2;
+        $ticket->user_id = Auth::user()->id;
+        $ticket->agent_id = null;
+        $ticket->category_id = $request['categoria'];
+        $ticket->save();
+
+        Session::flash('message','Ticket Creado');
+        return Redirect::to('/mis-ticket');
+
+        }
+
 }

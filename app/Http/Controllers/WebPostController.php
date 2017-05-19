@@ -17,7 +17,7 @@ use Auth;
 use Flash;
 use Input;
 
-class WebPostController extends AdminBaseController
+class WebPostController extends BaseController
 {
     
 

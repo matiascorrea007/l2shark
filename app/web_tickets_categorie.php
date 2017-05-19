@@ -16,7 +16,7 @@ class web_tickets_categorie extends Model
 public function ticket()
     {
         //un categoria puede tener muchas ticket
-       return $this->hasMany(Ticket::class);
+       return $this->hasMany(web_ticket::class);
     }
 
 
