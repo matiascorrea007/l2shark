@@ -29,6 +29,6 @@
 		{!!Html::script('layout/js/jquery.min.js')!!}
 		{!!Html::script('layout/js/bootstrap.js')!!} 
         {!!Html::script('layout/js/placeholder-shim.min.js')!!} 
-        {!!Html::script('layout/js/custom.js')!!} 
+        {!!Html::script('layout/js/l2login.js')!!} 
 </body>
 </html>
