@@ -74,7 +74,7 @@
         <table id="example2" class="table table-hover table-dark donateBox">
   <thead>
     <th><i class="fa fa-user"></i> Personaje</th>
-    <th style="text-align: center;"><i class="fa fa-dollar"></i> Valor total</th>
+    <th style="text-align: center;"><i class=""></i> Valor total</th>
     <th><i class=""></i></th>
     
   </thead>
@@ -91,7 +91,7 @@
     </td>
 
     <td style="text-align: center;">
-        <h1><span style="color:#237200"><b><span id="valor_symbol">$</span> <span id="valor_total">0,00</span></b></span></h1>
+        <h1><span style="color:#237200"><b><span id="valor_symbol"><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></span> <span id="valor_total">0,00</span></b></span></h1>
 
         <input type="text" name="total" hidden class="valor_total"   value="">
         <input type="text" name="bonus" hidden class="bonuss"   value="">

@@ -443,7 +443,6 @@ class ComboController extends AdminBaseController
          ->where('item_id','=',$item)->first();
 
            //los creo siempre ya que son armor wepons y rings
-            
              DB::connection('externa')->table('items')->insert(
                 ['owner_id' => $request['destinatario'], 
                 'item_id' => $item,

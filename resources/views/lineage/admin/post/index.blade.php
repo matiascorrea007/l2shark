@@ -72,8 +72,6 @@
 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ver-{{ $post->id }}"><i class="fa fa-expand"> Ver</i></button>
 
 
-
-
 <a class="btn btn-success btn-lg fa fa-edit" data-toggle="modal" data-target="#edit-{{ $post->id }}"></a>
 
 <a class="btn btn-primary btn-lg fa fa-globe" href="{!! URL::to('blogdetail-post'.$post->id) !!}"></a>
