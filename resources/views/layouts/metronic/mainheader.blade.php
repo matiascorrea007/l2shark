@@ -77,7 +77,7 @@
     <ul class="nav navbar-nav">
         
          <li class="menu-dropdown classic-menu-dropdown ">
-            <a href="{{ url('admin') }}">
+            <a href="{{ url('panel') }}">
                 <img height="30"  width="30" src="storage/icono admin/home.svg"> Home
             </a>      
          </li>
@@ -89,10 +89,10 @@
     <span class="arrow"></span></a>
         <ul class="dropdown-menu pull-left">
             <li class=" ">
-                <a href="{!! URL::to('admin-config/') !!}" class="nav-link"><i class="fa fa-cogs"></i> General</a>
+                <a href="{!! URL::to('panel-config/') !!}" class="nav-link"><i class="fa fa-cogs"></i> General</a>
             </li>
             <li class=" ">
-                <a href="{!! URL::to('admin-paginas/') !!}" class="nav-link"><i class="fa fa-columns"></i> Paginas </a>
+                <a href="{!! URL::to('panel-paginas/') !!}" class="nav-link"><i class="fa fa-columns"></i> Paginas </a>
             </li>
             <li class=" ">
                 <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-database"></i> DB</a>

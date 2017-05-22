@@ -53,7 +53,7 @@ $(document).ready(function(){
     //capturo el nombre del personaje
     var character = this.id;
     //hace referencia a la ruta , y le mandos los parametros
-  $.get('admin/'+ character , function(data){
+  $.get('panel/'+ character , function(data){
   //me lo muesta en el input que tenga id mostrar
 
 

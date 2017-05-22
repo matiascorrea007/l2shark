@@ -119,10 +119,7 @@
 						<span class="default o1">
 							<span>PDU</span>
 							<div>
-						<a href="./ucp" class="default noJquery">Panel de Usuario</a>			
-						<a href="./?page=ucp_changepass" class="default">Cambiar Pass</a>
-						<a href="./?page=ucp_changeemail" class="default">Cambiar E-mail</a>	
-						<a href="./?page=ucp_unstuck" class="default">Unstuck Char</a>
+					<a href="{{ url('/panel') }}" class="default noJquery">Panel de Usuario</a>	
 							</div>
 						</span>
 						<a href="{{ url('/logout') }}" class="default o2 noJquery">Logout</a>
@@ -289,15 +286,47 @@
 						<div class='bg'></div>
 						<div class='txt t3'></div>
 					</div>
-	
-					<div class='galleryBox'><div>
 						
-					
-								
+
+			<div class="galleryBox"><div>
+
+						@foreach($videos as $video)					
+					<a href="#" class="btn btn-default" data-toggle="modal" data-target="#video-{{$video->id}}" >
+					<img height="100" width="100" 	src='{{$video->imagen}}'>
+					<div></div><span></span>
+					</a>
+				@endforeach	
+
+		
+		<!--Cargo el modal-->	
+		@foreach($videos as $video)
+			<div class="modal fade modal-fullscreen" id="video-{{$video->id}}" tabindex="-1" role="dialog" aria-labelledby="videoModal" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button  type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <div>
+                            <iframe width="854" height="480" src="{{$video->link}}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		@endforeach
+
+
 									
 					</div></div>
+				
+					
+
+					
 					<a style='margin-top:4px !important;' class='default dbig' href="{{ url('galeria-video') }}">{{ trans('layout.ver más') }}</a>
 				</div>	
+
+
+
+
 
 		<div class='box'>
 					<div class='title'>
@@ -305,10 +334,9 @@
 						<div class='txt t3'></div>
 					</div>
 	
-				<div class='thumbnail img-responsive'>
+				<div class=' img-responsive'>
 					<div>
-						
-									
+								
 					@foreach($imagenes as $imagene)					
 					<a href="#" class="btn btn-default" data-toggle="modal" data-target="#imagenes-{{$imagene->id}}" >
 					<img height="100" width="100" 	src='{{$imagene->url}}'>

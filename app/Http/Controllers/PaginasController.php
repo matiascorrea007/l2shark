@@ -85,5 +85,17 @@ class PaginasController extends BaseController
     }
 
 
+    public function demoUsuario(){
+          
+         return view ('lineage.demoUsuario');
+
+    }
+
+    public function demoAdmin(){
+          
+         return view ('lineage.demoAdmin');
+
+    }
+
 
 }

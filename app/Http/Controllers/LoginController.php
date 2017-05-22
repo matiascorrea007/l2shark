@@ -48,7 +48,7 @@ class LoginController extends Controller
 
      public function LoginRedirect()
     {
-        return Redirect::back();
+        return Redirect::to('/panel');
     }
 
 

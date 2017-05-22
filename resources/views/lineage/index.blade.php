@@ -1,9 +1,14 @@
 @extends('layouts.monster')
-@include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
+
 
 
 <div class="row ">
+
 <div class='news'><div>
 @foreach($posts as $post)
 
