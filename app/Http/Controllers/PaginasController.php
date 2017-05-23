@@ -87,12 +87,19 @@ class PaginasController extends BaseController
 
     public function demoUsuario(){
           
+          if (Auth::check()) {
+              Auth::logout();
+            }
          return view ('lineage.demoUsuario');
 
     }
 
     public function demoAdmin(){
           
+          if (Auth::check()) {
+              Auth::logout();
+            }
+            
          return view ('lineage.demoAdmin');
 
     }

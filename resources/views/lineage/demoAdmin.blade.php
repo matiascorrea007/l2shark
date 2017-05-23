@@ -22,13 +22,17 @@
 			        	
 			        	<hr>
 			        	<div class="login-form">
-			        		<!-- Start Error box -->
-			        		<div class="alert alert-danger hide">
-								  <button type="button" class="close" data-dismiss="alert"> ×</button>
-								  <h4>Error!</h4>
-								   Your Error Message goes here
-							</div> <!-- End Error box -->
-
+			        	
+			        		@if (count($errors) > 0)
+        			<div class="alert alert-danger">
+            			<strong>Whoops!</strong> Hubo algunos problemas con su entrada.<br><br>
+            			<ul>
+                			@foreach ($errors->all() as $error)
+                    			<li>{{ $error }}</li>
+                			@endforeach
+            			</ul>
+        			</div>
+    						@endif
 
 			        	<form id='form' action="{{ url('/login') }}" method="post">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">

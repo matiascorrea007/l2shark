@@ -1,9 +1,10 @@
 @extends('layouts.monster')
-@section('content')
 @include('alerts.errors')
 @include('alerts.request')
 @include('alerts.success')
 @include('flash::message')
+
+@section('content')
 
 
 
