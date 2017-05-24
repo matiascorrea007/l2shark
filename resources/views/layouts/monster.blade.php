@@ -5,17 +5,17 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="imagetoolbar" content="no">
-<meta name="keywords" content="l2mk, high five, l2, lineage, lineage2, lineage 2, lainiege, laineage, lainiage, lineage dois, lineage ii, internacional, international, portuguese, english, espanish, espanol, espanhol, portugues, ingles, gringo, br, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, diversao gratis, gratuito, gratuitamente, free fun, new server, novo servidor, o melhor servidor de lineage 2, o melhor servidor">
-<meta name="description" content="L2MK, the best server of Lineage 2 High Five. Join us for free and play!">
+<meta name="keywords" content="l2Jserver, high five, l2, lineage, lineage2, lineage 2, lainiege, laineage, lainiage, lineage dois, lineage ii, internacional, international, portuguese, english, espanish, espanol, espanhol, portugues, ingles, gringo, br, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, diversao gratis, gratuito, gratuitamente, free fun, new server, novo servidor, o melhor servidor de lineage 2, o melhor servidor">
+<meta name="description" content="L2Jserver, the best server of Lineage 2 . Join us for free and play!">
 <link rel="shortcut icon" href="imgs\favicon.ico">
-<title>L2MK - High Five</title>
+<title>Template elemet - SharkDesing</title>
 <link rel="image_src" href="imgs\image_src.jpg">
-<meta property="og:title" content="L2MK - High Five">
-<meta property="og:site_name" content="L2MK">
-<meta property="og:url" content="http://www.l2monsterkill.com.br">
-<meta property="og:description" content="L2MK, the best server of Lineage 2 High Five. Join us for free and play!">
+<meta property="og:title" content="sharkdesing - L2Jserver">
+<meta property="og:site_name" content="sharkdesing">
+<meta property="og:url" content="http://www.sharkdesing.com">
+<meta property="og:description" content="SharkDesing Diseño de paginas web">
 <meta property="og:type" content="website">
-<meta property="og:image" content="http://www.l2monsterkill.com.br/imgs/image_src.jpg">
+<meta property="og:image" content="http://www.sharkdesing.com">
 
 
 
@@ -90,6 +90,10 @@
 		
 		<div class='userarea'>
 				
+				
+
+
+
 				@if(Auth::guest())		
 			<div class='anpc'><div>{{ trans('layout.no tiene una cuenta?') }}
 			</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>{{ trans('layout.registrarse') }}</a></div>
@@ -101,16 +105,7 @@
 
 			<div class='loginarea'><!--Login Area-->
 
-				@if (count($errors) > 0)
-        			<div class="alert alert-danger">
-            			<strong>Whoops!</strong> Hubo algunos problemas con su entrada.<br><br>
-            			<ul>
-                			@foreach ($errors->all() as $error)
-                    			<li>{{ $error }}</li>
-                			@endforeach
-            			</ul>
-        			</div>
-    			@endif
+				
 				
 				@if(Auth::check())
 
@@ -183,8 +178,8 @@
 			
 							</div>
 		</span>
-		<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank' class='o5'><span class='opac'></span></a>
-		<a href='http://www.l2monsterkill.com.br/forum' class='o6' target='_blank'><span class='opac'></span></a>
+		<a href='#' target='_blank' class='o5'><span class='opac'></span></a>
+		<a href='#' class='o6' target='_blank'><span class='opac'></span></a>
 	</nav>
 
 	
@@ -255,15 +250,15 @@
 					</div>
 					<div class='forumLines'>
 					
-								<a class='forumLine two' href='http://www.l2monsterkill.com.br/forum/index.php?/topic/33-telas-no-windowns-10/' target='_blank'>
-									<div class='avatar'><img src='http://www.l2monsterkill.com.br/forum/uploads/'></div>
+								<a class='forumLine two' href='#' target='_blank'>
+									<div class='avatar'><img src='#'></div>
 									<div class='text'>
 										<span>Telas no windowns 10</span>
 										<div>by Kallies <span>10 February, 2017</span></div>
 									</div>
 								</a>
 								
-								<a class='forumLine one' href='http://www.l2monsterkill.com.br/forum/index.php?/topic/18-area-pvp-por-grade/' target='_blank'>
+								<a class='forumLine one' href='#' target='_blank'>
 									<div class='avatar'><img src='forum\uploads\monthly_2017_01\AVATAR.jpg.3f05cec697ee9684431b9bbd60fa2af3.thumb.jpg.fa1eeb3628c827e23a0c16d84feea50a.jpg'></div>
 									<div class='text'>
 										<span>Area PvP por Grade</span>
@@ -271,7 +266,7 @@
 									</div>
 								</a>
 								
-								<a class='forumLine two' href='http://www.l2monsterkill.com.br/forum/index.php?/topic/19-gmedal-e-event-medal/' target='_blank'>
+								<a class='forumLine two' href='#' target='_blank'>
 									<div class='avatar'><img src='forum\uploads\monthly_2017_01\AVATAR.jpg.3f05cec697ee9684431b9bbd60fa2af3.thumb.jpg.fa1eeb3628c827e23a0c16d84feea50a.jpg'></div>
 									<div class='text'>
 										<span>G.Medal e Event Medal</span>
@@ -279,7 +274,7 @@
 									</div>
 								</a>
 								</div>
-					<a class='default dbig' target='_blank' href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/'>{{ trans('layout.ver más') }}</a>
+					<a class='default dbig' target='_blank' href='#'>{{ trans('layout.ver más') }}</a>
 				</div>
 				<div class='box'>
 					<div class='title'>
@@ -472,12 +467,12 @@ $(document).ready(function(){
 			<div>{{ trans('layout.Otros') }}</div>
 			
 			<a href='index-17.htm?page=gallery'>{{ trans('layout.Galeria') }}</a>
-			<a href='http://www.l2monsterkill.com.br/forum/index.php?/forum/5-main/' target='_blank'>{{ trans('layout.Base de conocimientos') }}</a>
-			<a href='http://www.l2monsterkill.com.br/forum' target='_blank'>Forum</a>
+			<a href='#' target='_blank'>{{ trans('layout.Base de conocimientos') }}</a>
+			<a href='#'>Forum</a>
 					</div>
 	</div>
 	<div class='copyright'>
-		&copy 2017 L2 Shark  - All rights reserved
+		&copy 2017 L2  - All rights reserved
 	</div>
 </footer>
 
@@ -490,7 +485,7 @@ $(document).ready(function(){
 
 <!-- Facebook PopUp -->
 
-<div id='fanback'><div id='fan-exit'></div><div id='fanbox'><div id='fanclose'></div><iframe src='//www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/l2monsterkill&amp;width=402&amp;height=255&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23E2E2E2&amp;stream=false&amp;header=false&amp;appId=577018195656213' scrolling='no' frameborder='0' allowtransparency='true'></iframe></div></div>
+<div id='fanback'><div id='fan-exit'></div><div id='fanbox'><div id='fanclose'></div><iframe src='//www.facebook.com/plugins/likebox.php?href=https://www.SharkDesing-1995441010742071&amp;width=402&amp;height=255&amp;colorscheme=light&amp;show_faces=true&amp;border_color=%23E2E2E2&amp;stream=false&amp;header=false&amp;appId=577018195656213' scrolling='no' frameborder='0' allowtransparency='true'></iframe></div></div>
 <script src='js\jquery.cookie.js' type='text/javascript'></script>
 
 <script type='text/javascript'>

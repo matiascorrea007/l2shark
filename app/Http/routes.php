@@ -21,7 +21,7 @@ use Soft\Http\Requests;
 use Soft\Http\Requests\Request;
 
 
-Route::group(['middleware' => 'web'], function () {
+
 //sistema de logue para laravel 5.2
 Route::auth();
 
@@ -92,7 +92,7 @@ Route::post('newsletter-enviar','MailController@newsletterEnviar');
 
 
 
-});
+
 
 
 
