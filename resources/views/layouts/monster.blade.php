@@ -69,7 +69,7 @@
 		<div class='bg-top-logo'> 
 		<img src='' style="background:url('skin/monster/imgs/bg-top.jpg') no-repeat center top" >
 		@if(!empty($logo))
-		<img height="400" width="450" src="../public_html/storage/paginas/home/logo/{{$logo->logo}}" alt="" />
+		<img height="400" width="450" src="storage/paginas/home/logo/{{$logo->logo}}" alt="" />
 		@endif
 		</div>
 		<img src='imgs\nm\loader.gif' style='width:0;height:0;display:none;'>
@@ -96,7 +96,7 @@
 
 				@if(Auth::guest())		
 			<div class='anpc'><div>{{ trans('layout.no tiene una cuenta?') }}
-			</div> <a data-toggle="modal" data-target="#registrarse" id="#registrarse" class='default'>{{ trans('layout.registrarse') }}</a></div>
+			</div> <a href="{{ url('/registrarse') }}" class='default'>{{ trans('layout.registrarse') }}</a></div>
 				@endif
 
 				<div class='avatar' style='background-image: url(skin/monster/imgs/avatar/human_male_mage.jpg);'></div>

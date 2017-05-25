@@ -105,7 +105,7 @@
 			
 		</ul>
 	</nav>
-	
+
 	<div class="jumbotron header" id="header">
 		<div class="overlay">
 
@@ -128,7 +128,7 @@
 		<li><a href="{{ url('/registrarse') }}" class="hvr-underline-from-left">Registro</a></li>
 		<li><a href="{{ url('/informacion') }}" class="hvr-underline-from-left">Servidor</a></li>
 		<li><a href="{{ url('/donar') }}" class="hvr-underline-from-left">Donaciones</a></li>
-		<li><a href="{{ url('/descargas') }}" role="button" class="hvr-underline-from-left reg-popup">Archivos</a></li>
+		<li><a href="{{ url('/descargas') }}"  class="hvr-underline-from-left ">Archivos</a></li>
 		<li><a href="{{ url('/top-pvp') }}" class="hvr-underline-from-left">Estadisticas</a></li>
 		<li><a href="{{ url('/boss') }}" class="hvr-underline-from-left">Raid Boss</a></li>
 		<li><a href="{{ url('/siege') }}" class="hvr-underline-from-left">Castles</a></li>
