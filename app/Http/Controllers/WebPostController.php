@@ -16,6 +16,7 @@ use Image;
 use Auth;
 use Flash;
 use Input;
+use Soft\web_skin;
 
 class WebPostController extends BaseController
 {
@@ -34,6 +35,8 @@ class WebPostController extends BaseController
         $posts=web_post::orderBy('created_at','desc')->paginate(10);
       
         $link = "post";
+
+
     return view ('lineage.admin.post.index',compact('link','posts'));
     }
 
@@ -195,7 +198,11 @@ class WebPostController extends BaseController
 
 
 
-
+private function skin()
+    {
+        $skin = web_skin::first();
+        return $skin;
+    }
 
 
 
@@ -203,6 +210,15 @@ class WebPostController extends BaseController
     {
 
         $post=web_post::find($id);
-        return view('lineage.noticias',compact('post'));
+
+        if ($this->skin()->nombre == "element") {
+            return view('lineage.templates.element.noticias',compact('post'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.noticias',compact('post'));
+        } 
+
+
+        
     }
 }

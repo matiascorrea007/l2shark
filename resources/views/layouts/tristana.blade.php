@@ -327,10 +327,10 @@ third.animate(online3, function() {third.animate(online3);});
                   @endif
                 </div>
             </div>
-				</div><!--END user AREA-->
+				<!--END user AREA-->
 
 				<!-- Sidebar Top Players Start -->
-				<div class="col-lg-3 players">
+				
 					<div class="sidebar-head">
 						<h2>Top PVP/PK</h2>
 					</div>
