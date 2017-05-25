@@ -47,7 +47,7 @@ class VotosController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Voto Creado');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 
     /**
@@ -87,7 +87,7 @@ class VotosController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Voto Modificado');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 
     /**
@@ -103,6 +103,6 @@ class VotosController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'voto Eliminado');
-        return Redirect::to('/admin-config');
+        return Redirect::to('/panel-config');
     }
 }

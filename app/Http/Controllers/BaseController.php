@@ -19,6 +19,7 @@ use Soft\web_logo;
 use Soft\web_voto;
 use Soft\web_video;
 use Soft\web_imagene;
+use Soft\web_skin;
 
 class BaseController extends Controller
 {
@@ -28,16 +29,15 @@ class BaseController extends Controller
    public function __construct() {
 
        //datos de la plantilla principal
-      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(5);
-      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(5);
+      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(10);
+      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(10);
       $logo=web_logo::first();
       $box=web_facebook::first();
       $votos=web_voto::all();
       $user = Auth::user();
       $imagenes = web_imagene::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
       $videos = web_video::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
-     
-    
+  
        
       //datos de la plantilla principal
 
@@ -50,6 +50,7 @@ class BaseController extends Controller
        View::share ( 'votos', $votos );
        View::share ( 'imagenes', $imagenes );
        View::share ( 'videos', $videos );
+       
      
       
 

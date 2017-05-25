@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Soft\Cliente;
 use DB;
-
+use Input;
 
 class AuthController extends Controller
 {
@@ -51,12 +51,24 @@ class AuthController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
+    {   
+        $rules =  array('captcha' => ['required', 'captcha']); 
+
+        $messages  = ['captcha' => 'El captcha ingresado es Incorrecto.' ];
+
         return Validator::make($data, [
             'login' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-        ]);
+            'captcha' => ['required', 'captcha'],
+
+        ],$messages);
+
+
+   
+
+
+
     }
 
     /**

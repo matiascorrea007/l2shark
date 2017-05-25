@@ -59,7 +59,7 @@ class WebLogoController extends Controller
        
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'logo Creado');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 
     /**
@@ -106,7 +106,7 @@ class WebLogoController extends Controller
         }
          //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Logo Modificado');
-        return Redirect::to('/admin-config');
+        return Redirect::to('/panel-config');
     }
 
     /**
@@ -123,6 +123,6 @@ class WebLogoController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'logo Eliminada');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 }

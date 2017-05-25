@@ -161,7 +161,7 @@
 			<a href='index-5.htm?page=info'></a>
 			<div style='left: -39px;'>
 			<a href="{{ url('/descargas') }}">{{ trans('layout.Descargas') }}</a>
-			<a href="{{ url('/donaciones') }}">{{ trans('layout.Donaciones') }}</a>
+			<a href="{{ url('/donar') }}">{{ trans('layout.Donaciones') }}</a>
 			<a href="{{ url('/reglas') }}">{{ trans('layout.Reglas') }}</a>
 			<a href="{{ url('/soporte') }}" class='noJquery'>{{ trans('layout.Soporte') }}</a>
 			<a href="{{ url('/informacion') }}">{{ trans('layout.Informacion') }}</a>	
@@ -500,7 +500,7 @@ $(document).ready(function(){
 
 <!--modal-->
 
-    @include('lineage.modal.registrarse') 
+    @include('lineage.templates.element.modal.registrarse') 
 	
 
 

@@ -33,11 +33,11 @@ Route::get('galeria-video','PaginasController@GaleriaVideos');
 Route::get('demo-usuario','PaginasController@demoUsuario');
 Route::get('demo-admin','PaginasController@demoAdmin');
 Route::get('descargas','PaginasController@Download');
-Route::get('donaciones','PaginasController@Donaciones');
+Route::get('donar','PaginasController@Donaciones');
 Route::get('reglas','PaginasController@Reglas');
 Route::get('soporte','PaginasController@Soporte');
 Route::get('informacion','PaginasController@Informacion');
-
+Route::get('registrarse','PaginasController@Registrarse');
 
 
 Route::get('boss','BossController@boss');
@@ -112,7 +112,7 @@ Route::group(array('middleware' => 'auth'), function(){
 Route::group(['middleware' =>['auth']], function () {
 
 
-Route::get('skin','SkinController@index');
+Route::get('skines','SkinController@index');
 Route::get('skin-create','SkinController@create');
 Route::post('skin-store','SkinController@store');
 Route::put('skin-update/{id}','SkinController@update');

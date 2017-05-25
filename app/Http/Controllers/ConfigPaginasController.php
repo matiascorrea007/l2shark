@@ -47,7 +47,7 @@ class ConfigPaginasController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Informacion Creado');
-       return Redirect::to('/admin-paginas');
+       return Redirect::to('/panel-paginas');
     }
 
     /**
@@ -87,7 +87,7 @@ class ConfigPaginasController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'Informacion Modificado');
-       return Redirect::to('/admin-paginas');
+       return Redirect::to('/panel-paginas');
     }
 
     /**
@@ -103,6 +103,6 @@ class ConfigPaginasController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'Informacion Eliminado');
-        return Redirect::to('/admin-paginas');
+        return Redirect::to('/panel-paginas');
     }
 }

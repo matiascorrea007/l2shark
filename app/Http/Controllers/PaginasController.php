@@ -23,6 +23,7 @@ use Soft\Categoriasub;
 use Auth;
 use Soft\Models\character;
 use Embed\Embed;
+use Soft\web_skin;
 
 class PaginasController extends BaseController 
 {
@@ -33,55 +34,123 @@ class PaginasController extends BaseController
     }
 
 
+     private function skin()
+    {
+        $skin = web_skin::first();
+        return $skin;
+    }
+
+
+
      public function Home(){
         $posts=web_post::orderBy('created_at','desc')->paginate(3);
-       // $pago = DB::connection('informatica')->table('marcas')->first();
-         return view ('lineage.index',compact('posts'));
+        
 
+        if ($this->skin()->nombre == "element") {
+           return view ('lineage.templates.element.index',compact('posts'));
+        }
+
+        if ($this->skin()->nombre == "tristana") {
+           return view ('lineage.templates.tristana.index',compact('posts'));
+        }
     }
 
 
 
     public function Download(){
           $paginas = web_pagina::first();
-         return view ('lineage.download',compact('paginas'));
+          
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.download',compact('paginas'));
+        }
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.download',compact('paginas'));
+        }
     }
 
     public function Donaciones(){
           $paginas = web_pagina::first();
-         return view ('lineage.donaciones',compact('paginas'));
+          
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.donaciones',compact('paginas'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.donaciones',compact('paginas'));
+        }  
     }
 
     public function Reglas(){
           $paginas = web_pagina::first();
-         return view ('lineage.reglas',compact('paginas'));
+          
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.reglas',compact('paginas'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.reglas',compact('paginas'));
+        }  
     }
 
     public function Soporte(){
           $paginas = web_pagina::first();
-         return view ('lineage.soporte',compact('paginas'));
+          
 
+       if ($this->skin()->nombre == "element") {
+           return view ('lineage.templates.element.soporte',compact('paginas'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+           return view ('lineage.templates.tristana.soporte',compact('paginas'));
+        }  
     }
 
     public function Informacion(){
           $paginas = web_pagina::first();
-         return view ('lineage.informacion',compact('paginas'));
+            
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.informacion',compact('paginas'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.informacion',compact('paginas'));
+        }  
     }
 
     public function GaleriaVideos(){
           $AllVideos = web_video::where('visible','=',1)->get();
-         return view ('lineage.galeria-videos',compact('AllVideos'));
+          
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.galeria-videos',compact('AllVideos'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.galeria-videos',compact('AllVideos'));
+        }  
     }
 
     public function GaleriaImagenes(){
           $AllImagenes = web_imagene::where('visible','=',1)->get();
-         return view ('lineage.galeria-imagenes',compact('AllImagenes'));
+           
 
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.galeria-imagenes',compact('AllImagenes'));
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.galeria-imagenes',compact('AllImagenes'));
+        } 
+    }
+
+
+    public function Registrarse(){
+      
+
+       if ($this->skin()->nombre == "element") {
+            return view ('lineage.templates.element.registro');
+        }  
+        if ($this->skin()->nombre == "tristana") {
+            return view ('lineage.templates.tristana.registro');
+        } 
     }
 
 

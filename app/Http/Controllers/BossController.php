@@ -11,6 +11,8 @@ use Redirect;
 use Storage;
 use DB;
 use Carbon\Carbon;
+use Soft\web_skin;
+
 
 class BossController extends BaseController
 {
@@ -112,23 +114,16 @@ class BossController extends BaseController
       ->orderBy('level', 'asc')
       ->get();
  
-    //$date = Carbon::now();
-      
-     // dd($date);
-        
-         return view ('lineage.boss',compact('boss','raids',
-          'Benom',
-          'Antharas',
-          'Baium',
-          'QueenAnt',
-          'Core',
-          'Valakas',
-          'Beleth',
-          'AndreasVanHalter',
-          'Zaken',
-          'ScarletvanHalisha',
-          'Frintezza',
-          'Orfen'));
+    
+        $skin = web_skin::first();
+
+        if ($skin->nombre == "element") {
+          return view ('lineage.templates.element.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
+
+        if ($skin->nombre == "tristana") {
+          return view ('lineage.templates.tristana.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
 
     }
 

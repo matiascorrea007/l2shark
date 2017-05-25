@@ -11,7 +11,7 @@ use Redirect;
 use Storage;
 use DB;
 use Image;
-
+use Soft\web_skin;
 
 class SiegeController extends BaseController
 {
@@ -112,28 +112,15 @@ class SiegeController extends BaseController
       ->first();
 
       
+      $skin = web_skin::first();
 
-        return view ('lineage.siege',compact(
-            'Aden',
-            'AdenClan',
-            'Dion',
-            'DionClan',
-            'Giran',
-            'GiranClan',
-            'Gludio',
-            'GludioClan',
-            'Goddard',
-            'GoddardClan',
-            'Innadril',
-            'InnadrilClan',
-            'Oren',
-            'OrenClan',
-            'Rune',
-            'RuneClan',
-            'Schuttgart',
-            'SchuttgartClan'));
-    
+        if ($skin->nombre == "element") {
+        return view ('lineage.templates.element.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
+        }
 
+        if ($skin->nombre == "tristana") {
+        return view ('lineage.templates.tristana.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
+        }
     }
 
    

@@ -175,6 +175,7 @@ return [
         Iber\Generator\ModelGeneratorProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+        Mews\Captcha\CaptchaServiceProvider::class,
        
         
 
@@ -238,6 +239,7 @@ return [
         'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
         'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
         
         
 

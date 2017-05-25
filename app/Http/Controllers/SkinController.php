@@ -5,10 +5,10 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-use Soft\Skin;
+use Soft\web_skin;
 use Alert;
 use DB;
-class SkinController extends Controller
+class SkinController extends AdminController
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +19,7 @@ class SkinController extends Controller
     {
         $link = "skin";
 
-         return view('admin.skin.index',compact('link')); 
+         return view('lineage.admin.skin.index',compact('link')); 
     }
 
     /**
@@ -41,13 +41,13 @@ class SkinController extends Controller
     public function store(Request $request)
     {
 
-        $skin = Skin::first();
+        $skin = web_skin::first();
 
-         $skin->skin =$request['skin'];
+         $skin->nombre =$request['skin'];
          $skin->save();
 
         Alert::success('Mensaje existoso', 'Guardado');
-        return redirect('/skin');
+        return redirect('/skines');
 
     }
 

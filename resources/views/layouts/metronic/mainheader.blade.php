@@ -97,6 +97,9 @@
             <li class=" ">
                 <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-database"></i> DB</a>
             </li>
+            <li class=" ">
+                <a href="{!! URL::to('skines/') !!}" class="nav-link"><i class="fa fa-paint-brush"></i> Skin</a>
+            </li>
         </ul>
      </li>
     @endif

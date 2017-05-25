@@ -11,6 +11,7 @@ use Redirect;
 use Storage;
 use DB;
 use Image;
+use Soft\web_skin;
 
 
 class EstadisticasController extends BaseController
@@ -20,6 +21,12 @@ class EstadisticasController extends BaseController
        parent::__construct();
     }
 
+      private function skin()
+    {
+        $skin = web_skin::first();
+        return $skin;
+    }
+
 
 
     public function rankingPVP()
@@ -27,7 +34,18 @@ class EstadisticasController extends BaseController
 
         $playerpvps = DB::table('characters')->where('pvpkills','>',1)->orderBy('pvpkills', 'des')->paginate(100);
         $contador = 0;
-         return view ('lineage.estadisticas.pvp',compact('playerpvps','contador'));
+
+        
+
+        if ($this->skin()->nombre == "element") {
+          return view ('lineage.templates.element.estadisticas.pvp',compact('playerpvps','contador'));
+        }
+
+        if ($this->skin()->nombre == "tristana") {
+          return view ('lineage.templates.tristana.estadisticas.pvp',compact('playerpvps','contador'));
+        }
+
+         
     }
 
 
@@ -38,7 +56,13 @@ class EstadisticasController extends BaseController
         
         $playerpks = DB::table('characters')->where('pkkills','>',1)->orderBy('pkkills', 'des')->paginate(100);
         $contador = 0;
-         return view ('lineage.estadisticas.pk',compact('playerpks','contador'));
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.pk',compact('playerpks','contador'));
+        }
+
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.pk',compact('playerpks','contador'));
+        }
     }
 
 
@@ -59,15 +83,26 @@ class EstadisticasController extends BaseController
 
         $contador = 0;
 
-        
-         return view ('lineage.estadisticas.clan',compact('clans','clanCastles','contador'));
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.clan',compact('clans','clanCastles','contador'));
+        }
+
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.clan',compact('clans','clanCastles','contador'));
+        }
     }
 
     public function rankingHp()
     {   
         $playerhps = DB::table('characters')->where('maxHp','>',1)->orderBy('maxHp', 'des')->paginate(100);
         $contador = 0;
-         return view ('lineage.estadisticas.hp',compact('playerhps','contador'));
+
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.hp',compact('playerhps','contador'));
+        }
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.hp',compact('playerhps','contador'));
+        }
     }
 
     public function rankingMp()
@@ -75,7 +110,13 @@ class EstadisticasController extends BaseController
         
         $playermps = DB::table('characters')->where('maxMp','>',1)->orderBy('maxMp', 'des')->paginate(100);
         $contador = 0;
-         return view ('lineage.estadisticas.mp',compact('playermps','contador'));
+
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.mp',compact('playermps','contador'));
+        }
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.mp',compact('playermps','contador'));
+        }
     }
 
     public function rankingActivos()
@@ -83,7 +124,13 @@ class EstadisticasController extends BaseController
         
         $playeractivos = DB::table('characters')->where('onlinetime','>',1)->orderBy('onlinetime', 'des')->paginate(100);
         $contador = 0;
-         return view ('lineage.estadisticas.activos',compact('playeractivos','contador'));
+
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.activos',compact('playeractivos','contador'));
+        }
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.activos',compact('playeractivos','contador'));
+        }
     }
 
     public function rankingOnline()
@@ -91,15 +138,25 @@ class EstadisticasController extends BaseController
         
         $playeronlines = DB::table('characters')->where('online','=',1)->orderBy('char_name', 'des')->get();
         $contador = 0;
-         return view ('lineage.estadisticas.online',compact('playeronlines','contador'));
+
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.online',compact('playeronlines','contador'));
+        }
+         if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.online',compact('playeronlines','contador'));
+        }
     }
 
     public function rankingDonadores()
     {   
         
         
-        
-         return view ('lineage.estadisticas.donadores');
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.donadores');
+        }
+        if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.donadores');
+        }
     }
 
 
@@ -113,7 +170,13 @@ class EstadisticasController extends BaseController
         ->orderBy('char_name', 'des')
         ->get();
         $contador = 0;
-         return view ('lineage.estadisticas.heroes',compact('heroes','contador'));
+
+        if ($this->skin()->nombre == "element") {
+         return view ('lineage.templates.element.estadisticas.heroes',compact('heroes','contador'));
+         }
+         if ($this->skin()->nombre == "tristana") {
+         return view ('lineage.templates.tristana.estadisticas.heroes',compact('heroes','contador'));
+         }
     }
 
 }

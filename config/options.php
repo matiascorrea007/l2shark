@@ -56,10 +56,8 @@ return array(
 
 
 'skin'=>[
-'blue' => 'blue', 
-'grey' => 'grey', 
-'dark' => 'dark', 
-'light' => 'light', 
+'element' => 'element', 
+'tristana' => 'tristana', 
 ],
 
 

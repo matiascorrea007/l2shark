@@ -25,7 +25,8 @@
         "milon/barcode": "^5.3",
         "laracasts/flash": "^3.0",
         "embed/embed": "^3.0",
-        "anouar/paypalpayment": "~1.0"
+        "anouar/paypalpayment": "~1.0",
+        "mews/captcha": "^2.1"
 
     
 

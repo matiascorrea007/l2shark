@@ -48,7 +48,7 @@ class WebFacebookController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'box Creado');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 
     /**
@@ -88,7 +88,7 @@ class WebFacebookController extends Controller
 
         //le manda un mensaje al usuario
        Alert::success('Mensaje existoso', 'box Modificado');
-       return Redirect::to('/admin-config');
+       return Redirect::to('/panel-config');
     }
 
     /**
@@ -104,6 +104,6 @@ class WebFacebookController extends Controller
         
         //le manda un mensaje al usuario
         Alert::success('Mensaje existoso', 'box Eliminado');
-        return Redirect::to('/admin-config');
+        return Redirect::to('/panel-config');
     }
 }
