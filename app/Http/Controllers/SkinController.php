@@ -7,7 +7,16 @@ use Illuminate\Http\Request;
 use Soft\Http\Requests;
 use Soft\web_skin;
 use Alert;
+use Session;
+use Redirect;
+use Storage;
 use DB;
+use Image;
+use Auth;
+use Embed\Embed;
+use Toastr;
+
+
 class SkinController extends AdminController
 {
     /**
@@ -18,8 +27,8 @@ class SkinController extends AdminController
     public function index()
     {
         $link = "skin";
-
-         return view('lineage.admin.skin.index',compact('link')); 
+        $skin = web_skin::first();
+         return view('lineage.admin.skin.index',compact('skin')); 
     }
 
     /**

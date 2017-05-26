@@ -32,17 +32,9 @@
 
 
 {{ Form::open(['url' => ['skin-store'], 'method' => 'POST', 'files'=>True]) }}
-
-<div class="modal-body">      
-
-@include('admin.skin.forms.formscreate')
-</div>
-
-<div class="modal-footer">
-{!!Form::submit('modificar',['class'=>'btn btn-primary pull-right'])!!}
-
+@include('lineage.admin.skin.forms.formscreate')
 {!!Form::close()!!}
-
+</div>
 
 
 

@@ -22,6 +22,8 @@
         <link href="{{ asset('layout/css/custom.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/jquery.minicolors.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/themes/default.css') }}" rel="stylesheet" type="text/css" />
+        {!!Html::style('layout/css/cubeportfolio.css')!!}
+        {!!Html::style('layout/css/portfolio.min.css')!!}
         <!-- sweetalert -->
         <link href="{{ asset('layout/css/sweetalert.css') }}" rel="stylesheet"/>
         <link href="{{ asset('layout/css/select2.css') }}" rel="stylesheet"/>

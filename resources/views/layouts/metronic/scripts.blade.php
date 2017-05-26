@@ -36,6 +36,8 @@
         {!!Html::script('layout/js/quick-sidebar.js')!!}
         {!!Html::script('layout/js/quick-nav.js')!!}
         {!!Html::script('layout/js/jquery.minicolors.js')!!}
+        {!!Html::script('layout/js/jquery.cubeportfolio.min.js')!!}
+        {!!Html::script('layout/js/portfolio-1.min.js')!!}
 
 
 <!------------------------------- metronic scriptt ------------------------------>
