@@ -19,6 +19,7 @@ use Soft\Models\Character;
 use Soft\Models\ClanDatum;
 use Auth;
 use Flash;
+use Toastr;
 
 class AdminController extends AdminBaseController
 {   
@@ -45,6 +46,8 @@ class AdminController extends AdminBaseController
              flash('no se puedo realizar la conexion a la BD.')->error();
             
         }
+
+
 
         return view ('lineage.admin.index',compact('characters'));
     }

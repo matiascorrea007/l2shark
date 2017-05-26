@@ -38,8 +38,8 @@
 
 							<div class="login-links"> 
 					           
-					            <br><br><br>
-
+					            <br><br>
+								<p style="color:red;">Ingrese con los siguientes datos :</p>	
 					            <p><strong>Email: </strong>usuario@sharkdesing.com</p>
 					            <p><strong>password: </strong>123456</p>
 							</div>   

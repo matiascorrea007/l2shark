@@ -15,6 +15,7 @@ use Redirect;
 use Storage;
 use DB;
 use Image;
+use Toastr;
 use Soft\Producto;
 use Soft\Producto_Imagen;
 use Soft\Categoria;
@@ -168,6 +169,8 @@ class PaginasController extends BaseController
           if (Auth::check()) {
               Auth::logout();
             }
+
+            
             
          return view ('lineage.demoAdmin');
 

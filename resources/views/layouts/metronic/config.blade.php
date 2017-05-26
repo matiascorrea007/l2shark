@@ -1,8 +1,70 @@
+<div class="btn-group btn-theme-panel">
+    <ul class="nav navbar-nav pull-left">
+        <div class="">
+                                        <ul class="page-breadcrumb breadcrumb">
+                                        <li>
+                                            <a href="index.html">Home</a>
+                                            <i class="fa fa-circle"></i>
+                                        </li>
+                                        <li>
+                                            <span>Dashboard</span>
+                                        </li>
+                                    </ul>
+                                    </div>
+
+    </ul>
+</div>
+
+
+
+
+
 <div class="page-toolbar">
+
+
+
                                         <!-- BEGIN THEME PANEL -->
                                         <div class="btn-group btn-theme-panel">
-                                            <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
-                                                <i class="icon-settings"></i>
+
+                                        <ul class="nav navbar-nav pull-right">
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                       <li class="dropdown dropdown-user dropdown-dark">
+                                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                        <i class=""><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></i> Saldo :
+                                                        <span class="badge badge-danger">{{$user->saldo}}</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                                     <li>
+                                                         <a href="{!! URL::to('donaciones') !!}">
+                                                        <i class="fa fa-credit-card  "></i> Agregar Saldo</a>
+                                                     </li>
+                                                     <li>
+                                                         <a href="{!! URL::to('transferir-coin') !!}">
+                                                        <i class="fa fa-exchange "></i> Transferir Saldo </a>
+                                                     </li>
+                                                    </ul>
+                                                </li>
+
+
+
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30">
+                                                <span class="username username-hide-mobile">{{$user->login}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-default">
+                                                <li>
+                                                    <a href="{!! URL::to('logout') !!}" >
+                                                        <i class="fa fa-sign-out color-light"></i> Log Out </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+
+
+
+                                      <!--  <a href="javascript:;" class="btn dropdown-toggle" data-toggle="dropdown">
+                                                <i class=""><img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30"></i>
                                             </a>
                                             <div class="dropdown-menu theme-panel pull-right dropdown-custom hold-on-click">
                                                 <div class="row">
@@ -101,7 +163,7 @@
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <!-- END THEME PANEL -->
                                     </div>

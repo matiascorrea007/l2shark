@@ -25,40 +25,7 @@
                         <div class="page-header-menu" style="display: block;">
                             <div class="container-fluid">
 
-                            <ul class="nav navbar-nav pull-right">
-                                        <!-- BEGIN USER LOGIN DROPDOWN -->
-                                       <li class="dropdown dropdown-user dropdown-dark">
-                                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                        <i class=""><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></i> Saldo :
-                                                        <span class="badge badge-success">{{$user->saldo}}</span>
-                                                    </a>
-                                                    <ul class="dropdown-menu dropdown-menu-dark">
-                                                     <li>
-                                                         <a href="{!! URL::to('donaciones') !!}">
-                                                        <i class="fa fa-credit-card  "></i> Agregar Saldo</a>
-                                                     </li>
-                                                     <li>
-                                                         <a href="{!! URL::to('transferir-coin') !!}">
-                                                        <i class="fa fa-exchange "></i> Transferir Saldo </a>
-                                                     </li>
-                                                    </ul>
-                                                </li>
-
-
-
-                                        <li class="dropdown dropdown-user dropdown-dark">
-                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-                                                <img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30">
-                                                <span class="username username-hide-mobile">{{$user->login}}</span>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-default">
-                                                <li>
-                                                    <a href="{!! URL::to('logout') !!}" >
-                                                        <i class="fa fa-sign-out color-light"></i> Log Out </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                            
 
 
                                 <!-- BEGIN HEADER SEARCH BOX -->
@@ -94,9 +61,11 @@
             <li class=" ">
                 <a href="{!! URL::to('panel-paginas/') !!}" class="nav-link"><i class="fa fa-columns"></i> Paginas </a>
             </li>
+            @if(Auth::user()->admin == "super")
             <li class=" ">
                 <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-database"></i> DB</a>
             </li>
+            @endif
             <li class=" ">
                 <a href="{!! URL::to('skines/') !!}" class="nav-link"><i class="fa fa-paint-brush"></i> Skin</a>
             </li>

@@ -13,6 +13,7 @@
 	<link href="{{ asset('layout/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
   	<link href="{{ asset('layout/css/l2login.css') }}" rel="stylesheet" type="text/css" />
    
+   
   </head>
  <body>
     	

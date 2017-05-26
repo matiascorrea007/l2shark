@@ -30,17 +30,7 @@
                             <div class="page-head">
                                 <div class="container-fluid">
                                     <!-- BEGIN PAGE TITLE -->
-                                    <div class="page-title">
-                                        <ul class="page-breadcrumb breadcrumb">
-                                        <li>
-                                            <a href="index.html">Home</a>
-                                            <i class="fa fa-circle"></i>
-                                        </li>
-                                        <li>
-                                            <span>Dashboard</span>
-                                        </li>
-                                    </ul>
-                                    </div>
+                                    
                                     <!-- END PAGE TITLE -->
                                     <!-- BEGIN PAGE TOOLBAR -->
                                    @include('layouts.metronic.config')

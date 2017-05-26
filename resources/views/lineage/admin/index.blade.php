@@ -4,6 +4,7 @@
 @include('alerts.request')
 @include('alerts.success')
 @include('flash::message')
+{!! Toastr::message() !!}
 
 <div class="row">
     <div class="col-md-6">

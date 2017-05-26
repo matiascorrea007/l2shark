@@ -45,7 +45,9 @@ class DbController extends AdminBaseController
             //en caso de una exepcion
         catch(\PDOException $e)
         {
-             flash('no se puedo realizar la conexion a la BD.')->error();
+           
+
+             flash('no se puedo realizar la conexion a la Base de Datos     .'.$e->getMessage())->error();
             
         }
 

@@ -55,6 +55,10 @@
 <script src="{{ asset('layout/js/sweetalert-dev.js') }}"></script>
 @include('sweet::alert')
 
+<!-- Alert Toastr -->
+{!!Html::script('layout/js/toastr.js')!!} 
+{!! Toastr::message() !!}
+
 <script src="{{ asset('layout/js/parallax.js') }}"></script>
 
 <!--Filemanager-->

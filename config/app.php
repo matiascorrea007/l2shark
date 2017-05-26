@@ -176,6 +176,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Whossun\Toastr\ToastrServiceProvider::class,
        
         
 
@@ -240,6 +241,7 @@ return [
         'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
         'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Toastr'  => Whossun\Toastr\Facades\Toastr::class,
         
         
 
