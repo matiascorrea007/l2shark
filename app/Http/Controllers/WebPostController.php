@@ -70,7 +70,7 @@ class WebPostController extends BaseController
         //carpeta
          $nombreNoticia = $request['titulo'];
         $directory = "noticias/".$nombreNoticia;
-
+        
          //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
         if(!empty($request->hasFile('imagen'))){
           $imagen = Input::file('imagen');

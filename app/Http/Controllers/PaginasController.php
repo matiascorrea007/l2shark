@@ -54,6 +54,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
            return view ('lineage.templates.tristana.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.index',compact('posts'));
+        }
     }
 
 
@@ -68,6 +72,9 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.download',compact('paginas'));
         }
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.download',compact('paginas'));
+        }
     }
 
     public function Donaciones(){
@@ -80,6 +87,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.donaciones',compact('paginas'));
         }  
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.donaciones',compact('paginas'));
+        }
     }
 
     public function Reglas(){
@@ -92,6 +103,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.reglas',compact('paginas'));
         }  
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.reglas',compact('paginas'));
+        }
     }
 
     public function Soporte(){
@@ -104,6 +119,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
            return view ('lineage.templates.tristana.soporte',compact('paginas'));
         }  
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.soporte',compact('paginas'));
+        }
     }
 
     public function Informacion(){
@@ -116,6 +135,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.informacion',compact('paginas'));
         }  
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.informacion',compact('paginas'));
+        }
     }
 
     public function GaleriaVideos(){
@@ -128,6 +151,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.galeria-videos',compact('AllVideos'));
         }  
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.galeria-videos',compact('AllVideos'));
+        }
     }
 
     public function GaleriaImagenes(){
@@ -140,6 +167,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.galeria-imagenes',compact('AllImagenes'));
         } 
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.galeria-imagenes',compact('AllImagenes'));
+        }
     }
 
 
@@ -152,6 +183,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.registro');
         } 
+
+        if ($this->skin()->nombre == "animus") {
+           return view ('lineage.templates.animus.registro');
+        }
     }
 
 
