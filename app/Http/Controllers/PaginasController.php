@@ -44,7 +44,7 @@ class PaginasController extends BaseController
 
 
      public function Home(){
-        $posts=web_post::orderBy('created_at','desc')->paginate(3);
+        $posts=web_post::orderBy('created_at','desc')->paginate(10);
         
 
         if ($this->skin()->nombre == "element") {
@@ -57,6 +57,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.index',compact('posts'));
+        }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.index',compact('posts'));
         }
     }
 
@@ -75,6 +79,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.download',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.download',compact('paginas'));
+        }
     }
 
     public function Donaciones(){
@@ -90,6 +98,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.donaciones',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.donaciones',compact('paginas'));
         }
     }
 
@@ -107,6 +119,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.reglas',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.reglas',compact('paginas'));
+        }
     }
 
     public function Soporte(){
@@ -122,6 +138,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.soporte',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.soporte',compact('paginas'));
         }
     }
 
@@ -139,6 +159,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.informacion',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.informacion',compact('paginas'));
+        }
     }
 
     public function GaleriaVideos(){
@@ -154,6 +178,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.galeria-videos',compact('AllVideos'));
+        }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.galeria-videos',compact('AllVideos'));
         }
     }
 
@@ -171,6 +199,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.galeria-imagenes',compact('AllImagenes'));
         }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.galeria-imagenes',compact('AllImagenes'));
+        }
     }
 
 
@@ -186,6 +218,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "animus") {
            return view ('lineage.templates.animus.registro');
+        }
+
+        if ($this->skin()->nombre == "diamond") {
+           return view ('lineage.templates.diamond.registro');
         }
     }
 

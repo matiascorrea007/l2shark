@@ -1,0 +1,133 @@
+﻿.widget {
+
+}
+
+	.widget a {
+
+	text-decoration: none;
+	}
+	
+	.widget a:hover {
+	
+	text-decoration: none;
+	}
+
+.tabnav { margin-left:65px; margin-top:10px}
+
+	.tabnav li {
+	display: inline;
+	list-style: none;
+	text-align:center;
+	padding-top:5px;
+	padding-right: 15px;
+	}
+	
+		.tabnav li a {
+			text-align:center;
+			color: #9A9292;
+	font-size:14px;
+	border-bottom:1px rgba(0,0,0,0) solid;-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+		}
+		
+		.tabnav li a:hover, .tabnav li a:active, .tabnav li.ui-tabs-selected a {
+			color: #e0d1b8;
+		border-bottom:1px #e0d1b8 solid; padding-bottom:5px;
+	font-size:14px;
+		}
+		
+	.tabdiv {
+	margin-top: -10px;
+	padding: 5px;
+	}
+	
+		.tabdiv li {
+		list-style-image: url("star.htm");
+		margin-left: 0px;
+		}
+
+.ui-tabs-hide {
+		display: none;
+		}
+
+		#featuredvid {
+		text-align: center;
+		}
+		
+			.fvid {
+			margin-bottom: 5px;
+			}
+		
+			.vidselector li {
+			text-align: left;
+			list-style: none;
+			padding: 5px;
+			background: #ffffff;
+			border: 1px solid #dedbd1;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			}
+			
+			
+.tabnav_b { margin-left:18px; margin-top:10px;
+    text-align: center;margin: 10px 0px 20px 18px;}
+
+	.tabnav_b li {
+	display: inline;
+	list-style: none;
+	text-align:center;
+	padding-top:2px;
+	padding-right: 15px;
+	}
+	
+		.tabnav_b li a {
+			text-align:center;
+			color: #9A9292;
+	font:16px 'PT Sans';
+	border-bottom:1px rgba(0,0,0,0) solid;-webkit-transition: all 0.3s ease-in-out;
+				-moz-transition: all 0.3s ease-in-out;
+				-o-transition: all 0.3s ease-in-out;
+				-ms-transition: all 0.3s ease-in-out;
+				transition: all 0.3s ease-in-out;
+		}
+		
+		.tabnav_b li a:hover, .tabnav_b li a:active, .tabnav_b li.ui-tabs-selected a {
+			color: #e0d1b8;
+		border-bottom:1px #e0d1b8 solid; padding-bottom:2px;
+	font:16px 'PT Sans';
+		}
+		
+	.tabdiv_b {
+	margin-top: -10px;
+	padding: 5px;
+	}
+	
+		.tabdiv_b li {
+		list-style-image: url("star.htm");
+		margin-left: 0px;
+		}
+
+.ui-tabs-hide_b {
+		display: none;
+		}
+
+		#featuredvid_b {
+		text-align: center;
+		}
+		
+			.fvid_b {
+			margin-bottom: 5px;
+			}
+		
+			.vidselector_b li {
+			text-align: left;
+			list-style: none;
+			padding: 5px;
+			background: #ffffff;
+			border: 1px solid #dedbd1;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+			}

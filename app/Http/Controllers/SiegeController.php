@@ -125,6 +125,10 @@ class SiegeController extends BaseController
         if ($skin->nombre == "animus") {
         return view ('lineage.templates.animus.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
         }
+
+        if ($skin->nombre == "diamond") {
+        return view ('lineage.templates.diamond.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
+        }
     }
 
    

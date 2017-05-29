@@ -129,6 +129,10 @@ class BossController extends BaseController
           return view ('lineage.templates.animus.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
         }
 
+        if ($skin->nombre == "diamond") {
+          return view ('lineage.templates.diamond.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
+
     }
 
 

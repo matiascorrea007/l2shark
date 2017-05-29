@@ -112,7 +112,7 @@
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-12">
 	{!!Form::label('')!!}
-	{!!Form::textarea ('infromacion',null,['class'=>'my-editor','id'=>'lfm','placeholder'=>'ingrese la Informacion del Servidor', 'row' => 100, 'cols' => 80])!!}
+	{!!Form::textarea ('informacion',null,['class'=>'my-editor','id'=>'lfm','placeholder'=>'ingrese la Informacion del Servidor', 'row' => 100, 'cols' => 80])!!}
 </div>
 <br>
    

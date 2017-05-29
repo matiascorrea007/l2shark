@@ -202,7 +202,7 @@ Route::get('search-item','ComboController@SearchItem');
 Route::get('paginas','ConfigPaginasController@index');
 Route::get('paginas-create','ConfigPaginasController@create');
 Route::post('paginas-store','ConfigPaginasController@store');
-Route::get('paginas-update/{id}','ConfigPaginasController@update');
+Route::put('paginas-update/{id}','ConfigPaginasController@update');
 Route::put('paginas-destroy/{id}','ConfigPaginasController@destroy');
 
 
