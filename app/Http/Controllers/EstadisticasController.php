@@ -49,6 +49,10 @@ class EstadisticasController extends BaseController
           return view ('lineage.templates.diamond.estadisticas.pvp',compact('playerpvps','contador'));
         }
 
+         if ($this->skin()->nombre == "altrone") {
+          return view ('lineage.templates.altrone.estadisticas.pvp',compact('playerpvps','contador'));
+        }
+
          
     }
 
@@ -70,6 +74,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.pk',compact('playerpks','contador'));
+        }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.pk',compact('playerpks','contador'));
         }
     }
 
@@ -102,6 +110,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.clan',compact('clans','clanCastles','contador'));
         }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.clan',compact('clans','clanCastles','contador'));
+        }
     }
 
     public function rankingHp()
@@ -118,6 +130,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.hp',compact('playerhps','contador'));
+        }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.hp',compact('playerhps','contador'));
         }
     }
 
@@ -137,6 +153,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.mp',compact('playermps','contador'));
         }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.mp',compact('playermps','contador'));
+        }
     }
 
     public function rankingActivos()
@@ -154,6 +174,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.activos',compact('playeractivos','contador'));
+        }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.activos',compact('playeractivos','contador'));
         }
     }
 
@@ -173,6 +197,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.online',compact('playeronlines','contador'));
         }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.online',compact('playeronlines','contador'));
+        }
     }
 
     public function rankingDonadores()
@@ -188,6 +216,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.donadores');
+        }
+
+        if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.donadores');
         }
     }
 
@@ -213,6 +245,10 @@ class EstadisticasController extends BaseController
           
          if ($this->skin()->nombre == "diamond") {
          return view ('lineage.templates.diamond.estadisticas.heroes',compact('heroes','contador'));
+         }
+
+         if ($this->skin()->nombre == "altrone") {
+         return view ('lineage.templates.altrone.estadisticas.heroes',compact('heroes','contador'));
          }
     }
 

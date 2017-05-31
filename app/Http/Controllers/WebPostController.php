@@ -217,7 +217,13 @@ private function skin()
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.noticias',compact('post'));
         } 
+        if ($this->skin()->nombre == "animus") {
+            return view ('lineage.templates.animus.noticias',compact('post'));
+        } 
 
+        if ($this->skin()->nombre == "altrone") {
+            return view ('lineage.templates.altrone.noticias',compact('post'));
+        } 
 
         
     }
