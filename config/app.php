@@ -177,6 +177,7 @@ return [
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Whossun\Toastr\ToastrServiceProvider::class,
+        
        
         
 

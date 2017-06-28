@@ -182,6 +182,7 @@ class ComboController extends AdminBaseController
     
      public function ComboItemAdd(Request $request,$id)
     {
+       
          //si es una peticion ajax
         if ($request->ajax()) {
             

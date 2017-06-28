@@ -694,8 +694,10 @@ h2 {
 	margin: 10px 0 10px;	
 }
 
-.account div {
-	background: url(../images/pers-acc.png) no-repeat top center;
+
+
+.raid div {
+	background: url(../images/raid.png) no-repeat top center;
 	margin: 10px 0px 0px 15px;
 	width: 160px;
 	height: 48px;
@@ -703,12 +705,38 @@ h2 {
 	cursor: pointer;
 }
 
-.account div:hover {
+.siege div {
+	background: url(../images/siege.png) no-repeat top center;
+	margin: 10px 0px 0px 15px;
+	width: 160px;
+	height: 48px;
+	display: block;
+	cursor: pointer;
+}
+
+.estadisticas div {
+	background: url(../images/estadisticas.png) no-repeat top center;
+	margin: 10px 0px 0px 15px;
+	width: 160px;
+	height: 48px;
+	display: block;
+	cursor: pointer;
+}
+
+.raid div:hover {
 	background-position: bottom;
 cursor: pointer;	
 }
 
+.siege div:hover {
+	background-position: bottom;
+cursor: pointer;	
+}
 
+.estadisticas div:hover {
+	background-position: bottom;
+cursor: pointer;	
+}
 
 
 article a { color: #9b0000 !important; }

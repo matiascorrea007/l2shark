@@ -159,7 +159,7 @@
             </div>
           </div>-->
 
-          
+
         </div>
         
         <div id="center-block"> 
@@ -250,11 +250,12 @@
 
           <div id="right-block">
             <div id="block-title">
-              <img src="skin/altrone/images/account.png" alt="">
+              <img src="skin/altrone/images/info.png" alt="">
             </div>
-            <a href="/index.php?f=cp"><div class="account last"><div id="accountbtn"></div></div></a>
-                        <center><a class="rec" href="/index.php?f=forget">Забыли пароль?</a></center>
-                        <center><a class="reg" href="/index.php?f=register">Регистрация</a></center>
+           <a href="{{ url('/boss') }}"><div class="raid last"><div id="accountbtn"></div></div></a>
+           <a href="{{ url('/siege') }}"><div class="siege last"><div id="accountbtn"></div></div></a>
+           <a href="{{ url('/top-pvp') }}"><div class="estadisticas last"><div id="accountbtn"></div></div></a> 
+
           </div>
 
           <!--
