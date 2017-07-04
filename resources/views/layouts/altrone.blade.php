@@ -106,6 +106,7 @@
                 <div id="top-left" class="tl">Nombre</div>
                 <div id="top-right" class="tl">PVP</div>
               </div>
+              @if(!empty($pvps))
               @foreach($pvps as $pvp)
                 <div id='top-line'>
                   <div id='top-left' class='tl'>
@@ -114,6 +115,7 @@
                    <div id='top-right' class='tl'> {{$pvp->pvpkills}}</div>
                   </div>
                    @endforeach  
+                   @endif
             </div>
             <hr><br>
             <div id="top-players">
@@ -121,6 +123,7 @@
                 <div id="top-left" class="tl">Nombre</div>
                 <div id="top-right" class="tl">PK</div>
               </div>
+              @if(!empty($pks))
               @foreach($pks as $pk)
                 <div id='top-line'>
                   <div id='top-left' class='tl'>
@@ -129,6 +132,7 @@
                    <div id='top-right' class='tl'> {{$pk->pkkills}}</div>
                   </div>
                    @endforeach  
+                   @endif
             </div>
 
           </div>

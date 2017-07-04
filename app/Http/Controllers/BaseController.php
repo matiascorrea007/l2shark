@@ -29,8 +29,22 @@ class BaseController extends Controller
    public function __construct() {
 
        //datos de la plantilla principal
-      $pvps = DB::table('characters')->orderBy('pvpkills', 'des')->paginate(10);
-      $pks = DB::table('characters')->orderBy('pkkills', 'des')->paginate(10);
+       
+       
+       try
+        {
+            $pvps = DB::connection('externa')->table('characters')->orderBy('pvpkills', 'des')->paginate(10);
+            $pks = DB::connection('externa')->table('characters')->orderBy('pkkills', 'des')->paginate(10);
+        }
+        catch(\PDOException $e)
+        {
+            $pvps = null;
+            $pks = null;
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+      
       $logo=web_logo::first();
       $box=web_facebook::first();
       $votos=web_voto::all();

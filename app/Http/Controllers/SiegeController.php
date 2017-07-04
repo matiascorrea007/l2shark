@@ -25,91 +25,110 @@ class SiegeController extends BaseController
     public function siege()
     {
         
-        $caslte = 
+         try
+        {   
+        $Aden = DB::connection('externa')->table('castle')
+        ->where('name','=','Aden')
+        ->first();
 
-       $Aden = DB::table('castle')
-      ->where('name','=','Aden')
-      ->first();
-
-      $AdenClan = DB::table('clan_data')
-      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
-      ->where('name','=','Aden')
-      ->first();
-
-      $Dion = DB::table('castle')
+        $Dion = DB::connection('externa')->table('castle')
       ->where('name','=','Dion')
       ->first();
 
-      $DionClan = DB::table('clan_data')
-      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
-      ->where('name','=','Dion')
-      ->first();
-
-      $Giran = DB::table('castle')
+      $Giran = DB::connection('externa')->table('castle')
       ->where('name','=','Giran')
       ->first();
 
-      $GiranClan = DB::table('clan_data')
+      $Gludio = DB::connection('externa')->table('castle')
+      ->where('name','=','Gludio')
+      ->first();
+
+      $Goddard = DB::connection('externa')->table('castle')
+      ->where('name','=','Goddard')
+      ->first();
+
+      $Innadril = DB::connection('externa')->table('castle')
+      ->where('name','=','Innadril')
+      ->first();
+
+      
+      $Oren = DB::connection('externa')->table('castle')
+      ->where('name','=','Oren')
+      ->first();
+      
+      $Rune = DB::connection('externa')->table('castle')
+      ->where('name','=','Rune')
+      ->first();
+
+      $Schuttgart = DB::connection('externa')->table('castle')
+      ->where('name','=','Schuttgart')
+      ->first();
+
+
+        }
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion con castle.')->error();
+        }
+
+
+
+        try
+        { 
+           $AdenClan = DB::connection('externa')->table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Aden')
+      ->first();
+
+      $DionClan = DB::connection('externa')->table('clan_data')
+      ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->where('name','=','Dion')
+      ->first();
+
+      $GiranClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Giran')
       ->first();
-
       
-      
-      $Gludio = DB::table('castle')
-      ->where('name','=','Gludio')
-      ->first();
-
-      $GludioClan = DB::table('clan_data')
+      $GludioClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Gludio')
       ->first();
 
-      $Goddard = DB::table('castle')
-      ->where('name','=','Goddard')
-      ->first();
 
-      $GoddardClan = DB::table('clan_data')
+      $GoddardClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Goddard')
       ->first();
 
-      $Innadril = DB::table('castle')
-      ->where('name','=','Innadril')
-      ->first();
-
-      $InnadrilClan = DB::table('clan_data')
+      $InnadrilClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Innadril')
       ->first();
 
-      $Oren = DB::table('castle')
-      ->where('name','=','Oren')
-      ->first();
-
-      $OrenClan = DB::table('clan_data')
+      $OrenClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Oren')
       ->first();
 
-      $Rune = DB::table('castle')
-      ->where('name','=','Rune')
-      ->first();
-
-      $RuneClan = DB::table('clan_data')
+      $RuneClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Rune')
       ->first();
 
-      $Schuttgart = DB::table('castle')
-      ->where('name','=','Schuttgart')
-      ->first();
-
-      $SchuttgartClan = DB::table('clan_data')
+      $SchuttgartClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
       ->where('name','=','Schuttgart')
       ->first();
+        }
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion con clan_data.')->error();
+        }
+       
+
+     
 
       
       $skin = web_skin::first();

@@ -22,7 +22,6 @@ use Soft\Categoria;
 use Soft\Review;
 use Soft\Categoriasub;
 use Auth;
-use Soft\Models\character;
 use Embed\Embed;
 use Soft\web_skin;
 

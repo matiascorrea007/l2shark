@@ -32,7 +32,20 @@ class EstadisticasController extends BaseController
     public function rankingPVP()
     {   
 
-        $playerpvps = DB::table('characters')->where('pvpkills','>',1)->orderBy('pvpkills', 'des')->paginate(100);
+
+         try
+        {   
+            $playerpvps = DB::connection('externa')->table('characters')->where('pvpkills','>',1)->orderBy('pvpkills', 'des')->paginate(100);
+        }
+        catch(\PDOException $e)
+        {
+            
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
+        
         $contador = 0;
 
         
@@ -62,8 +75,21 @@ class EstadisticasController extends BaseController
     public function rankingPK()
     {   
         
-        $playerpks = DB::table('characters')->where('pkkills','>',1)->orderBy('pkkills', 'des')->paginate(100);
+         try
+        {   
+            $playerpks = DB::connection('externa')->table('characters')->where('pkkills','>',1)->orderBy('pkkills', 'des')->paginate(100);
+        }
+        catch(\PDOException $e)
+        {
+            
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
         $contador = 0;
+
+
         if ($this->skin()->nombre == "element") {
          return view ('lineage.templates.element.estadisticas.pk',compact('playerpks','contador'));
         }
@@ -85,17 +111,29 @@ class EstadisticasController extends BaseController
 
     public function rankingClan()
     {   
-        
-        $clanCastles = DB::table('clan_data')
+        try
+        {   
+             $clanCastles = DB::connection('externa')->table('clan_data')
         ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
         ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
         ->orderBy('clan_level', 'des')->get();
 
 
-        $clans = DB::table('clan_data')
+        $clans = DB::connection('externa')->table('clan_data')
         ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
         ->orderBy('clan_level', 'des')->get();
 
+        }
+        catch(\PDOException $e)
+        {
+      
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
+        
+       
 
         $contador = 0;
 
@@ -118,7 +156,22 @@ class EstadisticasController extends BaseController
 
     public function rankingHp()
     {   
-        $playerhps = DB::table('characters')->where('maxHp','>',1)->orderBy('maxHp', 'des')->paginate(100);
+
+        try
+        {   
+
+            $playerhps = DB::connection('externa')->table('characters')->where('maxHp','>',1)->orderBy('maxHp', 'des')->paginate(100);
+
+        }
+        catch(\PDOException $e)
+        {
+      
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
+        
         $contador = 0;
 
         if ($this->skin()->nombre == "element") {
@@ -140,7 +193,18 @@ class EstadisticasController extends BaseController
     public function rankingMp()
     {   
         
-        $playermps = DB::table('characters')->where('maxMp','>',1)->orderBy('maxMp', 'des')->paginate(100);
+         try
+        {   
+            $playermps = DB::connection('externa')->table('characters')->where('maxMp','>',1)->orderBy('maxMp', 'des')->paginate(100);
+        }
+        catch(\PDOException $e)
+        {
+      
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
         $contador = 0;
 
         if ($this->skin()->nombre == "element") {
@@ -162,8 +226,19 @@ class EstadisticasController extends BaseController
     public function rankingActivos()
     {   
         
-        $playeractivos = DB::table('characters')->where('onlinetime','>',1)->orderBy('onlinetime', 'des')->paginate(100);
-        $contador = 0;
+         try
+        {   
+             $playeractivos = DB::connection('externa')->table('characters')->where('onlinetime','>',1)->orderBy('onlinetime', 'des')->paginate(100);
+        }
+        catch(\PDOException $e)
+        {
+      
+             flash('no se puedo realizar la conexion a la BD.')->error();
+            
+        }
+
+
+       $contador = 0;
 
         if ($this->skin()->nombre == "element") {
          return view ('lineage.templates.element.estadisticas.activos',compact('playeractivos','contador'));
@@ -184,7 +259,15 @@ class EstadisticasController extends BaseController
     public function rankingOnline()
     {   
         
-        $playeronlines = DB::table('characters')->where('online','=',1)->orderBy('char_name', 'des')->get();
+         try
+        {   
+            $playeronlines = DB::connection('externa')->table('characters')->where('online','=',1)->orderBy('char_name', 'des')->get();
+        }
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion a la BD.')->error();
+        }
+
         $contador = 0;
 
         if ($this->skin()->nombre == "element") {
@@ -202,6 +285,8 @@ class EstadisticasController extends BaseController
          return view ('lineage.templates.altrone.estadisticas.online',compact('playeronlines','contador'));
         }
     }
+
+
 
     public function rankingDonadores()
     {   
@@ -227,12 +312,23 @@ class EstadisticasController extends BaseController
     public function rankingHeroes()
     {   
         
-        $heroes = DB::table('characters')
+
+        try
+        {   
+            $heroes = DB::connection('externa')->table('characters')
         ->where('nobless','=',1)
         ->join('clan_data', 'characters.clanid', '=', 'clan_data.clan_id')
         ->join('class_list', 'characters.classid', '=', 'class_list.id')
         ->orderBy('char_name', 'des')
         ->get();
+        }
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion a la BD.')->error();
+        }
+
+
+        
         $contador = 0;
 
         if ($this->skin()->nombre == "element") {

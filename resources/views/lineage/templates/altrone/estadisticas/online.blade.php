@@ -1,7 +1,10 @@
 @extends('layouts.altrone')
 @include('alerts.errors')
 @section('content')
-
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
 
 
 <div class="">
@@ -45,6 +48,7 @@
 			<th title="Tiempo Online">Tiempo Online</th>
 		</tr>
 		
+		@if(!empty($playeronlines))
 		@foreach($playeronlines as $playeronline)
 		<tbody>
 			<tr class="two">
@@ -60,7 +64,7 @@
 			</tr>
 		</tbody>
 		@endforeach
-
+		@endif
 		</table>
 	</div>
 

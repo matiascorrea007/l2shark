@@ -31,6 +31,7 @@
 	</tr>
 	
 	<tbody>
+		@if(!empty($Antharas))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/antharas.jpg" height="60" width="100"></td>
 			<td>{{$Antharas->name}}</td>
@@ -51,7 +52,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Valakas))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/valakas.jpg" height="60" width="100"></td>
 			<td>{{$Valakas->name}}</td>
@@ -72,7 +75,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Benom))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/benom.jpg" height="60" width="100"></td>
 			<td>{{$Benom->name}}</td>
@@ -93,7 +98,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Baium))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/baium.jpg" height="60" width="100"></td>
 			<td>{{$Baium->name}}</td>
@@ -114,7 +121,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($QueenAnt))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/queen.jpg" height="60" width="100"></td>
 			<td>{{$QueenAnt->name}}</td>
@@ -135,7 +144,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Core))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/core.jpg" height="60" width="100"></td>
 			<td>{{$Core->name}}</td>
@@ -156,8 +167,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
-
+		@if(!empty($Zaken))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/zaken.jpg" height="60" width="100"></td>
 			<td>{{$Zaken->name}}</td>
@@ -178,7 +190,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($ScarletvanHalisha))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/vanhalisha.jpg" height="60" width="100"></td>
 			<td>{{$ScarletvanHalisha->name}}</td>
@@ -199,7 +213,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Frintezza))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/frintezza.jpg" height="60" width="100"></td>
 			<td>{{$Frintezza->name}}</td>
@@ -220,8 +236,9 @@
 			@endif
 			</td>
 		</tr>
+		@endif
 
-
+		@if(!empty($Orfen))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/orfen.jpg" height="60" width="100"></td>
 			<td>{{$Orfen->name}}</td>
@@ -242,7 +259,7 @@
 			@endif
 			</td>
 		</tr>
-		
+		@endif
 	</tbody>
 
 	</table>
@@ -264,6 +281,7 @@
 		<th>Status</th>
 		<th style="width:200px;" >Respawn</th>
 	</tr>
+	@if(!empty($raids))
 	@foreach($raids as $raid)
 	<tbody>
 		<tr class="">
@@ -288,7 +306,7 @@
 		
 	</tbody>
 	@endforeach
-
+	@endif
 	</table>
  </div>
 </div>
