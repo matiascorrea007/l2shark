@@ -1,6 +1,10 @@
 @extends('layouts.monster')
 @include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
 
 
               <h1>Grand Boss</h1>
@@ -18,6 +22,7 @@
 	
 	<tbody>
 		<tr class="">
+		@if(!empty($antharas))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/antharas.jpg"></td>
 			<td>{{$Antharas->name}}</td>
 			<td>{{$Antharas->level}}</td>
@@ -36,9 +41,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($Valakas))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/valakas.jpg"></td>
 			<td>{{$Valakas->name}}</td>
 			<td>{{$Valakas->level}}</td>
@@ -57,9 +64,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($Benom))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/benom.jpg"></td>
 			<td>{{$Benom->name}}</td>
 			<td>{{$Benom->level}}</td>
@@ -78,9 +87,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($Baium))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/baium.jpg"></td>
 			<td>{{$Baium->name}}</td>
 			<td>{{$Baium->level}}</td>
@@ -99,9 +110,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($QueenAnt))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/queen.jpg"></td>
 			<td>{{$QueenAnt->name}}</td>
 			<td>{{$QueenAnt->level}}</td>
@@ -120,9 +133,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($Core))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/core.jpg"></td>
 			<td>{{$Core->name}}</td>
 			<td>{{$Core->level}}</td>
@@ -141,10 +156,12 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 
 		<tr class="">
+		@if(!empty($Zaken))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/zaken.jpg"></td>
 			<td>{{$Zaken->name}}</td>
 			<td>{{$Zaken->level}}</td>
@@ -163,9 +180,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($ScarletvanHalisha))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/vanhalisha.jpg"></td>
 			<td>{{$ScarletvanHalisha->name}}</td>
 			<td>{{$ScarletvanHalisha->level}}</td>
@@ -184,9 +203,11 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 		<tr class="">
+		@if(!empty($Frintezza))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/frintezza.jpg"></td>
 			<td>{{$Frintezza->name}}</td>
 			<td>{{$Frintezza->level}}</td>
@@ -205,10 +226,12 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 
 
 		<tr class="">
+		@if(!empty($Orfen))
 			<td><img class="bossImg" src="skin/monster/imgs/boss/orfen.jpg"></td>
 			<td>{{$Orfen->name}}</td>
 			<td>{{$Orfen->level}}</td>
@@ -227,6 +250,7 @@
 				
 			@endif
 			</td>
+			@endif
 		</tr>
 		
 	</tbody>
@@ -250,6 +274,7 @@
 		<th>Status</th>
 		<th>Respawn</th>
 	</tr>
+	@if(!empty($raids))
 	@foreach($raids as $raid)
 	<tbody>
 		<tr class="">
@@ -274,7 +299,7 @@
 		
 	</tbody>
 	@endforeach
-
+	@endif
 	</table>
  </div>
 </div>

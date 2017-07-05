@@ -1,6 +1,12 @@
 @extends('layouts.monster')
 @include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
+
+
 <div class="page">
 
 <ul class="nav nav-tabs ">
@@ -33,7 +39,7 @@
 			<th>Clan</th>
 			<th>Ally</th>
 		</tr>
-		
+		@if(!empty($heroes))	
 		@foreach($heroes as $heroe)
 		<tbody>
 			<tr class="two">
@@ -42,14 +48,10 @@
 				<td><b>{{$heroe->class_name}}</b></td>
 				<td><b>{{$heroe->clan_name}}</b></td>
 				<td><b>{{$heroe->ally_name}}</b></td>
-				
-
-				
-
-
 			</tr>
 		</tbody>
 		@endforeach
+		@endif
 
 		</table>
 

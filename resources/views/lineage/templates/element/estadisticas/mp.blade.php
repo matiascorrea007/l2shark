@@ -1,6 +1,11 @@
 @extends('layouts.monster')
 @include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
+
 <div class="page">
 
 <ul class="nav nav-tabs ">
@@ -33,7 +38,7 @@
 			<th>MP</th>
 			<th title="Tiempo Online">Tiempo Online</th>
 		</tr>
-		
+		@if(!empty($playermps))
 		@foreach($playermps as $playermp)
 		<tbody>
 			<tr class="two">
@@ -50,7 +55,7 @@
 			</tr>
 		</tbody>
 		@endforeach
-
+		@endif
 		</table>
 	</div>
 

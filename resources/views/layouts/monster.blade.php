@@ -77,7 +77,7 @@
 		
 				<div class='serverStatus off'><span></span></div>
 		
-		<a class='downloadButton' href='index-1.htm?page=download'><span></span></a>
+		<a class='downloadButton' href="{{ url('/descargas') }}"><span></span></a>
 		
 		<div class='langs'>			
 		<a href="{{ url('lang', ['en']) }}" class='en noJquery' title='English'><span></span></a>
@@ -210,6 +210,7 @@
 								<th>PVP</th>
 							</tr>
 						</thead>
+						@if(!empty($pvps))
 						@foreach($pvps as $pvp)
 								<tbody>
 									<tr class='two'>
@@ -218,6 +219,7 @@
 									</tr>
 								</tbody>
 							@endforeach	
+						@endif
 					</table>
 
 
@@ -228,6 +230,7 @@
 								<th>PK</th>
 							</tr>
 						</thead>
+						@if(!empty($pks))
 						@foreach($pks as $pk)
 								<tbody>
 									<tr class='two'>
@@ -236,6 +239,7 @@
 									</tr>
 								</tbody>
 						@endforeach	
+						@endif
 					</table>
 
 

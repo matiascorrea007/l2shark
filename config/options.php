@@ -58,6 +58,9 @@ return array(
 'skin'=>[
 'element' => 'element', 
 'tristana' => 'tristana', 
+'altrone' => 'altrone',
+'diamond' => 'diamond',
+'animus' => 'animus',
 ],
 
 

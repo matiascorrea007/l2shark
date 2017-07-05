@@ -1,6 +1,12 @@
 @extends('layouts.monster')
 @include('alerts.errors')
 @section('content')
+@include('alerts.errors')
+@include('alerts.request')
+@include('alerts.success')
+@include('flash::message')
+
+
 <div class="page">
 
 <ul class="nav nav-tabs ">
@@ -32,7 +38,7 @@
 			<th>Leader</th>
 			<th>Level</th>
 		</tr>
-		
+		@if(!empty($clans))	
 		@foreach($clans as $clan)
 		<tbody>
 			<tr class="two">
@@ -46,7 +52,7 @@
 			</tr>
 		</tbody>
 		@endforeach
-
+		@endif
 		</table>
 
 
@@ -68,7 +74,7 @@
 			<th>Level</th>
 			<th>Castle</th>
 		</tr>
-		
+		@if(!empty($clanCastles))
 		@foreach($clanCastles as $clanCastle)
 		<tbody>
 			<tr class="two">
@@ -83,7 +89,7 @@
 			</tr>
 		</tbody>
 		@endforeach
-
+		@endif
 		</table>
 
 

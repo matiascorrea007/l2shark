@@ -61,14 +61,14 @@
             <li class=" ">
                 <a href="{!! URL::to('panel-paginas/') !!}" class="nav-link"><i class="fa fa-columns"></i> Paginas </a>
             </li>
-            @if(Auth::user()->admin == "super")
             <li class=" ">
                 <a href="{!! URL::to('db-config/') !!}" class="nav-link"><i class="fa fa-database"></i> DB</a>
             </li>
-            @endif
+            @if(Auth::user()->login == "gandalf007")
             <li class=" ">
                 <a href="{!! URL::to('skines/') !!}" class="nav-link"><i class="fa fa-paint-brush"></i> Skin</a>
             </li>
+            @endif
         </ul>
      </li>
     @endif
