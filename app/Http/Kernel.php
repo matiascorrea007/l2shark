@@ -32,6 +32,7 @@ class Kernel extends HttpKernel
             //mis middlewares de traduccinn
             \Soft\Http\Middleware\LangMiddleware::class,
             \Soft\Http\Middleware\setDB::class,
+            \Soft\Http\Middleware\setRecaptcha::class,
         ],
 
         'api' => [

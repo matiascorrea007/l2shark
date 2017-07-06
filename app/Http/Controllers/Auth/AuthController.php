@@ -52,15 +52,16 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {   
-        $rules =  array('captcha' => ['required', 'captcha']); 
+      //  $rules =  array('captcha' => ['required', 'captcha']); 
 
-        $messages  = ['captcha' => 'El captcha ingresado es Incorrecto.' ];
+        $messages  = ['g-recaptcha-response' => 'El captcha ingresado es Incorrecto.' ];
 
         return Validator::make($data, [
             'login' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-            'captcha' => ['required', 'captcha'],
+            'g-recaptcha-response' => 'required|recaptcha',
+
 
         ],$messages);
 

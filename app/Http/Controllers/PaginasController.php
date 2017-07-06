@@ -25,6 +25,7 @@ use Auth;
 use Embed\Embed;
 use Soft\web_skin;
 
+
 class PaginasController extends BaseController 
 {
 
@@ -239,6 +240,8 @@ class PaginasController extends BaseController
 
     public function Registrarse(){
       
+      
+   
 
        if ($this->skin()->nombre == "element") {
             return view ('lineage.templates.element.registro');

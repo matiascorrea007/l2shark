@@ -177,6 +177,7 @@ return [
         Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         Whossun\Toastr\ToastrServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         
        
         
@@ -243,6 +244,7 @@ return [
         'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         'Toastr'  => Whossun\Toastr\Facades\Toastr::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
         
         
 

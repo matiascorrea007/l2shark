@@ -27,7 +27,8 @@
         "embed/embed": "^3.0",
         "anouar/paypalpayment": "~1.0",
         "mews/captcha": "^2.1",
-        "whossun/laravel-toastr": "^1.0"
+        "whossun/laravel-toastr": "^1.0",
+        "greggilbert/recaptcha": "dev-master"
 
     
 

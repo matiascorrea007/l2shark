@@ -10,7 +10,7 @@ use App\User;
 use Auth;
 use Session;
 use Soft\web_conexion;
-
+use Soft\Recaptcha;
 
 class setDB
 {
@@ -24,6 +24,7 @@ class setDB
     public function handle($request, Closure $next)
     {
 
+        if(web_conexion::first() != null){ 
 
         $informatica = web_conexion::first();
 
@@ -33,8 +34,14 @@ class setDB
         Config::set('database.connections.externa.database', $informatica ->db);
         DB::connection('externa');
 
-        
-
         return $next($request);
+
+    }else{ 
+
+         return $next($request);
+        
+    }
+
+    
     }
 }
