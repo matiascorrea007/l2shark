@@ -10,6 +10,7 @@ use Soft\web_logo;
 use Soft\web_voto;
 use Soft\web_pagina;
 use Soft\Recaptcha;
+use Soft\Mercadopago;
 use Alert;
 use Session;
 use Redirect;
@@ -81,8 +82,9 @@ class AdminController extends AdminBaseController
         $boxs=web_facebook::all();
         $votos=web_voto::all();
         $recaptcha=Recaptcha::first();
+        $mercadopago=Mercadopago::first();
         $link = "footer";
-        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha'));
+        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago'));
     }
 
 

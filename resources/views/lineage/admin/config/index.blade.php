@@ -320,6 +320,64 @@
 
 
 
+
+<div class="row">
+    <div class="col-md-12">
+    <div class="portlet light ">
+        <div class="portlet-title">
+            <div class="caption">
+
+<i class="fa fa-cogs font-red"></i>
+<span class="caption-subject font-red sbold uppercase">Configurar MercadoPago</span>
+
+
+    <div><br>
+    <p>Para obtener las private_key y public_key ingresar a <a href="https://www.mercadopago.com/mla/account/credentials?type=basic">MercadoPago</a></p>
+    </div>
+
+
+     </div><!--end caption-->
+
+
+
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+
+
+    
+             
+      
+       </div>
+   </div>
+
+
+        </div><!--portlet-title-->
+    <div class="portlet-body">
+        <div class="table-scrollable">
+          
+           @if(!empty($mercadopago))
+
+    {!!Form::model($mercadopago,['url'=>['mercadopago-update',$mercadopago->id],'method'=>'PUT' , 'files'=>True])!!}
+      @include('lineage.admin.config.mercadopago.forms.mercadopago')
+    {!!Form::close()!!}
+
+        @else
+
+        {!!Form::open(['url'=>['mercadopago-store'],'method'=>'POST' , 'files'=>True])!!}
+           @include('lineage.admin.config.mercadopago.forms.mercadopagoCreate')
+        {!!Form::close()!!}
+
+        @endif
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+
+
+
                           
 
 @endsection

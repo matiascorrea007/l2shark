@@ -221,6 +221,9 @@ Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario'
 /*--------ticket----------*/
 
 
+Route::post('mercadopago-store','MercadopagoController@store');
+Route::put('mercadopago-update/{id}','MercadopagoController@update');
+
 
 Route::post('recaptcha-store','RecaptchaController@store');
 Route::put('recaptcha-update/{id}','RecaptchaController@update');

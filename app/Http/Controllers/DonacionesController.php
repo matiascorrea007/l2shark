@@ -21,6 +21,9 @@ use MP;
 use Soft\web_donacione;
 use Soft\User;
 use Soft\web_donaciones_transferencia;
+use Soft\Mercadopago;
+
+
 class DonacionesController extends AdminBaseController
 {
     /**
@@ -63,7 +66,16 @@ class DonacionesController extends AdminBaseController
     $email = Auth::user()->email;
     $total = (int)$request['total'];
 
-     $mp = new MP("202272916517685", "LDi7fuJAGEX1MOtp27ufQr2kt64Jvu0q");
+
+    $mercadopago = Mercadopago::first();
+
+
+    if (empty($mercadopago)) {
+      flash('No se puede realizar compras por MercadoPago por este momento , revise las (Key).')->error(); 
+      return Redirect::back();
+    }
+
+     $mp = new MP("$mercadopago->public_key", "$mercadopago->private_key");
 
        
     $preference_data = array(
