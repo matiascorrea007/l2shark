@@ -4,7 +4,7 @@ namespace Soft\Http\Requests;
 
 use Soft\Http\Requests\Request;
 
-class UserCreateRequest extends Request
+class UserEmailRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,6 @@ class UserCreateRequest extends Request
      */
     public function authorize()
     {
-        //esto autoriza al request
         return true;
     }
 
@@ -25,11 +24,9 @@ class UserCreateRequest extends Request
     public function rules()
     {
         return [
-       'nombre' =>'required',
-        'apellido' =>'required',
+        'email_actual' =>'required',
         'email' =>'required',
-        'password' =>'required',
-        'password_confirmation' =>'required',
+        'email_confirmation' =>'required',
         ];
     }
 }

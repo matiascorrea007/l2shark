@@ -54,6 +54,10 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-default">
                                                 <li>
+                                                    <a href="{!! URL::to('usuario-config') !!}" >
+                                                        <i class="fa fa-sign-out color-light"></i> Configuracion</a>
+                                                </li>
+                                                <li>
                                                     <a href="{!! URL::to('logout') !!}" >
                                                         <i class="fa fa-sign-out color-light"></i> Log Out </a>
                                                 </li>

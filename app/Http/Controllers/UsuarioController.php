@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Soft\Http\Requests;
 use Soft\Http\Requests\UserCreateRequest;
 use Soft\Http\Requests\UserUpdateRequest;
+use Soft\Http\Requests\UserPasswordRequest;
+use Soft\Http\Requests\UserEmailRequest;
 use Illuminate\Database\Eloquent\Scope;
 //agregamos esto para no escribir cinema 
 use Soft\User;
@@ -18,18 +20,17 @@ use Auth;
 use Alert;
 use Soft\Cliente;
 use DB;
+use Flash;
 
-class UsuarioController extends Controller
+class UsuarioController extends AdminBaseController
 {
 
     public function __construct()
     {
-        //se aplica el auth a todos los metodos de esta clase , por lo tanto tiene que estar
-        //logueado para acceder
-        //$this->middleware('auth');
-        //$this->middleware('admin');
-        
+         parent::__construct();
+
     }
+
 
     //lista los recuroso
     public function index(Request $request)
@@ -209,5 +210,94 @@ class UsuarioController extends Controller
         
         return view('admin.usuario.perfil');
     }
+
+
+    public function usuarioConfig()
+    { 
+        
+
+        return view('lineage.admin.user.config');
+    }
+
+
+     public function cambiarPassword(UserPasswordRequest $request,$id)
+    { 
+        
+        $user = User::find($id);
+
+        try
+        {
+
+
+
+            //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
+            DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->first();
+
+        if ($user->login == $request['login'] and $user->re_password == $request['password_actual']) {
+           
+           $user->password = bcrypt($request['password']);
+           $user->re_password = $request['password_confirmation'];
+           $user->save();
+
+       DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->insert([
+            'password' => base64_encode(pack('H*', sha1($request['password'])))
+            ]);
+
+            Alert::success('Mensaje existoso', 'Contraseña Cambiada Con Exito');    
+
+        }else{
+             flash('el logion o la contraseñna actual no coinciden.')->error();    
+        }
+
+
+
+
+        }
+        catch(\PDOException $e)
+        {
+             flash('no se puedo realizar la conexion a la BD.')->error();  
+        }
+
+    
+        return Redirect::back();
+    }
+
+
+
+
+
+     public function cambiarEmail(UserEmailRequest $request,$id)
+    {   
+        $users = User::all();
+
+        //para comprobar que el email no se encuentre en uso
+        foreach ($users as $user) {
+            if ($user->email == $request['email']) {
+                flash('Este E-mail ya se encuentra en uso.')->error(); 
+                return Redirect::back();
+            }
+        }
+
+        if ($request['email'] !=  $request['email_confirmation']) {
+           flash('el Nuevo Email y Repetir Email no coinciden.')->error(); 
+           return Redirect::back();
+        }
+
+        //guardamos el nuevo email
+        $user = User::find($id);
+       if ($user->email == $request['email_actual']) {
+            $user->email = $request['email'];
+            $user->save();
+            Alert::success('Mensaje existoso', 'Email Cambiado Con Exito');
+       }else{
+        flash('su Email actual es incorrecto.')->error(); 
+    
+       }
+        
+        
+        return Redirect::back();
+    }
+
+
 
 }

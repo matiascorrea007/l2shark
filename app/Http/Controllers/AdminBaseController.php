@@ -27,6 +27,7 @@ class AdminBaseController extends Controller
        //datos de la plantilla admin
       $user = Auth::user();
 
+      
      
     
        

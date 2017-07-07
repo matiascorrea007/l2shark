@@ -12,6 +12,7 @@ use Storage;
 use DB;
 use Image;
 use Soft\web_skin;
+use Flash;
 
 
 class EstadisticasController extends BaseController

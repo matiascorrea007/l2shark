@@ -222,6 +222,12 @@ Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario'
 
 
 
+Route::post('recaptcha-store','RecaptchaController@store');
+Route::put('recaptcha-update/{id}','RecaptchaController@update');
+
+Route::get('usuario-config','UsuarioController@usuarioConfig');
+Route::put('cambiar-password/{id}','UsuarioController@cambiarPassword');
+Route::put('cambiar-email/{id}','UsuarioController@cambiarEmail');
 
 
 Route::get('voto','VotosController@index');

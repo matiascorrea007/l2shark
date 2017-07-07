@@ -263,6 +263,61 @@
 
 
 
+<div class="row">
+    <div class="col-md-12">
+    <div class="portlet light ">
+        <div class="portlet-title">
+            <div class="caption">
+
+<i class="fa fa-cogs font-red"></i>
+<span class="caption-subject font-red sbold uppercase">Configurar ReCaptcha</span>
+
+
+    <div><br>
+    <p>Para obtener las private_key y public_key ingresar a <a href="https://www.google.com/recaptcha/admin#list">Recaptcha</a></p>
+    </div>
+
+
+     </div><!--end caption-->
+
+
+
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+
+
+    
+             
+      
+       </div>
+   </div>
+
+
+        </div><!--portlet-title-->
+    <div class="portlet-body">
+        <div class="table-scrollable">
+          
+           @if(!empty($recaptcha))
+
+    {!!Form::model($recaptcha,['url'=>['recaptcha-update',$recaptcha->id],'method'=>'PUT' , 'files'=>True])!!}
+      @include('lineage.admin.config.recaptcha.forms.captcha')
+    {!!Form::close()!!}
+
+        @else
+
+        {!!Form::open(['url'=>['recaptcha-store'],'method'=>'POST' , 'files'=>True])!!}
+           @include('lineage.admin.config.recaptcha.forms.captchaCreate')
+        {!!Form::close()!!}
+
+        @endif
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+
 
 
                           

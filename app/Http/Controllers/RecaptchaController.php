@@ -5,7 +5,8 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
-use Soft\web_facebook;
+
+use Soft\Recaptcha;
 use Alert;
 use Session;
 use Redirect;
@@ -14,7 +15,7 @@ use DB;
 use Image;
 
 
-class WebFacebookController extends Controller
+class RecaptchaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,7 +34,7 @@ class WebFacebookController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -44,11 +45,14 @@ class WebFacebookController extends Controller
      */
     public function store(Request $request)
     {
-        web_facebook::create($request->all());
-
+        $Recaptcha = new Recaptcha;
+        $Recaptcha->private_key = $request['private_key'];
+        $Recaptcha->public_key = $request['public_key'];
+        $Recaptcha->save();
+        
         //le manda un mensaje al usuario
-       Alert::success('Mensaje existoso', 'box Creado');
-       return Redirect::to('/panel-config');
+       Alert::success('Mensaje existoso', 'Key guardadas');
+       return Redirect::back();
     }
 
     /**
@@ -82,12 +86,12 @@ class WebFacebookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $box=web_facebook::find($id);
-        $box->fill($request->all());
-        $box->save();
+        $Recaptcha=Recaptcha::find($id);
+        $Recaptcha->fill($request->all());
+        $Recaptcha->save();
 
         //le manda un mensaje al usuario
-       Alert::success('Mensaje existoso', 'box Modificado');
+       Alert::success('Mensaje existoso', 'Key Modificado');
        return Redirect::to('/panel-config');
     }
 
@@ -99,11 +103,6 @@ class WebFacebookController extends Controller
      */
     public function destroy($id)
     {
-        $box=web_facebook::find($id);
-        $box->delete();
-        
-        //le manda un mensaje al usuario
-        Alert::success('Mensaje existoso', 'box Eliminado');
-        return Redirect::to('/panel-config');
+        //
     }
 }
