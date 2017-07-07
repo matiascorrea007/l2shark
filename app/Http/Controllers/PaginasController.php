@@ -242,7 +242,7 @@ class PaginasController extends BaseController
       
        try
         {
-            //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
+            //esto es para comprobar que se aga la conexion 
             DB::connection('externa')->table('accounts')->get();
             $MostarFormulario = true;
         }
@@ -257,19 +257,19 @@ class PaginasController extends BaseController
         }  
 
         if ($this->skin()->nombre == "tristana") {
-            return view ('lineage.templates.tristana.registro');
+            return view ('lineage.templates.tristana.registro',compact('MostarFormulario'));
         } 
 
         if ($this->skin()->nombre == "animus") {
-           return view ('lineage.templates.animus.registro');
+           return view ('lineage.templates.animus.registro',compact('MostarFormulario'));
         }
 
         if ($this->skin()->nombre == "diamond") {
-           return view ('lineage.templates.diamond.registro');
+           return view ('lineage.templates.diamond.registro',compact('MostarFormulario'));
         }
 
         if ($this->skin()->nombre == "altrone") {
-           return view ('lineage.templates.altrone.registro');
+           return view ('lineage.templates.altrone.registro',compact('MostarFormulario'));
         }
     }
 

@@ -214,22 +214,28 @@ class UsuarioController extends AdminBaseController
 
     public function usuarioConfig()
     { 
-        
+        $user = Auth::user();
 
-        return view('lineage.admin.user.config');
+        try {
+            DB::connection('externa')->table('accounts')->where('login','=',$user->login)->first();
+            $enlazado = true;
+        } catch (\PDOException $e) {
+            $enlazado = false;
+        }
+       
+
+        return view('lineage.admin.user.config',compact('enlazado'));
     }
 
 
      public function cambiarPassword(UserPasswordRequest $request,$id)
     { 
-    
+
         
         $user = User::find($id);
 
         try
         {
-
-
 
             //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
             DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->first();
@@ -297,6 +303,37 @@ class UsuarioController extends AdminBaseController
         
         
         return Redirect::back();
+    }
+
+
+
+
+
+
+    public function asociarCuenta(Request $request,$id)
+    {   
+        $user = User::find($id);
+
+        try
+        {
+
+        DB::connection('externa')->table('accounts')->insert([
+            'login' => $user->login, 
+            'email' => $user->email,
+            'password' => base64_encode(pack('H*', sha1($user->re_password)))]);
+
+        
+        $enlazado = true;
+
+        }
+            catch(\PDOException $e)
+        {
+              flash('Se a producido un error al enlazar')->error(); 
+              $enlazado = false;
+        }
+       
+        
+        return redirect()->back();
     }
 
 

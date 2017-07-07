@@ -228,7 +228,7 @@ Route::put('recaptcha-update/{id}','RecaptchaController@update');
 Route::get('usuario-config','UsuarioController@usuarioConfig');
 Route::put('cambiar-password/{id}','UsuarioController@cambiarPassword');
 Route::put('cambiar-email/{id}','UsuarioController@cambiarEmail');
-
+Route::put('asociar-cuenta/{id}','UsuarioController@asociarCuenta');
 
 Route::get('voto','VotosController@index');
 Route::get('voto-create','VotosController@create');
