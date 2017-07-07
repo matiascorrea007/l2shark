@@ -45,7 +45,7 @@
 
 
 <div class="row col-xs-12 col-sm-12 col-md-12" >
-{!!Form::submit('Cambiar Password',['class'=>'btn btn-primary pull-right'])!!}
+{!!Form::submit('Cambiar Email',['class'=>'btn btn-primary pull-right'])!!}
 
 
 </div></div>

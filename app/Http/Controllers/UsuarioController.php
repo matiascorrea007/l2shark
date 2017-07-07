@@ -217,12 +217,18 @@ class UsuarioController extends AdminBaseController
         $user = Auth::user();
 
         try {
-            DB::connection('externa')->table('accounts')->where('login','=',$user->login)->first();
-            $enlazado = true;
+          $conexion =   DB::connection('externa')->table('accounts')->where('login','=',$user->login)->get();
+          if (!empty($conexion)) {
+             $enlazado = true;
+          }else{
+            $enlazado = false;
+          }
+            
         } catch (\PDOException $e) {
             $enlazado = false;
         }
        
+      
 
         return view('lineage.admin.user.config',compact('enlazado'));
     }
@@ -246,14 +252,15 @@ class UsuarioController extends AdminBaseController
            $user->re_password = $request['password_confirmation'];
            $user->save();
 
-       DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->insert([
+
+       DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->update([
             'password' => base64_encode(pack('H*', sha1($request['password'])))
             ]);
 
             Alert::success('Mensaje existoso', 'Contraseña Cambiada Con Exito');    
 
         }else{
-             flash('el logion o la contraseñna actual no coinciden.')->error();    
+             flash('el login o la contraseñna actual no coinciden.')->error();    
         }
 
 
@@ -292,14 +299,27 @@ class UsuarioController extends AdminBaseController
 
         //guardamos el nuevo email
         $user = User::find($id);
-       if ($user->email == $request['email_actual']) {
+        try {
+
+            if ($user->email == $request['email_actual']) {
+
+            DB::connection('externa')->table('accounts')->where('login','=',$user->login)->update([
+            'email' => $request['email']]);
             $user->email = $request['email'];
             $user->save();
+
             Alert::success('Mensaje existoso', 'Email Cambiado Con Exito');
        }else{
+
         flash('su Email actual es incorrecto.')->error(); 
     
        }
+
+
+        } catch(\PDOException $e) {
+            flash('No se puedo realizar la conexion con la DB.')->error(); 
+        }
+       
         
         
         return Redirect::back();
