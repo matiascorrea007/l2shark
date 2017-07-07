@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Soft\Cliente;
 use DB;
 use Input;
+use Redirect;
 
 class AuthController extends Controller
 {
@@ -54,16 +55,14 @@ class AuthController extends Controller
     {   
       //  $rules =  array('captcha' => ['required', 'captcha']); 
 
-        $messages  = ['g-recaptcha-response' => 'El captcha ingresado es Incorrecto.' ];
-
         return Validator::make($data, [
             'login' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
-            'g-recaptcha-response' => 'required|recaptcha',
+            'g-recaptcha-response' => 'required',
 
 
-        ],$messages);
+        ]);
 
 
    
@@ -81,23 +80,18 @@ class AuthController extends Controller
     protected function create(array $data)
     {
        
+    
+            DB::connection('externa')->table('accounts')->insert([
+            'login' => $data['login'], 
+            'email' => $data['email'],
+            'password' => base64_encode(pack('H*', sha1($data['password'])))]);
 
-         $user = User::create([
+            $user = User::create([
             'login' => $data['login'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             're_password' =>$data['password_confirmation'],
-        ]);
-
-         DB::connection('externa')->table('accounts')->insert([
-            'login' => $data['login'], 
-            'email' => $data['email'],
-            'password' => base64_encode(pack('H*', sha1($data['password'])))
-            ]
-        );
-
-       
-         
+            ]);
 
 
         return $user;

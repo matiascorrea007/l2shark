@@ -240,12 +240,22 @@ class PaginasController extends BaseController
 
     public function Registrarse(){
       
-      
-   
+       try
+        {
+            //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
+            DB::connection('externa')->table('accounts')->get();
+            $MostarFormulario = true;
+        }
+        catch(\PDOException $e)
+        {
+             $MostarFormulario = false;
+        }
 
+   
        if ($this->skin()->nombre == "element") {
-            return view ('lineage.templates.element.registro');
+            return view ('lineage.templates.element.registro',compact('MostarFormulario'));
         }  
+
         if ($this->skin()->nombre == "tristana") {
             return view ('lineage.templates.tristana.registro');
         } 

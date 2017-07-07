@@ -5,17 +5,10 @@
 @include('alerts.success')
 @include('flash::message')
 
-
-
-
-
-            
-
-        
-        
-
-
-        <!--Star Registro-->
+@if($MostarFormulario)
+   
+    
+    <!--Star Registro-->
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="registrationform">
@@ -89,13 +82,6 @@
      <!--END Registro-->
 
 
-
-
-
-
-
-
-
-
+@endif
 
 @endsection

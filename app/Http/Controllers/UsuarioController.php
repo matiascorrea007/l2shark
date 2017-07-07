@@ -222,6 +222,7 @@ class UsuarioController extends AdminBaseController
 
      public function cambiarPassword(UserPasswordRequest $request,$id)
     { 
+    
         
         $user = User::find($id);
 
