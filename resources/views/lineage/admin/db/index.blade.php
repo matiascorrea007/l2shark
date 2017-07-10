@@ -27,6 +27,10 @@
 
     <div class="actions">
        <div class="btn-group btn-group-devided" >
+        <a class="btn btn-warning pull-right" data-toggle="modal" data-target="#help-db"><i class="fa  fa-info-circle"></i></a>
+
+
+
        </div>
    </div>
 
@@ -54,6 +58,7 @@
         </div>
     </div>
 
-
+<!-- modal ayuda-->
+@include('lineage.admin.db.modal.help-db')
 
 @endsection
