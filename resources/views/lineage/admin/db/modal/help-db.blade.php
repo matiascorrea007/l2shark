@@ -9,8 +9,9 @@
 
 <div class="modal-body">      
 
-
+<div class="embed-responsive embed-responsive-4by3">
 <iframe class="tscplayer_inline" id="embeddedSmartPlayerInstance" src="videotutoriales/db/db_player.html?embedIFrameId=embeddedSmartPlayerInstance" height="500" width="870" scrolling="no" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</div>
 
 </div>
 
