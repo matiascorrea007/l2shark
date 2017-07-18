@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
+    @if(!empty($servidor))
+      <title>{{$servidor->nombre}} | Lineage 2 {{$servidor->cronica}}</title> 
+ @else
+      <title>SharkEstudio.com | Lineage 2</title> 
+  @endif
+
+
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content="Best lineage 2 classic servers waiting for you.">
-        <meta name="keywords" content="Best lineage servers, Lineage 2 classic, lineage 2 classic бесплатный сервер, l2 classic бесплатные сервера, линейдж 2 классик, lineage 2 classic euro">
+        <meta name="Description" content="L2Jserver, lineage 2 free to play!">
+        <meta name="keywords" content="#1 desarrollo web , lineage 2 , paginas web , web , app , software web , software app , responsive , interlude , software , apliacaciones , web responsive , diseño web , web developers , sharkestudio , shark estudio" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
         <meta name="format-detection" content="telephone=no">
-
         <link rel="icon" href="skin/animus/images/favicon.ico" type="image/x-icon" />
-        <title>First Free to Play European Lineage 2 classic server</title>
         
         {!!Html::style('skin/animus/css/bootstrap.css')!!}
         {!!Html::style('skin/animus/css/style.css')!!}

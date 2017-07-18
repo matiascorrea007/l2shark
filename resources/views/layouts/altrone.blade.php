@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{title}</title>
+
+  @if(!empty($servidor))
+      <title>{{$servidor->nombre}} | Lineage 2 {{$servidor->cronica}}</title> 
+ @else
+      <title>SharkEstudio.com | Lineage 2</title> 
+  @endif
+
   <link rel="shortcut icon" href="{url}/favicon.ico">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="Description" content="stress, lineage2, la2, stressweb.ru">
-  <meta name="Keywords" content="stress, lineage2, la2, stressweb.ru">
+  <meta name="Description" content="L2Jserver, lineage 2 free to play!">
+  <meta name="keywords" content="#1 desarrollo web , lineage 2 , paginas web , web , app , software web , software app , responsive , interlude , software , apliacaciones , web responsive , diseño web , web developers , sharkestudio , shark estudio" />
   <link href="skin/altrone/css/style.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/engine.css" rel="stylesheet" type="text/css" />
@@ -46,6 +52,16 @@
   
 </head>
 <body>
+<!------------------------ SDK FACEBOOK ------------------>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.10&appId=1529659150661681";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div id="top-text-panel">
 
@@ -57,6 +73,8 @@
     <img src="http://l2design.ru/banners/88x31.gif" title="Шаблоны Lineage 2" alt="Шаблоны Lineage 2"></a>
     </div>
   </div>-->
+  
+  
 
   </div>
 
@@ -65,6 +83,9 @@
     <div id="body-bottom">
       <div id="wrapper">
         <div id="header">
+        @if(!empty($logo))
+<img id="logo" height="400"  width="450" src="storage/paginas/home/logo/{{$logo->logo}}" alt="" class="" />
+        @endif
           <div id="logo"><a href="/"></a></div>
         </div>
 
@@ -191,7 +212,11 @@
           @yield('content')
 
             
+          
 
+          @if(!empty($box))
+      {!! $box->box!!}
+      @endif
 
               
             </div>

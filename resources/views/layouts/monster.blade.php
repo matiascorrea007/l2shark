@@ -2,13 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
+@if(!empty($servidor))
+      <title>{{$servidor->nombre}} | Lineage 2 {{$servidor->cronica}}</title> 
+ @else
+      <title>SharkEstudio.com | Lineage 2</title> 
+  @endif
+
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="imagetoolbar" content="no">
-<meta name="keywords" content="l2Jserver, high five, l2, lineage, lineage2, lineage 2, lainiege, laineage, lainiage, lineage dois, lineage ii, internacional, international, portuguese, english, espanish, espanol, espanhol, portugues, ingles, gringo, br, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, diversao gratis, gratuito, gratuitamente, free fun, new server, novo servidor, o melhor servidor de lineage 2, o melhor servidor">
-<meta name="description" content="L2Jserver, the best server of Lineage 2 . Join us for free and play!">
+
+<meta name="Description" content="L2Jserver, lineage 2 free to play!">
+<meta name="keywords" content="#1 desarrollo web , lineage 2 , paginas web , web , app , software web , software app , responsive , interlude , software , apliacaciones , web responsive , diseño web , web developers , sharkestudio , shark estudio" />
+
 <link rel="shortcut icon" href="imgs\favicon.ico">
-<title>Template elemet - SharkDesing</title>
 <link rel="image_src" href="imgs\image_src.jpg">
 <meta property="og:title" content="sharkdesing - L2Jserver">
 <meta property="og:site_name" content="sharkdesing">
@@ -49,6 +56,8 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
+
+
 
 
 <!--si la session es english -->

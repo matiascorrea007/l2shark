@@ -15,7 +15,7 @@ use DB;
 use Image;
 
 
-class RecaptchaController extends Controller
+class RecaptchaController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

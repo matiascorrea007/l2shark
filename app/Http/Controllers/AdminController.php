@@ -1,7 +1,6 @@
 <?php
 
 namespace Soft\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
@@ -11,17 +10,23 @@ use Soft\web_voto;
 use Soft\web_pagina;
 use Soft\Recaptcha;
 use Soft\Mercadopago;
+use Soft\web_serverinfo;
+use Soft\Models\Character;
+use Soft\Models\ClanDatum;
+
 use Alert;
 use Session;
 use Redirect;
 use Storage;
 use DB;
 use Image;
-use Soft\Models\Character;
-use Soft\Models\ClanDatum;
 use Auth;
 use Flash;
 use Toastr;
+use Carbon\Carbon;
+use Exception;
+use MP;
+use Input;
 
 class AdminController extends AdminBaseController
 {   
@@ -83,8 +88,9 @@ class AdminController extends AdminBaseController
         $votos=web_voto::all();
         $recaptcha=Recaptcha::first();
         $mercadopago=Mercadopago::first();
+        $servidor=web_serverinfo::first();
         $link = "footer";
-        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago'));
+        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago','servidor'));
     }
 
 

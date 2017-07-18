@@ -54,7 +54,7 @@
                         <div class="container-fluid"> 2017 &copy; l2Servers
                             - All rights reserved &nbsp;|&nbsp;
                             Lineage 2 Panel 1.0 &nbsp;|&nbsp;
-                            Developer by <a href="http://sharkdesing.com/" title="desarrollo web" target="_blank">Sharkdesing.com</a>
+                            Developer by <a href="http://sharkestudio.com/" title="desarrollo web" target="_blank">SharkEstudio.com</a>
                         </div>
                     </div>
                     <div class="scroll-to-top">

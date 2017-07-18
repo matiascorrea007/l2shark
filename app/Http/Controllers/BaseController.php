@@ -1,25 +1,33 @@
 <?php
 
 namespace Soft\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use Soft\Http\Requests;
-use Alert;
-use Session;
-use Redirect;
-use Storage;
-use DB;
-use Image;
-use View;
-use Auth;
-use Route;
+
 use Soft\web_facebook;
 use Soft\web_logo;
 use Soft\web_voto;
 use Soft\web_video;
 use Soft\web_imagene;
 use Soft\web_skin;
+use Soft\web_serverinfo;
+
+use Alert;
+use Session;
+use Redirect;
+use Storage;
+use DB;
+use Image;
+use Auth;
+use Flash;
+use Toastr;
+use Carbon\Carbon;
+use Exception;
+use MP;
+use Input;
+use View;
+use Route;
+
 
 class BaseController extends Controller
 {
@@ -51,10 +59,10 @@ class BaseController extends Controller
       $user = Auth::user();
       $imagenes = web_imagene::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
       $videos = web_video::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
+      $servidor=web_serverinfo::first();
   
        
       //datos de la plantilla principal
-
 
        View::share ( 'pvps', $pvps );
        View::share ( 'pks', $pks );
@@ -64,9 +72,8 @@ class BaseController extends Controller
        View::share ( 'votos', $votos );
        View::share ( 'imagenes', $imagenes );
        View::share ( 'videos', $videos );
+       View::share ( 'servidor', $servidor );
        
-     
-      
 
     }  
 

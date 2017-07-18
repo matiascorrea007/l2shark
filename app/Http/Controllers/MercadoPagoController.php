@@ -15,7 +15,7 @@ use DB;
 use Image;
 
 
-class MercadoPagoController extends Controller
+class MercadoPagoController extends AdminBaseController
 {
     /**
      * Display a listing of the resource.

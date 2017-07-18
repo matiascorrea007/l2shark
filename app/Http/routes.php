@@ -220,10 +220,12 @@ Route::get('user-ticket-responder-{id}','TicketController@UserTicketResponder');
 Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario');
 /*--------ticket----------*/
 
+Route::post('serverinfo-store','ServidorinfoController@store');
+Route::put('serverinfo-update/{id}','ServidorinfoController@update');
 
-Route::post('mercadopago-store','MercadopagoController@store');
-Route::put('mercadopago-update/{id}','MercadopagoController@update');
 
+Route::post('mercadopago-store','MercadoPagoController@store');
+Route::put('mercadopago-update/{id}','MercadoPagoController@update');
 
 Route::post('recaptcha-store','RecaptchaController@store');
 Route::put('recaptcha-update/{id}','RecaptchaController@update');

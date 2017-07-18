@@ -2,9 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Flame.pw - Lineage 2 Interlude Project</title>
-<meta name="keywords" content="l2, l2 c6, l2 Interlude, l2 c6 Interlude, la2, la2 c6, la2 Interlude, la2 c6 Interlude, Lineage, Lineage 2, Lineage 2 C4, Lineage Interlude, Lineage 2 Interlude, Lineage 2 C4 Interlude, LineageClassic, LineageClassic 2, LineageClassic C4, Flame.PW 2 C4, Flame.PW 2 Interlude, Flame.PW 2 C4 Interlude, Lineage Classic, Lineage Classic 2, Lineage Classic C4, Lineage Classic 2 C4, Lineage Classic 2 Interlude, Lineage Classic 2 C4 Interlude, Классический сервер, Классический сервер Lineage, Классический сервер Lineage 2, Классический сервер Lineage 2 C4, Классический сервер Lineage 2 Interlude, Классический сервер Lineage 2 C4 Scions of Destony, Lineage PTS, Lineage 2 PTS, Lineage 2 C4 PTS, Lineage 2 C4 Interlude PTS, Лучший Lineage, Лучший Lineage 2, Лучший Lineage 2 C4, Лучший Lineage Interlude, Лучший Lineage 2 C4 Interlude, PTS сервер Lineage , PTS сервер Lineage 2, PTS сервер Lineage 2 C4, PTS сервер Lineage Interlude, PTS сервер Lineage 2 C4 Scions of Desiny, PVP сервер Lineage, PVP сервер Lineage 2, PVP сервер Lineage 2 C4, PVP сервер Lineage 2 Interlude, PVP сервер Lineage 2 C4 Interlude, lineage 2 pvp server c6, lineage 2 pvp server scions of destiny, lineage 2 pvp server interlude, il, ил, интерлюд, lineage 2 pvp server gracia, lineage 2 pvp server gracia final, lineage 2 pvp server epilogue, lineage 2 pvp server freya, lineage 2 pvp server high five, lineage 2 pvp server goodes of destruction, lineage 2 pvp server lindvior, сервер pvp, l2 пвп сервер, l2 классик сервер, сервер для l2, lineage2 pvp server, lineage2 classic server, tera сервер, скачать линейка, скачать линейка 2, скачать линягу, скачать линягу 2, скачать lineage, скачать lineage 2, download lineage, download lineage 2, aion server top, diablo 2 lord of destruction скачать, бесплатный wow сервер, goha forums, aion скачать, aion top, top pvp server lineage 2, top classic server lineage 2, top l2, top lineage, top lineage 2, дата выхода blade and soul, MMORPG, RPG, TOPMMORPG, lineage MMO, MMO">
-<meta name="description" content="Flame.PW: Лучший сервер Lineage 2 C6 Interlude в рунете!">
+
+@if(!empty($servidor))
+      <title>{{$servidor->nombre}} | Lineage 2 {{$servidor->cronica}}</title> 
+ @else
+      <title>SharkEstudio.com | Lineage 2</title> 
+  @endif
+
+<meta name="Description" content="L2Jserver, lineage 2 free to play!">
+<meta name="keywords" content="#1 desarrollo web , lineage 2 , paginas web , web , app , software web , software app , responsive , interlude , software , apliacaciones , web responsive , diseño web , web developers , sharkestudio , shark estudio" />
+
 <link rel="shortcut icon" href="skin/diamond/favicon.ico?v=1">
 
 {!!Html::style('skin/diamond/css/bootstrap.css')!!}

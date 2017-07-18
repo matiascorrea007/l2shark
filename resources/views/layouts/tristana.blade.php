@@ -4,10 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Template Tristana - SharkDesing!</title>
-	<meta name="Description" content="L2Jserver, the best server of Lineage 2 . Join us for free and play!">
-	<meta name="keywords" content="l2Jserver, high five, l2, lineage, lineage2, lineage 2, lainiege, laineage, lainiage, lineage dois, lineage ii, internacional, international, portuguese, english, espanish, espanol, espanhol, portugues, ingles, gringo, br, 1x, 5x, 10x, 30x, 50x, 70x, 100x, 150x, 200x, 300x, 1000x, free fun, diversao gratis, gratuito, gratuitamente, free fun, new server, novo servidor, o melhor servidor de lineage 2, o melhor servidor" />
+
+
+    @if(!empty($servidor))
+      <title>{{$servidor->nombre}} | Lineage 2 {{$servidor->cronica}}</title> 
+ @else
+      <title>SharkEstudio.com | Lineage 2</title> 
+  @endif
+
+	<meta name="Description" content="L2Jserver, lineage 2 free to play!">
+	<meta name="keywords" content="#1 desarrollo web , lineage 2 , paginas web , web , app , software web , software app , responsive , interlude , software , apliacaciones , web responsive , diseño web , web developers , sharkestudio , shark estudio" />
     <!-- Bootstrap -->
     <link href="skin/tristana/css/bootstrap.min.css" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>

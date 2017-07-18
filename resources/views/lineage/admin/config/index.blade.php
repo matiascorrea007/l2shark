@@ -15,6 +15,64 @@
             <div class="caption">
 
 <i class="fa fa-cogs font-red"></i>
+<span class="caption-subject font-red sbold uppercase">Informacion del Servidor</span>
+
+
+
+     </div><!--end caption-->
+
+
+
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+
+
+    
+             
+      
+       </div>
+   </div>
+
+
+        </div><!--portlet-title-->
+    <div class="portlet-body">
+        <div class="table-scrollable">
+          
+           @if(!empty($servidor))
+
+    {!!Form::model($servidor,['url'=>['serverinfo-update',$servidor->id],'method'=>'PUT' , 'files'=>True])!!}
+      @include('lineage.admin.config.serverinfo.forms.serverinfo')
+    {!!Form::close()!!}
+
+        @else
+
+        {!!Form::open(['url'=>['serverinfo-store'],'method'=>'POST' , 'files'=>True])!!}
+           @include('lineage.admin.config.serverinfo.forms.serverinfoCreate')
+        {!!Form::close()!!}
+
+        @endif
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<div class="row">
+    <div class="col-md-12">
+    <div class="portlet light ">
+        <div class="portlet-title">
+            <div class="caption">
+
+<i class="fa fa-cogs font-red"></i>
 <span class="caption-subject font-red sbold uppercase">Configuracion Box Facebook</span>
 
     <div><br>
