@@ -105,19 +105,23 @@
 
 
 
-          <div id="left-block" class="servers">
+       <!--   <div id="left-block" class="servers">
             <div class="server">
   <div id="serv-info">
+  
     <div id="s-name">{name} <b style="color: #e01c2a;"></b></div>
     <b><div id="online" class="{game}" style="margin-right: 0px;margin-top: -3px;font-size: 15px;"><div id="accountbtn">{online}</div></div></b>
   </div>
+ 
   <div class="box-1">
     <div class="progress" data-load="{online}" data-max-load="1000">
       <div class="progress-1"></div>
     </div>
   </div>
 </div>
-          </div>
+          </div>-->
+
+
           <div id="left-block" style="margin-bottom: 25px;">
             <div id="block-title">
               <img src="skin/altrone/images/top.png" alt="">
@@ -188,7 +192,8 @@
         </div>
         
         <div id="center-block"> 
-
+  
+  <!--
           <div id="example">
         <img src="skin/altrone/images/new-ribbon.png" width="112" height="112" alt="New Ribbon" id="ribbon">
         <div id="slides">
@@ -204,7 +209,7 @@
         <a href="#" class="next"><img src="skin/altrone/images/arrow-next.png" width="24" height="43" alt="Arrow Next"></a>
       </div>
       <img src="skin/altrone/images/example-frame.png" width="739" height="341" alt="Example Frame" id="frame">
-    </div>    
+    </div>    -->
 
 
           <div style="color: rgb(57, 62, 82);"><br><div style="margin-top: -15px;">

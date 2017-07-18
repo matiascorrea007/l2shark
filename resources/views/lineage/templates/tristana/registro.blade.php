@@ -69,8 +69,9 @@
                         <label for="inputPassword" class="col-lg-3 control-label">
                            Captcha</label>
                         <div class="col-lg-9">
-                         {!! Captcha::img(); !!}
-                            <input type="password" class="form-control" id="inputPassword" name="captcha" placeholder="Ingrese el Captcha">
+                         {!! Recaptcha::render() !!}
+                         <br><br>
+                            
                         </div>
                     </div>
                     
