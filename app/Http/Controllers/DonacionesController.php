@@ -82,7 +82,7 @@ class DonacionesController extends AdminBaseController
     "items" => array(
         array(
             "id" => "Code",
-            "title" => "Linegae 2",
+            "title" => "Linegae 2 Donacion N".$donacion->id,
             "currency_id" => "AR",
             "picture_url" =>"https://www.mercadopago.com/org-img/MP3/home/logomp3.gif",
             "description" => "Description",
@@ -119,9 +119,9 @@ class DonacionesController extends AdminBaseController
 
   
     "back_urls" => array(
-        "success" => "http://sharkinformatica.com",
-        "failure" => "http://sharkinformatica.com",
-        "pending" => "http://sharkinformatica.com"
+        "success" => "http://sharkestudio.com",
+        "failure" => "http://sharkestudio.com",
+        "pending" => "http://sharkestudio.com"
     ),
 
 
