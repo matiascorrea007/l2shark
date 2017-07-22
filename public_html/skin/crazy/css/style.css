@@ -372,7 +372,7 @@ ul {
 	display: block;
 	width: 380px;
 	height: 216px;
-	background: url(../images/logo.png) no-repeat;
+	/*background: url(../images/logo.png) no-repeat;*/
 	top: 84px;
     left: 315px;
 }
