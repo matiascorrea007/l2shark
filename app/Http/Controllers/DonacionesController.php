@@ -359,7 +359,7 @@ class DonacionesController extends AdminBaseController
        $donacion = web_donacione::find($id);
         $donacion->delete();
          Alert::success('Success', 'Donacion Eliminada Correctamente ');
-         return Redirect::to('/donaciones-hechas');
+         return Redirect::back();
     }
 
 
@@ -377,6 +377,6 @@ class DonacionesController extends AdminBaseController
       
 
         Alert::success('Success', 'Donacion Eliminada Correctamente ');
-         return Redirect::to('/donaciones-hechas');
+         return Redirect::back();
     }
 }

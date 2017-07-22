@@ -225,6 +225,10 @@ private function skin()
             return view ('lineage.templates.altrone.noticias',compact('post'));
         } 
 
+        if ($this->skin()->nombre == "crazy") {
+            return view ('lineage.templates.crazy.noticias',compact('post'));
+        } 
+
         
     }
 }

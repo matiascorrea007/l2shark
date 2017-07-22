@@ -12,8 +12,8 @@
         <div class="portlet-title">
             <div class="caption">
 
-<i class="fa fa-database  font-red"></i>
-<span class="caption-subject font-red sbold uppercase">Configuracion de la Base de Datos</span>
+<i class="fa fa-paypal  font-red"></i>
+<span class="caption-subject font-red sbold uppercase">Pagar</span>
 
     <div><br>
     </div>

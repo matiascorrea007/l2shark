@@ -97,7 +97,7 @@
   <li><a href="{{ url('/descargas') }}">DOWNLOAD</a></li>
   <li><a href="{{ url('/donar') }}">DONACIONES</a></li>
   <li><a href="{{ url('/top-pvp') }}">ESTADISTICAS</a></li>
-  <li class="last"><a href="/index.php?f=donate">FORO</a></li>
+  <li class="last"><a href="#">FORO</a></li>
 </div>  
 <!--MENU -->      
         

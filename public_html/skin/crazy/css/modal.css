@@ -1,0 +1,118 @@
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+.modal {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(23,16,15,0.82);
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 9999;
+  opacity: 0;
+}
+
+.fade {
+  position: fixed;
+  display: block;
+  width: 96%;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  margin: auto;
+}
+
+.modal_inner {
+  position: absolute;
+  display: block;
+  width: 300px;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.5);
+  top: -500%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #1f1c18;
+  padding: 20px 0 0px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.modal_close {
+  position: absolute;
+  display: block;
+  width: 27px;
+  height: 27px;
+  top: -22px;
+    right: -22px;
+  background: url(../images/close.png) no-repeat;
+}
+
+.modal_close:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/* Icon Float Away */
+.hvr-icon-float-away {
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+.hvr-icon-float-away:before, .hvr-icon-float-away:after {
+  content: "";
+  position: absolute;
+}
+.hvr-icon-float-away:before {
+	-webkit-transform: scale(1.5) translateZ(0);
+    transform: scale(1.5) translateZ(0);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.4s ease;
+    -webkit-filter: blur(7px);
+    filter: blur(7px);
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    -o-transform: scale(1.3);
+    transform: scale(1.3);
+
+}
+.hvr-icon-float-away:hover:before {
+	-webkit-transform: scale(1.0) translateZ(0);
+    transform: scale(1.0) translateZ(0);
+    opacity: 1;
+    visibility: visible;
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+}
+.hvr-icon-float-away:after {
+  opacity: 1;
+}

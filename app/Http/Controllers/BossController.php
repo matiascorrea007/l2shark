@@ -155,6 +155,10 @@ class BossController extends BaseController
           return view ('lineage.templates.altrone.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
         }
 
+        if ($skin->nombre == "crazy") {
+          return view ('lineage.templates.crazy.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
+
     }
 
 

@@ -122,12 +122,12 @@
 <div class="form-group navbar-form navbar-left">
   {!!Form::label('')!!}
   
-  <input type="text" onkeyup="searchItems();" class="form-control"  id="searchid" name="id">
-  <input type="text" onkeyup="searchItems();" class="form-control" id="searchnombre" name="nombre">
+  <input type="text" onkeyup="searchItems();" class="form-control"  id="searchid" name="id" placeholder="Codigo">
+  <input type="text" onkeyup="searchItems();" class="form-control" id="searchnombre" name="nombre"  placeholder="Descripcion">
 
  
   {{ Form::select('type',config('options.l2items'),'',['class'=>'form-control']) }}
- <button type="submit" class="glyphicon glyphicon-search btn btn-success" id="search"> BUSCAR </button>
+ <button type="submit" class="fa fa-search btn btn-success" id="search"> BUSCAR </button>
 </div>
 
  <!--endbuscador-->

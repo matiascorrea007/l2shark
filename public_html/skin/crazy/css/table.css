@@ -1,0 +1,462 @@
+/**************************************************/
+/**************************************************/
+				/***формы TOP***/
+/**************************************************/
+/**************************************************/
+.smart_tabs_block {
+	position: absolute;
+	display: block;
+	width: 220px;
+	top: 815px;
+	left: 6px;
+}
+
+.smart_tabs_title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 86px;
+	line-height: 86px;
+	color: #ffe3db;
+	font-family: TimesNewRomanBold;
+	font-size: 16px;
+	text-align: center;
+	margin: 15px auto 0;
+}
+
+.smart_tab {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: 86px;
+	left: 0px;
+}
+
+table#top_block {
+	position: relative;
+	display: block;
+	width: 190px;
+	margin: 0 auto;
+}
+
+table#top_block tr {
+	position: relative;
+	display: inline-block;
+	width: 190px;
+	margin: 0 auto 3px;
+	background: rgba(0,0,0,0.23);
+	padding: 0 5px;
+}
+
+table#top_block tr th, table#top_block tr td {
+	position: relative;
+	display: inline-block;
+	float: left;
+}
+
+table#top_block tr th {
+	font-family: TimesNewRomanRegular;
+	margin-bottom: 5px;
+}
+
+table#top_block tr td {
+	color: #b5a380;
+	font-size: 12px;
+	font-family: TimesNewRomanRegular;
+	height: 20px;
+	line-height: 20px;
+	margin-bottom: 2px;
+	
+}
+
+table.top_pvp {
+	top: 0px;
+	left: 0px;
+}
+
+table.top_pk {
+	top: 0px;
+	left: 0px;
+}
+
+ul.smart_tab_ul {
+    position: absolute;
+    display: block;
+    width: 190px;
+    text-align: center;
+    top: 362px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    list-style: none;
+    padding-top: 8px;
+}
+
+ul.smart_tab_ul li {
+	position: relative;
+	display: inline-block;
+	left: 23px;
+}
+
+ul.smart_tab_ul a {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 18px;
+	opacity: 0.6;
+}
+
+ul.smart_tab_ul li:nth-child(1) a {
+	background: url(../images/pvpbtn.png) no-repeat;
+}
+
+ul.smart_tab_ul li:nth-child(2) a {
+	background: url(../images/pkbtn.png) no-repeat;
+}
+
+ul.smart_tab_ul li.active a, ul.smart_tab_ul li:hover a {
+	opacity: 1;
+}
+
+.smart_tab {
+	-webkit-transform: scale(0.0);
+	-moz-transform: scale(0.0);
+	-o-transform: scale(0.0);
+	transform: scale(0.0);
+	opacity: 0;
+	-webkit-transition:all 0.3s ease; 
+	-o-transition:all 0.3s ease; 
+	-moz-transition:all 0.3s ease; 
+	transition:all 0.3s ease;
+}
+
+.smart_active_tab {
+	-webkit-transform: scale(1.0);
+	-moz-transform: scale(1.0);
+	-o-transform: scale(1.0);
+	transform: scale(1.0);
+	opacity: 1;
+}
+/**************************************************/
+/**************************************************/
+				/***формы***/
+/**************************************************/
+/**************************************************/
+ul#smart_content_menu {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 0 auto 20px;
+	list-style: none;
+	text-align: center;
+}
+
+ul#smart_content_menu li {
+	position: relative;
+	display: inline-block;
+	margin: 0 0px 3px;
+}
+
+ul#smart_content_menu li a {
+	position: relative;
+	display: block;
+	color: rgba(214,200,165,0.5);
+	background: #191b27;
+	border: 1px solid rgba(255,255,255,0.1);
+	padding: 2px 7px;
+	font-size: 12px;
+}
+
+ul#smart_content_menu li a:hover {
+	color: rgba(214,200,165,0.9);
+	border: 1px solid rgba(255,255,255,0.2);
+}
+
+label {
+    font-size: 12px;
+}
+
+.smart_content_title, #smart_content_inner center h3, #smart_content_inner h4 {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 10px auto;
+	text-align: center;
+    color: #d1d2db;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.smart_content_title p {
+	color: #888990;
+	font-size: 12px;
+	text-transform: none;
+}
+
+.smart_content_title center h3 {
+
+}
+
+.smart_content_title span {
+	position: relative;
+	display: block;
+	font-weight: normal;
+	font-size: 12px;
+	color: rgba(214,200,165,1);
+	margin-bottom: 15px;
+}
+
+form.smart_form {
+	position: relative;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.smart_div {
+	position: relative;
+	display: block;
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.smart_div label {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+.smart_div br {
+	display: none;
+}
+
+.smart_div form.smart_form input[type="radio"] {
+    position: relative;
+    display: inline-block !important;
+    width: 15px !important;
+    height: 15px !important;
+    top: 2px;
+}
+
+#sexchar.smart_div form.smart_form span {
+	position: relative;
+	display: block;
+	text-align: center;
+}
+
+form.smart_form table, form.smart_form table tbody {
+	display: block;
+	width: 100%;
+}
+
+form.smart_form tr {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 5px auto;
+	text-align: center;
+}
+
+form.smart_form tr td {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+form.smart_form input, form.smart_form select {
+
+}
+
+#smart_content_menu_server {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto 10px;
+}
+
+#smart_content_menu_server a {
+	position: relative;
+	display: inline-block;
+	color: rgba(214,200,165,0.5);
+	background: #191b27;
+	border: 1px solid rgba(255,255,255,0.1);
+	padding: 2px 7px;
+	font-size: 13px;
+}
+
+#smart_content_menu_server a:hover, #smart_content_menu_server a.activ {
+	color: rgba(214,200,165,0.9);
+	border: 1px solid rgba(255,255,255,0.2);
+}
+
+.smart_table_inner {
+	position: relative;
+	display: block;
+	width: 100%;
+}
+
+.smart_table_inner tr {
+	position: relative;
+	display: inline-table;
+	width: 100%;
+}
+
+.smart_rait span {
+	color: green;
+}
+
+.smart_table_inner .l2left {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	text-align: right;
+}
+
+.smart_table_inner .l2right {
+	position: relative;
+	display: inline-block;
+	width: 49%;
+	text-align: left;
+	padding-left: 1%;
+}
+
+.smart_table_stats {
+	position: relative;
+	width: 97% !important;
+	margin: 0 auto !important;
+}
+
+.smart_table_stats tr td {
+	text-align: center;
+}
+
+div#alpha {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+}
+
+div#alpha a {
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0 2px 4px;
+	background: rgba(255,255,255,0.1);
+	color: #ccc;
+	text-align: center;
+	line-height: 20px;
+}
+
+div#alpha a:hover {
+	color: #fff;
+}
+
+input, select {
+	width: 240px !important;
+	height: 34px !important;
+	background: url(../images/input.png) no-repeat;
+	color: #7d7f8a;
+	text-shadow: 0 0 0 #7d7f8a; 
+	font-size: 12px;
+	text-align: center;
+}
+
+select {
+	padding: 0 10px;
+	background: url(../images/select.png) no-repeat right 1px center, url(../images/input.png) no-repeat;
+	-webkit-appearance: none;
+	-ms-appearance: none;
+    appearance: none!important;
+    -moz-appearance: none;
+    text-align-last: center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.smart_btn {
+	position: relative !important;
+	display: block !important;
+	margin: 0px auto !important;
+	-webkit-transition:all 0.3s ease; 
+	-o-transition:all 0.3s ease; 
+	-moz-transition:all 0.3s ease; 
+	transition:all 0.3s ease;
+	cursor: pointer;
+	text-transform: uppercase;
+    width: 196px !important;
+    height: 71px !important;
+    background: url(../images/btn.png) no-repeat !important;
+    text-align: center !important;
+    color: #fdf3ce !important;
+    font-size: 13px !important;
+    font-family: TimesNewRomanRegular !important;
+    line-height: 69px !important;
+    font-weight: normal !important;
+    
+}
+
+.smart_btn:hover {
+	-webkit-filter:brightness(1.4); 
+	-moz-filter:brightness(1.4); 
+	-o-filter:brightness(1.4); 
+	filter:brightness(1.4); 
+}
+
+.smart_btn_reg {
+	background: url(../images/reg.png) no-repeat !important;
+}
+
+.smart_btn_log {
+	background: url(../images/log.png) no-repeat !important;
+}
+
+.smart_btn_res {
+	background: url(../images/res.png) no-repeat !important;
+}
+
+fieldset {
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    padding: 5px 0;
+    background: rgba(12, 16, 19, 0.4);
+}
+
+a.smart_btn_forget_login {
+    position: relative;
+    display: inline-block;
+    margin: 15px 24px 0;
+    font-size: 14px;
+    color: #fa6014;
+    text-decoration: underline;
+}
+
+a.smart_btn_forget_login:hover {
+	text-decoration: none;
+}
+
+textarea {
+    width: 98% !important;
+    background: rgba(255,255,255,0.0);
+    border: 1px solid rgba(255,255,255,0.1);
+    outline: none;
+    padding: 1%;
+    color: #fff;
+}
+
+option {
+	background: #17100f;
+}
+
+.smart_l2sec_code {
+    position: absolute !important;
+    z-index: 1;
+    top: 6px;
+    left: 14px;
+    width: auto !important;
+}
