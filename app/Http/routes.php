@@ -38,10 +38,15 @@ Route::get('reglas','PaginasController@Reglas');
 Route::get('soporte','PaginasController@Soporte');
 Route::get('informacion','PaginasController@Informacion');
 Route::get('registrarse','PaginasController@Registrarse');
-
-
 Route::get('boss','BossController@boss');
 Route::get('siege','SiegeController@siege');
+
+
+Route::get('como-jugar','PaginasController@comoJugar');
+Route::get('noticias','PaginasController@noticias');
+Route::get('ingresar','PaginasController@ingresar');
+
+
 
 /*---------------estadisticas-------------*/
 Route::get('top-pvp','EstadisticasController@rankingPVP');

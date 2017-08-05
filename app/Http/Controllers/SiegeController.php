@@ -156,6 +156,10 @@ class SiegeController extends BaseController
         if ($skin->nombre == "crazy") {
         return view ('lineage.templates.crazy.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
         }
+
+        if ($skin->nombre == "newland") {
+        return view ('lineage.templates.newland.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
+        }
     }
 
    

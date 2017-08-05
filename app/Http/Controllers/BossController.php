@@ -123,7 +123,7 @@ class BossController extends BaseController
            $raids = DB::connection('externa')->table('raidboss_spawnlist')
       ->join('npc', 'raidboss_spawnlist.boss_id', '=', 'npc.id')
       ->orderBy('level', 'asc')
-      ->get();;
+      ->get();
         }
         catch(\PDOException $e)
         {
@@ -159,6 +159,9 @@ class BossController extends BaseController
           return view ('lineage.templates.crazy.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
         }
 
+        if ($skin->nombre == "newland") {
+          return view ('lineage.templates.newland.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
     }
 
 

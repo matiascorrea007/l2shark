@@ -229,6 +229,10 @@ private function skin()
             return view ('lineage.templates.crazy.noticias',compact('post'));
         } 
 
+        if ($this->skin()->nombre == "newland") {
+            return view ('lineage.templates.newland.noticias',compact('post'));
+        } 
+
         
     }
 }

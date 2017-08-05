@@ -420,9 +420,6 @@ class ComboController extends AdminBaseController
     {   
         
 
-        //traigo el ultimo item asi le sumo uno al ultimo id
-        $ultimoID =collect( DB::connection('externa')->table('items')->get());
-        $ultimoID = $ultimoID->pop()->object_id + 1;
        
 
         $request['destinatario'];
@@ -449,6 +446,11 @@ class ComboController extends AdminBaseController
          ->where('item_id','=',$item)->first();
 
 
+
+        //traigo el ultimo item asi le sumo uno al ultimo id
+        $ultimoID =collect( DB::connection('externa')->table('items')->get());
+        $ultimoID = $ultimoID->pop()->object_id + 1;
+        
            //los creo siempre ya que son armor wepons y rings
              DB::connection('externa')->table('items')->insert(
                 ['owner_id' => $request['destinatario'], 

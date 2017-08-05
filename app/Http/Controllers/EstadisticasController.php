@@ -71,6 +71,10 @@ class EstadisticasController extends BaseController
           return view ('lineage.templates.crazy.estadisticas.pvp',compact('playerpvps','contador'));
         }
 
+        if ($this->skin()->nombre == "newland") {
+          return view ('lineage.templates.newland.estadisticas.pvp',compact('playerpvps','contador'));
+        }
+
          
     }
 
@@ -113,6 +117,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.pk',compact('playerpks','contador'));
+        }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.pk',compact('playerpks','contador'));
         }
     }
 
@@ -165,6 +173,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.clan',compact('clans','clanCastles','contador'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.clan',compact('clans','clanCastles','contador'));
+        }
     }
 
     public function rankingHp()
@@ -205,6 +217,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.hp',compact('playerhps','contador'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.hp',compact('playerhps','contador'));
+        }
     }
 
     public function rankingMp()
@@ -241,6 +257,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.mp',compact('playermps','contador'));
+        }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.mp',compact('playermps','contador'));
         }
     }
 
@@ -279,6 +299,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.activos',compact('playeractivos','contador'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.activos',compact('playeractivos','contador'));
+        }
     }
 
     public function rankingOnline()
@@ -313,6 +337,10 @@ class EstadisticasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.online',compact('playeronlines','contador'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.online',compact('playeronlines','contador'));
+        }
     }
 
 
@@ -338,6 +366,10 @@ class EstadisticasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.donadores');
+        }
+
+        if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.donadores');
         }
     }
 
@@ -382,6 +414,10 @@ class EstadisticasController extends BaseController
 
          if ($this->skin()->nombre == "crazy") {
          return view ('lineage.templates.crazy.estadisticas.heroes',compact('heroes','contador'));
+         }
+
+         if ($this->skin()->nombre == "newland") {
+         return view ('lineage.templates.newland.estadisticas.heroes',compact('heroes','contador'));
          }
     }
 

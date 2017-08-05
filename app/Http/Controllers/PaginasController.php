@@ -70,6 +70,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.index',compact('posts'));
+        }
     }
 
 
@@ -99,6 +103,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.download',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.download',compact('paginas'));
+        }
     }
 
     public function Donaciones(){
@@ -126,6 +134,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.donaciones',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.donaciones',compact('paginas'));
         }
     }
 
@@ -155,6 +167,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.reglas',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.reglas',compact('paginas'));
+        }
     }
 
     public function Soporte(){
@@ -182,6 +198,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.soporte',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.soporte',compact('paginas'));
         }
     }
 
@@ -215,6 +235,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.informacion',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.informacion',compact('paginas'));
+        }
     }
 
     public function GaleriaVideos(){
@@ -243,6 +267,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.galeria-videos',compact('AllVideos'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.galeria-videos',compact('AllVideos'));
+        }
     }
 
     public function GaleriaImagenes(){
@@ -270,6 +298,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.galeria-imagenes',compact('AllImagenes'));
+        }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.galeria-imagenes',compact('AllImagenes'));
         }
     }
 
@@ -311,7 +343,38 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "crazy") {
            return view ('lineage.templates.crazy.registro',compact('MostarFormulario'));
         }
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.registro',compact('MostarFormulario'));
+        }
     }
+
+
+//esto es unicamente para el template de newland
+     public function comoJugar(){
+      
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.comojugar');
+        }
+    }
+
+    public function noticias(){
+      $posts=web_post::orderBy('created_at','desc')->paginate(10);
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.new',compact('posts'));
+        }
+    }
+
+    public function ingresar(){
+      $posts=web_post::orderBy('created_at','desc')->paginate(10);
+
+        if ($this->skin()->nombre == "newland") {
+           return view ('lineage.templates.newland.login');
+        }
+    }
+//esto es unicamente para el template de newland
 
 
     public function demoUsuario(){

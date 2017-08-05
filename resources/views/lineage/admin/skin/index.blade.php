@@ -1,4 +1,8 @@
-@extends('layouts.metronic')
+<?php 
+$skin =  DB::table('web_skins')->first();
+ ?>
+
+@extends($skin->nombre == "newland" ? 'layouts.newland.index' : 'layouts.metronic');
 @section('content')
 <!-- muestra mensaje que se a modificado o creado exitosamente-->
 <!--include('alerts.success')-->
