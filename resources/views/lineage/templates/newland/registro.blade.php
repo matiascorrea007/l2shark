@@ -49,7 +49,7 @@
                                         </div>
                                     </div>
                                     
-                                    <button type="button" class="btn btn-primary btn-block">Register</button>
+                                    <button type="submit" class="btn btn-primary btn-block">Register</button>
                                     
                                   <!-- <div class="form-actions">
                                         <div class="checkbox checkbox-primary">

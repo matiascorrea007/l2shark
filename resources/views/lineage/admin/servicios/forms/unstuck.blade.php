@@ -9,8 +9,8 @@ Este servicio es esencial si no se puede abrir el juego debido a errores graves 
 
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-6">
-<input type="text" name="characheter" value=""  disabled="" class="form-control char" placeholder="">
- <input type="text" name="characheter" value=""   class="form-control char hidden" placeholder="">
+<input type="text" name="charnombre" value=""  disabled="" class="form-control char" placeholder="">
+ {!!Form::text('charnombre',null,['class'=>'form-control hidden char', 'placeholder'=>'ingrese el codigo del color'])!!}
 
 </div>
 

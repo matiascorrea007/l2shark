@@ -286,8 +286,7 @@ class ServiciosController extends AdminBaseController
     {
 
        $char_nombre = $request['charnombre'];
-        
-        
+
         //para comprobar que se selecciono un personaje
         if (empty($char_nombre)) {
             Alert::error('UPs!', 'Seleccione un personaje');
@@ -335,6 +334,7 @@ class ServiciosController extends AdminBaseController
 
         $char_nombre = $request['charnombre'];
 
+
         //validamos que selecciono a un personaje
         if (empty($char_nombre)) {
             Alert::error('UPs!', 'Seleccione un personaje');
@@ -348,6 +348,7 @@ class ServiciosController extends AdminBaseController
         //para corraborar que el saldo sea suficiente
         if ($coin->unstuck > $user->saldo) {
             Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
         }else{
             //descontamos el saldo
             $user->saldo = $user->saldo - $coin->unstuck;
@@ -357,7 +358,7 @@ class ServiciosController extends AdminBaseController
         
 
         //movemos al character
-        $character= DB::connection('externa')->table('characters')->where('char_name','=',$request['characheter'])
+        $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
         ->update(['x' =>81918,'y'=>148045,'z'=>-3405]);
 
 
@@ -375,7 +376,7 @@ class ServiciosController extends AdminBaseController
     {
 
          $char_nombre = $request['charnombre'];
-        
+     
         
         //para comprobar que se selecciono un personaje
         if (empty($char_nombre)) {
@@ -384,7 +385,7 @@ class ServiciosController extends AdminBaseController
         }
 
          //si ya es nobles que avise con un mensaje
-        $char = character::where('char_name','=',$char_nombre)->first();
+        $char = DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)->first();
         if ($char->nobless == 1) {
             flash('El Personaje Seleccionado ya es Nobless!!')->error();
              return Redirect::to('/servicios');
@@ -396,6 +397,7 @@ class ServiciosController extends AdminBaseController
         //para corraborar que el saldo sea suficiente
         if ($coin->noblesse > $user->saldo) {
             Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
         }else{
             //descontamos el saldo
             $user->saldo = $user->saldo - $coin->noblesse;
@@ -404,9 +406,9 @@ class ServiciosController extends AdminBaseController
         }
 
       
-            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)
+            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)->update(['nobless' => 1]);
             //hacemos la actualizacion de la tabla
-            ->update(['nobless' => 1]);
+            
 
         
         return Redirect::to('/servicios');
@@ -423,7 +425,41 @@ class ServiciosController extends AdminBaseController
      public function Hero(Request $request)
     {
 
-        return view ('lineage.admin.servicios.index');
+         $char_nombre = $request['charnombre'];
+     
+        
+        //para comprobar que se selecciono un personaje
+        if (empty($char_nombre)) {
+            Alert::error('UPs!', 'Seleccione un personaje');
+        return Redirect::to('/servicios');
+        }
+
+         //si ya es heroes que avise con un mensaje
+        $char = DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)->first();
+        if ($char->hero == 1) {
+            flash('El Personaje Seleccionado ya es Hero!!')->error();
+             return Redirect::to('/servicios');
+        }
+
+        $user = User::find(Auth::user()->id);
+        $coin = web_coin_servicio::first();
+
+        //para corraborar que el saldo sea suficiente
+        if ($coin->noblesse > $user->saldo) {
+            Flash('Saldo Insuficiente')->error();
+            return Redirect::to('/servicios');
+        }else{
+            //descontamos el saldo
+            $user->saldo = $user->saldo - $coin->noblesse;
+            $user->save();
+            Alert::success('Mensaje existoso', 'Hero Activado Corractamente');
+        }
+
+      
+            $character= DB::connection('externa')->table('characters')->where('char_name','=',$char_nombre)->update(['hero' => 1]);
+            //hacemos la actualizacion de la tabla
+
+       return Redirect::to('/servicios');
     }
 
 

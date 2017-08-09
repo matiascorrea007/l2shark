@@ -83,7 +83,7 @@ class AuthController extends Controller
     
             DB::connection('externa')->table('accounts')->insert([
             'login' => $data['login'], 
-            'email' => $data['email'],
+            //'email' => $data['email'],
             'password' => base64_encode(pack('H*', sha1($data['password'])))]);
 
             $user = User::create([

@@ -467,6 +467,23 @@ class ComboController extends AdminBaseController
                 'mana_left' => -1,
                 ]);
 
+             /* esto es para aCis
+              DB::connection('externa')->table('items')->insert(
+                 ['owner_id' => $request['destinatario'], 
+                'object_id' => $ultimoID,
+                'item_id' => $item,
+                'count' => 1,
+                'enchant_level' => 0,
+                'loc' => "INVENTORY",
+                'loc_data' => 0,
+                
+                'custom_type1' => 0,
+                'custom_type2' => 0,
+                'mana_left' => -50,
+                'time' => 1,
+                ]);
+                */
+
 
          $i = $i + 1 ;
             }
