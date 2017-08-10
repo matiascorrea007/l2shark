@@ -43,6 +43,9 @@ class DbController extends AdminBaseController
     public function ProbarConexion()
     {  
 
+        $cronicas = Cronica::lists('descripcion', 'id');
+        $serverpacks = Serverpack::lists('descripcion', 'id');
+
        try
         {
             //comprueba la conexion
@@ -59,7 +62,7 @@ class DbController extends AdminBaseController
         }
 
         $db = web_conexion::first();
-        return view ('lineage.admin.db.index',compact('db'));
+        return view ('lineage.admin.db.index',compact('db','cronicas','serverpacks'));
 
 
     }
@@ -78,8 +81,8 @@ class DbController extends AdminBaseController
         $conexion->user = $request['user'];
         $conexion->db = $request['db'];
         $conexion->password = $request['password'];
-        $conexion->cronica = $request['cronica'];
-        $conexion->serverpack = $request['serverpack'];
+        $conexion->cronica_id = $request['cronica_id'];
+        $conexion->serverpack_id = $request['serverpack_id'];
         $conexion->save();
 
          Alert::success('Mensaje existoso', 'Datos Guardados Con Exito');
@@ -101,8 +104,8 @@ class DbController extends AdminBaseController
         $conexion->user = $request['user'];
         $conexion->db = $request['db'];
         $conexion->password = $request['password'];
-        $conexion->cronica = $request['cronica'];
-        $conexion->serverpack = $request['serverpack'];
+        $conexion->cronica_id = $request['cronica_id'];
+        $conexion->serverpack_id = $request['serverpack_id'];
         $conexion->save();
         Alert::success('Mensaje existoso', 'Datos Modificados Con Exito');
         return Redirect::to('/db-config');

@@ -62,20 +62,8 @@
 <div class="col-xs-12 col-sm-12 col-md-6">
 <div class="form-group form-md-line-input has-success">
          <div class="">
-            <select class="form-control" name="cronica">
-                <option value="interlude">interlude</option>
-                <option value="Kamael">Kamael</option>
-                <option value="Hellbound">Hellbound</option>
-                <option value="Gracia">Gracia</option>
-                <option value="GraciaPart2">Gracia Part 2</option>
-                <option value="GraciaFinal">Gracia Final</option>
-                <option value="GraciaEpilogue">Gracia Epilogue</option>
-                <option value="Freya">Freya</option>
-                <option value="HighFive">High Five</option>
-                <option value="GD">Goddess Of Destruction</option>
-                <option value="Tauti">Tauti</option>
-                <option value="Lindvior">Lindvior</option>
-             </select>
+         {!!Form::select('cronica_id',$cronicas,null,['class'=>'form-control'])!!}
+           
      <label for="form_control_1">Cronica</label>
         </div>
  </div>
@@ -89,10 +77,7 @@
 <div class="col-xs-12 col-sm-12 col-md-6">
 <div class="form-group form-md-line-input has-success">
          <div class="">
-            <select class="form-control" name="serverpack">
-                <option value="L2jFrozen">L2jFrozen</option>
-                <option value="L2jaCis">L2jaCis</option>
-             </select>
+            {!!Form::select('serverpack_id',$serverpacks,null,['class'=>'form-control'])!!}
      <label for="form_control_1">Server Pack</label>
         </div>
  </div>
