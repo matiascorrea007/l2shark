@@ -1,5 +1,5 @@
 @section('menu')
-<div class="container">
+<div class="container" >
             <span class="bar hide"></span>
             <a href="index.html" class="logo"><img src="skin/newland/img/logo.png" alt=""></a>
                 <nav>
@@ -57,7 +57,7 @@
 
 
 
-<section class="padding-top-40 padding-bottom-40">	
+<section class="padding-top-40 padding-bottom-40" style="background-image: url(skin/newland/img/boss.jpg); background-repeat: no-repeat; background-attachment: fixed;">	
 			<div class="container">
 				<div class="row sidebar">
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 leftside">
@@ -84,7 +84,7 @@
               <h1>Grand Boss</h1>
 <div class="portlet-body">
         <div class="table-scrollable">
-<table  class="table table-bordered table-hover">
+<table  class="table table-bordered ">
 	
 	<tr>
 		<th></th>
@@ -337,7 +337,7 @@
               <h1>Raid Boss</h1>
 <div class="portlet-body">
         <div class="table-scrollable">
-<table  class=" table table-bordered table-hover">
+<table  class=" table table-bordered ">
 	
 	<tr>
 		<th>Nombre</th>

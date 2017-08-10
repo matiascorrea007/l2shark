@@ -1,7 +1,7 @@
-body{background:#FFF;font-family:"Roboto",sans-serif;font-weight:300;font-size:15px;line-height:1.5;color:#7b7b7b}
-a{color:#313131;-webkit-transition:.25s;transition:.25s}
+body{background:#FFF;font-family:"Roboto",sans-serif;font-weight:300;font-size:15px;line-height:1.5;color:#ffffff;}
+a{color:#ffffff;;-webkit-transition:.25s;transition:.25s}
 button,a:hover,a:active,a:focus{color:#2776dc;text-decoration:none;outline:0!important}
-h1,h2,h3,h4,h5,h6{color:#4f4f4f;font-family:"Roboto",sans-serif;margin:0;font-weight:normal!important}
+h1,h2,h3,h4,h5,h6{color:#ffffff;font-family:"Roboto",sans-serif;margin:0;font-weight:normal!important}
 pre{padding:25px;background-color:#FFF;border-color:#eaeaea}
 p{margin-bottom:20px;line-height:1.6}
 img{max-width:100%;height:auto}

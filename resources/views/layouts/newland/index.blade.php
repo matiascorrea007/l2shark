@@ -36,10 +36,15 @@
 	<!-- FAVICON -->
 	<link rel="shortcut icon" href="skin/newland/img/favicon.ico">
 	
+	
+
 	<!-- CORE CSS -->
 	<link href="skin/newland/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="skin/newland/css/theme.min.css" rel="stylesheet">
 	<link href="skin/newland/css/custom.css" rel="stylesheet"> 
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+   <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'>
+
 	<link href="skin/newland/css/helpers.min.css" rel="stylesheet">
 	 <link href="{{ asset('layout/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css" />
@@ -54,9 +59,9 @@
         <link href="{{ asset('layout/css/layout.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/custom.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/jquery.minicolors.css') }}" rel="stylesheet" type="text/css" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
-   <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'> 
+ 
     
+
 	<!-- PLUGINS -->
 	<link href="skin/newland/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 	<link href="skin/newland/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
@@ -316,23 +321,23 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">	
 							<ul class="nav">
-								<li><a href="index.html">INICIO</a></li>
-								<li><a href="descargas.html">DESCARGAS</a></li>
-								<li><a href="como-jugar.html">COMO JUGAR</a></li>
-								<li><a href="informaci%C3%B3n.html">INFORMACIÓN</a></li>
+								<li><a href="{{ url('/') }}">INICIO</a></li>
+								<li><a href="{{ url('/descargas') }}">DESCARGAS</a></li>
+								<li><a href="{{ url('/como-jugar') }}">COMO JUGAR</a></li>
+								<li><a href="{{ url('/informacion') }}">INFORMACIÓN</a></li>
 							</ul>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<ul class="nav">
-								<li><a href="noticias.html">NOTICIAS</a></li>
-								<li><a href="eventos.html">EVENTOS</a></li>
-								<li><a href="galeria.html">GALERIA</a></li>
-								<li><a href="soporte.html">SOPORTE</a></li>
+								<li><a href="{{ url('/noticias') }}">NOTICIAS</a></li>
+								<li><a href="{{ url('/top-pvp') }}">ESTADISTICAS</a></li>
+								<li><a href="{{ url('/galeria-imagen') }}">GALERIA</a></li>
+								<li><a href="{{ url('/soporte') }}">SOPORTE</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-		
+						
 				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fl2newland&tabs=timeline&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=115028639145040" width="340" height="340" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 				</div>

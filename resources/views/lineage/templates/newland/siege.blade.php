@@ -56,7 +56,7 @@
 @include('flash::message')
 
 
-<section class="padding-top-40 padding-bottom-40">  
+<section class="padding-top-40 padding-bottom-40" style="background-image: url(skin/newland/img/siege.jpg); background-repeat: no-repeat; background-attachment: fixed;">  
             <div class="container">
                 <div class="row sidebar">
                     <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 leftside">
@@ -82,7 +82,7 @@
 
                     <div class="ct">Dion Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr >
                     <td ><img src="skin/globales/img/castles/dion.jpg" alt=""></td>
@@ -140,7 +140,7 @@
     <div class="">
                     <div class="ct">Schuttgart Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td><img src="skin/globales/img/castles/schuttgart.jpg" alt=""></td>
@@ -198,7 +198,7 @@
     <div class="">
                     <div class="ct">Oren Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td><img src="skin/globales/img/castles/oren.jpg" alt=""></td>
@@ -256,7 +256,7 @@
     <div class="">
                     <div class="ct">Gludio Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td><img src="skin/globales/img/castles/gludio.jpg" alt=""></td>
@@ -314,7 +314,7 @@
     <div class="">
                     <div class="ct">Goddard Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td><img src="skin/globales/img/castles/goddard.jpg" alt=""></td>
@@ -372,7 +372,7 @@
     <div class="">
                     <div class="ct">Innadril Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td><img src="skin/globales/img/castles/schuttgart.jpg" alt=""></td>
@@ -430,7 +430,7 @@
     <div class="">
                     <div class="ct">Giran Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td ><img src="skin/globales/img/castles/giran.jpg" alt=""></td>
@@ -488,7 +488,7 @@
     <div class="">
                     <div class="ct">Aden Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td ><img src="skin/globales/img/castles/aden.jpg" alt=""></td>
@@ -546,7 +546,7 @@
     <div class="">
                     <div class="ct">Rune Castle</div>
                     <div class="table-scrollable">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered ">
                 <tbody>
                     <tr>
                     <td ><img src="skin/globales/img/castles/rune.jpg" alt=""></td>

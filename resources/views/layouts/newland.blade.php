@@ -99,18 +99,18 @@
 					<div class="row">
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">	
 							<ul class="nav">
-								<li><a href="index.html">INICIO</a></li>
-								<li><a href="descargas.html">DESCARGAS</a></li>
-								<li><a href="como-jugar.html">COMO JUGAR</a></li>
-								<li><a href="informaci%C3%B3n.html">INFORMACIÓN</a></li>
+								<li><a href="{{ url('/') }}">INICIO</a></li>
+								<li><a href="{{ url('/descargas') }}">DESCARGAS</a></li>
+								<li><a href="{{ url('/como-jugar') }}">COMO JUGAR</a></li>
+								<li><a href="{{ url('/informacion') }}">INFORMACIÓN</a></li>
 							</ul>
 						</div>
 						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 							<ul class="nav">
-								<li><a href="noticias.html">NOTICIAS</a></li>
-								<li><a href="eventos.html">EVENTOS</a></li>
-								<li><a href="galeria.html">GALERIA</a></li>
-								<li><a href="soporte.html">SOPORTE</a></li>
+								<li><a href="{{ url('/noticias') }}">NOTICIAS</a></li>
+								<li><a href="{{ url('/top-pvp') }}">ESTADISTICAS</a></li>
+								<li><a href="{{ url('/galeria-imagen') }}">GALERIA</a></li>
+								<li><a href="{{ url('/soporte') }}">SOPORTE</a></li>
 							</ul>
 						</div>
 					</div>
@@ -159,11 +159,11 @@
 	</script>
 	
 		<!-- Javascript -->
-	<script src="plugins/countdown/jquery.countdown.min.js"></script>
-	<script src="plugins/easypiechart/jquery.easypiechart.min.js"></script>
+	<script src="skin/newland/plugins/countdown/jquery.countdown.min.js"></script>
+	<script src="skin/newland/plugins/easypiechart/jquery.easypiechart.min.js"></script>
 	<script>
 	$(function() {
-		$('#countdown').countdown('2017/9/1').on('update.countdown', function(event) {
+		$('#countdown').countdown('2017/10/1').on('update.countdown', function(event) {
 			var $this = $(this).html(event.strftime(''
 			+'<span>%-w semana%!w</span>'
 			+'<span>%-d día%!d</span>'

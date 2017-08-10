@@ -56,7 +56,7 @@
 @include('flash::message')
 
 
-<section class="padding-top-40 padding-bottom-40">	
+<section class="padding-top-40 padding-bottom-40" style="background-image: url(skin/newland/img/top.jpg);background-repeat: no-repeat; background-attachment: fixed;">	
 			<div class="container">
 				<div class="row sidebar">
 					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 leftside">
@@ -94,7 +94,7 @@
 		A continuación se muestran Todos los Heroes
 	</div>
 	
-	<table cellspacing="0" cellpadding="0" border="0" class="table table-bordered table-hover">
+	<table cellspacing="0" cellpadding="0" border="0" class="table table-bordered">
 		
 		<tr>
 			<th class="pos"></th>

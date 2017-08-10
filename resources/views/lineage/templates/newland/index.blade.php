@@ -126,7 +126,9 @@
 		</section>	<br>	
 
 
-<center><h3>Lanzamiento del periodo Beta 01/09/2017</h3><br><div id="countdown" class="margin-top-10 color-white"></div>
+<center><h3>Lanzamiento del periodo Beta 01/10/2017</h3><br><div id="countdown" class="margin-top-10 color-white"></div>
 </center>
+
+
 
 @endsection
