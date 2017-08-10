@@ -45,8 +45,9 @@ class ServiciosController extends AdminBaseController
             
         }
         
-        
-        return view ('lineage.admin.servicios.index',compact('characters','coin'));
+        $link = "servicios";
+
+        return view ('lineage.admin.servicios.index',compact('characters','coin','link'));
     }
 
 

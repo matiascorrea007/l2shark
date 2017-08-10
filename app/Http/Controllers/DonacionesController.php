@@ -33,7 +33,8 @@ class DonacionesController extends AdminBaseController
      */
     public function index()
     {
-        return view ('lineage.admin.donaciones.donar');
+        $link =  "Donaciones / Donar";
+        return view ('lineage.admin.donaciones.donar',compact('link'));
     }
 
     /**
@@ -173,8 +174,8 @@ class DonacionesController extends AdminBaseController
     public function listar()
     {
         $donaciones = web_donacione::orderBy('created_at','des')->get();
-
-        return view ('lineage.admin.donaciones.donaciones-listar',compact('donaciones'));
+        $link =  "Donaciones / Listar";
+        return view ('lineage.admin.donaciones.donaciones-listar',compact('donaciones','link'));
     }
 
 
@@ -182,16 +183,16 @@ class DonacionesController extends AdminBaseController
     public function hechas()
     {
         $donaciones = web_donacione::where('account','=',Auth::user()->login)->orderBy('created_at','des')->get();
-
-        return view ('lineage.admin.donaciones.donaciones-hechas',compact('donaciones'));
+        $link =  "Donaciones / Hechas";
+        return view ('lineage.admin.donaciones.donaciones-hechas',compact('donaciones','link'));
     }
 
 
     public function pendientes()
     {
         $donaciones = web_donacione::where('status','=',"pendiente")->orderBy('created_at','des')->get();
-
-        return view ('lineage.admin.donaciones.donaciones-pendientes',compact('donaciones'));
+        $link =  "Donaciones / Pendientes";
+        return view ('lineage.admin.donaciones.donaciones-pendientes',compact('donaciones','link'));
     }
 
 
@@ -232,9 +233,9 @@ class DonacionesController extends AdminBaseController
              flash('no se puedo realizar la conexion a la BD.')->error();      
         }
 
+        $link =  "Donaciones / Transferir";
 
-
-        return view ('lineage.admin.donaciones.donaciones-transferir',compact('characters'));
+        return view ('lineage.admin.donaciones.donaciones-transferir',compact('characters','link'));
     }
 
 
@@ -346,7 +347,8 @@ class DonacionesController extends AdminBaseController
             $transferenciasPlayers = web_donaciones_transferencia::where('pj','!=',"")->orderBy('created_at', 'des')->get();
             $transferenciasCuentas = web_donaciones_transferencia::where('email','!=',"")->get();
 
-            return view ('lineage.admin.donaciones.transferencias-realizadas',compact('transferenciasPlayers','transferenciasCuentas'));
+            $link =  "Donaciones / Transferecnias / Realizadas";
+            return view ('lineage.admin.donaciones.transferencias-realizadas',compact('transferenciasPlayers','transferenciasCuentas','link'));
     }
 
 

@@ -27,8 +27,9 @@ class GaleriaController extends AdminBaseController
     public function index()
     {
         
-        
-        return view('lineage.admin.galeria.index'); 
+       
+        $link="Galeria";
+        return view('lineage.admin.galeria.index',compact('link')); 
     }
 
     /**
@@ -45,7 +46,8 @@ class GaleriaController extends AdminBaseController
     public function showImagen()
     {
         $imagenes = web_imagene::paginate(20);
-         return view ('lineage.admin.galeria.ver-imagenes',compact('imagenes'));
+         $link="Galeria / Imagenes";
+         return view ('lineage.admin.galeria.ver-imagenes',compact('imagenes','link'));
     }
     /**
      * Store a newly created resource in storage.
@@ -155,7 +157,8 @@ class GaleriaController extends AdminBaseController
     public function showVideo()
     {
         $videos = web_video::paginate(20);
-         return view ('lineage.admin.galeria.ver-videos',compact('videos'));
+        $link="Galeria / Videos";
+         return view ('lineage.admin.galeria.ver-videos',compact('videos','link'));
     }
 
 

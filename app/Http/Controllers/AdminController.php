@@ -54,9 +54,9 @@ class AdminController extends AdminBaseController
             
         }
 
+        $link = "home";
 
-
-        return view ('lineage.admin.index',compact('characters'));
+        return view ('lineage.admin.index',compact('characters','link'));
     }
 
 
@@ -89,7 +89,7 @@ class AdminController extends AdminBaseController
         $recaptcha=Recaptcha::first();
         $mercadopago=Mercadopago::first();
         $servidor=web_serverinfo::first();
-        $link = "footer";
+        $link = "Configuracion / General";
         return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago','servidor'));
     }
 
@@ -97,7 +97,7 @@ class AdminController extends AdminBaseController
 
     public function Paginas(){
         $paginas=web_pagina::all();
-        $link = "footer";
+        $link =  "Configuracion / Paginas";
         return view ('lineage.admin.paginas.index',compact('link','paginas'));
     }
 

@@ -34,7 +34,7 @@ class WebPostController extends BaseController
     {
         $posts=web_post::orderBy('created_at','desc')->paginate(10);
       
-        $link = "post";
+        $link = "Noticias";
 
 
     return view ('lineage.admin.post.index',compact('link','posts'));

@@ -130,11 +130,6 @@
 	
 	<!-- wrapper --> 
 	<div id="wrapper">	
-
-
-
-
-
 	<section class="hero cover hidden-xs" style="background-image: url(skin/newland/img/cover/cover-profile.jpg);">
 			<div class="hero-bg"></div>
 			<div class="container relative">
@@ -150,29 +145,29 @@
 				</div>
 			</div>
 		</section>
-		
+
+
 		<section class="profile-nav height-50 border-bottom-1 border-grey-300  hidden-xs">
 			<div class="tab-select sticky">
 				<div class="container">
 					<ul class="nav nav-tabs" role="tablist">
+		
 
-						<li class="active" ><a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-						<ul class="dropdown-menu">
-						<li><a href="{{ url('panel') }}"><i class="fa fa-user-plus"></i>Registrarte</a></li>
-						<li class="divider"></li>
-						<li><a href="{{ url('panel') }}"><i class="fa fa-user"></i>Iniciar Sesión</a></li>
-						<li class="divider"></li>
-						<li><a href="{{ url('panel') }}"><i class="fa fa-support"></i>Soporte</a></li>
-					</ul>
-						</li>
+		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
+		@if(!empty($link) and  $link == "home")<li class="active" >@else <li class="" > @endif
+		<a href="{{ url('panel') }}" >Home</a></li>
 
 
 
 
-					@if(Auth::user()->admin == 1)<!--permiso de admin-->
-						<li><a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Configuracion</a>
-						<ul class="dropdown-menu">
-						<li class=" ">
+		@if(Auth::user()->admin == 1)<!--permiso de admin-->
+
+		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
+		<li class="" >
+
+		<a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Configuracion</a>
+			<ul class="dropdown-menu">
+			<li class=" ">
                 <a href="{!! URL::to('panel-config/') !!}" class="nav-link"><i class="fa fa-cogs"></i> General</a>
             </li>
             <li class=" ">
@@ -186,17 +181,13 @@
                 <a href="{!! URL::to('skines/') !!}" class="nav-link"><i class="fa fa-paint-brush"></i> Skin</a>
             </li>
             @endif
-					</ul>
-					@endif
+			</ul>
+		@endif
+		</li>
 
-
-
-
-
-
-
-						</li>
-						<li><a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Donaciones</a>
+		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
+		 <li class="" > 
+		<a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Donaciones</a>
 						<ul class="dropdown-menu">
 						 <li class=" ">
                 <a href="{!! URL::to('donaciones/') !!}" class="nav-link"><i class="fa fa-plus-circle"></i> Adquirir Coins</a>
@@ -219,15 +210,13 @@
                 <a href="{!! URL::to('transfererencias-realizadas/') !!}" class="nav-link"><i class="fa fa-exchange"></i> Transferencias Realizadas</a>
             </li>
 					</ul>
-						</li>
+		</li>
 
 
 
-
-
-
-		<li><a href="{{ url('servicios') }}" >Servicios</a>
-			</li>
+		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
+		@if(!empty($link) and  $link == "servicios")<li class="active" >@else <li class="" > @endif
+		<a href="{{ url('servicios') }}" >Servicios</a></li>
 
 
 
@@ -247,15 +236,16 @@
 
 
 
-			@if(Auth::user()->admin == 1)<!--permiso de admin-->
-			<li><a href="{{ url('post') }}" >Noticias</a>
-			</li>@endif
+		@if(Auth::user()->admin == 1)<!--permiso de admin-->
+		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
+		@if(!empty($link) and  $link == "Noticias")<li class="active" >@else <li class="" > @endif
+		<a href="{{ url('post') }}" >Noticias</a>
+		</li>
+		@endif
 
 
-
-				<li><a href="{{ url('combo') }}">Shop</a>
-					</li>
-
+		@if(!empty($link) and  $link == "Shop")<li class="active" >@else <li class="" > @endif
+		<a href="{{ url('combo') }}">Shop</a></li>
 
 
 		<li><a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Galeria</a>
@@ -267,15 +257,13 @@
             <li class=" ">
                 <a href="{!! URL::to('galeria-video-show') !!}" class="nav-link"><i class="fa fa-youtube-play"></i> Galeria de Videos </a>
             </li>
-        @endif
+        	@endif
             <li class=" ">
             <a href="{!! URL::to('galeria') !!}" class="nav-link"><i class="fa fa-link"></i> Enviar Imagen/Video</a>
             </li>
 			</ul>
 		</li>
 
-						
-				
 					</ul>
 				</div>
 			</div>
@@ -286,30 +274,23 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<ol class="breadcrumb">
-							<li><a href="index-2.html">Inicio</a></li>
-							<li><a href="#">Panel</a></li>
-							<li class="active">Perfil</li>
+							<li><a href="{!! URL::to('panel') !!}">Panel /</a></li>
+							<li class="active"> @if(!empty($link)) {{$link}} @endif</li>
 						</ol>	
 					</div>
 				</div>
 			</div>
 		</section>
+
+		@yield('separador')
 		
 		<section>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="post post-fl">
-							<div class="post-thumbnail">
-								
-							</div>
-							<div class="post-header">
-								<div class="post-title">
-								
-								</div>
-							</div>
 							
-
+							
 							@yield('content')  
 				
 						</div>

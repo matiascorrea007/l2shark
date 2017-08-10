@@ -278,7 +278,9 @@ class ComboController extends AdminBaseController
     {      
         $combos = web_producto_combo::all();
         $categorias = web_categoria::all();
-         return view ('lineage.admin.shop.index',compact('categorias','combos'));
+
+        $link="Shop";
+         return view ('lineage.admin.shop.index',compact('categorias','combos','link'));
     }
 
 

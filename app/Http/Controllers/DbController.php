@@ -28,7 +28,8 @@ class DbController extends AdminBaseController
     public function index()
     {  
             $db = web_conexion::first();
-            return view ('lineage.admin.db.index',compact('db'));
+            $link =  "Configuracion / DB";
+            return view ('lineage.admin.db.index',compact('db','link'));
         
     }
 

@@ -44,7 +44,7 @@ class TicketController extends AdminBaseController
         }
         
         $tickets=$tickets->paginate(10);
-        $link = "ticket";
+        $link = "Ticket / Administrar";
 
         return view('lineage.admin.ticket.admin-ticket',compact('link','count','tickets')); 
     }
@@ -114,7 +114,9 @@ class TicketController extends AdminBaseController
         $prioridades  = web_tickets_prioritie::lists('nombre', 'id');
         $category  = web_tickets_categorie::lists('nombre', 'id');
 
-        return view('lineage.admin.ticket.user-ticket',compact('category','prioridades','tickets'));
+
+        $link =  "Ticket / listar";
+        return view('lineage.admin.ticket.user-ticket',compact('category','prioridades','tickets','link'));
 
     }
 
