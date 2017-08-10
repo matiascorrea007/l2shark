@@ -41,7 +41,7 @@ class AdminController extends AdminBaseController
     }
 
 
-    public function Admin(){
+    public function Admin(Request $request){
 
         try
         {
@@ -55,7 +55,7 @@ class AdminController extends AdminBaseController
         }
 
         $link = "home";
-
+     // dd($request->ips());
         return view ('lineage.admin.index',compact('characters','link'));
     }
 

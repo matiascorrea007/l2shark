@@ -52,15 +52,15 @@ $skin =  DB::table('web_skins')->first();
  				<tbody>
  					<tr>
     				<td>Account</td>
-    				<td></td>
+    				<td>{{Auth::user()->login}}</td>
     				</tr>
 					<tr>
     				<td>E-mail</td>
-    				<td></td>
+    				<td>{{Auth::user()->email}}</td>
 					</tr>
 					<tr>
     				<td>Creada en</td>
-    				<td></td>
+    				<td>{{Auth::user()->created_at}}</td>
 					</tr>
 					<tr>
     				<td>Último login</td>
@@ -70,10 +70,6 @@ $skin =  DB::table('web_skins')->first();
     				<td>Último IP</td>
     				<td></td>
 					</tr>
-					<tr>
-    				<td>Personajes</td>
-    				<td></td>
-    				</tr>
 				</tbody>
   			</table>
         </div>

@@ -56,6 +56,37 @@
 <div class="col-xs-12 col-sm-12 col-md-3"></div>
 </div>
 
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-3"></div>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<div class="form-group form-md-line-input has-success">
+         <div class="">
+        
+
+{!!Form::select('cronica_id',$cronicas,null,['class'=>'form-control'])!!}
+
+                 <label for="form_control_1">Cronica</label>
+        </div>
+ </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3"></div>
+</div>
+
+
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-3"></div>
+<div class="col-xs-12 col-sm-12 col-md-6">
+<div class="form-group form-md-line-input has-success">
+         <div class="">
+        {!!Form::select('serverpack_id',$serverpacks,null,['class'=>'form-control'])!!}
+     <label for="form_control_1">Server Pack</label>
+        </div>
+ </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-3"></div>
+</div>
+
+
 
 <div class="row col-xs-12 col-sm-12 col-md-12" >
 {!!Form::submit('Guardar',['class'=>'btn btn-primary pull-right'])!!}

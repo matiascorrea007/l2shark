@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use Soft\Http\Requests;
 
 use Soft\web_conexion;
+use Soft\Cronica;
+use Soft\Serverpack;
+
 use Config;
 use DB;
 use Alert;
@@ -26,11 +29,14 @@ class DbController extends AdminBaseController
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {  
+    {       
+            $cronicas = Cronica::lists('descripcion', 'id');
+            $serverpacks = Serverpack::lists('descripcion', 'id');
             $db = web_conexion::first();
             $link =  "Configuracion / DB";
-            return view ('lineage.admin.db.index',compact('db','link'));
+            return view ('lineage.admin.db.index',compact('db','link','cronicas','serverpacks'));
         
+
     }
 
 
@@ -66,11 +72,14 @@ class DbController extends AdminBaseController
      */
     public function store(Request $request)
     {
+        
         $conexion = new web_conexion;
         $conexion->host = $request['host'];
         $conexion->user = $request['user'];
         $conexion->db = $request['db'];
         $conexion->password = $request['password'];
+        $conexion->cronica = $request['cronica'];
+        $conexion->serverpack = $request['serverpack'];
         $conexion->save();
 
          Alert::success('Mensaje existoso', 'Datos Guardados Con Exito');
@@ -92,6 +101,8 @@ class DbController extends AdminBaseController
         $conexion->user = $request['user'];
         $conexion->db = $request['db'];
         $conexion->password = $request['password'];
+        $conexion->cronica = $request['cronica'];
+        $conexion->serverpack = $request['serverpack'];
         $conexion->save();
         Alert::success('Mensaje existoso', 'Datos Modificados Con Exito');
         return Redirect::to('/db-config');
