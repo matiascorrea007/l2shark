@@ -1,4 +1,8 @@
-@extends('layouts.app')
+<?php 
+$skin =  DB::table('web_skins')->first();
+ ?>
+
+@extends($skin->nombre == "newland" ? 'layouts.newland.index' : 'layouts.metronic');
 @section('content')
 @include('alerts.request')
 @include('alerts.success')
@@ -18,7 +22,7 @@
 
 
 {!!Form::open(['url'=>'post-store', 'method'=>'POST' , 'files'=>True])!!}
-@include('admin.post.forms.formscreate')
+@include('lineage.admin.post.forms.formscreate')
 {!!Form::submit('registrar',['class'=>'btn btn-primary'])!!}
 {!!Form::close()!!}
 

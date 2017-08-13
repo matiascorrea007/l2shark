@@ -1,4 +1,8 @@
-@extends('layouts.app')
+<?php 
+$skin =  DB::table('web_skins')->first();
+ ?>
+
+@extends($skin->nombre == "newland" ? 'layouts.newland.index' : 'layouts.metronic');
 @section('content')
 @include('alerts.request')
 @include('alerts.success')
@@ -17,7 +21,7 @@
 
 {!!Form::model($post,['url'=>['post-update',$post->id],'method'=>'PUT' , 'files'=>True])!!}
 
-@include('admin.post.forms.formscreate')
+@include('lineage.admin.post.forms.formscreate')
 
 {!!Form::submit('modificar',['class'=>'btn btn-primary pull-right'])!!}
 <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>

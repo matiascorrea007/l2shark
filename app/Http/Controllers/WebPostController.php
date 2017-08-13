@@ -123,12 +123,9 @@ class WebPostController extends BaseController
      */
     public function edit(Request $request ,$id)
     {
-        if ($request->ajax()) {
+         $post=web_post::find($id);
+         return view('lineage.admin.post.edit',compact('post'));
 
-            $post=web_post::find($id);
-            return response($post);
-            
-          }
     }
 
     /**
@@ -140,7 +137,7 @@ class WebPostController extends BaseController
      */
     public function update(Request $request)
     {
-        dd($request);
+       
          $post=web_post::find($id);
         
 
@@ -191,9 +188,9 @@ class WebPostController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $post=web_Post::find($request->id);
+        $post=web_Post::find($id);
         $post->delete();
         
         //le manda un mensaje al usuario

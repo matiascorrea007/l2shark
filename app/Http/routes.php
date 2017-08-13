@@ -266,7 +266,7 @@ Route::get('post-edit-{id}','WebPostController@edit');
 Route::get('post-create','WebPostController@create');
 Route::post('post-store','WebPostController@store');
 Route::put('post-update','WebPostController@update');
-Route::delete('post-destroy','WebPostController@destroy');
+Route::delete('post-destroy/{id}','WebPostController@destroy');
 
 
 Route::get('galeria','GaleriaController@index');

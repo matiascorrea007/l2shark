@@ -73,18 +73,14 @@ $skin =  DB::table('web_skins')->first();
   
   
 <td>
-<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ver" onclick="ModalEditarNoticia({{$post->id}});"><i class="fa fa-expand"> Ver</i></button>
 
-
-<a class="btn btn-success btn-lg fa fa-edit" data-toggle="modal" data-target="#edit" onclick="ModalEditarNoticia({{$post->id}});"></a>
+<a class="btn btn-success btn-lg fa fa-edit" href="{!! URL::to('post-edit-'.$post->id) !!}"></a>
 
 <a class="btn btn-primary btn-lg fa fa-globe" href="{!! URL::to('blogdetail-post'.$post->id) !!}"></a>
 <!--esto es para que solo el administrador pueda eliminar-->
 
 <!--para el metodo eliminar necesito de un formulario para ejecutarlo-->
- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete" onclick="ModalEditarNoticia({{$post->id}});"><i class="fa fa-trash-o"> Eliminar</i></button>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+ <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#confirmDelete-{{ $post->id }}"><i class="fa fa-trash-o"></i></button>
 
 </td>
 
@@ -100,13 +96,11 @@ $skin =  DB::table('web_skins')->first();
 
 
 
-<!--modal ver post-->
- @include('lineage.admin.post.modal.show')
+
 <!--modal eliminar post-->
  @include('lineage.admin.post.modal.delete')
  <!--modal create post-->
  @include('lineage.admin.post.modal.create')
-  <!--modal create post-->
- @include('lineage.admin.post.modal.edit')                         
+                     
 
 @endsection
