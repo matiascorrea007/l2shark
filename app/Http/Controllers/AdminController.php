@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
 use Soft\web_facebook;
+use Soft\web_email;
 use Soft\web_logo;
 use Soft\web_voto;
 use Soft\web_pagina;
@@ -130,8 +131,10 @@ class AdminController extends AdminBaseController
         $recaptcha=Recaptcha::first();
         $mercadopago=Mercadopago::first();
         $servidor=web_serverinfo::first();
+        $email=web_email::first();
+      
         $link = "Configuracion / General";
-        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago','servidor'));
+        return view ('lineage.admin.config.index',compact('link','logos','boxs','votos','recaptcha','mercadopago','servidor','email'));
     }
 
 

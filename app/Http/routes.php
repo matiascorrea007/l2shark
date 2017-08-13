@@ -229,6 +229,9 @@ Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario'
 Route::post('serverinfo-store','ServidorinfoController@store');
 Route::put('serverinfo-update/{id}','ServidorinfoController@update');
 
+Route::post('email-store','ConfigEmailController@store');
+Route::put('email-update/{id}','ConfigEmailController@update');
+
 
 Route::post('mercadopago-store','MercadoPagoController@store');
 Route::put('mercadopago-update/{id}','MercadoPagoController@update');

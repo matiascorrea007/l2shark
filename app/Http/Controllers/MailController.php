@@ -1,16 +1,27 @@
 <?php
-
 namespace Soft\Http\Controllers;
-use Mail;
-use Redirect;
-use Session;
 use Illuminate\Http\Request;
-use Alert;
-use DB;
 use Soft\Http\Requests;
+
 use Soft\User;
+use Soft\web_email;
+
 use Newsletter;
+use Mail;
+use Alert;
+use Session;
+use Redirect;
+use Storage;
+use DB;
+use Image;
+use Auth;
+use Flash;
+use Toastr;
+use Carbon\Carbon;
+use Exception;
+use MP;
 use Input;
+use View;
 
 
 
@@ -128,94 +139,32 @@ class MailController extends Controller
 
     public function send(Request $request)
    {
-    //llama a la funcion CartTotal
-        $cartcount = $this->CartCount();
-        //llama a la funcion total
-        $total = $this->total();
-
-        $subcategorias = DB::table('categoriasubs')->orderBy('nombre', 'asc')->get();
-         $categorias = DB::table('categorias')->orderBy('nombre', 'asc')->get();
-        $carrucels =  DB::table('web_carrucels')->orderBy('imagen', 'asc')->get();
-        $carrucelMarcas =  DB::table('web_marcas')->orderBy('imagen', 'asc')->get();
-        $informacions =  DB::table('web_informacions')->orderBy('direccion1', 'asc')->get();
-        $boxs =  DB::table('web_facebooks')->orderBy('box', 'asc')->get();
-        $logos =  DB::table('web_logos')->orderBy('logo', 'asc')->get();
-         
-        
 
 
-       //guarda el valor de los campos enviados desde el form en un array
+     $email = web_email::first();
+     
+      //guarda el valor de los campos enviados desde el form en un array
        $data = $request->all();
-        
-       //se envia el array y la vista lo recibe en llaves individuales {{ $email }} , {{ $subject }}...
-       \Mail::send('emails.email', $data, function($message) use ($request)
+
+
+    \Mail::send('emails.email', $data, function($message) use ($request,$email)
        {
            //remitente
-           $message->from($request->email, $request->nombre , $request->apellido);
+          $message->from($request->email);
  
            //asunto
-           $message->subject($request->subject);
+           $message->subject($request->titulo);
  
            //receptor
-           $message->to(env('CONTACT_MAIL'), env('CONTACT_NAME'));
+           $message->to($email->email, $email->nombre);
  
        });
 
+
        Session::flash('message','mensjae enviado correctamente');
-        return view ('shop.contacto',compact('cartcount',
-                                          'categorias',
-                                          'subcategorias',
-                                          'carrucels',
-                                          'carrucelMarcas',
-                                          'informacions',
-                                          'boxs',
-                                          'logos',
-                                          'total'
-                                          ));
+        return Redirect::to('/');
    }
+   
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

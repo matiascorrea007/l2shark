@@ -440,6 +440,64 @@ $skin =  DB::table('web_skins')->first();
 
 
 
+
+
+<div class="row">
+    <div class="col-md-12">
+    <div class="portlet light ">
+        <div class="portlet-title">
+            <div class="caption">
+
+<i class="fa fa-cogs font-red"></i>
+<span class="caption-subject font-red sbold uppercase">Configurar Recepcion de Emails</span>
+
+
+    <div><br>
+    <p>El Email ingresado sera el cual reciba todos los mensajes enviados atrabes del formulario de contacto
+    </div>
+
+
+     </div><!--end caption-->
+
+
+
+    <div class="actions">
+       <div class="btn-group btn-group-devided" >
+
+
+    
+             
+      
+       </div>
+   </div>
+
+
+        </div><!--portlet-title-->
+    <div class="portlet-body">
+        <div class="table-scrollable">
+          
+           @if(!empty($email))
+
+    {!!Form::model($email,['url'=>['email-update',$email->id],'method'=>'PUT' , 'files'=>True])!!}
+      @include('lineage.admin.config.email.forms.email')
+    {!!Form::close()!!}
+
+        @else
+
+        {!!Form::open(['url'=>['email-store'],'method'=>'POST' , 'files'=>True])!!}
+           @include('lineage.admin.config.email.forms.emailCreate')
+        {!!Form::close()!!}
+
+        @endif
+
+                    </div>
+                </div>
+            </div>
+            <!-- END SAMPLE TABLE PORTLET-->
+        </div>
+    </div>
+
+
                           
 
 @endsection

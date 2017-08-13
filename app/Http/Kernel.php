@@ -33,6 +33,7 @@ class Kernel extends HttpKernel
             \Soft\Http\Middleware\LangMiddleware::class,
             \Soft\Http\Middleware\setDB::class,
             \Soft\Http\Middleware\setRecaptcha::class,
+            \Soft\Http\Middleware\setEmail::class,
         ],
 
         'api' => [

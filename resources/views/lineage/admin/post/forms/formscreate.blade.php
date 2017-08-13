@@ -2,7 +2,7 @@
 <div class="portlet box dark">
      <div class="portlet-title">
          <div class="caption">
-              <i class="fa fa-facebook"></i>Titulo</div>
+              <i class="fa  fa-text-height"></i>Titulo</div>
           <div class="tools">
                 <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                       <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -32,7 +32,7 @@
 <div class="portlet box dark">
      <div class="portlet-title">
          <div class="caption">
-              <i class="fa fa-facebook"></i>Imagen de Portada</div>
+              <i class="fa fa-image"></i>Imagen de Portada</div>
           <div class="tools">
                 <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                       <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -62,7 +62,7 @@
 <div class="portlet box dark">
      <div class="portlet-title">
          <div class="caption">
-              <i class="fa fa-facebook"></i>Descripcion Corta</div>
+              <i class="fa fa-list"></i>Descripcion Corta</div>
           <div class="tools">
                 <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                       <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>
@@ -92,7 +92,7 @@
 <div class="portlet box dark">
      <div class="portlet-title">
          <div class="caption">
-              <i class="fa fa-facebook"></i>Descripcion Larga</div>
+              <i class="fa fa-list"></i>Descripcion Larga</div>
           <div class="tools">
                 <a href="javascript:;" class="collapse" data-original-title="" title=""> </a>
                       <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title=""> </a>

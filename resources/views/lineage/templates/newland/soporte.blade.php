@@ -79,20 +79,20 @@
 							<h4><i class="fa fa-envelope"></i> ¡Envianos tu mensaje!</h4>
 							<p>Por cualquier consulta o problema enviarnos tu mensaje rellenando el siguiente formulario.</p>
 						</div>
-						<form>
+						{!!Form::open(['url'=>'mail', 'method'=>'POST','class'=>'form-horizontal'])!!}
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Email" required>
+								<input type="text" class="form-control" placeholder="email" name="email" required>
+							</div> 
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Asunto" name="titulo" required>
 							</div>
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Asunto" required>
-							</div>
-							<div class="form-group">
-								<textarea class="form-control" rows="7" placeholder="Mensaje"></textarea>
+								<textarea class="form-control" rows="7" placeholder="Mensaje" name="mensaje"></textarea>
 							</div>
 							<div class="text-center margin-top-30">
-								<button type="button" class="btn btn-primary btn-lg btn-rounded btn-shadow">Enviar</button>
+								<button type="submit" class="btn btn-primary btn-lg btn-rounded btn-shadow">Enviar</button>
 							</div>
-						</form>
+						{!!Form::close()!!}
 					</div>
 					<div class="col-lg-5 height-300">
 						<img src="skin/newland/img/content/contact.jpg" class="image-right" alt="">
