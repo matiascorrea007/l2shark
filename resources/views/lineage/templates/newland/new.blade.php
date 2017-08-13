@@ -144,9 +144,9 @@
 								<div class="col-lg-4">
 									<div class="post-thumbnail">
 									@if($post->imagen == "noticia.jpg")
-							<a href="#"><img src="storage/noticias/noticia.jpg" alt=""></a>
+							<a href="{{ url('blogdetail-post'.$post->id) }}"><img src="storage/noticias/noticia.jpg" alt=""></a>
 							@else
-							<img src='{{$post->portada}}' width="400" height="150">
+							<a href="{{ url('blogdetail-post'.$post->id) }}"><img src='{{$post->portada}}' width="400" height="150"></a>
 							@endif
 
 									</div>

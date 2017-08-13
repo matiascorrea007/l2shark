@@ -74,7 +74,7 @@
 
 						<ul class="nav nav-tabs ">
   <li class="active"><a href="{{ url('top-pvp') }}">Top PVP</a></li>
-  <li><a  href="{{ url('top-pk') }}">Top PK</a></li>
+  <li><a  href="{{ url('top-pk') }}" >Top PK</a></li>
   <li><a  href="{{ url('top-clan') }}">Top Clan</a></li>
   <li><a  href="{{ url('top-hp') }}">Top HP</a></li>
   <li><a  href="{{ url('top-mp') }}">Top MP</a></li>
@@ -87,7 +87,7 @@
 <hr>
 
 	
-	<h1>Top 100 PvP </h1>
+	<h1 style="color:white;">Top 100 PvP </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran los 100 jugadores con más puntos de PvP (Player vs Player)
@@ -129,7 +129,6 @@
 					
 					</div>
 				</div>
-			</div>
 		</section>
 
 

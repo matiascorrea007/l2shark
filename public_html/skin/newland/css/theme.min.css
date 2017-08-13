@@ -939,7 +939,7 @@ img.thumbnail.pull-left{margin-right:10px}
 .sidebar>.rightside{padding-left:40px;display:table-cell;vertical-align:top;float:none}
 .nav-tabs{border-color:rgba(0,0,0,0.1);border-bottom:1px solid rgba(0,0,0,0.1)}
 .nav-tabs>li{padding:0!important;border:0!important}
-.nav-tabs>li>a{color:rgba(0,0,0,0.65);font-weight:bold;padding:15px 20px;margin:0;font-size:14px}
+.nav-tabs>li>a{color: rgb(201, 170, 113);font-weight:bold;padding:15px 20px;margin:0;font-size:14px}
 .nav-tabs>li>a i{margin-right:10px}
 .nav-tabs .tab-content{padding:20px 0}
 .nav-tabs>li.active>a,.nav-tabs>li>a:hover{color:rgba(0,0,0,0.7);background-color:#FFF}
