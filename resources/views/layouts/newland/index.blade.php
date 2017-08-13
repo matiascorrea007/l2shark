@@ -165,7 +165,7 @@
 
 
 		@if(Auth::user()->admin == 1)<!--permiso de admin-->
-		@if(!empty($link) and  $link == "Configuracion / General" or $link == "Configuracion / Paginas" or $link=="Configuracion / DB")
+		@if(!empty($link) and  ($link == "Configuracion / General" or $link == "Configuracion / Paginas" or $link=="Configuracion / DB"))
 		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
 		<li class="active" >@else<li class="" >@endif
 
@@ -190,7 +190,7 @@
 		</li>
 
 		<!--con esta condicion activio cada tap al cambiar el menu con un active-->
-		 @if(!empty($link) and  $link == "Donaciones / Donar" or $link == "Donaciones / Listar" or $link=="Donaciones / Hechas" or $link == "Donaciones / Pendientes" or $link == "Donaciones / Transferir" or $link == "Donaciones / Transferecnias / Realizadas")
+		 @if(!empty($link) and  ($link == "Donaciones / Donar" or $link == "Donaciones / Listar" or $link=="Donaciones / Hechas" or $link == "Donaciones / Pendientes" or $link == "Donaciones / Transferir" or $link == "Donaciones / Transferecnias / Realizadas"))
 		<li class="active" >@else<li class="" >@endif
 
 		<a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Donaciones</a>
@@ -227,7 +227,7 @@
 
 
 
-		@if(!empty($link) and  $link == "Ticket / Administrar" or $link == "ticket" or $link=="Ticket / listar" )
+		@if(!empty($link) and  ($link == "Ticket / Administrar" or $link == "ticket" or $link=="Ticket / listar" ))
 		<li class="active" >@else<li class="" >@endif
 		<a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Tciket</a>
 		<ul class="dropdown-menu">
@@ -258,7 +258,7 @@
 
 
 
-		@if(!empty($link) and  $link == "Galeria" or $link == "Galeria / Imagenes" or $link=="Galeria / Videos" )
+		@if(!empty($link) and  ($link == "Galeria" or $link == "Galeria / Imagenes" or $link=="Galeria / Videos" ))
 		<li class="active" >@else<li class="" >@endif
 		<a href="{{ url('panel') }}" class="dropdown-toggle" data-toggle="dropdown">Galeria</a>
 			<ul class="dropdown-menu">

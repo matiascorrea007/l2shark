@@ -89,7 +89,7 @@
 <hr>
 
 	
-	<h1>Top Online </h1>
+	<h1 style="color:white;">Top Online </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran los jugadores Online

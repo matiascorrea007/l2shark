@@ -88,7 +88,7 @@
 <hr>
 
 	
-	<h1>Heroes </h1>
+	<h1 style="color:white;">Heroes </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran Todos los Heroes

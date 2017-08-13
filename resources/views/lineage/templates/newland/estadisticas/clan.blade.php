@@ -90,7 +90,7 @@
 <hr>
 
 	
-	<h1>Clanes </h1>
+	<h1 style="color:white;">Clanes </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran Todos los Clanes

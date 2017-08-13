@@ -86,7 +86,7 @@
 <hr>
 
 	
-	<h1>Top 100 HP </h1>
+	<h1 style="color:white;">Top 100 HP </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran los 100 jugadores con más puntos de HP

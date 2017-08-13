@@ -88,7 +88,7 @@
 <hr>
 
 	
-	<h1>Top 100 Activos </h1>
+	<h1 style="color:white;">Top 100 Activos </h1>
 	
 	<div class="pddInner">
 		A continuación se muestran los 100 jugadores con más Actividad en el Juego
