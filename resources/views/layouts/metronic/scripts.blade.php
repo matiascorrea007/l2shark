@@ -64,6 +64,8 @@
 <script src="{{ asset('layout/js/parallax.js') }}"></script>
 
 <!--Filemanager-->
+
+
 <script src="{{ asset('../vendor/unisharp/laravel-filemanager/public/js/lfm.js') }}"></script>
 <script src="{{ asset('../vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('../vendor/unisharp/laravel-ckeditor/adapters/jquery.js') }}"></script>

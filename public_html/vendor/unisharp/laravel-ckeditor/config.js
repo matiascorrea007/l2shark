@@ -18,6 +18,7 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: 'insert' },
 		{ name: 'forms' },
 		{ name: 'tools' },
+		{name: 'pbckcode'},
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'others' },
 		'/',
@@ -40,7 +41,25 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'link:advanced';
 
-	config.extraPlugins = 'colorbutton,youtube,div,codesnippet,stylesheetparser';
+	config.extraPlugins = 'colorbutton,youtube,div,codesnippet,stylesheetparser,pbckcode,preview,imageresponsive,codeTag,print';
 	
+	config.pbckcode = {
+    // An optional class to your pre tag.
+    cls: '',
+
+    // The syntax highlighter you will use in the output view
+    highlighter: 'PRETTIFY',
+
+    // An array of the available modes for you plugin.
+    // The key corresponds to the string shown in the select tag.
+    // The value correspond to the loaded file for ACE Editor.
+    modes: [['HTML', 'html'], ['CSS', 'css'], ['PHP', 'php'], ['JS', 'javascript']],
+
+    // The theme of the ACE Editor of the plugin.
+    theme: 'textmate',
+
+    // Tab indentation (in spaces)
+    tab_size: '4'
+  };
 
 };

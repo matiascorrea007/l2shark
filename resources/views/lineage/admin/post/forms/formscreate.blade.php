@@ -76,7 +76,7 @@
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-12">
 	{!!Form::label('')!!}
-	{!!Form::textarea ('descripcioncorta',null,['class'=>'ckeditor noticia_descrip_corta','id'=>'lfm','placeholder'=>'ingrese la observacion'])!!}<br><br><br>
+	{!!Form::textarea ('descripcioncorta',null,['class'=>'my-editor noticia_descrip_corta','id'=>'lfm','placeholder'=>'ingrese la observacion'])!!}<br><br><br>
 </div>
 <br>
    
