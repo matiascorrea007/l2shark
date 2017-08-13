@@ -2,7 +2,7 @@
 <div class="panel-body">
 <div class="row">
 
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-6">
 <div class="form-group form-md-line-input has-success">
     <div class="input-icon right">
         <input type="text" name="nombre" class="form-control" value="{{$servidor->nombre}}">
@@ -12,7 +12,7 @@
  </div>
 </div>
 
-<div class="col-xs-12 col-sm-12 col-md-3">
+<div class="col-xs-12 col-sm-12 col-md-6">
 <div class="form-group form-md-line-input has-success">
     <div class="input-icon right">
         <input type="text" name="cronica" class="form-control" value="{{$servidor->cronica}}">
