@@ -3,6 +3,7 @@ namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 use Soft\Http\Requests;
 
+
 use Soft\web_email;
 
 use Alert;

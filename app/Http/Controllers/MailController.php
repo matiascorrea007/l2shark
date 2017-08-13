@@ -2,6 +2,7 @@
 namespace Soft\Http\Controllers;
 use Illuminate\Http\Request;
 use Soft\Http\Requests;
+use Soft\Http\Requests\EmailSendRequest;
 
 use Soft\User;
 use Soft\web_email;
@@ -137,7 +138,7 @@ class MailController extends Controller
 
 
 
-    public function send(Request $request)
+    public function send(EmailSendRequest $request)
    {
 
 

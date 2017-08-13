@@ -89,9 +89,25 @@
 							<div class="form-group">
 								<textarea class="form-control" rows="7" placeholder="Mensaje" name="mensaje"></textarea>
 							</div>
+                             <div class="controls form-group">
+                                        <div class="row">
+                                            <div class="col-lg-2 no-padding-right">
+                                                <span class="helper-left">Recatcha</span>
+                                                 {!! Recaptcha::render() !!}
+                                            </div>
+
+                                            <div class="col-lg-10">
+                                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
 							<div class="text-center margin-top-30">
 								<button type="submit" class="btn btn-primary btn-lg btn-rounded btn-shadow">Enviar</button>
 							</div>
+
+                               
+
 						{!!Form::close()!!}
 					</div>
 					<div class="col-lg-5 height-300">
