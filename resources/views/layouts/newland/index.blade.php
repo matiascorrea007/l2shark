@@ -39,16 +39,15 @@
 	
 
 	<!-- CORE CSS -->
-	<link href="skin/newland/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="skin/newland/css/bootstrap.css" rel="stylesheet">
 	<link href="skin/newland/css/theme.min.css" rel="stylesheet">
 	<link href="skin/newland/css/custom.css" rel="stylesheet"> 
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
-   <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'>
+   	<link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'>
 
 	<link href="skin/newland/css/helpers.min.css" rel="stylesheet">
 	 <link href="{{ asset('layout/css/font-awesome.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/simple-line-icons.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('layout/css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/bootstrap-switch.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/colorpicker.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('layout/css/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
@@ -269,6 +268,47 @@
 			</ul>
 		</li>
 
+
+		
+                                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                                       <li class="dropdown dropdown-user dropdown-dark">
+                                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                        <i class=""><img src="storage/icono admin/coins.svg" alt="" width="20"  height="20"></i> Saldo :
+                                                        <span class="badge badge-danger">{{$user->saldo}}</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-menu-dark">
+                                                     <li>
+                                                         <a href="{!! URL::to('donaciones') !!}">
+                                                        <i class="fa fa-credit-card  "></i> Agregar Saldo</a>
+                                                     </li>
+                                                     <li>
+                                                         <a href="{!! URL::to('transferir-coin') !!}">
+                                                        <i class="fa fa-exchange "></i> Transferir Saldo </a>
+                                                     </li>
+                                                    </ul>
+                                                </li>
+
+
+
+                                        <li class="dropdown dropdown-user dropdown-dark">
+                                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                                <img alt="" class="img-circle" src="skin/globales/img/avatar/human_female_fighter.jpg" height="30" width="30">
+                                                <span class="username username-hide-mobile">{{$user->login}}</span>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-default">
+                                                <li>
+                                                    <a href="{!! URL::to('usuario-config') !!}" >
+                                                        <i class="fa fa-cog "></i> Configuracion</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{!! URL::to('logout') !!}" >
+                                                        <i class="fa fa-sign-out "></i> Log Out </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    
+
+
 					</ul>
 				</div>
 			</div>
@@ -287,7 +327,7 @@
 			</div>
 		</section>
 
-		@yield('separador')
+		
 		
 		<section>
 			<div class="container">
@@ -353,12 +393,35 @@
 	<!-- /.footer -->
 	<!-- Javascript -->
 	<script src="{{ asset('layout/js/jquery.min.js') }}" type="text/javascript"></script>
-	
 	<script src="skin/newland/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="skin/newland/plugins/core.min.js"></script>
 	<script src="skin/newland/plugins/owl-carousel/owl.carousel.min.js"></script>
+		{!!Html::script('layout/js/js.cookie.min.js')!!}
+        {!!Html::script('layout/js/jquery.slimscroll.js')!!}
+        {!!Html::script('layout/js/jquery.blockui.min.js')!!}
+        {!!Html::script('layout/js/bootstrap-switch.js')!!}
+        {!!Html::script('layout/js/moment.min.js')!!}
+        {!!Html::script('layout/js/daterangepicker.js')!!}
+        {!!Html::script('layout/js/morris.js')!!}
+        {!!Html::script('layout/js/raphael-min.js')!!}
+        {!!Html::script('layout/js/jquery.waypoints.min.js')!!}
+        {!!Html::script('layout/js/jquery.counterup.js')!!}
+        {!!Html::script('layout/js/fullcalendar.js')!!}
+        {!!Html::script('layout/js/jquery.flot.js')!!}
+        {!!Html::script('layout/js/jquery.flot.resize.js')!!}
+        {!!Html::script('layout/js/jquery.flot.categories.js')!!}
+        {!!Html::script('layout/js/jquery.easypiechart.js')!!}
+        {!!Html::script('layout/js/jquery.sparkline.min.js')!!}
+        {!!Html::script('layout/js/app.js')!!}
+        {!!Html::script('layout/js/dashboard.js')!!}
+        {!!Html::script('layout/js/layout.js')!!}
+        {!!Html::script('layout/js/demo.js')!!}
+        {!!Html::script('layout/js/quick-sidebar.js')!!}
+        {!!Html::script('layout/js/quick-nav.js')!!}
+        {!!Html::script('layout/js/jquery.cubeportfolio.min.js')!!}
+        {!!Html::script('layout/js/portfolio-1.min.js')!!}
 
-{!!Html::script('layout/js/components-color-pickers.js')!!}
+		{!!Html::script('layout/js/components-color-pickers.js')!!}
         {!!Html::script('layout/js/bootstrap-colorpicker.js')!!}
         {!!Html::script('layout/js/jquery.minicolors.js')!!}
 
@@ -387,24 +450,6 @@
 <script src="{{ asset('../vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
 <script src="{{ asset('../vendor/unisharp/laravel-ckeditor/adapters/jquery.js') }}"></script>
 
-<!--Filemanager para crear-->
-    <script>
-       $('textarea.my-editor').ckeditor({
-filebrowserImageBrowseUrl: 'laravel-filemanager?type=Images',
-filebrowserImageUploadUrl: 'laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-filebrowserBrowseUrl: 'laravel-filemanager?type=Files',
-filebrowserUploadUrl: 'laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'});
-        $('#lfm').filemanager('image');
-    </script>
-<!--Filemanager para editar-->
-    <script>
-       $('textarea.my-editor2').ckeditor({
-filebrowserImageBrowseUrl: 'laravel-filemanager?type=Images',
-filebrowserImageUploadUrl: 'laravel-filemanager/upload?type=Images&_token={{csrf_token()}}',
-filebrowserBrowseUrl: 'laravel-filemanager?type=Files',
-filebrowserUploadUrl: 'laravel-filemanager/upload?type=Files&_token={{csrf_token()}}'});
-        $('#lfm2').filemanager('image');
-    </script>
 
 
 
@@ -531,9 +576,9 @@ $.get('ajax-subcategoria?cat_id='+ cat_id, function(data){
     });
 </script>
 
-
+<!-----------------------MIS SCRIPT---------------------------->
 <script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>
-
+<script type="text/javascript" src="layout/js/mis-js/mis-ajax-modales.js"></script>
 
 
 	<script>

@@ -21,6 +21,7 @@ use Soft\web_facebook;
 use Soft\web_coin_servicio;
 use Soft\Models\character;
 use Soft\User;
+use Soft\web_conexion;
 
 class ServiciosController extends AdminBaseController
 {
@@ -33,6 +34,7 @@ class ServiciosController extends AdminBaseController
     {   
 
         $coin = web_coin_servicio::first();
+        $conexion = web_conexion::first();
 
         try
         {
@@ -47,7 +49,7 @@ class ServiciosController extends AdminBaseController
         
         $link = "servicios";
 
-        return view ('lineage.admin.servicios.index',compact('characters','coin','link'));
+        return view ('lineage.admin.servicios.index',compact('characters','coin','link','conexion'));
     }
 
 

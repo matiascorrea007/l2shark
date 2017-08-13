@@ -46,6 +46,7 @@ $skin =  DB::table('web_skins')->first();
 
 
 
+
     <div class="portlet-body">
         <div class="table-scrollable">
             <table class="table table-hover table-light">

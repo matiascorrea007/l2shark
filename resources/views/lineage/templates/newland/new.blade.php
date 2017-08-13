@@ -11,7 +11,7 @@
 						<li><a  href="{{ url('/descargas') }}">DESCARGAS</a></li>
 						<li><a  href="{{ url('/como-jugar') }}">COMO JUGAR</a></li>
 						<li><a  href="{{ url('/informacion') }}">INFORMACIÓN</a></li>
-					    <li><a class="active" href="{{ url('/noticias') }}">NOTICIAS</a></li>
+					    <li class="active"><a  href="{{ url('/noticias') }}">NOTICIAS</a></li>
 
 						<li><a href="{{ url('/galeria-imagen') }}">GALERIA</a></li>
 					</ul>

@@ -234,21 +234,7 @@ label{margin-bottom:10px;font-weight:500}
 .table>thead>tr>th{border-bottom:0;padding:15px 5px}
 .table>thead>tr>th,.table>tbody>tr>th,.table>tfoot>tr>th,.table>thead>tr>td,.table>tbody>tr>td,.table>tfoot>tr>td{vertical-align:middle}
 .table-bordered,.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border-color:#eaeaea}
-.modal-open{padding-right:0!important;overflow:inherit!important}
-.modal-dialog{margin-top:100px}
-.modal-backdrop.in{opacity:.9;background-color:#101010}
-.modal-open .modal{z-index:9999;overflow:inherit!important}
-.modal-header{padding:15px 25px;line-height:30px;border-color:rgba(0,0,0,0.08)!important}
-.modal-header .close{margin:0;text-shadow:none;font-size:27px;position:absolute;right:25px}
-.modal-title{color:#5f5f5f;font-size:17px!important;font-weight:500!important;line-height:30px!important}
-.modal-title i{margin-right:10px}
-.modal-content{border-radius:4px;-webkit-border-radius:4px;border:0;box-shadow:0 2px 6px 0 rgba(80,80,80,0.5);-webkit-box-shadow:0 2px 6px 0 rgba(80,80,80,0.5)}
-.modal-body{background:#FFF;border-bottom:0;padding:30px 25px}
-.modal-footer{border-top:1px solid rgba(0,0,0,0.08)!important;margin:0;padding:20px 25px;font-size:13px}
-.modal-sm{width:400px}
-.modal-search{background:#FFF;position:fixed;width:100%;padding:2px 0;top:-60px;left:0;z-index:980;border-bottom:1px solid rgba(0,0,0,0.15);box-shadow:0 1px 1px 0 rgba(0,0,0,0.05);-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,0.05);-webkit-transition:.25s;transition:.25s}
-.modal-search .container{position:relative}
-.modal-search .close{position:absolute;right:20px;top:6px;font-size:20px;cursor:pointer;color:rgba(0,0,0,0.7);opacity:1}
+
 .search-open .modal-search{top:60px}
 .modal-search .form-control:focus,.modal-search .form-control{box-shadow:none;-webkit-box-shadow:none;border:0;background:#FFF;padding:6px 0;height:auto;line-height:inherit;color:#4a4a4a}
 .ekko-lightbox .modal-header{border-bottom:0;position:absolute;bottom:0;left:0;width:100%;padding:0;-webkit-transition:background .25s linear;transition:background .25s linear}

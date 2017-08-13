@@ -89,6 +89,8 @@ $skin =  DB::table('web_skins')->first();
 
 
 <div class="row">
+
+@if ($conexion->cronica->descripcion == "Interlude" and $conexion->serverpack->descripcion == "L2jFrozen") 
     <div class="col-md-6">
     <div class="portlet light ">
         <div class="portlet-title">
@@ -123,6 +125,7 @@ $skin =  DB::table('web_skins')->first();
             </div>
             <!-- END SAMPLE TABLE PORTLET-->
         </div>
+@endif
 
 
 
@@ -130,8 +133,7 @@ $skin =  DB::table('web_skins')->first();
 
 
 
-
-
+@if ($conexion->cronica->descripcion == "Interlude" and $conexion->serverpack->descripcion == "L2jFrozen") 
     <div class="col-md-6">
     <div class="portlet light ">
         <div class="portlet-title">
@@ -166,6 +168,9 @@ $skin =  DB::table('web_skins')->first();
             </div>
             <!-- END SAMPLE TABLE PORTLET-->
         </div>
+@endif
+
+
 
 
 

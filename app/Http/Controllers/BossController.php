@@ -1,17 +1,25 @@
 <?php
-
 namespace Soft\Http\Controllers;
-
 use Illuminate\Http\Request;
 
 use Soft\Http\Requests;
+use Soft\web_skin;
+use Soft\web_conexion;
+
 use Alert;
 use Session;
 use Redirect;
 use Storage;
 use DB;
+use Image;
+use Auth;
+use Flash;
+use Toastr;
 use Carbon\Carbon;
-use Soft\web_skin;
+use Exception;
+use MP;
+use Input;
+
 
 
 class BossController extends BaseController
@@ -26,8 +34,9 @@ class BossController extends BaseController
 
     public function boss()
     {
-        
+      //$conexion = web_conexion::first();
 
+     
       try
         {   
            $boss = DB::connection('externa')->table('grandboss_data')
@@ -107,16 +116,13 @@ class BossController extends BaseController
       ->where('name','=','Orfen')
       ->orderBy('level', 'asc')
       ->first();
-
-           
+      
         }
-        catch(\PDOException $e)
+    catch(\PDOException $e)
         {
              flash('no se puedo realizar la conexion con grandboss_data.')->error();
         }
 
-      
-     
 
      try
         {   
@@ -125,10 +131,16 @@ class BossController extends BaseController
       ->orderBy('level', 'asc')
       ->get();
         }
-        catch(\PDOException $e)
+     catch(\PDOException $e)
         {
              flash('no se puedo realizar la conexion con raidboss_spawnlist.')->error();
         }
+
+      
+
+
+
+
 
 
 

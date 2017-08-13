@@ -11,6 +11,7 @@ use Soft\web_pagina;
 use Soft\Recaptcha;
 use Soft\Mercadopago;
 use Soft\web_serverinfo;
+use Soft\web_conexion;
 use Soft\Models\Character;
 use Soft\Models\ClanDatum;
 
@@ -43,6 +44,9 @@ class AdminController extends AdminBaseController
 
     public function Admin(Request $request){
 
+        //almacenar ultima ip $_SERVER['REMOTE_ADDR']
+        //cada vez que ingrese al panel un usuario que me guarde su IP
+
         try
         {
              $characters = DB::connection('externa')->table('characters')->where('account_name','=',Auth::user()->login)->paginate(7);
@@ -56,16 +60,21 @@ class AdminController extends AdminBaseController
 
         $link = "home";
      // dd($request->ips());
-        return view ('lineage.admin.index',compact('characters','link'));
+        return view ('lineage.admin.index',compact('characters','link','xml'));
     }
 
 
     public function ObtenerCharacter(Request $request, $character){
-       
-        //si es una peticion ajax
-        if ($request->ajax()) {
+        //conexion a la BD
+        $conexion = web_conexion::first();
 
-            $char = DB::connection('externa')->table('characters')->where('char_name','=',$character)
+
+        /*---Interlude L2jfrozen*/
+        if ($conexion->cronica->descripcion == "Interlude" and $conexion->serverpack->descripcion == "L2jFrozen") {
+           //si es una peticion ajax
+        if ($request->ajax()) {
+            
+               $char = DB::connection('externa')->table('characters')->where('char_name','=',$character)
             ->join('class_list','characters.classid','=','class_list.id')->first();
 
             //obtengo el clan al que pertenese ese personaje
@@ -78,8 +87,40 @@ class AdminController extends AdminBaseController
             return response()->json([
                  $char,$clan,$sub1,$sub2,$sub3
                 ]);
+            }
         }
-    }
+
+
+
+
+        /*---Interlude L2jaCis*/
+        if ($conexion->cronica->descripcion == "Interlude" and $conexion->serverpack->descripcion == "L2jaCis") {
+           //si es una peticion ajax
+        if ($request->ajax()) {
+            
+               $char = DB::connection('externa')->table('characters')->where('char_name','=',$character)
+            ->join('class_list','characters.classid','=','class_list.id')->first();
+
+            //obtengo el clan al que pertenese ese personaje
+            $clan = DB::connection('externa')->table('clan_data')->where('clan_id','=', $char->clanid)->first();
+            //obtengo las sub que tiene ese personajes
+            $sub1 = DB::connection('externa')->table('character_subclasses')->where('char_obj_id','=', $char->obj_Id)->where('class_index','=',1)->join('class_list','character_subclasses.class_id','=','class_list.id')->first();
+            $sub2 = DB::connection('externa')->table('character_subclasses')->where('char_obj_id','=', $char->obj_Id)->where('class_index','=',2)->join('class_list','character_subclasses.class_id','=','class_list.id')->first();
+            $sub3 = DB::connection('externa')->table('character_subclasses')->where('char_obj_id','=', $char->obj_Id)->where('class_index','=',3)->join('class_list','character_subclasses.class_id','=','class_list.id')->first();
+
+            return response()->json([
+                 $char,$clan,$sub1,$sub2,$sub3
+                ]);
+            }
+        }
+
+
+
+            
+        }
+        
+
+
 
 
     public function Config(){
@@ -96,7 +137,7 @@ class AdminController extends AdminBaseController
 
 
     public function Paginas(){
-        $paginas=web_pagina::all();
+        $paginas=web_pagina::first();
         $link =  "Configuracion / Paginas";
         return view ('lineage.admin.paginas.index',compact('link','paginas'));
     }

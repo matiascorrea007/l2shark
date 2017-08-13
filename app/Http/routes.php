@@ -129,6 +129,7 @@ Route::get('backup', 'BackupController@index');
 
 Route::get('panel', 'AdminController@admin');
 Route::get('panel/{character}','AdminController@ObtenerCharacter');
+Route::post('panel/{character}','AdminController@ObtenerCharacter');
 
 Route::get('panel-config','AdminController@Config');
 Route::get('panel-paginas','AdminController@Paginas');
@@ -264,8 +265,8 @@ Route::get('post','WebPostController@index');
 Route::get('post-edit-{id}','WebPostController@edit');
 Route::get('post-create','WebPostController@create');
 Route::post('post-store','WebPostController@store');
-Route::put('post-update/{id}','WebPostController@update');
-Route::delete('post-destroy/{id}','WebPostController@destroy');
+Route::put('post-update','WebPostController@update');
+Route::delete('post-destroy','WebPostController@destroy');
 
 
 Route::get('galeria','GaleriaController@index');

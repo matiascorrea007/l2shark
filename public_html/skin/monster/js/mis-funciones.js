@@ -52,10 +52,13 @@ $(document).ready(function(){
     var token = $("#token").val();
     //capturo el nombre del personaje
     var character = this.id;
+    //console.log(character);
     //hace referencia a la ruta , y le mandos los parametros
+
   $.get('panel/'+ character , function(data){
   //me lo muesta en el input que tenga id mostrar
 
+  console.log(data[0]);
 
 
     //muestra el nombre del personaje

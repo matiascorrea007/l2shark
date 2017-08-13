@@ -43,8 +43,8 @@ $skin =  DB::table('web_skins')->first();
         </div><!--portlet-title-->
     <div class="portlet-body">
 
- @foreach($paginas as $pagina)
-{!!Form::model($pagina,['url'=>['paginas-update',$pagina->id],'method'=>'PUT' , 'files'=>True])!!}
+
+{!!Form::model($paginas,['url'=>['paginas-update',$paginas->id],'method'=>'PUT' , 'files'=>True])!!}
 
 <div class="modal-body">      
 @include('lineage.admin.paginas.forms.formscreate')
@@ -53,7 +53,7 @@ $skin =  DB::table('web_skins')->first();
 {!!Form::submit('Guardar',['class'=>'btn btn-primary pull-right'])!!}
 <button type="button" class="btn btn-primary pull-left" data-dismiss="modal">Close</button>
 {!!Form::close()!!}
-@endforeach
+
                 </div>
             </div>
             <!-- END SAMPLE TABLE PORTLET-->

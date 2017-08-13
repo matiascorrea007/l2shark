@@ -1,3 +1,4 @@
+@extends('layouts.newland')
 @section('menu')
 <div class="container" >
             <span class="bar hide"></span>
@@ -47,8 +48,6 @@
         </div>
 @endsection
 
-
-@extends('layouts.newland')
 @section('content')
 @include('alerts.errors')
 @include('alerts.request')
