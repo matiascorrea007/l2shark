@@ -37,10 +37,13 @@
 	<link rel="shortcut icon" href="skin/newland/img/favicon.ico">
 	
 	<!-- CORE CSS -->
+
+	
 	<link href="skin/newland/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="skin/newland/css/theme.min.css" rel="stylesheet">
 	<link href="skin/newland/css/custom.css" rel="stylesheet"> 
 	<link href="skin/newland/css/helpers.min.css" rel="stylesheet">
+	<link href="skin/newland/css/loading.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
    <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'> 
    
@@ -75,7 +78,33 @@
 	
 	<!-- wrapper --> 
 	<div id="wrapper">	
-		
+
+	
+	
+	
+	<div id="loading">
+
+  <div class="loading-image">
+
+  <div class="loading-page loading">
+  <div class="counter">
+  
+    <p>Cargando</p>
+    <h1>0%
+      <!--
+      h1.abs loading
+      h1.abs.color loading
+      -->
+    </h1>
+    <hr/>
+  </div>
+</div>
+
+</div>
+</div>
+
+	
+     
 		
 		@yield('content')
 
@@ -127,10 +156,11 @@
 	<!-- /.footer -->
 
 	<!-- Javascript -->
-	<script src="skin/newland/plugins/jquery/jquery-1.11.1.min.js"></script>
+	<script src="skin/newland/js/jquery-2.2.2.min.js"></script>
 	<script src="skin/newland/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<script src="skin/newland/plugins/core.min.js"></script>
 	<script src="skin/newland/plugins/owl-carousel/owl.carousel.min.js"></script>
+	<script src="skin/newland/js/loading.js"></script>
 	<script>
 	(function($) {
 	"use strict";
@@ -155,6 +185,7 @@
 	</script>
 	
 		<!-- Javascript -->
+		
 	<script src="skin/newland/plugins/countdown/jquery.countdown.min.js"></script>
 	<script src="skin/newland/plugins/easypiechart/jquery.easypiechart.min.js"></script>
 	<script>
@@ -162,7 +193,7 @@
 		$('#countdown').countdown('2017/10/1').on('update.countdown', function(event) {
 			var $this = $(this).html(event.strftime(''
 			+'<span>%-w semana%!w</span>'
-			+'<span>%-d día%!d</span>'
+			+'<span>%-d dia%!d</span>'
 			+'<span>%H horas</span>'
 			+'<span>%M minutos</span>'
 			+'<span>%S segundos</span>'));
@@ -184,6 +215,9 @@
 		});
 	});
 	</script>
+	
+	
+
     </div>
         </body>
     </html>

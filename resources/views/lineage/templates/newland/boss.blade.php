@@ -80,7 +80,7 @@
 			
 
 
-              <h1>Grand Boss</h1>
+              <h1 style="color:white;">Grand Boss</h1>
 <div class="portlet-body">
         <div class="table-scrollable">
 <table  class="table table-bordered ">
@@ -333,7 +333,7 @@
 <hr>
 
 
-              <h1>Raid Boss</h1>
+              <h1 style="color:white;">Raid Boss</h1>
 <div class="portlet-body">
         <div class="table-scrollable">
 <table  class=" table table-bordered ">

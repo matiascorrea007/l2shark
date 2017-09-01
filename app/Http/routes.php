@@ -226,8 +226,8 @@ Route::get('user-ticket-responder-{id}','TicketController@UserTicketResponder');
 Route::put('user-ticket-comentario/{id}','TicketController@UserTicketComentario');
 /*--------ticket----------*/
 
-Route::post('serverinfo-store','ServidorinfoController@store');
-Route::put('serverinfo-update/{id}','ServidorinfoController@update');
+Route::post('serverinfo-store','ServerInfoController@store');
+Route::put('serverinfo-update/{id}','ServerInfoController@update');
 
 Route::post('email-store','ConfigEmailController@store');
 Route::put('email-update/{id}','ConfigEmailController@update');
@@ -268,7 +268,7 @@ Route::get('post','WebPostController@index');
 Route::get('post-edit-{id}','WebPostController@edit');
 Route::get('post-create','WebPostController@create');
 Route::post('post-store','WebPostController@store');
-Route::put('post-update','WebPostController@update');
+Route::put('post-update/{id}','WebPostController@update');
 Route::delete('post-destroy/{id}','WebPostController@destroy');
 
 

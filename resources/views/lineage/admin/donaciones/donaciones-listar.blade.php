@@ -38,7 +38,7 @@ $skin =  DB::table('web_skins')->first();
             <table class="table table-hover table-light">
   <thead>
       <tr>
-    <th>Id</th>
+    <th>Donacion N</th>
     <th>Account</th>
     <th>Coins</th>
     <th>Bonus</th>
@@ -52,7 +52,7 @@ $skin =  DB::table('web_skins')->first();
     </thead>
     @foreach($donaciones as $donacione)
     <tbody>
-  <td>{{ $donacione -> id}}</td>
+  <td>#{{ $donacione -> id}}</td>
   <td>{{ $donacione -> account}}</td>
   <td>{{ $donacione -> coin}}</td>
   <td>{{ $donacione -> bonus}}</td>

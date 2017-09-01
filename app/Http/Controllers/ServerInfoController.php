@@ -19,11 +19,10 @@ use Carbon\Carbon;
 use Exception;
 use MP;
 use Input;
+class ServerInfoController extends AdminBaseController
+{  
 
-
-class ServidorInfoController extends AdminBaseController
-{
-     public function store(Request $request)
+    public function store(Request $request)
     {
        $servidor = new web_serverinfo;
         $servidor->nombre = $request['nombre'];
