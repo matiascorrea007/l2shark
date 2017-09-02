@@ -101,7 +101,7 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
         </select>-->
     </td>
     
-    <td>{{ Form::select('type',config('options.coins'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
+    <td>{{ Form::select('type',config('options.coins2'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
         <div class="bonus">+<span id="bonus"></span> (bonos)</div>
     </td>
     

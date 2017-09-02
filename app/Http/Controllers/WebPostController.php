@@ -140,13 +140,22 @@ class WebPostController extends BaseController
        
          $post=web_post::find($id);
         
+         //si se modifica el titulo , se tiene que crear una nueva carpeta con el nombre del titulo
+         $newDirectorio = "noticias/".$request['titulo'];
 
-         //carpeta
-         $nombreNoticia = $post->titulo;
-        $directory = "noticias/".$nombreNoticia;
+         //viejo direcctorio
+        $oldDirectory = "noticias/".$post->titulo;
 
-         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
-        if(!empty($request->hasFile('imagen'))){
+
+        //si se modifico el titulo y se cambio la imagen
+        //si modifico mi titulo que me cree una nueva carpeta
+        if ($newDirectorio != $oldDirectory and !empty($request->hasFile('imagen'))) {
+            //que me cree la nueva carpeta
+            Storage::makeDirectory($newDirectorio);
+            //que me pase la imagen de la vieja carpeta a esta
+            //Storage::move($oldDirectory."/".$post->imagen, $newDirectorio."/".$post->imagen);
+            //elimino la vieja carpeta
+            Storage::deleteDirectory($oldDirectory);
 
             //eliminamos la imagen anterior    
             if($post->portada != "storage/noticias/noticia.jpg"){
@@ -154,20 +163,69 @@ class WebPostController extends BaseController
             \Storage::disk('noticias')->delete($directoryDelete);
             }
 
+             //me guarde la nueva imagen
             $imagen = Input::file('imagen');
             $filename=time() . '.' . $imagen->getClientOriginalExtension();
         
             //esto es para q funcione en local 
             //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
-            image::make($imagen->getRealPath())->save('storage/'.$directory.'/'. $filename);
+            image::make($imagen->getRealPath())->save('storage/'.$newDirectorio.'/'. $filename);
+
+            $ruta = 'storage/'.$newDirectorio.'/'.$filename;
+            
         }
 
-        if(!empty($request->hasFile('imagen'))){
-            $ruta = 'storage/'.$directory.'/'. $filename;
+
+        //si solo se modifica el titulo
+        //si modifico mi titulo que me cree una nueva carpeta
+        if ($newDirectorio != $oldDirectory and empty($request->hasFile('imagen'))) {
+            //que me cree la nueva carpeta
+            Storage::makeDirectory($newDirectorio);
+            //que me pase la imagen de la vieja carpeta a esta
+            if($post->portada == "storage/noticias/noticia.jpg"){
+                //que no me pase nada ya que esta la de por defecto
+                $ruta = "storage/noticias/noticia.jpg";
+              }else{   
+            Storage::move($oldDirectory."/".$post->imagen, $newDirectorio."/".$post->imagen);
+            $ruta = 'storage/'.$newDirectorio.'/'.$post->imagen;
+            }
+            //elimino la vieja carpeta
+            Storage::deleteDirectory($oldDirectory);
+
+             
         }
 
-         if (!empty($request['imagen'])) {
+
+
+         //si solo se modifica la imagen
+         //pregunto si la imagen no es vacia y guado en $filename , caso contrario guardo null
+        if(!empty($request->hasFile('imagen')) and $newDirectorio == $oldDirectory){
+
+            //eliminamos la imagen anterior    
+            if($post->portada != "storage/noticias/noticia.jpg"){
+            $directoryDelete = $post->titulo."/".$post->imagen;
+            \Storage::disk('noticias')->delete($directoryDelete);
+            }
+
+            //me guarde la nueva imagen
+            $imagen = Input::file('imagen');
+            $filename=time() . '.' . $imagen->getClientOriginalExtension();
+        
+            //esto es para q funcione en local 
+            //image::make($imagen->getRealPath())->save( public_path('storage/'.$directory.'/'. $filename));
+            image::make($imagen->getRealPath())->save('storage/'.$oldDirectory.'/'. $filename);
+
+            $ruta = 'storage/'.$oldDirectory.'/'. $filename;
+            
+        }
+
+
+        //si no son vacios que se guarden lo que tienen
+         if (!empty($filename)) {
             $post->imagen = $filename;
+        }
+
+        if (!empty($ruta)) {
             $post->portada = $ruta;
         }
            
@@ -191,6 +249,8 @@ class WebPostController extends BaseController
     public function destroy($id)
     {
         $post=web_Post::find($id);
+        //eliminamos la carpeta.
+        Storage::deleteDirectory("noticias/".$post->titulo);
         $post->delete();
         
         //le manda un mensaje al usuario

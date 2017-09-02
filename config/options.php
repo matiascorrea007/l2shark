@@ -166,6 +166,19 @@ return array(
 '5000' => '5000 Online Coin',
 ],
 
+'coins2'=>[
+'' => 'Seleccione',
+'50' => '50 Online Coin',
+'100' => '100 Online Coin',
+'200' => '200 Online Coin',
+'300' => '300 Online Coin',
+'500' => '500 Online Coin',
+'1000' => '1000 Online Coin',
+'2000' => '2000 Online Coin',
+'3000' => '3000 Online Coin',
+],
+
+
 'donaciones'=>[
 'G2APay' => 'G2APay',
 'PagSeguro' => 'PagSeguro', 

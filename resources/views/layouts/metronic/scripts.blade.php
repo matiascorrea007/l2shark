@@ -215,7 +215,7 @@ $.get('ajax-subcategoria?cat_id='+ cat_id, function(data){
 </script>
 
 
-<script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>
+<script type="text/javascript" src="layout/js/mis-js/mis-funciones.js"></script>
 
 <!------------script backup---------------->	
 
