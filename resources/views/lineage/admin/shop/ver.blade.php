@@ -54,14 +54,15 @@ $skin =  DB::table('web_skins')->first();
         
             @foreach($productos as $producto)
                <tr >
-              <td><input class="sumPrice" type="checkbox" name="itens[]" data-price="{{$producto->precio}}" value="{{$producto->item_id}}"></td>
+              <td><input class="sumPrice" type="checkbox" name="itens[]" data-price="{{$producto->precio}}" value="{{$producto->id}}"></td>
+
           @if($producto->imagen == "sin-foto.jpg")
             <td><img src="storage/combos/{{$producto->imagen}}" alt="" height="50" width="50" ></td>
           @elseif($producto->imagen != "sin-foto.jpg")
            <td><img src="{{$producto->ruta}}" alt="" height="50" width="50" ></td>
           @endif
               
-              <td>{{$producto->nombre}} <b>(1)</b></td>
+              <td>{{$producto->nombre}} <b>({{$producto->cantidad}})</b></td>
               <td><b>{{$producto->precio}}</b> Online Coin's</td>
             </tr>
           @endforeach

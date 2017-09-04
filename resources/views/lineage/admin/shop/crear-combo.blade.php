@@ -130,7 +130,7 @@ $skin =  DB::table('web_skins')->first();
   <input type="text" onkeyup="searchItems();" class="form-control" id="searchnombre" name="nombre"  placeholder="Descripcion">
 
  
-  {{ Form::select('type',config('options.l2items'),'',['class'=>'form-control']) }}
+  <!--{{ Form::select('type',config('options.l2items'),'',['class'=>'form-control']) }}-->
  <button type="submit" class="fa fa-search btn btn-success" id="search"> BUSCAR </button>
 </div>
 

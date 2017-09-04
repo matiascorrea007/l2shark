@@ -118,7 +118,7 @@
 			<span class="background-overlay"></span>
 			<div class="container">
 				<div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="http://www.youtube.com/embed/NIw4C24mQ6I?rel=0&amp;showinfo=0" allowfullscreen></iframe>
+					<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/NIw4C24mQ6I?rel=0&amp;showinfo=0" allowfullscreen></iframe>
 					
 				</div>		
 			</div>

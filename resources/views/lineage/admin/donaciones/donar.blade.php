@@ -38,12 +38,12 @@ $skin =  DB::table('web_skins')->first();
         
         <h1>Adquirir Coin's</h1>
 <p>
-El L2Server es un servidor gratuito, para que todos puedan disfrutar del mundo de Lineage II de forma gratuita, pero el servidor tiene algunos gastos. En la compra de coin's usted estará ayudando a crecer y mantener todos los servicios disponibles en todo momento.</p>
+El Servidor  <strong> @if(!empty($infoServer)) {{$infoServer->nombre}} @else (nombre del server) @endif</strong>  es un servidor gratuito, para que todos puedan disfrutar del mundo de Lineage II de forma gratuita, pero el servidor tiene algunos gastos. En la compra de coin's usted estará ayudando a crecer y mantener todos los servicios disponibles en todo momento.</p>
 
 <p>
 Usted puede comprar muchos artículos en el juego y disfrutar de unos servicios alternativos en nuestro sitio web utilizando Online Coin's.</p>
 
-<p>
+<p><!---->
 Cada Online Coin cuesta un cierto valor, se describe a continuación, con bonificación automática del 10% para pedidos superiores a 100 Online Coin's, 15% para compras superiores a 400 Online Coin's y 20% para compras superiores a 1000 Online Coin's. Por ejemplo: Usted paga 100 y recibe 110; paga 450 y recibe 517; paga 1200 y recibe 1440.</p>
 
      
@@ -101,7 +101,7 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
         </select>-->
     </td>
     
-    <td>{{ Form::select('type',config('options.coins2'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
+    <td>{{ Form::select('type',config('options.coins'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
         <div class="bonus">+<span id="bonus"></span> (bonos)</div>
     </td>
     

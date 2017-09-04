@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 use Soft\Http\Requests;
 use Soft\Http\Requests\TransferirCoinCuentaRequest;
 use Soft\Http\Requests\TransferirCoinPlayerRequest;
+
+use Soft\web_donacione;
+use Soft\User;
+use Soft\web_donaciones_transferencia;
+use Soft\Mercadopago;
+use Soft\web_serverinfo;
+
 use Config;
 use DB;
 use Alert;
@@ -18,10 +25,7 @@ use Auth;
 use Flash;
 use Input;
 use MP;
-use Soft\web_donacione;
-use Soft\User;
-use Soft\web_donaciones_transferencia;
-use Soft\Mercadopago;
+
 
 
 class DonacionesController extends AdminBaseController
@@ -33,8 +37,10 @@ class DonacionesController extends AdminBaseController
      */
     public function index()
     {
+        $infoServer = web_serverinfo::first();
+
         $link =  "Donaciones / Donar";
-        return view ('lineage.admin.donaciones.donar',compact('link'));
+        return view ('lineage.admin.donaciones.donar',compact('link','infoServer'));
     }
 
     /**

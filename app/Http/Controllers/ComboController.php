@@ -307,6 +307,7 @@ class ComboController extends AdminBaseController
         }
 
         $categorias = web_categoria::all();
+
     return view ('lineage.admin.shop.crear-combo',compact('categorias'));
     }
 
@@ -366,6 +367,8 @@ class ComboController extends AdminBaseController
             $producto->nombre    = $item->name;
             $producto->web_combo_id    = $productoCombo->id;
             $producto->imagen    = "sin-foto.jpg"; 
+            $producto->cantidad    = 1; 
+            $producto->precio    = 0; 
             $producto->save();
 
         }   
@@ -412,6 +415,8 @@ class ComboController extends AdminBaseController
         $categorias = web_categoria::lists('nombre','id');
         $combo = web_producto_combo::find($idcombo);
         $productos = web_producto::where('web_combo_id','=',$idcombo)->get();
+
+       
         return view ('lineage.admin.shop.editar-combo',compact('productos','combo','categorias'));
     }
 
@@ -422,13 +427,20 @@ class ComboController extends AdminBaseController
     {   
         
 
-       
+      
 
         $request['destinatario'];
         $request['total'];
 
         $user = User::find(Auth::user()->id);
         $items = $request->itens;
+
+        //paso todos los items seleccionado a una coleccion
+        foreach ($items as $item) {
+            $itemColections[] = web_producto::find($item);
+        }
+
+
        
         //comprobamos el saldo
          if ($request['total'] > $user->saldo) {
@@ -440,25 +452,30 @@ class ComboController extends AdminBaseController
             }
 
 
-        $i = 0;
-            foreach ($items as $item) {
+       
+            foreach ($itemColections as $itemColection) {
                 
               //traigo los item 
-             $allitems[] = DB::connection('externa')->table('items')->where('owner_id','=',$request['destinatario'])
-         ->where('item_id','=',$item)->first();
+             //$allitems[] = DB::connection('externa')->table('items')->where('owner_id','=',$request['destinatario'])
+         //->where('item_id','=',$item)->first();
 
 
 
-        //traigo el ultimo item asi le sumo uno al ultimo id
-        $ultimoID =collect( DB::connection('externa')->table('items')->get());
-        $ultimoID = $ultimoID->pop()->object_id + 1;
         
+        
+        
+            //este for es para recorre las cantidaddes ya sea de armor o weapons y asi si son mas de 1 agregarlas ya que 'count' no funciona con wepons y armor
+            for ($i=0; $i < $itemColection->cantidad ; $i++) { 
+            //traigo el ultimo item asi le sumo uno al ultimo id    
+            $ultimoID =collect( DB::connection('externa')->table('items')->get());
+        $ultimoID = $ultimoID->pop()->object_id + 1;
+
            //los creo siempre ya que son armor wepons y rings
              DB::connection('externa')->table('items')->insert(
                 ['owner_id' => $request['destinatario'], 
                 'object_id' => $ultimoID,
-                'item_id' => $item,
-                'count' => 1,
+                'item_id' => $itemColection->item_id,
+                'count' => $itemColection->cantidad,
                 'enchant_level' => 0,
                 'loc' => "INVENTORY",
                 'loc_data' => 0,
@@ -468,7 +485,7 @@ class ComboController extends AdminBaseController
                 'custom_type2' => 0,
                 'mana_left' => -1,
                 ]);
-
+             }
              /* esto es para aCis
               DB::connection('externa')->table('items')->insert(
                  ['owner_id' => $request['destinatario'], 
@@ -487,7 +504,7 @@ class ComboController extends AdminBaseController
                 */
 
 
-         $i = $i + 1 ;
+        
             }
             
         Alert::success('Success', 'Items transferidos correctamente');
@@ -595,7 +612,9 @@ class ComboController extends AdminBaseController
             $producto->precio = $request['precio'.$producto->id];
             $producto->save();
         }
-  
+            $producto->cantidad = $request['cantidad'.$producto->id];
+            $producto->save();
+
         }
        
      

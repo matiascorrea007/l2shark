@@ -13,6 +13,7 @@ class web_producto extends Model
           'item_id',
           'nombre',
           'precio',
+          'cantidad',
           'slug',
           'web_producto_combo_id',
           'imagen',

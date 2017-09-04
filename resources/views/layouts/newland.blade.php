@@ -44,7 +44,7 @@
 	<link href="skin/newland/css/custom.css" rel="stylesheet"> 
 	<link href="skin/newland/css/helpers.min.css" rel="stylesheet">
 	<link href="skin/newland/css/loading.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'> 
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
    <link href="https://fonts.googleapis.com/css?family=Marcellus" rel="stylesheet" type='text/css'> 
    
     
@@ -216,7 +216,17 @@
 	});
 	</script>
 	
-	
+	<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-105783601-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+  gtag('js', new Date());
+
+  gtag('config', 'UA-105783601-1');
+</script>
+
+
 
     </div>
         </body>
