@@ -427,7 +427,15 @@ class ComboController extends AdminBaseController
     {   
         
 
-      
+        if (empty($request['itens'])) {
+            Alert::error('Error', 'No se selecciono ningun Items');
+            return Redirect::back();
+        }
+        if (empty($request['destinatario'])) {
+             Alert::error('Error', 'No se selecciono ningun Personaje');
+            return Redirect::back();
+        }
+
 
         $request['destinatario'];
         $request['total'];

@@ -9,9 +9,21 @@ use Soft\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Soft\Cliente;
-use DB;
-use Input;
+
+
+use Alert;
+use Session;
 use Redirect;
+use Storage;
+use DB;
+use Image;
+use Auth;
+use Flash;
+use Toastr;
+use Carbon\Carbon;
+use Exception;
+use MP;
+use Input;
 
 class AuthController extends Controller
 {
@@ -55,17 +67,35 @@ class AuthController extends Controller
     {   
       //  $rules =  array('captcha' => ['required', 'captcha']); 
 
+
+        //con esto validamos que el login no se encuentre petido en la DB del servidor
+        $login = DB::connection('externa')->table('accounts')->where('login','=',$data['login'])->get();
+       
+         if (!empty($login)) {
+
+            $reglas = array(
+                    'login-en-uso' => 'required',
+                );
+                
+        
+            $messages = array(
+                'login-en-uso.required' => 'El Login Ya se encunetra en uso.'
+                );
+
+            return Validator::make($data, $reglas, $messages); 
+        }
+
+
+
         return Validator::make($data, [
             'login' => 'required|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
             'g-recaptcha-response' => 'required',
 
-
         ]);
 
-
-   
+        
 
 
 
@@ -80,8 +110,11 @@ class AuthController extends Controller
     protected function create(array $data)
     {
        
-    
-            DB::connection('externa')->table('accounts')->insert([
+
+       
+       
+           
+           DB::connection('externa')->table('accounts')->insert([
             'login' => $data['login'], 
             //'email' => $data['email'],
             'password' => base64_encode(pack('H*', sha1($data['password'])))]);
@@ -95,6 +128,9 @@ class AuthController extends Controller
 
 
         return $user;
+
+        
+            
          
     }
 }

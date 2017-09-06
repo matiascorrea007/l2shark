@@ -15,7 +15,7 @@ return [
 
 
     'recaptcha' => 'El :attribute No es Correcto.',
-
+    'loginenuso' => 'El :attribute Ya se encuentra en uso.',
     
     'accepted'             => 'The :attribute must be accepted.',
     'active_url'           => 'The :attribute is not a valid URL.',
@@ -114,7 +114,8 @@ return [
 
     'attributes' => [
 
-    'g-recaptcha-response' => 'Captcha'
+    'g-recaptcha-response' => 'Captcha',
+    'loginenuso' => 'Login ya se encuentra en uso y/o'
 
     ],
 
