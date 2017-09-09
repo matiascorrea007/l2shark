@@ -74,6 +74,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.index',compact('posts'));
+        }
     }
 
 
@@ -107,6 +111,11 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.download',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.download',compact('paginas'));
+        }
+
     }
 
     public function Donaciones(){
@@ -138,6 +147,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.donaciones',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.donaciones',compact('paginas'));
         }
     }
 
@@ -171,6 +184,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.reglas',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.reglas',compact('paginas'));
+        }
     }
 
     public function Soporte(){
@@ -202,6 +219,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.soporte',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.soporte',compact('paginas'));
         }
     }
 
@@ -239,6 +260,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.informacion',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.informacion',compact('paginas'));
+        }
     }
 
     public function GaleriaVideos(){
@@ -271,6 +296,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.galeria-videos',compact('AllVideos'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.galeria-videos',compact('AllVideos'));
+        }
     }
 
     public function GaleriaImagenes(){
@@ -302,6 +331,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.galeria-imagenes',compact('AllImagenes'));
+        }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.galeria-imagenes',compact('AllImagenes'));
         }
     }
 
@@ -347,13 +380,16 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.registro',compact('MostarFormulario'));
         }
+
+        if ($this->skin()->nombre == "esmerald") {
+           return view ('lineage.templates.esmerald.registro',compact('MostarFormulario'));
+        }
     }
 
 
 //esto es unicamente para el template de newland
      public function comoJugar(){
       
-
         if ($this->skin()->nombre == "newland") {
            return view ('lineage.templates.newland.comojugar');
         }
@@ -377,6 +413,8 @@ class PaginasController extends BaseController
 //esto es unicamente para el template de newland
 
 
+
+
     public function demoUsuario(){
           
           if (Auth::check()) {
@@ -391,9 +429,6 @@ class PaginasController extends BaseController
           if (Auth::check()) {
               Auth::logout();
             }
-
-            
-            
          return view ('lineage.demoAdmin');
 
     }

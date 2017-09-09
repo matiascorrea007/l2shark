@@ -22,7 +22,7 @@
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-12">
 	{!!Form::label('')!!}
-	{!!Form::textarea ('link',null,['class'=>'form-control my-editor','id'=>'lfm', 'placeholder'=>'ingrese el codigo HTML para la imagen del voto'])!!}
+	{!!Form::textarea ('link',null,['class'=>'form-control ','id'=>'lfm', 'placeholder'=>'ingrese el codigo HTML para la imagen del voto'])!!}
 </div>
 <br>
    

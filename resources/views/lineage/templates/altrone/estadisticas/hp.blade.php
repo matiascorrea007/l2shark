@@ -24,7 +24,7 @@
   <li><a href="{{ url('top-clan') }}">Top Clan</a></li>
   <li class="active"><a href="{{ url('top-hp') }}">Top HP</a></li>
   <li><a href="{{ url('top-mp') }}">Top MP</a></li>
-  <li><a href="{{ url('top-olympiad') }}">Olympiad Ranking</a></li>
+  <li><a href="{{ url('#') }}">Olympiad Ranking</a></li>
   <li><a href="{{ url('top-heroes') }}">Heroes</a></li>
   <li><a href="{{ url('top-mas-activos') }}">Top Activos</a></li>
   <li><a href="{{ url('top-donadores') }}">Top Donadores</a></li>

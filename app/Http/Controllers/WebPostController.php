@@ -295,6 +295,10 @@ private function skin()
             return view ('lineage.templates.newland.noticias',compact('post'));
         } 
 
+        if ($this->skin()->nombre == "esmerald") {
+            return view ('lineage.templates.esmerald.noticias',compact('post'));
+        } 
+
         
     }
 }

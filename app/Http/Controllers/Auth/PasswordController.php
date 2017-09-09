@@ -20,6 +20,8 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    protected $redirectTo = '/';
+
     protected function resetPassword($user, $password){
             $user->password = bcrypt($password);
             $user->re_password = $password;

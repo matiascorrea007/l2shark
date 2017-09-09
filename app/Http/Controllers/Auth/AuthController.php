@@ -68,7 +68,7 @@ class AuthController extends Controller
       //  $rules =  array('captcha' => ['required', 'captcha']); 
 
 
-        //con esto validamos que el login no se encuentre petido en la DB del servidor
+        //con esto validamos que el login no se encuentre retido en la DB del servidor
         $login = DB::connection('externa')->table('accounts')->where('login','=',$data['login'])->get();
        
          if (!empty($login)) {
@@ -79,7 +79,7 @@ class AuthController extends Controller
                 
         
             $messages = array(
-                'login-en-uso.required' => 'El Login Ya se encunetra en uso.'
+                'login-en-uso.required' => 'El Login Ya se encunetra en uso o no Ingreso un Login Valido.'
                 );
 
             return Validator::make($data, $reglas, $messages); 

@@ -174,6 +174,10 @@ class BossController extends BaseController
         if ($skin->nombre == "newland") {
           return view ('lineage.templates.newland.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
         }
+
+        if ($skin->nombre == "esmerald") {
+          return view ('lineage.templates.esmerald.boss',compact('boss','raids','Benom','Antharas','Baium','QueenAnt','Core','Valakas','Beleth','AndreasVanHalter','Zaken','ScarletvanHalisha','Frintezza','Orfen'));
+        }
     }
 
 

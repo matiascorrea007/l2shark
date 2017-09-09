@@ -1,4 +1,4 @@
-@extends('layouts.monster')
+@extends('layouts.element')
 @section('content')
 @include('alerts.errors')
 @include('alerts.request')

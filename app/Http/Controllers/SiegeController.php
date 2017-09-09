@@ -77,13 +77,18 @@ class SiegeController extends BaseController
         { 
            $AdenClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Aden')
       ->first();
+     
 
       $DionClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Dion')
       ->first();
+
+     
 
       $GiranClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
@@ -93,32 +98,38 @@ class SiegeController extends BaseController
       
       $GludioClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Gludio')
       ->first();
 
 
       $GoddardClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Goddard')
       ->first();
 
       $InnadrilClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Innadril')
       ->first();
 
       $OrenClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Oren')
       ->first();
 
       $RuneClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Rune')
       ->first();
 
       $SchuttgartClan = DB::connection('externa')->table('clan_data')
       ->join('castle', 'clan_data.hasCastle', '=', 'castle.id')
+      ->join('characters', 'clan_data.leader_id', '=', 'characters.obj_id')
       ->where('name','=','Schuttgart')
       ->first();
         }
@@ -159,6 +170,10 @@ class SiegeController extends BaseController
 
         if ($skin->nombre == "newland") {
         return view ('lineage.templates.newland.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
+        }
+
+        if ($skin->nombre == "esmerald") {
+        return view ('lineage.templates.esmerald.siege',compact('Aden','AdenClan','Dion','DionClan','Giran','GiranClan','Gludio','GludioClan','Goddard','GoddardClan','Innadril','InnadrilClan','Oren','OrenClan','Rune','RuneClan','Schuttgart','SchuttgartClan'));
         }
     }
 

@@ -292,7 +292,8 @@ $skin =  DB::table('web_skins')->first();
     <tbody>
   <td>{{ $voto -> id}}</td>
   <td>{{ $voto -> nombre }}</td>
-  <td>{!! $voto -> link !!}</td>
+  <td>{{  $voto -> link }}</td>
+   <td>{!!  $voto -> link !!}</td>
 
 
   

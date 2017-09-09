@@ -207,6 +207,8 @@ class DonacionesController extends AdminBaseController
 
      public function Status(Request $Request , $id){
         $donacion=web_donacione::find($id);
+
+
         if ($Request['status'] == "1") {
            $donacion->status= "entregado";
            $donacion->save();
@@ -216,7 +218,7 @@ class DonacionesController extends AdminBaseController
         }
 
         //cargamos el saldo al usuiaro con el total de los coins
-        $user = user::find(Auth::user()->id);
+        $user = user::where('login','=',$donacion->account)->first();
         $user->saldo = $donacion->coin + $donacion->bonus;
         $user->save();
             

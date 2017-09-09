@@ -97,7 +97,7 @@
   <li><a href="{{ url('/descargas') }}">DOWNLOAD</a></li>
   <li><a href="{{ url('/donar') }}">DONACIONES</a></li>
   <li><a href="{{ url('/top-pvp') }}">ESTADISTICAS</a></li>
-  <li class="last"><a href="#">FORO</a></li>
+  <li class="last"><a href="http://warofthrones.foroactivo.com/">FORO</a></li>
 </div>  
 <!--MENU -->      
         
@@ -292,6 +292,22 @@
 
           </div>
 
+
+          <div id="right-block">
+            <div id="block-title">
+              <img src="skin/altrone/images/votos.png" alt="">
+            </div>
+
+          @foreach($votos as $voto)
+      {!!$voto->link!!}
+    @endforeach 
+
+          </div>
+
+          
+          
+
+
           <!--
           <div id="right-block" style="margin-bottom: 15px;">
             <div id="block-title">
@@ -329,7 +345,7 @@
         <div class="clr"></div>
         <div style="padding-top: 130px;"><div id="footer">
   <div id="rights">
-  &copy; 2017 <a class="footertext" href="http://sharkdesing.com">Sharkdesing.com</a> Lineage 2 Servers.
+  &copy; 2017 <a class="footertext" href="http://sharkestudio.com">Sharkestudio.com</a> Lineage 2 Servers.
   <br><br>
 
   </div>

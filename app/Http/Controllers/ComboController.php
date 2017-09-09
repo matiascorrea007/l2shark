@@ -468,12 +468,9 @@ class ComboController extends AdminBaseController
          //->where('item_id','=',$item)->first();
 
 
-
-        
-        
         
             //este for es para recorre las cantidaddes ya sea de armor o weapons y asi si son mas de 1 agregarlas ya que 'count' no funciona con wepons y armor
-            for ($i=0; $i < $itemColection->cantidad ; $i++) { 
+            
             //traigo el ultimo item asi le sumo uno al ultimo id    
             $ultimoID =collect( DB::connection('externa')->table('items')->get());
         $ultimoID = $ultimoID->pop()->object_id + 1;
@@ -493,7 +490,7 @@ class ComboController extends AdminBaseController
                 'custom_type2' => 0,
                 'mana_left' => -1,
                 ]);
-             }
+             
              /* esto es para aCis
               DB::connection('externa')->table('items')->insert(
                  ['owner_id' => $request['destinatario'], 

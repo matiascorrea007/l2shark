@@ -16,7 +16,7 @@
 
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-12">
 	{!!Form::label('Box Facebook')!!}
-	{!!Form::textarea ('box',null,['class'=>'form-control my-editor','id'=>'lfm', 'placeholder'=>'ingrese Iframe de Facebook'])!!}
+	{!!Form::textarea ('box',null,['class'=>'form-control ', 'placeholder'=>'ingrese Iframe de Facebook'])!!}
 </div>
 <br>
    
