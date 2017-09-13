@@ -6,12 +6,22 @@
 @include('flash::message')
 
 
+<!--popup Facebook-->
+
+
+<div id="fanback" style="display: block;">
+<div id="fan-exit"></div>
+<div id="fanbox">
+<div id="fanclose"></div>
+@if(!empty($box))
+      {!! $box->box!!}
+      @endif
+</div></div>
+
+<!--popup Facebook-->
+
+
 <div class="">
-
-	
-
-
-
 @foreach($posts as $post)	
   <div id="news"><br>
   <a href="{{ url('blogdetail-post'.$post->id) }}" class="ntitle">{{$post->titulo}}</a>

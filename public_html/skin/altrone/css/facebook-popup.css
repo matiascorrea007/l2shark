@@ -1,0 +1,8 @@
+/*----------facebook popup-------------*/
+#fanback { background: transparent url("../images/popup/fanbg.png") repeat; display: none; height: 100%; top: 0; left: 0; position: fixed; width: 100%; z-index: 99999; } 
+#fan-exit { height: 100%; width: 100%; } 
+#fanbox { background: #fff; border-radius: 5px; left: 50%; margin: -123px 0 0 -210px; position: absolute; top: 50%; width: 420px; } 
+#fanbox > iframe { border: none; overflow: hidden; margin: 8px 0 0 8px; width: 402px; height: 230px; } 
+#fanclose { background: transparent url("../images/popup/fanclose.png") repeat scroll 0 0; cursor: pointer; float: right; height: 15px; right: -22px; top: -20px; padding: 30px 40px 20px 20px; position: absolute; } 
+#fanclose:hover { background-position: 0 -56px; } 
+/*----------facebook popup-------------*/

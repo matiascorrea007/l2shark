@@ -17,13 +17,17 @@
   <link href="skin/altrone/css/engine.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/animate.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/slides.css" rel="stylesheet" type="text/css" />
+  <link href="skin/altrone/css/facebook-popup.css" rel="stylesheet" type="text/css" />
+
   <script type="text/javascript" src="skin/altrone/js/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="skin/altrone/js/bootstrap.js"></script>
   <script type="text/javascript" src="skin/altrone/js/jquery.tools.min.js"></script>
   <script type="text/javascript" src="skin/altrone/js/progress.js" ></script>
   <script type="text/javascript" src="skin/altrone/js/to-top.js"></script>
   <script type="text/javascript" src="skin/altrone/js/jquery.jrumble.1.3.min.js"></script>
-  <script src="skin/altrone/js/slides.min.jquery.js"></script>
+  <script type="text/javascript" src="skin/altrone/js/slides.min.jquery.js"></script>
+  <script type="text/javascript" src="skin/altrone/js/facebook-popup.js"></script>
+
   <script>
     $(function(){
       $('#slides').slides({
@@ -49,18 +53,13 @@
       });
     });
   </script>
-  
-</head>
+    
+
+
+
+
+
 <body>
-<!------------------------ SDK FACEBOOK ------------------>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.10&appId=1529659150661681";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
 
 <div id="top-text-panel">
@@ -353,6 +352,9 @@
       </div>
     </div>
   </div>
+
+
+
   <div id="scroll-top"><a id="gotop" class="scrollTop" href="#" onclick="top.goTop(); return false;"></a> </div>
   <script>
 $(function(){
@@ -374,5 +376,7 @@ $(function(){
   });
 });
 </script>
+
+
 </body>
 </html>
