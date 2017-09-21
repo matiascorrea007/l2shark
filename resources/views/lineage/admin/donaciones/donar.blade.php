@@ -43,8 +43,8 @@ El Servidor  <strong> @if(!empty($infoServer)) {{$infoServer->nombre}} @else (no
 <p>
 Usted puede comprar muchos artículos en el juego y disfrutar de unos servicios alternativos en nuestro sitio web utilizando Online Coin's.</p>
 
-<p><!---->
-Cada Online Coin cuesta un cierto valor, se describe a continuación, con bonificación automática del 10% para pedidos superiores a 100 Online Coin's, 15% para compras superiores a 400 Online Coin's y 20% para compras superiores a 1000 Online Coin's. Por ejemplo: Usted paga 100 y recibe 110; paga 450 y recibe 517; paga 1200 y recibe 1440.</p>
+<!--<p>
+Cada Online Coin cuesta un cierto valor, se describe a continuación, con bonificación automática del 10% para pedidos superiores a 100 Online Coin's, 15% para compras superiores a 400 Online Coin's y 20% para compras superiores a 1000 Online Coin's. Por ejemplo: Usted paga 100 y recibe 110; paga 450 y recibe 517; paga 1200 y recibe 1440.</p>-->
 
      
           
@@ -102,14 +102,14 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
     </td>
     
     <td>{{ Form::select('type',config('options.coins'),'',['class'=>'form-control','name'=>'qtdCoins','id'=>'qtdCoins']) }}
-        <div class="bonus">+<span id="bonus"></span> (bonos)</div>
+       <!--  <div class="bonus">+<span id="bonus"></span> (bonos)</div>-->
     </td>
     
     <td style="text-align: center;">
         <h1><span style="color:#237200"><b><span id="valor_symbol">$</span> <span id="valor_total">0,00</span></b></span></h1>
 
         <input type="text" name="total" hidden class="valor_total"   value="">
-        <input type="text" name="bonus" hidden class="bonuss"   value="">
+      <!--  <input type="text" name="bonus" hidden class="bonuss"   value="">-->
     </td>
   </tbody>
   </table>

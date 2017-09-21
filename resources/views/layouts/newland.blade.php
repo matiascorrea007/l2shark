@@ -83,12 +83,9 @@
 	
 	
 	<div id="loading">
-
   <div class="loading-image">
-
   <div class="loading-page loading">
   <div class="counter">
-  
     <p>Cargando</p>
     <h1>0%
       <!--
@@ -99,7 +96,6 @@
     <hr/>
   </div>
 </div>
-
 </div>
 </div>
 

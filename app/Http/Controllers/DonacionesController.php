@@ -51,13 +51,17 @@ class DonacionesController extends AdminBaseController
     public function create(Request $request)
     {
       
-    
         /*--------------------------------------metodo MercadoPago----------------------------------*/
        if ($request['metodo_pgto'] == "mercadopago") {
 
         $donacion = new web_donacione;
         $donacion->coin = $request['qtdCoins'];
-        $donacion->bonus = $request['bonus'];
+        if ($request['bonus'] == null) {
+         $donacion->bonus = 0;
+        }else{
+          $donacion->bonus = $request['bonus'];
+        }
+        
         $donacion->account = Auth::user()->login;
         $donacion->total = $request['total'];
         $donacion->metodo = $request['metodo_pgto'];
@@ -261,6 +265,13 @@ class DonacionesController extends AdminBaseController
                 $user->save();
             }
 
+
+            //traigo el ultimo item asi le sumo uno al ultimo id    
+            $ultimoID =collect( DB::connection('externa')->table('items')->get());
+        $ultimoID = $ultimoID->pop()->object_id + 1;
+
+
+       
         //traigo el item 
          $item = DB::connection('externa')->table('items')->where('owner_id','=',$request['destinatario'])
          ->where('item_id','=',3509)->first();
@@ -269,7 +280,7 @@ class DonacionesController extends AdminBaseController
          if (empty($item)) {
              DB::connection('externa')->table('items')->insert(
                 ['owner_id' => $request['destinatario'], 
-               
+                'object_id' => $ultimoID,
                 'item_id' => 3509,
                 'count' => $request['cantidad'],
                 'enchant_level' => 0,
