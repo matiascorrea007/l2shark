@@ -11,6 +11,7 @@ use Soft\web_video;
 use Soft\web_imagene;
 use Soft\web_skin;
 use Soft\web_serverinfo;
+use Soft\web_conexion;
 
 use Alert;
 use Session;
@@ -60,7 +61,10 @@ class BaseController extends Controller
       $imagenes = web_imagene::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
       $videos = web_video::where('visible','=',1)->take(4)->orderBy('id','asc')->get();
       $servidor=web_serverinfo::first();
-  
+      $conexion=web_conexion::first();
+      $ip = $conexion->host;
+
+
        
       //datos de la plantilla principal
 
@@ -73,6 +77,7 @@ class BaseController extends Controller
        View::share ( 'imagenes', $imagenes );
        View::share ( 'videos', $videos );
        View::share ( 'servidor', $servidor );
+       View::share ( 'ip', $ip );
        
 
     }  

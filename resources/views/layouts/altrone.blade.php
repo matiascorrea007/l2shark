@@ -123,8 +123,9 @@
 
           <div id="left-block" style="margin-bottom: 25px;">
             <div id="block-title">
-              <img src="skin/altrone/images/top.png" alt="">
+              <img src="skin/altrone/images/top2.png" alt="">
             </div>
+            <br><br>
             <div id="top-players">
               <div id="top-line" class="top-head">
                 <div id="top-left" class="tl">Nombre</div>
@@ -232,9 +233,9 @@
 
           <div id="right-block">
             <div id="block-title">
-              <img src="skin/altrone/images/account.png" alt="">
+              <img src="skin/altrone/images/login2.png" alt="">
             </div>
-
+<br><br>
             <div class='userarea'><!--astar userarea-->
     
                 
@@ -283,19 +284,38 @@
 
           <div id="right-block">
             <div id="block-title">
-              <img src="skin/altrone/images/info.png" alt="">
+              <img src="skin/altrone/images/info2.png" alt="">
             </div>
+            <br><br>
            <a href="{{ url('/boss') }}"><div class="raid last"><div id="accountbtn"></div></div></a>
            <a href="{{ url('/siege') }}"><div class="siege last"><div id="accountbtn"></div></div></a>
            <a href="{{ url('/top-pvp') }}"><div class="estadisticas last"><div id="accountbtn"></div></div></a> 
+
+           <!-- Online / offline -->
+<?php  
+ $login = @fsockopen( $ip, 2106, $errno, $errstr, 1);
+ $server = @fsockopen( $ip, 7777, $errno, $errstr, 1);
+
+?>
+
+@if(!empty($login >= 1 and $server >= 1))
+  <div><img src="skin/globales/img/status/02_server_ON.png" alt="" /></div>
+@else
+  <div><img src="skin/globales/img/status/02_server_OFF.png" alt="" /></div>
+@endif
+
+<!-- Online / offline -->
+
+
 
           </div>
 
 
           <div id="right-block">
             <div id="block-title">
-              <img src="skin/altrone/images/votos.png" alt="">
+              <img src="skin/altrone/images/votanos2.png" alt="">
             </div>
+            <br><br>
 
           @foreach($votos as $voto)
       {!!$voto->link!!}

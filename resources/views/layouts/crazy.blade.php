@@ -212,18 +212,18 @@ $c2=1;
 
 <div class="vk_block">
 <!-- Online / offline -->
- <?php 
-
+@php
  $login = @fsockopen( 'localhost', 2106, $errno, $errstr, 1);
  $server = @fsockopen( 'localhost', 7777, $errno, $errstr, 1);
+@endphp
 
-if($login >= 1 and $server >= 1) 
-	echo "<div class='server_status on'><div></div></div>";
-else 
-	echo "<div class='server_status off'><div></div></div>";
-			
-?> 
-<!-- Online / offline -->
+@if($login >= 1 and $server >= 1)
+	<div><img src="skin/globales/img/status/02_server_ON.png" alt="" /></div>
+@else
+	<div><img src="skin/globales/img/status/02_server_OFF.png" alt="" /></div>
+@endif
+
+
 
 </div>
 
