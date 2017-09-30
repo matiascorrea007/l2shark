@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
 
   @if(!empty($servidor))
@@ -18,6 +18,7 @@
   <link href="skin/altrone/css/animate.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/slides.css" rel="stylesheet" type="text/css" />
   <link href="skin/altrone/css/facebook-popup.css" rel="stylesheet" type="text/css" />
+  <link href="skin/altrone/css/mi-css.css" rel="stylesheet" type="text/css" />
 
   <script type="text/javascript" src="skin/altrone/js/jquery-3.1.0.min.js"></script>
   <script type="text/javascript" src="skin/altrone/js/bootstrap.js"></script>
@@ -61,6 +62,17 @@
 
 <body>
 
+<!--si la session es english -->
+@if(\Session::get('lang') == 'en')
+<div class='all en'>
+@endif
+
+<!--si la session es español -->
+@if(\Session::get('lang') == 'es' or \Session::get('lang') == '' )
+<div class='all es'>
+@endif
+
+
 
 <div id="top-text-panel">
 
@@ -90,15 +102,24 @@
 
 <!--MENU -->
 <div id="navigation">
-  <li><a href="{{ url('/') }}">INICIO</a></li>
-  <li><a href="{{ url('/registrarse') }}">REGISTRARSE</a></li>
-  <li><a href="{{ url('/informacion') }}">SERVER</a></li>
-  <li><a href="{{ url('/descargas') }}">DOWNLOAD</a></li>
-  <li><a href="{{ url('/donar') }}">DONACIONES</a></li>
-  <li><a href="{{ url('/top-pvp') }}">ESTADISTICAS</a></li>
-  <li class="last"><a href="http://warofthrones.foroactivo.com/">FORO</a></li>
+  <li><a href="{{ url('/') }}">{{ trans('layout.inicio') }}</a></li>
+  <li><a href="{{ url('/registrarse') }}">{{ trans('layout.registrarse') }}</a></li>
+  <li><a href="{{ url('/informacion') }}">{{ trans('layout.server') }}</a></li>
+  <li><a href="{{ url('/descargas') }}">{{ trans('layout.Descargas') }}</a></li>
+  <li><a href="{{ url('/donar') }}">{{ trans('layout.Donaciones') }}</a></li>
+  <li><a href="{{ url('/top-pvp') }}">{{ trans('layout.Estadísticas') }}</a></li>
+  <li class="last"><a href="http://warofthrones.foroactivo.com/">{{ trans('layout.foro') }}</a></li>
 </div>  
-<!--MENU -->      
+<!--MENU --> 
+
+ <div class='langs'>     
+    <a href="{{ url('lang', ['en']) }}" class='en noJquery' title='English'><span></span></a>
+
+    <a href="{{ url('lang', ['es']) }}" class='es noJquery' title='Espa&ntilde;ol'><span></span></a>
+
+    <a href="{{ url('lang', ['br']) }}" class='pt noJquery' title='Portugu&ecirc;s'><span></span></a>
+
+    </div>     
         
         <div id="left-sideblock">
 
@@ -128,7 +149,7 @@
             <br><br>
             <div id="top-players">
               <div id="top-line" class="top-head">
-                <div id="top-left" class="tl">Nombre</div>
+                <div id="top-left" class="tl">{{ trans('layout.nombre') }}</div>
                 <div id="top-right" class="tl">PVP</div>
               </div>
               @if(!empty($pvps))
@@ -145,7 +166,7 @@
             <hr><br>
             <div id="top-players">
               <div id="top-line" class="top-head">
-                <div id="top-left" class="tl">Nombre</div>
+                <div id="top-left" class="tl">{{ trans('layout.nombre') }}</div>
                 <div id="top-right" class="tl">PK</div>
               </div>
               @if(!empty($pks))
@@ -249,10 +270,10 @@
                         <span class="default o1">
                             <span>PDU</span>
                             <div>
-                    <a href="{{ url('/panel') }}" class="default noJquery">Panel de Usuario</a> 
+                    <a href="{{ url('/panel') }}" class="default noJquery">{{ trans('layout.Panel de Usuario') }}</a> 
                             </div>
                         </span>
-                        <a href="{{ url('/logout') }}" class="default o2 noJquery">Logout</a>
+                        <a href="{{ url('/logout') }}" class="default o2 noJquery">{{ trans('layout.Salir') }}</a>
                     </div>
 
             
@@ -291,11 +312,10 @@
            <a href="{{ url('/siege') }}"><div class="siege last"><div id="accountbtn"></div></div></a>
            <a href="{{ url('/top-pvp') }}"><div class="estadisticas last"><div id="accountbtn"></div></div></a> 
 
-           <!-- Online / offline -->
+<!-- Online / offline -->
 <?php  
  $login = @fsockopen( $ip, 2106, $errno, $errstr, 1);
  $server = @fsockopen( $ip, 7777, $errno, $errstr, 1);
-
 ?>
 
 @if(!empty($login >= 1 and $server >= 1))

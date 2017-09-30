@@ -65,6 +65,7 @@ class BaseController extends Controller
       $ip = $conexion->host;
 
 
+
        
       //datos de la plantilla principal
 

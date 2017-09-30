@@ -47,8 +47,7 @@
 			<td>
 			
 			@if($Antharas->respawn_time > 0)
-			{{	$Antharas->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Antharas->respawn_time = date('d/m/Y \\s H:i:s',($Antharas->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -70,8 +69,7 @@
 			<td>
 			
 			@if($Valakas->respawn_time > 0)
-			{{	$Valakas->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Valakas->respawn_time = date('d/m/Y \\s H:i:s',($Valakas->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -93,8 +91,7 @@
 			<td>
 			
 			@if($Benom->respawn_time > 0)
-			{{	$Benom->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Benom->respawn_time = date('d/m/Y \\s H:i:s',($Benom->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -116,8 +113,7 @@
 			<td>
 			
 			@if($Baium->respawn_time > 0)
-			{{	$Baium->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Baium->respawn_time = date('d/m/Y \\s H:i:s',($Baium->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -139,8 +135,7 @@
 			<td>
 			
 			@if($QueenAnt->respawn_time > 0)
-			{{	$QueenAnt->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$QueenAnt->respawn_time = date('d/m/Y \\s H:i:s',($QueenAnt->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -162,8 +157,7 @@
 			<td>
 			
 			@if($Core->respawn_time > 0)
-			{{	$Core->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Core->respawn_time = date('d/m/Y \\s H:i:s',($Core->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
@@ -185,8 +179,7 @@
 			<td>
 			
 			@if($Zaken->respawn_time > 0)
-			{{	$Zaken->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Zaken->respawn_time = date('d/m/Y \\s H:i:s',($Zaken->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
@@ -208,8 +201,7 @@
 			<td>
 			
 			@if($ScarletvanHalisha->respawn_time > 0)
-			{{	$ScarletvanHalisha->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$ScarletvanHalisha->respawn_time = date('d/m/Y \\s H:i:s',($ScarletvanHalisha->respawn_time / 1000)) }}		
 			@endif
 			</td>
 		</tr>
@@ -231,8 +223,7 @@
 			<td>
 			
 			@if($Frintezza->respawn_time > 0)
-			{{	$Frintezza->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Frintezza->respawn_time = date('d/m/Y \\s H:i:s',($Frintezza->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
@@ -254,8 +245,7 @@
 			<td>
 			
 			@if($Orfen->respawn_time > 0)
-			{{	$Orfen->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Orfen->respawn_time = date('d/m/Y \\s H:i:s',($Orfen->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
@@ -298,8 +288,7 @@
 			<td>
 			
 			@if($raid->respawn_time > 0)
-			{{	$raid->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$raid->respawn_time = date('d/m/Y \\s H:i:s',($raid->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>

@@ -36,7 +36,7 @@
 				{!!$post->descripcioncorta!!}
 
 				<hr>
-			<p><a href="{{ url('/blogdetail-post'.$post->id) }}" target="_blank" class="btn btn-default btn-more" role="button"><img src="skin/tristana/images/plus.png">Leer Mas!!</a></p>
+			<p><a href="{{ url('/blogdetail-post'.$post->id) }}" target="_blank" class="btn btn-default btn-more" role="button"><img src="skin/tristana/images/plus.png">{{ trans('layout.Leer Mas!!') }}</a></p>
 
 			</div>
 </div>

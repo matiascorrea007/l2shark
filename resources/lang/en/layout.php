@@ -23,4 +23,11 @@ return [
     'Otros'=> 'Others',
     'Galeria'=> 'Gallery',
     'Base de conocimientos'=> 'Knowledge Base',
+    'inicio' => 'home',
+    'foro' => 'forum',
+    'server' => 'server',
+    'nombre' => 'name',
+    'Panel de Usuario' => 'User Panel',
+    'Salir' => 'Logout',
+    'Leer Mas!!' => 'Read more!!',
 ];

@@ -1,0 +1,33 @@
+<?php
+ 
+return [
+ 
+    'registrarse' => 'registo',
+    'cambiar contraseña' => 'alterar senha',
+    'recuperar contraseña' => 'recuperar senha',
+    "no tiene una cuenta?" => "não tem uma conta?",
+    "iniciar sesión" => "iniciar sessão",
+    'Olvidaste tu contraseña?' => 'Esqueceu sua senha??',
+    'Soporte' => 'Suporte',
+    'Descargas' => 'Downloads',
+    'Donaciones' => 'Doações',
+    'Informacion' => 'Informação',
+    'Reglas' => 'Regras',
+    'ver más'=> 'Ver mais',
+    'Síguenos'=> 'Siga-nos!',
+    'Ayúdenos a votar'=> 'Nos ajude a votar',
+    'Con su ayuda'=>'With your help we will have greater visibility, attracting more players and providing even more fun for you!',
+ 	'Cuenta'=> 'Conta',
+ 	'Servidor'=> 'Servidor',
+    'Estadísticas'=> 'Sobre nós',
+    'Otros'=> 'Outro',
+    'Galeria'=> 'Gallery',
+    'Base de conocimientos'=> 'Base de conhecimento',
+    'inicio' => 'casa',
+    'foro' => 'forum',
+    'server' => 'servidor',
+    'nombre' => 'nome',
+    'Panel de Usuario' => 'Painel do usuário',
+    'Salir' => 'Sair',
+    'Leer Mas!!' => 'Ler mais!!',
+];

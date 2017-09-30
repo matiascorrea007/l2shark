@@ -32,7 +32,7 @@
 <link rel="stylesheet" type="text/css" href="skin/monster/css/mi-css.css" media="all">
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="skin/monster/js//bootstrap.js"></script>
+<script type="text/javascript" src="skin/monster/js/bootstrap.js"></script>
 <script type="text/javascript" src="skin/monster/js/global.js"></script>
 <script type="text/javascript" src="skin/monster/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="skin/monster/js/mis-funciones.js"></script>

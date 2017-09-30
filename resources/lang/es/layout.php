@@ -24,6 +24,13 @@ return [
     'Otros'=> 'Otros',
     'Galeria'=> 'Galeria',
     'Base de conocimientos'=> 'Base de conocimientos',
+    'inicio' => 'inicio',
+    'foro' => 'foro',
+    'server' => 'server',
+    'nombre' => 'nombre',
+    'Panel de Usuario' => 'Panel de Usuario',
+    'Salir' => 'Salir',
+    'Leer Mas!!' => 'Leer Mas!!',
     
 
 
