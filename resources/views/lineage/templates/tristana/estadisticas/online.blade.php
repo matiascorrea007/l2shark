@@ -44,7 +44,7 @@
 			<th>Level</th>
 			<th title="Tiempo Online">Tiempo Online</th>
 		</tr>
-		
+		@if($playeronlines)
 		@foreach($playeronlines as $playeronline)
 		<tbody>
 			<tr class="two">
@@ -60,6 +60,7 @@
 			</tr>
 		</tbody>
 		@endforeach
+		@endif
 
 		</table>
 	</div>

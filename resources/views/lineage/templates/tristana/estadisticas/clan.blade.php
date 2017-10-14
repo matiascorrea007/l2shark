@@ -43,6 +43,7 @@
 			<th>Level</th>
 		</tr>
 		
+		@if(!empty($clans))
 		@foreach($clans as $clan)
 		<tbody>
 			<tr class="two">
@@ -56,6 +57,7 @@
 			</tr>
 		</tbody>
 		@endforeach
+		@endif
 
 		</table>
 
@@ -78,7 +80,8 @@
 			<th>Level</th>
 			<th>Castle</th>
 		</tr>
-		
+
+		@if(!empty($clanCastles))
 		@foreach($clanCastles as $clanCastle)
 		<tbody>
 			<tr class="two">
@@ -93,7 +96,7 @@
 			</tr>
 		</tbody>
 		@endforeach
-
+		@endif
 		</table>
 	</div>
 

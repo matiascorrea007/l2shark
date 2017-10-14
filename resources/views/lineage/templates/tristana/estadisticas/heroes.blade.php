@@ -46,6 +46,7 @@
 			<th>Ally</th>
 		</tr>
 		
+		@if(!empty($heroes))
 		@foreach($heroes as $heroe)
 		<tbody>
 			<tr class="two">
@@ -62,6 +63,7 @@
 			</tr>
 		</tbody>
 		@endforeach
+		@endif
 
 		</table>
 

@@ -46,11 +46,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Dion->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Dion))
+                    {{date('D\, j M Y H\:i',$Dion->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Dion->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Dion))
+                    {{$Dion->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -96,11 +104,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Schuttgart->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Schuttgart))
+                    {{date('D\, j M Y H\:i',$Schuttgart->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Schuttgart->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Schuttgart))
+                    {{$Schuttgart->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -146,11 +162,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Oren->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Oren))
+                    {{date('D\, j M Y H\:i',$Oren->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Oren->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Oren))
+                    {{$Oren->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -196,11 +220,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Gludio->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Gludio))
+                    {{date('D\, j M Y H\:i',$Gludio->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Gludio->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Gludio))
+                    {{$Gludio->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -246,11 +278,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Goddard->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Goddard))
+                    {{date('D\, j M Y H\:i',$Goddard->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Goddard->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Goddard))
+                    {{$Goddard->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -296,11 +336,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Innadril->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Innadril))
+                    {{date('D\, j M Y H\:i',$Innadril->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Innadril->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Innadril))
+                    {{$Innadril->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -346,11 +394,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Giran->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Giran))
+                    {{date('D\, j M Y H\:i',$Giran->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Giran->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Giran))
+                    {{$Giran->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -396,11 +452,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Aden->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Aden))
+                    {{date('D\, j M Y H\:i',$Aden->siegeDate/1000)}} Horas
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Aden->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Aden))
+                    {{$Aden->taxPercent}}%
+                    @endif
+                    </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>
@@ -446,11 +510,19 @@
                     </tr>
                     <tr>
                     <td>Guerra Siguiente:</td>
-                    <td class="green">{{date('D\, j M Y H\:i',$Rune->siegeDate/1000)}} Horas</td>
+                    <td class="green">
+                    @if(!empty($Rune))
+                    {{date('D\, j M Y H\:i',$Rune->siegeDate/1000)}} Horas
+                     @endif
+                     </td>
                     </tr>
                     <tr>
                     <td>Tasa:</td>
-                    <td class="green">{{$Rune->taxPercent}}%</td>
+                    <td class="green">
+                    @if(!empty($Rune))
+                    {{$Rune->taxPercent}}%
+                     @endif
+                     </td>
                     </tr>
                     <tr>
                     <td>Atacantes:</td>

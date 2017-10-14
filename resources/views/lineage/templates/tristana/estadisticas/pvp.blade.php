@@ -46,6 +46,7 @@
 			<th title="Tiempo Online">Tiempo Online</th>
 		</tr>
 		
+		@if(!empty($playerpvps))
 		@foreach($playerpvps as $playerpvp)
 		<tbody>
 			<tr class="two">
@@ -62,6 +63,7 @@
 			</tr>
 		</tbody>
 		@endforeach
+		@endif
 
 		</table>
 	</div>

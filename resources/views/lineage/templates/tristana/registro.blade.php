@@ -36,7 +36,7 @@
                     <div class="form-group">
                         <label for="inputEmail" class="col-lg-3 control-label">Login</label>
                         <div class="col-lg-9">
-                            <input type="text" class="form-control" id="inputEmail" name="login" placeholder="Email">
+                            <input type="text" class="form-control" id="inputEmail" name="login" placeholder="Login">
                         </div>
                     </div>
 

@@ -350,6 +350,7 @@ third.animate(online3, function() {third.animate(online3);});
 			<th>PvP</th>
 		</tr>
 	</thead>
+	@if(!empty($pvps))
 	@foreach($pvps as $pvp)
 		<tbody>
 			<tr class='two'>
@@ -358,6 +359,7 @@ third.animate(online3, function() {third.animate(online3);});
 			</tr>
 		</tbody>
 	@endforeach	
+	@endif
 </table>
 
 
@@ -370,6 +372,7 @@ third.animate(online3, function() {third.animate(online3);});
 			<th>PK</th>
 		</tr>
 	</thead>
+	@if(!empty($pks))
 		@foreach($pks as $pk)
 			<tbody>
 				<tr class='two'>
@@ -378,6 +381,7 @@ third.animate(online3, function() {third.animate(online3);});
 				</tr>
 			</tbody>
 		@endforeach	
+		@endif
 	</table>
 
 
@@ -394,7 +398,7 @@ third.animate(online3, function() {third.animate(online3);});
 
 					<div class="col-lg-3 forumposts">
 					<div class="sidebar-head clearfix">
-						<h2>последние сообщения с форума</h2>
+						<h2>Seguinos en nuestro Fanpage!!</h2>
 					</div>
 					
 <!-- Модуль Темы с Форума -->
@@ -403,9 +407,10 @@ third.animate(online3, function() {third.animate(online3);});
 
 
 
-<div class="post">
-	<img src="http://forum.agecold.ru/public/style_images/agecold_ru/profile/default_large.png" style="width: 32px; height: 32px; float: left;" class="question"><a href="<a href='http://forum.agecold.ru/index.php?showtopic=13871' title='1489427472'  target='_blank'>Переоткрытие</a>"><a href='http://forum.agecold.ru/index.php?showtopic=13871' title='1489427472'  target='_blank'>Переоткрытие</a></a>
-	<p href="#" class="author">автор: <a href='http://forum.agecold.ru/index.php?showuser=2115' target='_blank'>Midsummer</a> <time>10.04.17 19:12</time></p>
+<div class="">
+	@if(!empty($box))
+      					{!! $box->box!!}
+      				@endif
 </div>
 <hr/>
 
@@ -490,7 +495,7 @@ third.animate(online3, function() {third.animate(online3);});
 	@endif
 
 				
-				<p>© 2017 l2 server - Lineage II <br/><a href="http://www.sharkdesing.com">Sharkdesing.com</a></p>
+				<p>© 2017 l2 server - Lineage II <br/><a href="http://www.sharkestudio.com">Sharkestudio.com</a></p>
 			</div>
 			<a href="#header"><img src="http://agecold.ru/templates/agecold_2015/images/toparrow.png" class="toparrow scroll"></a>
 			<a href="#" class="payments pull-right"><img src="http://agecold.ru/templates/agecold_2015/images/payments.png"></a>

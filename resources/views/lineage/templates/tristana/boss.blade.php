@@ -31,7 +31,8 @@
 		<th>Respawn</th>
 	</tr>
 	
-	<tbody>
+	ody>
+		@if(!empty($Antharas))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/antharas.jpg" height="60" width="100"></td>
 			<td>{{$Antharas->name}}</td>
@@ -47,12 +48,13 @@
 			<td>
 			
 			@if($Antharas->respawn_time > 0)
-			{{	$Antharas->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Antharas->respawn_time = date('d/m/Y \\s H:i:s',($Antharas->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Valakas))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/valakas.jpg" height="60" width="100"></td>
 			<td>{{$Valakas->name}}</td>
@@ -68,12 +70,13 @@
 			<td>
 			
 			@if($Valakas->respawn_time > 0)
-			{{	$Valakas->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Valakas->respawn_time = date('d/m/Y \\s H:i:s',($Valakas->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Benom))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/benom.jpg" height="60" width="100"></td>
 			<td>{{$Benom->name}}</td>
@@ -89,12 +92,13 @@
 			<td>
 			
 			@if($Benom->respawn_time > 0)
-			{{	$Benom->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Benom->respawn_time = date('d/m/Y \\s H:i:s',($Benom->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Baium))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/baium.jpg" height="60" width="100"></td>
 			<td>{{$Baium->name}}</td>
@@ -110,12 +114,13 @@
 			<td>
 			
 			@if($Baium->respawn_time > 0)
-			{{	$Baium->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Baium->respawn_time = date('d/m/Y \\s H:i:s',($Baium->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($QueenAnt))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/queen.jpg" height="60" width="100"></td>
 			<td>{{$QueenAnt->name}}</td>
@@ -131,12 +136,13 @@
 			<td>
 			
 			@if($QueenAnt->respawn_time > 0)
-			{{	$QueenAnt->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$QueenAnt->respawn_time = date('d/m/Y \\s H:i:s',($QueenAnt->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Core))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/core.jpg" height="60" width="100"></td>
 			<td>{{$Core->name}}</td>
@@ -152,13 +158,13 @@
 			<td>
 			
 			@if($Core->respawn_time > 0)
-			{{	$Core->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Core->respawn_time = date('d/m/Y \\s H:i:s',($Core->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
+		@endif
 
-
+		@if(!empty($Zaken))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/zaken.jpg" height="60" width="100"></td>
 			<td>{{$Zaken->name}}</td>
@@ -174,12 +180,13 @@
 			<td>
 			
 			@if($Zaken->respawn_time > 0)
-			{{	$Zaken->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Zaken->respawn_time = date('d/m/Y \\s H:i:s',($Zaken->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($ScarletvanHalisha))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/vanhalisha.jpg" height="60" width="100"></td>
 			<td>{{$ScarletvanHalisha->name}}</td>
@@ -195,12 +202,13 @@
 			<td>
 			
 			@if($ScarletvanHalisha->respawn_time > 0)
-			{{	$ScarletvanHalisha->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$ScarletvanHalisha->respawn_time = date('d/m/Y \\s H:i:s',($ScarletvanHalisha->respawn_time / 1000)) }}		
 			@endif
 			</td>
 		</tr>
+		@endif
 
+		@if(!empty($Frintezza))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/frintezza.jpg" height="60" width="100"></td>
 			<td>{{$Frintezza->name}}</td>
@@ -216,13 +224,13 @@
 			<td>
 			
 			@if($Frintezza->respawn_time > 0)
-			{{	$Frintezza->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Frintezza->respawn_time = date('d/m/Y \\s H:i:s',($Frintezza->respawn_time / 1000)) }}			
 			@endif
 			</td>
 		</tr>
+		@endif
 
-
+		@if(!empty($Orfen))
 		<tr class="">
 			<td><img class="bossImg" src="skin/monster/imgs/boss/orfen.jpg" height="60" width="100"></td>
 			<td>{{$Orfen->name}}</td>
@@ -238,12 +246,11 @@
 			<td>
 			
 			@if($Orfen->respawn_time > 0)
-			{{	$Orfen->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$Orfen->respawn_time = date('d/m/Y \\s H:i:s',($Orfen->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
-		
+		@endif
 	</tbody>
 
 	</table>
@@ -265,6 +272,7 @@
 		<th>Status</th>
 		<th style="width:200px;" >Respawn</th>
 	</tr>
+	@if(!empty($raids))
 	@foreach($raids as $raid)
 	<tbody>
 		<tr class="">
@@ -281,14 +289,14 @@
 			<td>
 			
 			@if($raid->respawn_time > 0)
-			{{	$raid->respawn_time = date('d/m/Y \\s H:i:s') }}
-				
+			{{	$raid->respawn_time = date('d/m/Y \\s H:i:s',($raid->respawn_time / 1000)) }}
 			@endif
 			</td>
 		</tr>
 		
 	</tbody>
 	@endforeach
+	@endif
 
 	</table>
  </div>
