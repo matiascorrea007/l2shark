@@ -21,6 +21,7 @@ use Alert;
 use Soft\Cliente;
 use DB;
 use Flash;
+use Hash;
 
 class UsuarioController extends AdminBaseController
 {
@@ -240,16 +241,21 @@ class UsuarioController extends AdminBaseController
         
         $user = User::find($id);
 
+        $comprobarPass = Hash::check($request['password_actual'], $user->password ) ;
+
+
+    
+
         try
         {
 
             //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
             DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->first();
 
-        if ($user->login == $request['login'] and $user->re_password == $request['password_actual']) {
+        if ($user->login == $request['login'] and $comprobarPass == true) {
            
            $user->password = bcrypt($request['password']);
-           $user->re_password = $request['password_confirmation'];
+           $user->re_password = "";
            $user->save();
 
 

@@ -62,6 +62,7 @@ Si surgen problemas en la entrega automática, todo lo que tienes que hacer es p
     </div>
 
 {!!Form::open(['url'=>['donaciones-create'],'method'=>'POST' , 'files'=>True , 'onsubmit'=>'return checkCheckBox(this)'])!!}
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
     <label><input type="checkbox" name="checkbox" id="acceptrules" value="0"> <b>He leído y acepto las condiciones de compra de coin's expresado anteriormente</b></label>
         
