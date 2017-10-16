@@ -22,3 +22,6 @@ Introduzca el nuevo nombre y haga clic en el botón de abajo. Nota: Sólo el lí
 </div>
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

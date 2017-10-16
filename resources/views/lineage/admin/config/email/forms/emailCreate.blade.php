@@ -39,5 +39,6 @@
 {!!Form::submit('Guardar',['class'=>'btn btn-primary pull-right'])!!}
 </div>
 
-
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
+ 
 </div>

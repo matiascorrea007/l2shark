@@ -19,3 +19,6 @@ Este servicio es esencial si no se puede abrir el juego debido a errores graves 
 </div>
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -44,3 +44,5 @@
 </div>
 <div class="form-horizontal col-xs-12 col-sm-12 col-md-3"></div>
 </div>
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

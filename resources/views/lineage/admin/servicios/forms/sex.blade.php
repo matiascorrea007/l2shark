@@ -27,3 +27,6 @@ Seleccione el género y confirme haciendo clic en el botón de abajo.
 </div>
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

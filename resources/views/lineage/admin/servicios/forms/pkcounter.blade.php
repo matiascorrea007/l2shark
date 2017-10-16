@@ -6,3 +6,6 @@ Al hacer clic en el botón de abajo el personaje seleccionado tendrá 0 puntos P
 {!!Form::text('charnombre',null,['class'=>'form-control hidden char', 'placeholder'=>'ingrese el codigo del color'])!!}
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

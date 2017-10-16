@@ -7,3 +7,6 @@ Simplemente haga clic en el botón de abajo para el procedimiento a realizar.</p
 	
 	{!!Form::text('charnombre',null,['class'=>'form-control hidden char', 'placeholder'=>'ingrese el codigo del color'])!!}
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -20,3 +20,6 @@ Introduzca el nuevo nombre y haga clic en el botón de abajo.</p>
 </div>
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">

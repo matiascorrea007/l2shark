@@ -18,3 +18,6 @@ Un noble tiene habilidades y ventajas especiales en el juego, como el permiso pa
 </div>
 
 </div>
+
+
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
