@@ -114,6 +114,83 @@ Route::group(array('middleware' => 'auth'), function(){
 
 
 
+Route::group(['middleware' =>['admin']], function () {
+
+Route::get('db-config','DbController@index');
+Route::get('db-check','DbController@ProbarConexion');
+Route::post('db-config-store','DbController@store');
+Route::put('db-config-update/{id}','DbController@update');
+
+
+Route::get('panel-config','AdminController@Config');
+Route::get('panel-paginas','AdminController@Paginas');
+
+Route::get('donaciones-pendientes','DonacionesController@pendientes');
+Route::get('donaciones-listar','DonacionesController@listar');
+
+Route::get('transfererencias-realizadas','DonacionesController@TransferenciasRealizadas');
+
+Route::get('administrar-tickets','TicketController@index');
+Route::get('tickets-completados','TicketController@TicketCompletados');
+Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
+
+
+Route::get('post','WebPostController@index');
+Route::get('post-edit-{id}','WebPostController@edit');
+Route::get('post-create','WebPostController@create');
+Route::post('post-store','WebPostController@store');
+Route::put('post-update/{id}','WebPostController@update');
+Route::delete('post-destroy/{id}','WebPostController@destroy');
+
+Route::get('combo-create','ComboController@Combocreate');
+
+Route::post('combo-store','ComboController@Combostore');
+Route::get('combo-edit-{idcombo}','ComboController@ComboEdit');
+Route::put('combo-update-item-{idcombo}','ComboController@ComboUpdateItem');
+Route::put('combo-update-{idcombo}','ComboController@ComboUpdate');
+Route::delete('combo-destroy/{id}','ComboController@Combodestroy');
+Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');
+Route::get('combo-item-trash','ComboController@ComboItemTrash');
+
+
+Route::get('galeria-imagen-show','GaleriaController@showImagen');
+Route::get('galeria-imagen-edit-{id}','GaleriaController@editImagen');
+Route::get('galeria-imagen-create','GaleriaController@createImagen');
+Route::post('galeria-imagen-store','GaleriaController@storeImagen');
+Route::put('galeria-imagen-update/{id}','GaleriaController@updateImagen');
+Route::delete('galeria-imagen-destroy/{id}','GaleriaController@destroyImagen');
+
+Route::get('galeria-video-show','GaleriaController@showVideo');
+Route::get('galeria-video-edit-{id}','GaleriaController@editVideo');
+Route::get('galeria-video-create','GaleriaController@createVideo');
+Route::post('galeria-video-store','GaleriaController@storeVideo');
+Route::put('galeria-video-update/{id}','GaleriaController@updateVideo');
+Route::delete('galeria-video-destroy/{id}','GaleriaController@destroyVideo');
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::group(['middleware' =>['auth']], function () {
 
 
@@ -131,8 +208,8 @@ Route::get('panel', 'AdminController@admin');
 Route::get('panel/{character}','AdminController@ObtenerCharacter');
 Route::post('panel/{character}','AdminController@ObtenerCharacter');
 
-Route::get('panel-config','AdminController@Config');
-Route::get('panel-paginas','AdminController@Paginas');
+
+
 
 /*Servicios*/
 Route::get('servicios','ServiciosController@index');
@@ -154,23 +231,19 @@ Route::post('vip-edit','ServiciosController@Vip');
 
 
 
-Route::get('db-config','DbController@index');
-Route::get('db-check','DbController@ProbarConexion');
-Route::post('db-config-store','DbController@store');
-Route::put('db-config-update/{id}','DbController@update');
+
 
 
 Route::get('donaciones','DonacionesController@index');
 Route::match(['get','post'],'donaciones-create','DonacionesController@create');
 
-Route::get('donaciones-listar','DonacionesController@listar');
+
 Route::get('donaciones-hechas','DonacionesController@hechas');
-Route::get('donaciones-pendientes','DonacionesController@pendientes');
 
 Route::get('transferir-coin','DonacionesController@TransferirCoin');
 Route::post('transferir-coin-player','DonacionesController@TransferirCoinPlayer');
 Route::post('transferir-coin-cuenta','DonacionesController@TransferirCoinCuenta');
-Route::get('transfererencias-realizadas','DonacionesController@TransferenciasRealizadas');
+
 
 Route::post('donacion-cambiar-status/{id}','DonacionesController@Status');
 Route::delete('donaciones-destroy/{id}','DonacionesController@destroy');
@@ -186,17 +259,9 @@ Route::delete('categoria-destroy/{id}','CategoriaController@destroy');
 
 Route::get('combo','ComboController@index');
 Route::get('combo-ver-{id}','ComboController@ComboVer');
-Route::get('combo-create','ComboController@Combocreate');
-Route::post('combo-store','ComboController@Combostore');
-Route::get('combo-edit-{idcombo}','ComboController@ComboEdit');
-Route::put('combo-update-item-{idcombo}','ComboController@ComboUpdateItem');
-Route::put('combo-update-{idcombo}','ComboController@ComboUpdate');
-Route::delete('combo-destroy/{id}','ComboController@Combodestroy');
-
 Route::post('combo-comprar','ComboController@ComboComprar');
 
-Route::get('combo-item-add/{id}','ComboController@ComboItemAdd');
-Route::get('combo-item-trash','ComboController@ComboItemTrash');
+
 
 //busqueda por ajax
 Route::get('search-id/{id}','ComboController@SearchId');
@@ -214,9 +279,7 @@ Route::put('paginas-destroy/{id}','ConfigPaginasController@destroy');
 
 
 /*--------ticket----------*/
-Route::get('administrar-tickets','TicketController@index');
-Route::get('tickets-completados','TicketController@TicketCompletados');
-Route::post('tickets-cambiar-status/{id}','TicketController@TicketCambiarStatus');
+
 Route::get('tickets-responder-{id}','TicketController@TicketResponder');
 Route::put('tickets-comentario/{id}','TicketController@TicketComentario');
 
@@ -264,29 +327,11 @@ Route::put('logo-update/{id}','WebLogoController@update');
 Route::delete('logo-destroy/{id}','WebLogoController@destroy');
 
 
-Route::get('post','WebPostController@index');
-Route::get('post-edit-{id}','WebPostController@edit');
-Route::get('post-create','WebPostController@create');
-Route::post('post-store','WebPostController@store');
-Route::put('post-update/{id}','WebPostController@update');
-Route::delete('post-destroy/{id}','WebPostController@destroy');
 
 
 Route::get('galeria','GaleriaController@index');
 
-Route::get('galeria-imagen-show','GaleriaController@showImagen');
-Route::get('galeria-imagen-edit-{id}','GaleriaController@editImagen');
-Route::get('galeria-imagen-create','GaleriaController@createImagen');
-Route::post('galeria-imagen-store','GaleriaController@storeImagen');
-Route::put('galeria-imagen-update/{id}','GaleriaController@updateImagen');
-Route::delete('galeria-imagen-destroy/{id}','GaleriaController@destroyImagen');
 
-Route::get('galeria-video-show','GaleriaController@showVideo');
-Route::get('galeria-video-edit-{id}','GaleriaController@editVideo');
-Route::get('galeria-video-create','GaleriaController@createVideo');
-Route::post('galeria-video-store','GaleriaController@storeVideo');
-Route::put('galeria-video-update/{id}','GaleriaController@updateVideo');
-Route::delete('galeria-video-destroy/{id}','GaleriaController@destroyVideo');
 /*---------------WEB CONFIG------------*/
 
 

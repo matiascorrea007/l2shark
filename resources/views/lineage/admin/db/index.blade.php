@@ -44,7 +44,7 @@ $skin =  DB::table('web_skins')->first();
         
         @if(!empty($db))
 
-        {!!Form::model($db,['url'=>['db-config-update',$db->id],'method'=>'PUT' , 'files'=>True])!!}
+         {!!Form::open(['url'=>['db-config-update',$db->id],'method'=>'PUT' , 'files'=>True])!!}
 			@include('lineage.admin.db.forms.formsconexion')
 		{!!Form::close()!!}
 
