@@ -112,7 +112,8 @@
 </div>  
 <!--MENU --> 
 
- <div class='langs'>     
+    <div class='langs'>  
+       
     <a href="{{ url('lang', ['en']) }}" class='en noJquery' title='English'><span></span></a>
 
     <a href="{{ url('lang', ['es']) }}" class='es noJquery' title='Espa&ntilde;ol'><span></span></a>

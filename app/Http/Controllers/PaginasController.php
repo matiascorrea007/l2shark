@@ -78,6 +78,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.index',compact('posts'));
+        }
     }
 
 
@@ -116,6 +120,10 @@ class PaginasController extends BaseController
            return view ('lineage.templates.esmerald.download',compact('paginas'));
         }
 
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.download',compact('paginas'));
+        }
+
     }
 
     public function Donaciones(){
@@ -151,6 +159,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.donaciones',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.donaciones',compact('paginas'));
         }
     }
 
@@ -188,6 +200,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.reglas',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.reglas',compact('paginas'));
+        }
     }
 
     public function Soporte(){
@@ -223,6 +239,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.soporte',compact('paginas'));
+        }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.soporte',compact('paginas'));
         }
     }
 
@@ -264,6 +284,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.informacion',compact('paginas'));
         }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.informacion',compact('paginas'));
+        }
     }
 
     public function GaleriaVideos(){
@@ -300,6 +324,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.galeria-videos',compact('AllVideos'));
         }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.galeria-videos',compact('AllVideos'));
+        }
     }
 
     public function GaleriaImagenes(){
@@ -335,6 +363,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.galeria-imagenes',compact('AllImagenes'));
+        }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.galeria-imagenes',compact('AllImagenes'));
         }
     }
 
@@ -383,6 +415,10 @@ class PaginasController extends BaseController
 
         if ($this->skin()->nombre == "esmerald") {
            return view ('lineage.templates.esmerald.registro',compact('MostarFormulario'));
+        }
+
+        if ($this->skin()->nombre == "amegus") {
+           return view ('lineage.templates.amegus.registro',compact('MostarFormulario'));
         }
     }
 
