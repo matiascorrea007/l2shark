@@ -243,12 +243,35 @@ class UsuarioController extends AdminBaseController
 
         $comprobarPass = Hash::check($request['password_actual'], $user->password ) ;
 
+        $comprobarRePass = Hash::check($request['password'], $request['password_confirmation']) ;
 
-    
+       
+        //si el usuario es admin que le cambie el password sin necesidad de conexion a la DB
+        if (Auth::user()->admin == 1) {
+              if ($user->login == $request['login'] and $comprobarPass == true) {
+                if ($request['password'] == $request['password_confirmation'] ) {
+                    # code...
+              
+           
+           $user->password = bcrypt($request['password']);
+           $user->re_password = "";
+           $user->save();
+           Alert::success('Mensaje existoso', 'Contraseña Cambiada Con Exito');    
+           return Redirect::back();
+             }else{
+                 flash('el nuevo password no coincide con Re-Password.')->error(); 
+             }
+
+         }else{
+             flash('el login o la contraseñna actual no coinciden.')->error();    
+         }
+        }
+
+
+
 
         try
         {
-
             //esto es para comprobar que se aga la conexion , caso contrario me diga q no hay conexion la DB
             DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->first();
 
