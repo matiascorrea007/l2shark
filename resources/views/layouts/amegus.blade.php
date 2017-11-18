@@ -11,13 +11,17 @@
 
 
 	<link rel="shortcut icon" href=""> 
-	<link rel="stylesheet" href="skin/Amegus/css/style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="skin/Amegus/css/style.css" >
     <link rel="stylesheet" type="text/css" href="skin/Amegus/css/engine.css">
+    <link rel="stylesheet" type="text/css" href="skin/Amegus/css/bootstrap.css">
 
-	<script src="skin/Amegus/js/jquery-1.8.3.min.js"></script>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 	<script src="skin/Amegus/js/jquery-ui.min.js"></script>
 	<script src="skin/Amegus/js/jquery.nivo.slider.pack.js"></script>
 	<script src="skin/Amegus/js/m.js"></script>
+
+
 
 
 
@@ -117,8 +121,8 @@
 	</div>
 </div>	
 
-<div id="center_block">
-<div id="slider_bg">
+<div id="center_block"  >
+<div id="slider_bg" >
 	<div id="slider-wrapper">
 		<div id="slider" class="nivoSlider">
 			<img src="" alt="" title="#htmlcaption1">
@@ -135,13 +139,17 @@
 	</div>
 
 	
-	</div><div id="news">
+	</div>
+
+	<div id="news" >
 	<div id="news_title">
 		НОВОСТИ
 	</div>
 
-
+	
 	@yield('content')
+	
+	
 	
 </div>
 </div>

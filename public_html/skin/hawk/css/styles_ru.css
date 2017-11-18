@@ -1,0 +1,602 @@
+.en {
+	display: none !important;
+}
+
+#general {
+	background: url(../images/bg1.jpg) no-repeat center top 0px,
+				url(../images/bg2.jpg) no-repeat center top 460px,
+				url(../images/bg3.jpg) no-repeat center top 960px;
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 1920px;
+	min-width: 1000px;
+	height: 1460px;
+	margin: 0 auto;
+}
+
+#wrapper {
+	position: relative;
+	display: block;
+	width: 1000px;
+	margin: 0 auto;
+	height: 1460px;
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+#navi {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 9px;
+	top: 38px;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+#navi ul {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+#navi ul li {
+	position: relative;
+	display: inline-block;
+}
+
+#navi ul li a {
+	position: relative;
+	display: block;
+	height: 15px;
+	margin: 0 20px;
+}
+
+#navi ul li a:before {
+	content: '';
+	width: 100%;
+	height: 0px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+	display: block;
+	-webkit-transition:all 0.1s ease; 
+	-o-transition:all 0.1s ease; 
+	-moz-transition:all 0.1s ease; 
+	transition:all 0.1s ease;
+	opacity: 0;
+}
+
+#navi ul li a:hover {
+	-webkit-filter:brightness(1.2); 
+	-moz-filter:brightness(1.2); 
+	-o-filter:brightness(1.2); 
+	filter:brightness(1.2);
+}
+
+#navi ul li a:hover:before {
+	-webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    filter: blur(10px);
+    height: 15px;
+    opacity: 1;
+}
+
+#navi ul li:nth-child(1) a, #navi ul li:nth-child(1) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left 0px;
+	width: 54px;
+}
+
+#navi ul li:nth-child(2) a, #navi ul li:nth-child(2) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left -94px;
+	width: 87px;
+}
+
+#navi ul li:nth-child(3) a, #navi ul li:nth-child(3) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left -220px;
+	width: 70px;
+	margin-right: 300px;
+}
+
+#navi ul li:nth-child(4) a, #navi ul li:nth-child(4) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left -329px;
+	width: 100px;
+	margin-left: 0px;
+}
+
+#navi ul li:nth-child(5) a, #navi ul li:nth-child(5) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left -472px;
+	width: 76px;
+}
+
+#navi ul li:nth-child(6) a, #navi ul li:nth-child(6) a:before {
+	background: url(../images/nav_ru.png) no-repeat center left -595px;
+	width: 45px;
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+.enter_btn {
+	position: absolute;
+	display: block;
+	width: 269px;
+	height: 79px;
+	top: 285px;
+	left: 0px;
+	right: 0px;
+	margin: auto;
+	background: url(../images/donate.png) no-repeat;
+}
+
+.enter_btn:hover {
+	-webkit-filter:brightness(1.2); 
+	-moz-filter:brightness(1.2); 
+	-o-filter:brightness(1.2); 
+	filter:brightness(1.2);
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+div#server_status {
+    position: absolute;
+    display: block;
+    width: 600px;
+    height: 85px;
+    top: 504px;
+    left: 20px;
+}
+
+#server_inner {
+	position: relative;
+	display: block;
+	width: 498px;
+	height: 85px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#server_block {
+	position: relative;
+	display: -webkit-inline-box;
+	width: auto;
+	height: 85px;
+}
+
+.status_item {
+	position: relative;
+	display: inline-block;
+	float: left;
+    width: 173px;
+    height: 85px;
+	background: url(../images/status.png) no-repeat center right;
+}
+
+.status_images {
+	position: relative;
+	display: inline-block;
+	width: 83px;
+	height: 85px;
+}
+
+.status_info {
+	position: relative;
+	display: inline-block;
+	width: 144px;
+	height: 85px;
+	float: right;
+	right: 20px;
+}
+
+.status_THRNpicture {
+    position: relative;
+    display: block;
+	width: 77px;
+	height: 85px;
+	background: url(../images/serverinfo1.png) no-repeat left;
+}
+
+.status_title {
+    position: relative;
+    display: block;
+    color: #ffbb37;
+    font-size: 14px;
+    font-family: calibrib;
+    padding-top: 15px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #38302a;
+}
+
+.status_title a {
+	color: #ffbb37;
+	font-size: 14px;
+	font-family: calibrib;
+}
+
+.status_title a:hover {
+	text-decoration: underline;
+}
+
+.status_title p {
+	position: relative;
+	display: block;
+	color: #645f55;
+	text-shadow: 0 0 0 rgba(100,95,85,0.7);
+	font-size: 12px;
+	font-family: calibril;
+	margin-top: -2px;
+}
+
+.status_online {
+	position: relative;
+	display: block;
+}
+
+.status_online p {
+	position: relative;
+	display: inline-block;
+	color: #b4b1aa;
+	font-size: 12px;
+	font-family: calibril;
+}
+
+.status_online p:before {
+	content: 'Игроков в сети:';
+}
+
+.status_online span {
+	position: relative;
+	display: inline-block;
+	color: #9fe988;
+	font-size: 12px;
+	font-family: calibri;
+}
+
+.server_prev {
+	position: absolute;
+	display: block;
+	width: 44px;
+	height: 51px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(../images/prev.png) no-repeat;
+	cursor: default;
+}
+
+.server_next {
+	position: absolute;
+	display: block;
+	width: 44px;
+	height: 51px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: url(../images/next.png) no-repeat;
+	cursor: default;
+}
+
+.server_prev span, .server_next span {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.total_block {
+	position: absolute;
+	display: block;
+	width: 100%;
+	top: -30px;
+	left: 0px;
+}
+
+.server_total {
+	position: relative;
+	display: block;
+	width: 100%;
+	text-align: center;
+	color: #ffb849;
+	font-size: 12px;
+	font-family: calibri;
+	margin: 0 auto;
+}
+
+.server_total span {
+	color: #ffeccf;
+}
+
+.total_first {
+	position: relative;
+	display: inline-block;
+}
+
+.total_first:before {
+	
+}
+
+.total_second {
+	position: relative;
+	display: inline-block;
+}
+
+.total_second:before {
+	
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+#shares_block {
+	position: absolute;
+	display: block;
+	width: 276px;
+	height: 305px;
+	top: 580px;
+	right: 50px;
+	overflow: hidden;
+}
+
+#shares_inner {
+	position: relative;
+	display: -webkit-inline-box;
+	width: auto;
+	height: 270px;
+	margin: 0 auto;
+	box-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+.shares_item {
+	position: relative;
+	display: block;
+	width: 276px;
+	height: 67px;
+	margin: 0 auto;
+	background: url(../images/share.png) no-repeat;
+	color: #fff;
+}
+
+ol#pagination {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 18px;
+	bottom: 5px;
+	text-align: center;
+}
+
+ol#pagination li {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+    height: 18px;
+    width: 18px;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    text-indent: -9999px;
+    background: url(../images/slider/clear.png) no-repeat;
+}
+
+ol#pagination li.current, ol#pagination li:hover {
+	 background:url(../images/slider/full.png) no-repeat;
+}
+
+ol#pagination li#prev, ol#pagination li#next {
+	display: none !important;
+}
+
+.shares_text {
+	position: absolute;
+	display:block;
+	width: 230px;
+	top: 0;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+	margin: auto;
+	color: #baa78f;
+	font-size: 12px;
+	font-family: calibri;
+	text-align: center;
+	padding-bottom: 18px;
+}
+
+.shares_text a {
+	position: relative;
+	display: block;
+	color: #ffa939;
+	font-size: 12px;
+	font-family: calibrib;
+}
+
+.shares_text span {
+	position: relative;
+	display: block;
+	color: #ffa939;
+	font-size: 12px;
+	font-family: calibrib;
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+#news {
+    position: relative;
+    display: inline-block;
+    width: 550px;
+    margin: 0 auto;
+}
+
+.news_frame {
+    position: relative;
+    display: block;
+    float: left;
+    width: 165px;
+    height: 165px;
+    margin: 0;
+    background: url(../images/frame.png) no-repeat;
+    margin-left: -6px;
+    margin-bottom: -3px;
+}
+
+.news_frame img {
+	position: absolute;
+	display: block;
+	width: 135px;
+	height: 135px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.news_title {
+	position: relative;
+	display: flex;
+	color: #ffa841;
+	font-size: 16px;
+	font-family: calibrib;
+	border-bottom: 1px solid #2d363a;
+	padding-bottom: 7px;
+	margin-bottom: 9px;
+
+}
+
+.news_title a {
+	color: #ffa841;
+	font-size: 16px;
+	font-family: calibrib;
+}
+
+.news_text {
+	position: relative;
+	display: block;
+	color: #d0bcb5;
+	font-size: 12px;
+	font-family: calibri;
+	line-height: 15px;
+}
+
+.news_text a {
+}
+
+.news_text a:hover {
+	text-decoration: none;
+}
+
+.news_info {
+	position: relative;
+	display: inline-block;
+	width: 550px;
+	height: 35px;
+	line-height: 35px;
+	background: rgba(9,11,12,0.41);
+}
+
+.news_date {
+	position: relative;
+	display: inline-block;
+	float: left;
+	left: 20px;
+	color: #b6babb;
+	font-size: 12px;
+	font-family: calibri;
+}
+
+.news_date span {
+	position: relative;
+	display: inline-block;
+}
+
+.news_date span:before {
+	color: #565d5e;
+	text-shadow: 0 0 0 #565d5e;
+	font-size: 12px;
+	font-family: calibri;
+}
+
+.news_date span:after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 10px;
+    top: 4px;
+    background: url(../images/clock.png) no-repeat;
+}
+
+.news_more {
+	position: relative;
+	display: inline-block;
+	float: right;
+	font-size: 12px;
+	color: #11708b;
+	right: 10px;
+	color: #1483a3;
+	text-decoration: underline;
+}
+
+.news_more:hover {
+	text-decoration: none;
+}
+
+.news_more:before {
+	content: 'Читать подробнее...';
+}
+
+.news_more a {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0px;
+	opacity: 0;
+	z-index: 10;
+	top: 0px;
+	left: 0px;
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+#stat_server_title:before {
+	content: 'СТАТИСТИКА СЕРВЕРОВ';
+}
+
+#stat_server_enter:before {
+	content: 'Выберите сервер';
+}
+
+#stat_server_total:before {
+	content: 'Общая статистика сервера';
+}
+/*---------------------------------------------*/
+/*---------------------------------------------*/
+.smart_btn_reg {
+    background: url(../images/reg.png) no-repeat !important;
+}
+
+.smart_btn_cab {
+    background: url(../images/log.png) no-repeat !important;
+}
+
+.smart_btn_rec {
+    background: url(../images/rec.png) no-repeat !important;
+}
+
+.input {
+    width: 352px !important;
+    height: 42px !important;
+    background: url(../images/input.png) no-repeat;
+    color: #b5afa3;
+    font-size: 11px;
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
+    background-size: 100% 42px;
+}

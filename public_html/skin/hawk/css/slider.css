@@ -1,0 +1,95 @@
+li.bjqs-slide {
+    display:none;
+    position:absolute;
+}
+
+
+#container {
+    top: 180px;
+    left: 0px;
+    right: 0px;
+    width: 800px;
+    height: 95px;
+    padding: 0;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner {
+    margin: 0 auto;
+    position: relative;
+}
+ul.bjqs {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: block;
+    margin: 0 auto;
+    list-style: none;
+    overflow: hidden;
+}
+
+ul.bjqs-controls {
+	display: none;
+}
+
+ol.bjqs-markers {
+    z-index: 20;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+ol.bjqs-markers li {
+  position: relative;
+  display: inline-block;
+}
+
+ol.bjqs-markers li a {
+    position: relative;
+    display: block;
+    height: 18px;
+    width: 18px;
+    margin: 0;
+    border: none;
+    overflow: hidden;
+    text-indent: -9999px;
+    background: url(../images/slider/clear.png) no-repeat;
+}
+
+ol.bjqs-markers li.active-marker a, ol.bjqs-markers li a:hover {
+	 background:url(../images/slider/full.png) no-repeat;
+}
+
+#text_1 {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  color: #ffc600;
+  font-size: 18px;
+  font-family: calibrib;
+}
+
+#text_2 {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: -1px auto;
+  color: #ffffff;
+  font-size: 24px;
+  font-family: calibrib;
+}
+
+#text_3 {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  color: #fff888;
+  font-size: 16px;
+  font-family: calibri;
+}

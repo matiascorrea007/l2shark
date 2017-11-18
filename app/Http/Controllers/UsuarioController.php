@@ -250,9 +250,7 @@ class UsuarioController extends AdminBaseController
         if (Auth::user()->admin == 1) {
               if ($user->login == $request['login'] and $comprobarPass == true) {
                 if ($request['password'] == $request['password_confirmation'] ) {
-                    # code...
               
-           
            $user->password = bcrypt($request['password']);
            $user->re_password = "";
            $user->save();
@@ -260,10 +258,12 @@ class UsuarioController extends AdminBaseController
            return Redirect::back();
              }else{
                  flash('el nuevo password no coincide con Re-Password.')->error(); 
+                 return Redirect::back();
              }
 
          }else{
-             flash('el login o la contraseñna actual no coinciden.')->error();    
+             flash('el login o la contraseñna actual no coinciden.')->error();
+             return Redirect::back();    
          }
         }
 
@@ -276,6 +276,7 @@ class UsuarioController extends AdminBaseController
             DB::connection('externa')->table('accounts')->where('login','=',$request['login'])->first();
 
         if ($user->login == $request['login'] and $comprobarPass == true) {
+            if ($request['password'] == $request['password_confirmation'] ) {
            
            $user->password = bcrypt($request['password']);
            $user->re_password = "";
@@ -287,7 +288,9 @@ class UsuarioController extends AdminBaseController
             ]);
 
             Alert::success('Mensaje existoso', 'Contraseña Cambiada Con Exito');    
-
+        }else{
+              flash('el nuevo password no coincide con Re-Password.')->error(); 
+        }
         }else{
              flash('el login o la contraseñna actual no coinciden.')->error();    
         }

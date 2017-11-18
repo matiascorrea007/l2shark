@@ -82,6 +82,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "amegus") {
            return view ('lineage.templates.amegus.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "hawk") {
+           return view ('lineage.templates.hawk.index',compact('posts'));
+        }
     }
 
 

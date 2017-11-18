@@ -258,10 +258,10 @@
               <img src="skin/altrone/images/login2.png" alt="">
             </div>
 <br><br>
+
+
             <div class='userarea'><!--astar userarea-->
     
-                
-                
 
             <div class='loginarea'>          
                 @if(Auth::check())
