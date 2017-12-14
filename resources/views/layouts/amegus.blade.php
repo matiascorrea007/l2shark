@@ -14,6 +14,7 @@
 	<link rel="stylesheet" type="text/css" href="skin/Amegus/css/style.css" >
     <link rel="stylesheet" type="text/css" href="skin/Amegus/css/engine.css">
     <link rel="stylesheet" type="text/css" href="skin/Amegus/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="skin/Amegus/css/mi-css.css">
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>

@@ -167,6 +167,8 @@ Route::post('galeria-video-store','GaleriaController@storeVideo');
 Route::put('galeria-video-update/{id}','GaleriaController@updateVideo');
 Route::delete('galeria-video-destroy/{id}','GaleriaController@destroyVideo');
 
+//backup 
+Route::get('backup', 'BackupController@index');
 
 });
 
@@ -201,13 +203,9 @@ Route::put('skin-update/{id}','SkinController@update');
 Route::delete('skin-destroy/{id}','SkinController@destroy');
 
 
-//backup 
-Route::get('backup', 'BackupController@index');
-
 Route::get('panel', 'AdminController@admin');
 Route::get('panel/{character}','AdminController@ObtenerCharacter');
 Route::post('panel/{character}','AdminController@ObtenerCharacter');
-
 
 
 

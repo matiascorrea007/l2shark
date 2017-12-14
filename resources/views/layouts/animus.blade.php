@@ -16,43 +16,18 @@
         <meta name="format-detection" content="telephone=no">
         <link rel="icon" href="skin/animus/images/favicon.ico" type="image/x-icon" />
         
-        {!!Html::style('skin/animus/css/bootstrap.css')!!}
+        {!!Html::style('skin/globales/css/bootstrap.css')!!}
         {!!Html::style('skin/animus/css/style.css')!!}
+        {!!Html::style('skin/animus/css/mi-css.css')!!}
+
 
         
 
-        <script type="text/javascript">(window.Image ? (new Image()) : document.createElement('img')).src = location.protocol + '//vk.com/rtrg?r=XaFj29ywI3wxE5k1BzoHRxefdz5q0v3ausJ2IsUbiaj0etT8mKEnmjHIp1XY7StkQO5mAb3tnqivp4KPplzT/gzX5EwX9VCXTDEVvrGH*ttotysbf/jDgklYMSTkv9iUUGXADcE7PryBx74kFEjFq/uCsUM6eNVAVrYCxQc*4iE-&pixel_id=1000052606';</script>
-
-        <!-- Facebook Pixel Code -->
-        <script>
-            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-                document,'script','https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1491049920905490');
-            fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-                       src="https://www.facebook.com/tr?id=1491049920905490&ev=PageView&noscript=1"
-            /></noscript>
-        <!-- DO NOT MODIFY -->
-        <!-- End Facebook Pixel Code -->
+    
     </head>
 
 
 <body>
-
-
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W84TMN"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W84TMN');</script>
-
     <div id="wrapper">
         <div class="bg-top"></div>
         <div class="bg-body"></div>
@@ -204,12 +179,11 @@
                     </ul>
                 </div>
 
-                <div style="color: #7c6e66;margin-top: -20px;margin-bottom: 12px;">Play on the best lineage 2 classic server. Try the taste of hardcore</div>
+               
                 <div class="bottom-text">
-                    <a href="https://www.g2a.com/" target="_blank" class="g2a-banner"><img src="skin/animus/images/g2a-icon.png" ></a>
-                    <a target="_blank" href="http://dadvi.com/" class="dadvi-banner"><img src="skin/animus//images/200x50_dadvi.png"/></a>
+                    
                 </div>
-            <div class="copyright">copyright © <span>2017 L2Classic.club</span> all right reserved.</div>
+            <div class="copyright">&copy; 2017 <a class="footertext" href="http://sharkestudio.com">Sharkestudio.com</a> Lineage 2 Servers.</div>
 
             </div>
         </div>
@@ -234,7 +208,7 @@
 </div>
 
 {!!Html::script('skin/animus/js/jquery-1.9.0.min.js')!!} 
-{!!Html::script('skin/animus/js/bootstrap.js')!!} 
+{!!Html::script('skin/globales/js/bootstrap.js')!!} 
 {!!Html::script('skin/animus/js/jquery.arcticmodal-0.3.min.js')!!} 
 {!!Html::script('skin/animus/js/jquery.iframetracker.js')!!} 
 {!!Html::script('skin/animus/js/openapi.js')!!} 
@@ -243,145 +217,6 @@
 
 
 <!--FB like-->
-<div id="fb-root"></div>
-<script>
-    $(window).ready(function() {
-        window.fbAsyncInit = function(){
-        console.debug('sdfdsf');
-        FB.init({ appId:'315852555477381', status:true,  cookie:true, xfbml:true, version : 'v2.5'});
-        FB.getLoginStatus(function(response){
-            console.debug(response);
-            if (response.status != "unknown")
-            {
-                var hideTheModal = $.cookie('hideTheModal');
-                if(hideTheModal == null){
-                    setTimeout(function(){
-                        $('#FBlike').arcticmodal({overlay:{css:{backgroundColor:'#fff',opacity:.80}},closeOnOverlayClick:false,closeOnEsc:false});
-
-                    }, 1);
-                }
-            }else{
-                //$('#FBlike').arcticmodal('close');
-                $('#FBlike').remove();
-                //$('.blocker').remove();
-            }
-
-        });
-
-    };
-
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
-
-        var hideTheModal = $.cookie('hideTheModal');
-        if(hideTheModal == null){
-
-            //1000
-            /*$('#close-modal').click(function(){
-                $.cookie('hideTheModal', 'true', { expires: 365 });
-            });*/
-            //$('#FBCOMM_iframe').on('click',function(){
-                //console.debug('mdcl');
-                //$('#FBlike').arcticmodal('close');
-                //$('.blocker').hide();
-                //$.cookie('hideTheModal', 'true', { expires: 365 });
-            //});
-            $('#FBCOMM_iframe iframe').iframeTracker({
-                blurCallback: function(){
-                    //console.debug('ftmdcl');
-                    $('#FBlike').arcticmodal('close');
-                    $.cookie('hideTheModal', 'true', { expires: 365 });
-                }
-            });
-
-
-        }
-    });
-    function testf()
-    {
-        $('.FBlike-body iframe').contents().get(0);
-    }
-
-</script>
-
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter32818837 = new Ya.Metrika({
-                    id:32818837,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/32818837" style="position:absolute; left:-9999px;"  /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-
-
-
-<script type="text/javascript">
-    /* <![CDATA[ */
-    var google_conversion_id = 951327610;
-    var google_custom_params = window.google_tag_params;
-    var google_remarketing_only = true;
-    /* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-    <div style="display:inline;">
-        <img height="1" width="1" style="border-style:none;"  src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/951327610/?value=0&amp;guid=ON&amp;script=0"/>
-    </div>
-</noscript>
-
-<script>
-(function(w, d, s, h, id) {
-    w.roistatProjectId = id; w.roistatHost = h;
-    var p = d.location.protocol == "https:" ? "https://" : "http://";
-    var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
-    var js = d.createElement(s); js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
-})(window, document, 'script', 'cloud.roistat.com', '47a5d4ab05e0d3fde80c35cf52d9095d');
-</script>
 
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>

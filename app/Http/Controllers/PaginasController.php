@@ -86,6 +86,10 @@ class PaginasController extends BaseController
         if ($this->skin()->nombre == "hawk") {
            return view ('lineage.templates.hawk.index',compact('posts'));
         }
+
+        if ($this->skin()->nombre == "exter") {
+           return view ('lineage.templates.exter.index',compact('posts'));
+        }
     }
 
 

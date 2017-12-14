@@ -5,27 +5,30 @@
 @include('alerts.success')
 @include('flash::message')
 
-<div class="title">News</div>
+
+<div class=" example-1 scrollbar-ripe-malinka">
     <div class="scroller">
         <div class='page all' data-bind='1'>                                                                                                                                      
        @foreach($posts as $post)
- <div class="news-block">
-                        <div class="news-im" >
-                 @if($post->imagen == "noticia.jpg")
-                <img src='skin/animus/images/news/news_border7.png' width="600" height="200">
-                @else
-                <img src='{{$post->portada}}' width="600" height="200">
-                @endif
+       <div class="title">{{$post->titulo}}</div>
+            <div class="news-block">
 
+                <div class="news-im aling-center" >
+                 @if($post->imagen == "noticia.jpg")
+                <p class="text-center"><img src='skin/animus/images/news/news_border7.png' width="600" height="200"></p>
+                @else
+                 <p class=""><img src='{{$post->portada}}' width="600" height="200"></p>
+                @endif
                 </div>
+
+
                         <div class="news-text">
-                            <h2>{{$post->titulo}}</h2>
                             <div class="text">
 
-    {!!$post->descripcioncorta!!}
+                                {!!$post->descripcioncorta!!}
+                            </div>
 
-    </div>
-                            <div class="author">Published: <span>{{$post->created_at}}</span> </div>
+                            <div class="author">Publicado : <span>{{$post->created_at}}</span> </div>
                             <p><a href="{{ url('/blogdetail-post'.$post->id) }}" target="_blank" class="btn btn-default btn-more" role="button"><img src="skin/tristana/images/plus.png">Leer Mas!!</a></p>
                         </div>
                     </div> 
@@ -52,7 +55,7 @@
 
 
            
-		
+		</div>
 
 
 
